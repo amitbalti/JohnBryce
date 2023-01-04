@@ -1,0 +1,121 @@
+If statement allows me to check if a certain sentence will happen.
+
+/// Quality sign /// 
+
+When we are using only single '=' that means that we are attaching a value to a variable.
+
+When we are using two '==' - that means that we are comparing something with another thing.
+
+
+/// if /// 
+Example:
+    let grade = prompt("Please enter your grade");
+    console.log(grade);
+
+    if (grade == 100) {
+        console.log("Very good!");
+        console.log("Some message");
+    }
+    console.log("After if statement");
+
+    Here, if the grade will be equal to 100 then the statements within the if statement will be printed in the console. Also the statement after the if statement will be printed in the console.
+    If the grade will not be equal to 100, then the console will print the statement after the if statement.
+
+
+/// If else /// 
+Another Example:
+    if (grade == 100) {
+        alert("Very good!");
+        console.log("Some message");
+    } else {
+        alert("Never mind!");
+    }
+
+    Basically, by using the if statement, we are using a boolean statement. 
+    If the grade is equal to 100, than we will receive the message of 'Very good!'. 
+    If the grade is less than 100, then we will receive the message of 'Never mind!'.
+
+/// if & else if & else /// 
+Another example:
+    if (grade == 100) {
+        alert("Very good!");
+        console.log("Some message");
+    } else if (grade >= 90) {
+        alert("Good!");
+    } else {
+        alert("Never mind!");
+    }
+
+    Here we basically have two if's and if both of them are wrong, then we will get the message of the 'else' statement.
+
+/// If inside if ///
+
+Example:
+    if (grade >= 60) {
+        if (grade <= 80) {
+          alert("Grade is between 60 - 80");
+        } else {
+          alert("Grade is bigger than 60");
+        }
+    } else {
+        alert("Grade is smaller than 60");
+    }
+
+/// && (and) operator ///
+    We can shorten the statement by writing:
+        if (grade >= 60 && grade <= 80) {
+            alert("Grade is between 60 - 80");
+        }
+
+        This means that the statement will be true only if both the grade is bigger or equal to 60 and the grade is smaller or equal to 80.
+
+    
+/// || (OR) operator ///
+Here it's only enough if one of the following statements are true:
+    if (grade >= 60 || grade >= 40) {
+        alert("OR operator");
+    }
+
+/// === ///
+
+When we are using the '==' operator, if we will have two variables like this:
+    const num1 = 20;
+    const num2 = "20";
+    if (num1 == num2) {
+        console.log("Equals");
+    } else {
+        console.log("Not equal");
+    }
+They will still be equal, even though one of them is a number and the other is a string.
+
+If we will use the '===' operator, then the result will be not equal. Three equal signs is checking two things: first, it will check if the values are the same, and second, it will check if the values are from the same type.
+    const num1 = 20;
+    const num2 = "20";
+    if (num1 === num2) {
+        console.log("Equals");
+    } else {
+        console.log("Not equal");
+    }
+    Here it will return 'not equal'.
+
+
+/// != ///
+This operator is basically saying that they are not equal.
+    const num1 = 20;
+    const num2 = 20;
+    if (num1 != num2) {
+        console.log("Equals");
+    } else {
+        console.log("Not equal");
+    }
+
+/// !== ///
+This means that it's enough that the values are not equal to one another or that their type is not equal to the other, then the statement will be true.
+    For example:
+        const num3 = 18;
+        const num4 = "18";
+        if (num3 !== num4) {
+            console.log("Equals");
+        }
+
+    This statement will be false if both of the types and the values will be equal. In this case if num4 will be 18.

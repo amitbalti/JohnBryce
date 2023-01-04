@@ -1,0 +1,23 @@
+The structure of the 'do-while' loop:
+    do {
+
+    }
+    while();
+Inside the 'do' block, we will have all the actions we want to use.
+
+Example:
+    do {
+        let number = +prompt("Please enter a number");
+    }
+    while(number != 999);
+
+    Here, every time the loop will run, we will get a number from the user.
+    Our stoppage sign will be found within the brackets next to the 'while' syntax.
+    In this case, the do-while loop will stop when the number will be equal to 999.
+
+The difference between the 'while' loop and the 'do-while' loop, is that in the 'while' loop the computer is first checking for the condition.
+Then if the condition is true, the loop will continue. If it will be false, the loop will not even start.
+In the 'do-while' loop, the computer is first making the action and then it's checking for the condition.
+
+When we will use the 'do-while' loop? 
+    When we want that the loop will occur at least once. If not, we can use the 'while' loop.

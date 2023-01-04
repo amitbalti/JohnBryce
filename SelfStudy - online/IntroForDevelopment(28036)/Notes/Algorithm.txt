@@ -1,0 +1,15 @@
+Algorithm - set of rules to be followed in problem-solving operations to execute a complicated mission.
+
+The Algorithm needs to be clear and precise.
+    For example - pizza delivery:
+        - The address for the delivery.
+        - Take the pizza from the store.
+        - Go to the costumer address.
+        - Give the pizza to the costumer.
+        - Take the money.
+        - Go back to the store.
+    
+        In this case, the Algorithm is for the delivery guy.
+        Is the same Algorithm will fit for a supermarket cashier? no - they are not meant to perform the same operation.
+
+Why do the Algorithm needs to be clear and precise? Because we are not working alone, usually a developer is working in a team. For that reason, the single developer needs to be clear and precise with his Algorithm so the whole team will understand the operation and that they will be able to perform the same operation without the single developer.

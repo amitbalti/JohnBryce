@@ -1,0 +1,20 @@
+//// prompt ////
+We can ask from our user to give us a certain value.
+To do that we will use the 'prompt' operator, which will basically give the use the option to write whatever he wants.
+    Example:
+        let firstName = prompt("What is your first name?");
+        console.log(`Welcome ${firstName}`);
+    Here the user will have to write his first name and press ok/hit enter.
+    Then his name will show up in the console.
+    If the user will hit the 'cancel' button we will get 'null' in the console - no value.
+
+We can also set a default value that will show up inside the prompt, even before the user will write anything.
+    Example:
+    let firstName = prompt("What is your first name?", "Amit");
+    console.log(`Welcome ${firstName}`);
+
+The type of 'prompt' is string.
+
+To make the type of 'prompt' to be a number, we will do it like that:
+    let age = +prompt("What is your age?");
+    console.log(typeof age);

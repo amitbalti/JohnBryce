@@ -1,0 +1,25 @@
+Sometimes, we will want to have a condition for a certain block of our flowchart.
+
+Boolean expression:
+    - Boolean expression is an expression which his value can be "true" or "false".
+    - When the expression is "true" - ONLY the left part of the flowchart will happen.
+    - When the expression is "false" - ONLY the right part of the flowchart will happen.
+
+    Example for boolean expression in 'booleanExP16':
+        - Receiving number and showing 'negative' or 'no-negative' according to his value.
+
+There are 6 operators which make up a boolean expression from two variables (a, b).
+    1. a == b - equal - this is true when the two variables have the same value.
+    2. a > b - bigger then - 'a' have a bigger value than 'b'.
+    3. a < b - smaller then - 'a' have a smaller value than 'b'.
+    4. a != b - isn't equal - both of the variables have different values.
+    5. a <= b - smaller or equal - 'a' have smaller value than 'b' or equal to him.
+    6. a >= b - bigger or equal - 'a' have bigger value than 'b' or equal to him.
+
+At the end of the two blocks, the flowchart will unite - meaning that every condition always have the one entrance and one exit only, when in every flowchart there is only one 'stop' junction.
+When using a boolean expression, only ONE of the blocks can occur, meaning, there is no situation in which one expression will be 'true' AND 'false' at the same time.
+
+We need to differentiate between the two rules of the equal sign '=' (we can see the examples in 'examplePage17' file):
+    - In his first rule, the equal sign will be used as an operator of assignment (when he is in the assignment junction), and he will change the value of the cell which is written in the left side of the expression.
+    - In his second rule, the equal sign will be used as the equal operator (when he is in the condition junction), and won't change the value of the cell. The equal operator is symmetrical, meaning that we can write him the other way around, like that: 17 = val.
+    

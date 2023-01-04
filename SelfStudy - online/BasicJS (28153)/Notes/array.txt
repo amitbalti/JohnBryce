@@ -1,0 +1,29 @@
+Array is a type of data that is used to save some data - it can be a number , it can be a string, and basically every data that js can work with.
+
+Array is represented with the square brackets - [].
+
+The attribute '.push()' - will push the data into the array.
+For example:
+    let arr = [];
+    for (let i = 0; i <= 10; i++) {
+        arr.push(+prompt("Please enter your grade"));
+    }
+
+
+The first place in the array will start with 0. 
+
+Example:
+    for (let i = 0; i < arr.length; i++) {
+        document.write(arr[i]);
+    }
+'arr.length' will return the size of the array.
+arr[i] will relate to the specific element in the array.
+
+'push()' is pushing the data into the end of the array.
+
+We can also change the value of a certain index in the array.
+For example:
+    let arr = [100, 95, 85, 90];
+
+    arr[1] = 80;
+Here, we basically changes the value 95 to 80.

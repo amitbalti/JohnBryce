@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="d1"></div>
+    <script>
+      //   navigator.geolocation.getCurrentPosition(fun1);
+      navigator.geolocation.watchPosition(fun1);
+
+      function fun1(p) {
+        let x = p.coords.latitude + " " + p.coords.longitude;
+        document.getElementById("d1").innerHTML = x;
+      }
+    </script>
+  </body>
+</html>

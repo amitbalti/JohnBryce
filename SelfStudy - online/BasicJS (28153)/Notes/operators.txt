@@ -1,0 +1,98 @@
+Operators allows us to make different actions between variables, and also between functions.
+
+//// Addition ////
+For example, we can add up two variables:
+    let num1 = 20;
+    let num2 = 30;
+    let num3 = num1 + num2;
+    console.log(num3);
+
+//// Subtraction ////
+We can also subtract the variables from one another, for example:
+    let num4 = num2 - num1;
+    console.log(num4);
+
+//// Multiplication ////
+We can also multiply the variables with one another, for example:
+    let num5 = num1 * num2;
+    console.log(num5);
+
+//// Division ////
+We can also divide one variable with another, for example:
+    let num6 = num2 / num1;
+    console.log(num6);
+
+//// Modulo ////
+Modulo is represented with '%'. 
+Modulo will show us the remnant of the division of two numbers.
+This is basically saying, how many times one variable can get inside another variable.
+    Example:
+        let num1 = 20;
+        let num2 = 30;  
+        let num7 = num2 % num1;
+        console.log(num7);
+    Here num1 will fit only one time in num2. The remnant will be 10, so it will print us 10.
+    If num2 will be 60 -> num2 % num1 -> will be equal to 0 - there is no remnant left.
+    If num2 will be 65 -> num2 % num1 -> will be equal to 5.
+
+//// ++ ////
+To add only one to the variable, we will use '++' operator.
+    Example:
+        let num1 = 20;
+        num1++;
+        console.log(num1);
+    It's like saying:
+        num1 = num1 + 1;
+    The console will show 21.
+
+//// -- ////
+To subtract only one from the variable, we will use '--' operator.
+    Example:
+        num1 = 21;
+        num1--;
+        console.log(num1);
+    It's like saying:
+        num1 = num1 - 1;
+    The console will show 20.
+
+//// *= ////
+A shorter way to multiply our current variable with another one.
+    Example:
+        let num8 = 4;
+        num8 *=3;
+        console.log(num8);
+    It's like saying:
+        num8 = num8 * 3;
+    The console will show 12.
+
+//// /= ////
+A shorter way to divide our current variable with another one.
+    Example:
+        let num8 = 12;
+        num8 /=3;
+        console.log(num8);
+    It's like saying:
+        num8 = num8 / 3;
+    The console will show 4.
+
+//// -= ////
+A shorter way to subtract our current variable with another one.
+    Example:
+        let num8 = 12;
+        num8 -=3;
+        console.log(num8);
+    It's like saying:
+        num8 = num8 - 3;
+    The console will show 9.
+
+//// += ////
+A shorter way to add our current variable with another one.
+    Example:
+        let num8 = 12;
+        num8 +=3;
+        console.log(num8);
+    It's like saying:
+        num8 = num8 + 3;
+    The console will show 15.
+
+    

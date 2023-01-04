@@ -1,0 +1,22 @@
+Sometimes we will want some in-between calculations that won't show as a output.
+
+In web development, to calculations there is no meaning for the calculations if we won't save their outcome.
+
+An expression can be a numerical value (1,2,3), a text will be between quotation marks "" ("example"), identifier of a variable or a calculation.
+The value of the expression will be copied to the variable.
+
+An expression is equal to a cell.
+
+The two examples in the 'examplesPage13' file:
+    1. Receiving two numbers and showing their sum.
+       There is an option to put more than one assignment in one assignment junction.
+       The assignments will occur one after the other, from top to bottom.
+    2. Receiving two numbers and showing their average.
+
+What is the key (מקרא)?
+    Assignment opens the option for us to save data in different variables beyond from the data within the input.
+    About the key we will write at the side of our flowchart, with a short description of what their job is.
+    Example can be found in the 'examplesPage13' file.
+        - Note - there is no obligation to indicate the input variables in the key (for example - a, b).
+        
+

@@ -1,0 +1,25 @@
+A % B (A module B) is the remnant from the whole division of A in B.
+    Example:
+        100 % 30 = 10
+        Meaning - 30 get into 100, 3 whole times.
+                  But, 3 times 30 are 90, and we left with remnant of 10 (module).
+
+The module is useful to:
+    - To know if one whole is dividing by the other without a remnant (meaning that the remnant is 0).
+        - In the above example, 100 is NOT dividing by 30 without a remnant.
+    - To describe "circular" numeric timeline - from 0 till a whole and going back to 0. 
+        - For every whole module 30 there will be a result between 0 to 29.
+            - In the diagram in file "circlePage14" there is a circular timeline from 0 to 29.
+              In order to calculate 100%30, using the diagram, we need to start from 0, and move 100 lines in clock direction.
+              When we finish we will stand on line 10. 
+
+Tip - when dividing, leave the numbers as is, without reduction.
+
+/////// Full Assignment ///////
+
+The operator (int) will reduce part of the fraction from the expression and will leave the whole.
+
+    For example - in the file 'examplePage14':
+        Receiving the number of kids and the number of cake slices. 
+
+        Showing the number of cake slices that each kid can get and the number of cake slices that will be remain.

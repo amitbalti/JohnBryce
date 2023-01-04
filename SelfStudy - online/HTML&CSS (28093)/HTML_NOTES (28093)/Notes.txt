@@ -1,0 +1,185 @@
+/////////////// HTML Basics ///////////////
+
+HTML = Hyper Text Markup Language - tags language.
+
+40 years ago there was a language called SGML that was being used like HTML is being used today. In SGML there are two languages - HTML which is being used for the web, and XML which is used to transform information between two sides.
+
+Both HTML and XML are markup languages, tags languages. One of them is for transforming info and the other to build web pages.
+
+Most of the tags in HTML have an opening and closing tags.
+    The opening tag: <>
+    The closing tag: </> - '/' is being used before the name of the tag.
+
+<html></html> tag - is a tag that will contain the different components that will be used in the page.
+
+<head></head> tag - is being used to set general settings for the entire page. For example the language that is being used in the page, and other settings like title which will appear at the tab name.
+
+<body></body> tag - defines the content that is being displayed in the web page.
+
+/////////////// Basic Tags ///////////////
+
+Block level tags = tags that catch the whole row. Which means that in their opening and closing they will make the next line to go below.
+
+Title tags = h1 - h6:
+    h1 is the largest one and h6 is the smallest.
+
+Titles have the attributes of 'align'. 
+    - For example: <h1 align="center"></h1> which will center the header.
+    - Another example: <h3 align="right"></h3>
+
+Another type of block level is <p></p> - paragraph.
+
+<div></div> - represents 'division', a unit in the page which we can set a certain style settings. This one is also a block level tag.
+
+-----------------
+
+There are also inline tags that won't make the next line go down.
+
+    For example: '<span></span>' - also helps creating style settings on the page.
+
+<pre></pre> - preformatted tag - one of the only tags in HTML that will get blank spaces.
+
+/////////////// Image & Hyperlink ///////////////
+
+Images tags are being written like this:
+<img />
+They are a self closing tags. 
+Example: 
+<img src="../img/a.jpg" alt="view" width="40%" height="200" />
+
+    To pick a pic we use the 'src' attribute = "source".
+    'alt' will give the image a description in case the image isn't loading in a certain device.
+    'width' will change the width of the pic.
+    'height' will change the height of the pic.
+    When only one of them is being changes, the other one will relatively change. 
+
+When we want to add a link we will use a tag called '<a></a>' (a for anchor).
+It will send us to a specific link online.
+The main attribute will be 'href' - stands for hyper reference.
+
+When we wanna link a inside doc we can do it like that: 
+    <a href="basictags.html">Basic tags</a>
+
+When we will link a online page we can do it like that:
+    <a href="https://www.youtube.com">For YouTube click here!</a>
+
+To link for a pic: 
+    <a href="../img/c.jpg">To the pic</a>
+
+When we wanna link a doc that needs to be downloaded to the costumer device: 
+    <a href="../1.docx">Word File</a>
+
+/////////////// Lists & Buttons ///////////////
+
+We have different types of lists:
+    <ol></ol> - ordered list - with numbers (1,2,3) or letters (a,b,c).
+    <ul></ul> - unordered list - with dots.
+    <dl></dl> - description list - in that we have the description title (<dt></dt>) and the description data (<dd></dd>)
+
+Inside of them we have list item - <li></li>
+
+To change the type in ordered list, we will write: <ol type="a/A/i/I"></ol> - the default will be number.
+We can also choose from which letter we wanna start with, to do that we will do: <ol start="8"></ol>
+
+For ul list we can also change the type of the list: <ul type="circle/square"></ul>
+    - circle - will create a hollow circle.
+    - square - will create a square.
+
+For buttons we have <input/> tag - is a text box which we can write text inside.
+We can give the input a type, for example button:
+    <input type="button"/>
+If we want the button to have text on it, we can say:
+    <input type="button" value="Never press here"/>
+    
+/////////////// Forms ///////////////
+
+Forms is a way to get info from the clients.
+We can choose different fields that we want to get from the client.
+When the client press the 'submit' button (for example) thanks to a backend tech, we will get the client choses.
+Then we will return a message to the client that his message was sent successfully.
+
+To make a form we have the <form></form> tag.
+We have the 'action' attribute which is the link which is where we will sent the form to.
+
+We have a way to send forms, we have a 'get' and a 'post' methods.
+
+    For example:
+        <form method="get"></form> - method 'get' means that the info is being sent in the link address.
+        <form method="post"></form> - method 'post' means it will send the info in the inner side of the page.
+
+To sum up, with form we can get info from the client, this will be sent to the server, which will be then sent to the database, and then the answer will be sent back to the client side.
+
+In forms we have input tags.
+In the input tags we have different controllers:
+    - 'type' - 'text' is the default one, and there can be many more.
+    - 'name' - 
+    - 'value' - will give the input something written in it.
+    - 'maxlength' - the max letters that can be written in the box.
+
+Different types of 'type':
+    - 'text' - any text. Can have 'maxlength', 'value' (which will give the box a name).
+    - 'password' - any password.
+    - 'email' - needs to have a specific structure.
+    - 'number' - can have a 'min' number, 'max' number, 'step' which will make jumps of any value we will give it.
+    - 'time' - choosing any time.
+    - 'date' - choosing any date.
+    - 'reset' - will reset all the relevant fields in the form.
+    - 'color' - can chose a certain color.
+
+If we want a certain input will be required we will write the 'required' attribute in the 'input' field.
+    For example: <input type="text" required/>
+    Without filling this field we will get an error if we will try to send it without filling it.
+
+If we want a button that doesn't require a validation, we will write 'formnonvalidate'.
+If we want the whole form to won't require validation we will write 'novalidate'.
+
+/////////////// Tables ///////////////
+
+The role for tables in HTML is to give a order in the page.
+The tag is <table></table>.
+    Inside the table we will use the <tr></tr> which is 'table row'. 
+        Inside of the we can put <td></td> which is 'table data'.
+
+To make a certain box be displayed on two or more columns, we will use the 'colspan' attribute in the <td colspan="2"></td>.
+To make a certain box be displayed on two or more rows, we will use the 'rowspan' attribute in the <td rowspan="2"></td>.
+
+
+/////////////// SVG ///////////////
+
+SVG = Scaleable Vector Graphics - which allows to create 2D shape.
+An example:
+    <svg width="300" height="200" style="background-color: magenta"> // The size of the svg.
+      <circle cx="50" cy="60" r="40" fill="blue stroke-width="3"/> // circle = will create a circle shape || cx = center x (from the left) || cy = center y (from the top) || r = radius || fill = the color inside the shape || stroke = the outside color of the shape || stroke-width = the width of the stroke.
+    </svg>
+
+    <rect width="70" height="50" x="100" y="30" /> // rect = rectangle shape || x = 100 means that it will move 100 units from the top || y = 30 - will move 30 units from the top.
+
+    <polygon points="30,90,100,140,80,170" /> // according to the amount of points, we will get a certain shape. If we will set three sets of x and y we will get a triangle, four - square ect. - In our example we will get a triangle.
+
+    <line x1="0" y1="0" x2="200" y2="180" stroke="green" stroke-width="4" /> // will give us a line.
+
+
+/////////////// Semantic Tags ///////////////
+
+In HTML5 we have semantic tags - their role is to describe components in the page.
+
+Examples for semantic tags which set tags in the page:
+    - <div>
+    - <article> - a independent section in the page which isn't dependent on other features in the page.
+    - <aside> - secondary section.
+    - <details>
+    - <figcaption>
+    - <figure>
+    - <footer> - can be in the bottom of the page or of a section or article.
+    - <header> - creates a header for the whole page or for a specific unit of the page.
+    - <main>
+    - <mark>
+    - <nav> - will create a navigation bar with a few links.
+    - <section> - a certain unit in the page.
+    - <summary>
+    - <time>
+
+The main purpose of the semantic tags is to help the searches help to know what is the content related to. 
+It is also used for people with disabilities.
+
+To sum up semantic tags defines sections in the page. Styling wise they are not making any difference aside to go a row below.

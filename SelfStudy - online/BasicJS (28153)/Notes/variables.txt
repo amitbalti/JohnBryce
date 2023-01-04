@@ -1,0 +1,31 @@
+Variables are cells in the memory of our computer. Those cells will save some data for us.
+Later on we can use the variables, we can change the variables values and so on.
+
+To declare a variable we will use the word 'let' then we will give the variable a name and finally, we will give the variable a data.
+    For example:
+        let age = 30;
+
+After using the word 'let' to set up a variable, we can still change the value / data of the variable. 
+To do it, there is no need to use the word 'let' before the variable name again, instead we will only write the name of the variable and the new value/data of the variable. 
+    For example: 
+        age = 34;
+
+A variable can have only one value, not more.
+
+We can define multiple variables in one line, using one 'let'.
+    For example:
+        let firstName, lastName;
+        firstName = "Amit";
+        lastName = "Balteriski";
+
+If we will use this example:
+        let firstName, lastName;
+        console.log(firstName);
+
+    The console will show us 'undefined' - this means that this variable didn't get a value/data.
+
+We can create a variable which his data will contain other variables.
+    For example:
+      let fullName = firstName + " " + lastName;
+    We can also show it like that:
+      let fullName = `${firstName} ${lastName}`;

@@ -1,0 +1,14 @@
+///////// Input /////////
+
+Receiving input - is a process during which the computer will receive data (with keyboard, mouse, cd and so on), to process them with a computer program.
+
+The data itself is called 'input' and mostly they will be saved in a memory folder (changing).
+
+There are a few examples to write the input in the flowchart.
+
+Can see in folder 'input-examples.png'.
+
+    1. In the first flowchart, 'a' is the input which is saved in variable 'a'.
+    2. In the second flowchart, 'a' and 'b' are the input which are saved as variables 'a' and 'b'.
+    3. In the third flowchart, we can shorten the input acts and write the input as one. This flowchart is doing the same as the second flowchart but it's writing the 'a' and 'b' variables in one input.
+    4. In the fourth flowchart, the second 'a' variable is basically replacing the first 'a' variable. So we are now considering the second 'a' input instead of the first 'a' input.

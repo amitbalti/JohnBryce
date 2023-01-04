@@ -1,0 +1,8 @@
+There are two operators which builds a third boolean expression from two boolean expressions.
+    - a && b - AND - both of the expressions are true.
+    - a || b - OR - at least one of the expressions is true.
+
+The && (AND) operator will come before the || (OR) operator.
+When building an expression out of boolean expression, part of the operator && and part of the || operator, it's best to use brackets to prevent mistakes and for clarity.
+
+Example can be found in the 'examplePa19' file.

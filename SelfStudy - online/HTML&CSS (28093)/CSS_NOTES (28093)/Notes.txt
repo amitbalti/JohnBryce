@@ -1,0 +1,11 @@
+CSS = Cascading Style Sheets.
+HTML will set the information of the page.
+CSS rule is to give us a really wide range of styling to our HTML page.
+
+When we are working with CSS, there are three ways to work with it:
+    1. Inline syntax - means that we are setting the style to a specific tag.
+        For example: <tag style="attribute:value; attribute:value;"></tag>
+        Another example: <p style="color: blue; letter-spacing: 20px;">hello</p>
+    2. In head CSS - means that in the head section of the HTML page we will use the 'style' tag and we will set all the settings we want of the CSS to a specific page.
+    3. External CSS document - will help us set certain settings to a wide HTML pages. With that we can set a certain settings for let's say headers, and use the same headers for more than one page. With that we will write less code and we will be more efficient.
+    To line the external CSS page to a HTML, we will set the 'link' tag at the head section, we will do it like this: <link rel="stylesheet" type="text/css>

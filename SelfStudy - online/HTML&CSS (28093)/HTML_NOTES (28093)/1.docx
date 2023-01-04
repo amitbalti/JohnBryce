@@ -1,0 +1,68 @@
+/////////////// HTML Basics ///////////////
+
+HTML = Hyper Text Markup Language - tags language.
+
+40 years ago there was a language called SGML that was being used like HTML is being used today. In SGML there are two languages - HTML which is being used for the web, and XML which is used to transform information between two sides.
+
+Both HTML and XML are markup languages, tags languages. One of them is for transforming info and the other to build web pages.
+
+Most of the tags in HTML have an opening and closing tags.
+    The opening tag: <>
+    The closing tag: </> - '/' is being used before the name of the tag.
+
+<html></html> tag - is a tag that will contain the different components that will be used in the page.
+
+<head></head> tag - is being used to set general settings for the entire page. For example the language that is being used in the page, and other settings like title which will appear at the tab name.
+
+<body></body> tag - defines the content that is being displayed in the web page.
+
+/////////////// Basic Tags ///////////////
+
+Block level tags = tags that catch the whole row. Which means that in their opening and closing they will make the next line to go below.
+
+Title tags = h1 - h6:
+    h1 is the largest one and h6 is the smallest.
+
+Titles have the attributes of 'align'. 
+    - For example: <h1 align="center"></h1> which will center the header.
+    - Another example: <h3 align="right"></h3>
+
+Another type of block level is <p></p> - paragraph.
+
+<div></div> - represents 'division', a unit in the page which we can set a certain style settings. This one is also a block level tag.
+
+-----------------
+
+There are also inline tags that won't make the next line go down.
+
+    For example: '<span></span>' - also helps creating style settings on the page.
+
+<pre></pre> - preformatted tag - one of the only tags in HTML that will get blank spaces.
+
+/////////////// Image & Hyperlink ///////////////
+
+Images tags are being written like this:
+<img />
+They are a self closing tags. 
+Example: 
+<img src="../img/a.jpg" alt="view" width="40%" height="200" />
+
+    To pick a pic we use the 'src' attribute = "source".
+    'alt' will give the image a description in case the image isn't loading in a certain device.
+    'width' will change the width of the pic.
+    'height' will change the height of the pic.
+    When only one of them is being changes, the other one will relatively change. 
+
+When we want to add a link we will use a tag called '<a></a>' (a for anchor).
+It will send us to a specific link online.
+The main attribute will be 'href' - stands for hyper reference.
+
+When we wanna link a inside doc we can do it like that: 
+    <a href="basictags.html">Basic tags</a>
+
+When we will link a online page we can do it like that:
+    <a href="https://www.youtube.com">For YouTube click here!</a>
+
+To link for a pic: 
+    <a href="../img/c.jpg">To the pic</a>
+

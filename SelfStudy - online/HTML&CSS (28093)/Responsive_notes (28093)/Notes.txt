@@ -1,0 +1,14 @@
+Responsive page means that the page will fit to both a larger or a smaller devices.
+
+There is a 'meta' tag that is called 'viewport'. This tag will adjust the size of the page content to the device screen.
+
+When we want to create a responsive web page, we will avoid using absolute numbers (for example 300px for width), we will instead use percentages.
+
+Another thing we can use is '@media' in the style of the page. 
+    For example: 
+        @media only screen and (max-width: 1024px) and (max-height: 768px) {}
+        @media only screen and (min-width: 400px) and (min-height: 300px) {
+            li {
+                display: inline;
+            }
+        }

@@ -1,0 +1,16 @@
+//// alert ////
+'alert()' is giving me the option to show output in the web page. Within the brackets we will use "" and write whatever we want.
+'alert' will be showed as a popup message, it will appear any time we will refresh the web page.
+    Example:
+        alert("Hello World!")
+
+//// console.log ////
+'console.log()' - will show us any output we want to see in the console of our webpage.
+'console.log' is being used mostly for the developers and less for the users.
+    Example:
+        console.log("Hello World");
+
+//// document.write ////
+'document.write()' - will be showed similarly to a paragraph tag in HTML.
+    Example:
+      document.write("Hello World <br>on document");

@@ -1,0 +1,16 @@
+When using the 'let' keyword to define a variable, we can change the value/data of the variable as many times as we would like.
+
+When using the 'const' keyword to define a variable, we can NOT change the value/data of the variable at all. The value we will define to the variable at the first time, this will be the value of this variable.
+    Example:
+        const lastName = "Balti";
+        lastName = "Cohen";
+        console.log(lastName);
+
+    This will give us an error because we already defined the const and we can't change it's value.
+
+We also always have to give our 'const' variable immediately a value, otherwise, we will get an error.
+    For example:
+        const x;
+        x=56;
+        console.log(x);
+    This will give us an error.

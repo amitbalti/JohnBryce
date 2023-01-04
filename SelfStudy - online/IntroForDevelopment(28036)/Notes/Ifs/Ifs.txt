@@ -1,0 +1,3 @@
+'If' (condition) will divide the flowchart into two blocks. 
+Any 'If' (condition) can continue and split to another block by another 'If' (condition).
+Example for 'If' in the 'exampleP18' file.

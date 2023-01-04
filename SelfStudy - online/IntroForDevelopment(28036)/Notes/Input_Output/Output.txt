@@ -1,0 +1,19 @@
+///////// Output /////////
+
+Output - is the outcome of running the algorithm. In most cases the outcome of the output will change, accordingly to the input that will be received during the algorithm process.
+Mostly the output will be considered as the print to the screen.
+
+In the output junction, we will write a expression or a list of expressions.
+
+An expression can be:
+    - Number which can't be change.
+    - Text within brackets.
+    - Identifier of a variable (a name).
+    - Calculations.
+    - List of expressions.
+
+    Examples can be found in the 'output-examples.png' file.
+
+////// Tip //////
+
+In every solution there is at least one output junction.

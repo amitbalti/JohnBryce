@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casting</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Casting</h1>
+    <hr />
+    <script>
+      // String -> Number
+      let salary = "12000";
+      console.log(typeof salary);
+      salary = Number(salary);
+      console.log(typeof salary);
+
+      // Number with remnant -> whole number
+      let age = 25.7;
+      console.log(parseInt(age));
+
+      // String -> Number with remnant -> Whole Number
+      let age2 = "25.7";
+      console.log(parseInt(age2));
+
+      // String -> Number
+      let age3 = "25.7";
+      console.log(typeof +age3);
+
+      // Number -> String
+      let number = 25;
+      console.log(typeof number);
+      number = String(number);
+      console.log(typeof number);
+
+      // Number -> String
+      let someNumber = 1234;
+      console.log(typeof someNumber);
+      someNumber = someNumber.toString();
+      console.log(typeof someNumber);
+    </script>
+  </body>
+</html>

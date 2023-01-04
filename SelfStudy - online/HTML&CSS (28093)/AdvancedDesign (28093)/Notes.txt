@@ -1,0 +1,58 @@
+When putting in style 'transition' attribute, it will allow us to make a transition from scenario a to b.
+
+Another option we have is called 'animation'. 
+    For animation we first call the '@keyframes' tag in the style.
+    We will first set up a name for this 'keyframes'. 
+    Then we will set a percentage for example - which is the timing of the specific setting we set.
+        For example:
+            @keyframes example1 {
+                0% {
+                    left: 0px;
+                    top: 0px;
+                }
+                25% {
+                    left: 300px;
+                    top: 0px;
+                }
+                50% {
+                    left: 300px;
+                    top: 200px;
+                    background-color: cadetblue;
+                }
+                75% {
+                    left: 0px;
+                    top: 200px;
+                }
+                100% {
+                    left: 0px;
+                    top: 0px;
+                }
+            }
+
+////////// Geolocation //////////
+
+Geolocation is a new feature for HTML5, which allow to find the location of the user.
+It's using GPS, wifi and also on IP address.
+
+    Example:
+
+        <div id="d1"></div>
+        <script>
+            navigator.geolocation.getCurrentPosition(fun1);
+            function fun1(p) {
+                let x = p.coords.latitude + " " + p.coords.longitude;
+                document.getElementById("d1").innerHTML = x;
+            }
+        </script>
+
+    This will need to be allowed by the user.
+
+    We can also use instead of the 'getCurrentPosition', the 'watchPosition' which will be updated when the user is moving.
+        <div id="d1"></div>
+        <script>
+            navigator.geolocation.watchPosition(fun1);
+            function fun1(p) {
+                let x = p.coords.latitude + " " + p.coords.longitude;
+                document.getElementById("d1").innerHTML = x;
+            }
+        </script>

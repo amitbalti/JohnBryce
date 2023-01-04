@@ -1,0 +1,27 @@
+Mathematical expression is made up from operators and operants.
+
+    - Operator - the sign that represents the action.
+    - Operant - the value which the action is made on.
+
+        Example: 
+            In the expression 1+2, the '+' is the operator and he is executing an action on the operants - the numbers (1, 2).
+
+For every operator there is a different priority. To change the order of the actions, we use brackets '()'.
+
+Mathematical operators:
+    ('a' and 'b' are numerical expressions).
+
+    Priority 1:
+        - (a) - brackets - will change the order of the calculation.
+        - |a| - absolute value - if a is negative -a, it will remain a.
+        - +a - plus - a.
+        - -a - minus - will turn a from negative to positive and vice versa.
+
+    Priority 2: 
+        - a * b - multiplier - a times b.
+        - a/b - division - a divided by b.
+        - a%b - modulo - returns the remainder or signed remainder of a division, after one number is divided by another.
+
+    Priority 3: 
+        - a+b - addition - a plus b.
+        - a-b - subtraction - a minus b.

@@ -1,0 +1,45 @@
+We can change one type of variable to another.
+
+//// String -> Number ////
+
+1. For example we have this variable:
+        let salary = "12000";
+    This is a variable with the type of string.
+    If we want to change the type of the variable to a number type, we will write it like that:
+        salary = Number(salary);
+    This will convert the type of the 'salary' variable from 'string' to 'number'.
+
+We can also take a number which have a remnant and to remove the remnant of the number and leave it as a whole number.
+To do it we will use the attribute 'parseInt'.
+    For example:
+        let age = 25.2;
+        console.log(parseInt(age));
+    This will make the number a whole number and convert it into 25.
+
+2. Using 'parseInt' with a string, will first make the string into a number, and then will remove the remnant of the number.
+    For example:
+        let age2 = "25.7";
+        console.log(parseInt(age2));
+    
+3. Another way to convert from string to number is by putting '+' before the variable name.
+    For example:
+        let age3 = "25.7";
+        console.log(typeof +age3);
+
+
+//// Number -> String ////
+
+1. A way to convert from number to string is by using the '.toString()' attribute.
+    For example:
+        let someNumber = 1234;
+        console.log(typeof someNumber);
+        someNumber = someNumber.toString();
+        console.log(typeof someNumber);
+
+2. We can also do it the other way around:
+    For example we have this variable:
+        let age = 25;
+    This is a variable with the type of number.
+    If we want to change the type of the variable to a string type, we will write it like that:
+        age = String(age);
+    This will convert the type of the 'age' variable from 'number' to 'string'.

@@ -1,0 +1,25 @@
+In the for loop we can write all of our properties to the loop in one line:
+
+For example:
+    for (let num = 1; num <= 100; num++) {
+        console.log(num);
+    }
+Here basically the loop is saying that first, 'num' variable is equal to 1.
+Then, it will check if the 'num' variable is equal to 100 or less.
+Lastly, the 'num' variable will go to the next 'num' (for example if num=3, then the next 'num' will be 4).
+This will continue until the num will be equal to more than 100.
+
+We can also put if statement inside a loop.
+For example:
+    for (let num = 1; num <= 100; num++) {
+        if (num % 2 == 0) {
+            console.log(num);
+        }
+    }
+Here, every number that his modulo 2 will be equal to 0, is a even number.
+
+Another way to find only the even numbers with only the for loop:
+    for (let num = 2; num <= 100; num += 2) {
+        console.log(num);
+    }
+Here the number start in two, and it will promote in two places, therefore it will be checking for all the even numbers.

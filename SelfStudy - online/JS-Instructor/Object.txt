@@ -1,0 +1,318 @@
+//// What is an object? ////
+Object is built from three parts:
+    1. Characteristics - the data that the object is holding.
+    2. Actions - the actions that the object can perform.
+    3. Events - messages that are being sent from the object.
+
+For example, we have a car. The car is gray, "ford", have 4 dors. She knows to drive forward, backwards, and honk. She also know how to give warnings to things that happen to her that are out of my control. For example when the fuel is over or when the engine is overheated.
+In this case, the car is our object. 
+The car characteristics are the things that describe her.
+The car actions is the things that she knows how to perform when I order her to.
+The events that the car is providing are things that are happening inside of her and that I should know about.
+
+
+//// How to use object? ////
+Object is the execution of a template.
+Using our car example, my car will have a building program in the factory. From that program we can create many cars which are identical to one another in the manufacturing, but still, every car is a object standing alone (every car have a different license number).
+
+Creating a new object:
+    To create a new object, we will use the word 'new'.
+        For example:
+            var arr = new Array();
+        Here, 'Array' isn't an array, but a template to create a new object an array.
+        'arr' is a variable which contain the object, with him we can access the object characteristics and the object's functions.
+        'new Array()' is an order to create a new object with the Array template.
+
+        Another example:
+            First we will create a car object:
+                var car = new Car();
+            Then, we can access to a characteristic of the amount of wheels, which is called 'wheels', and read it's values:
+                alert(car.wheels);
+                Here, it's not a function, therefore we will not put brackets after 'wheels' - like we are using a variable. 
+            To activate a different functions we can write:
+                car.driveForward();
+                Here, it's a function, therefore we will put brackets after 'driveForward'.
+
+//// String ////
+String is an object which is using text.
+
+Resting a string can occur in two different ways:
+    var str1 = "This is a string object";
+    var str2 = new String("This is a string object");
+Both ways are exactly the same. The first way is the shorter way of doing the second way.
+
+Some things we need to remember using strings:
+    - We can't change the length of the string once it was created. Every function returns a new string. If needed, we can change the string with another.
+    - The array is an internal representation of the string.
+    - We can't access a certain cell in the array of the string like in a regular array. For this case, we will need to use specific functions.
+
+String characteristics:
+    - length - this characteristic will return the length of the array. 
+        Example:
+            var str = "hello";
+            alert(str.length);
+        In this case, the alert will be '5'.
+    - charAt(number) - this function will return the character in a specific place of the array which is representing the string. To do that, we need to give the function a number as the placement (note: the counting is starting with '0').
+        Example:
+            var str = "charAt function";
+            alert(str.charAt(4));
+        In this case, the alert will be 'A'.
+    - indexOf(string) - this function will return the index in the array of a specific character or a specific string.
+                        The search is being done from the beginning till the end and it will return the first place only.
+                        If we are talking about a string, we will get the first character of the string, but it will look for the whole string, if the function didn't find the value, it will return 1.
+        Example:
+            var str = "testing a string";
+            alert(str.indexOf("ing"));
+        Here we will get '4'. This is because the first letter of the 'ing' in this string is in place '4' in the string array.
+    - lastIndexOf(string) - this function will return the last action of the function indexOf, but the search will be done from the end till the beginning.
+        Example:
+            var str = "testing a string";
+            alert(str.lastIndexOf("ing"));
+        Here we will get '13'. This is because the last character of the array is in the place of '13' in the string array. Because we are checking for the last index of the string we will get the letter 'g' which is place '13'.
+    - substring(num1, num2) - this function will return a new array which is a sub array of the original array. 
+                              We will need to give to the function a number of the array to start and a number to end.
+                              The new array will include the beginning location but not the end - the one before him.
+        Example:
+            var str = "testing a string";
+            alert(str.substring(0,4));
+        In this case it will give us the string between place 0 to place four. In this case 'test'.
+    - toLowerCase() - this function will change the characters of the string to small letter, and will bring it back as a new string.
+        Example:
+            var str = "TESTING a String";
+            alert(str.toLowerCase());
+        Here, the result will be: testing a string.
+    - toUpperCase() - this function will change the characters of the string to big/capital letters, and will bring it back as a new string.
+        Example:
+            var str = "Testing a String";
+            alert(str.toUpperCase());
+        Here, the result will be: TESTING A STRING.
+    - split(string) - this function will cut the string and will return a new array with his parts. It will get a character and will use it as a separator between the cells, meaning, the cell itself will not be part of the new array, but a cutting sign.
+        Example:
+            var str = "Testing a String";
+            var arr = str.split(" ");
+            alert("arr 0: " + arr[0] + "\narr 1: " + arr[1] + "\narr 2: " + arr[2] + "\nlength: " + arr.length);
+    - replace(string, newString) - this function will replace a string with a new string. It can be replaced with a whole new word, few words or just a part of a word. 
+        Example:
+            var str "Testing a String";
+            var newStr = str.replace ("Test", "Build");
+            alert(newStr);
+        Here instead of the string to be "Testing a String", the new string will be "Building a String".
+    - fontcolor(color) - this function will get a color and will return a new string which will contain the first string (which the function was active on), and will be wrapped with the 'font' tag with the color that it gets.
+        Example:
+            var str = new String ("Coloring a string blue");
+            var strBlue = str.fontcolor("blue");
+            alert(strBlue);
+        Here we will get: <font color="blue">Coloring a string blue</font>
+    - fontsize(size) - this function will get a font size and will return a new string which will contain the first string, and will be wrapped with the 'font' tag and with the size of the font.
+        Example:
+            var str = new String ("Writing in font 7");
+            var strFont = str.fontsize(7);
+            alert(strFont);
+        Here we will get: <font size="7">Writing in font 7</font>
+    - link(url) - this function will get a url and will return a new string which will contain the first string, wrapped with the 'a' tag which will link it, using 'href' to the url it received.
+        Example:
+            var str = new String("Go to Ynet");
+            var strLink = str.link("http://www.ynet.co.il");
+            alert(strLink);
+        Here we will get: <a href="http://www.ynet.co.il">Go to Ynet</a>
+    - bold() - this will return a new string which will contain the first string wrapped around 'b' tags.
+        Example:
+            var str = new String("Writing in bold font");
+            var strBold = str.bold();
+            alert(strBold);
+        Here we will get: <b>Writing in bold font</b>
+    - italics() - this will return a new string which will contain the first string wrapped around 'i' tags.
+        Example:
+            var str = new String("Writing in italic font");
+            var strItalic = str.italics();
+            alert(strItalic);
+        Here we will get: <i>Writing in italic font</i>
+
+//// Array ////
+
+Array is basically a template for an object, therefore we need to create a new object before we will want to use it.
+    var arr = new Array();
+
+As an object, array contains both characteristics and functions (actions).
+
+Array's characteristics:
+    - length - this characteristic return to us the length of the array, meaning, how many cells it got.
+        Example:
+            var arr = new Array(10);
+            alert(arr.length);
+        Here the alert will show 10 - which is the length of the new array we created.
+    - reverse() - this function will reverse the order of the cells of the array.
+        Example:
+            var arr = new Array("I", "love", "JS");
+            arr.reverse();
+            alert(arr);
+        Here we will see: JS,love,I
+    - concat(secondArray) - this function will connect two arrays and will return them as a new array which is built from the two arrays. The order of the connection will be: first the array which the function is coming from, and right after it, the second array which we will give the function as a parameter.
+        Example:
+            var arr1 = new Array("I", "love", "JS");
+            var arr2 = new Array("do", "you", "?");
+            var arr3 = arr1.concat(arr2);
+            alert(arr3);
+        Here we will get: I,love,JS,do,you,?
+    - sort() - this function will sort the values of the indexes in the array. The sorting is being done in the following way: first the numbers, next by Alphabet order - when Capital letters are being sorted first and only then the lower cases.
+        Example:
+            var arr = new Array("a", "b", "Z", "Y", 1, 4);
+            arr.sort();
+            alert(arr);
+        Here we will see: 1,4,Y,Z,a,b
+        Another example:
+            var arr = new Array(1, 2, 10);
+            arr.sort();
+            alert(arr);
+        Here we will get: 1, 10, 2 - this is because the sorting of numbers is automatic - meaning 10 will come before 2 (because it's first number is 1).
+    - join(separator) - this function will give us back all the values of the array which will become a string. This function will get a character which will separate between the connected values. This function basically will perform the opposite action of the 'split' function in the string.
+        Example:
+            var arr = new Array("I", "love", "JS");
+            var str = arr.join(" "); 
+            alert(str);
+        Here we will get: I love JS
+    
+//// Date ////
+The object Date represents a certain date and hour. For example: 3/7/06 in time 16:27:12.
+    Example:
+        // Creating an object:
+            var myDate = new Date();
+        
+        // Showing the object: 
+            alert(myDate);
+From the moment the object was created, it won't update, but it will contain the date and the time that were set when he was created.
+    A date can be shown by local formula by using the proper function.
+    For example:
+        var myDate = new Date();
+        alert(myDate.toLocaleString());
+
+Functions of Date:
+    The functions of Date are divided into two main groups:
+        1. get - if we will check a regular clock, we can look at it and know the time.
+        2. set - we can set the time to a different time.
+
+    Some examples of functions:
+        - getDate() - this function will return the part of the day in the month from the date.
+            Example:
+                var myDate = new Date();
+                alert(myDate.getDate());
+            Today is the 1/1/2023, therefore we will get: 1
+        - setDate(Date) - this function will change the part of the day in the date by a number we will chose which can be between 1-31.
+            Example:
+                var myDate = new Date();
+                myDate.setDate(8);
+                alert(myDate.getDate());
+            Here we will get: 8
+        - getDay() - this function will return the day of the week - represented by numbers between 0 to 6.
+            Example:
+                var myDate = new Date();
+                alert(myDate.getDay());
+            Today is sunday, therefore we will get: 0
+        - getHours() - this function will return the hour, a number between 0 to 23.
+            Example:
+                var myDate = new Date();
+                alert(myDate.getHours());
+            Now is 17:20, therefore we will get: 17
+        - setHours(hours) - this function will set the time by the number we will give.
+            Example:    
+                var myDate = new Date();
+                myDate.setHours(23);
+                alert(myDate.getHours());
+            Here we will get: 23
+            We can also give minutes, seconds and milliseconds, separated by ',' and with that change the whole hour:
+            Example:    
+                var myDate = new Date();
+                myDate.setHours(23,01,59,200);
+                alert(myDate.getSeconds());
+            We can also manipulate the time by adding or subtracting. 
+            Example:    
+                var myDate = new Date();
+                alert(myDate.setHours(myDate.getHours()+5))
+        - setMonth(number) - this function sets the month by a number we will give.
+            Example:
+                var myDate = new Date();
+                myDate.setMonth(2);
+                alert(myDate.getMonth());
+            Today is January (1), but we set the month to be 2, therefore, we will get: 2.
+        - getTime() - this function will return the number of milliseconds since the 1/1/1970 in midnight.
+            Example:
+                var myDate = new Date();
+                myDate.setTime(299397954321);
+                alert(myDate.getTime());
+        - toDateString() - this function will return a string which contain the date only and the day of the week.
+            Example:    
+                var myDate = new Date();
+                alert(myDate.toDateString());
+            Here we will get: Sun Jan 01 2023 - which is the day of the week and the date.
+        - toLocaleDateString() - this function will return a string which will contain the date and the day of the week by local representation.
+            Example:
+                var myDate = new Date();
+                alert(myDate.toLocaleDateString());
+            With my computer, it will show: 01/01/2023
+        - toLocaleString() - this function will return the whole date, including the time in the local representation.
+            Example:
+                var myDate = new Date();
+                alert(myDate.toLocaleString());
+            With my computer, it will show: 01/01/2023, 17:31:46
+        - toUTCString() - this function will return a string which will be represented by the UTC - a international way to get dates.
+            Example:
+                var myDate = new Date();
+                alert(myDate.toUTCString());
+            The UTC in Israel is: Sun, 01 Jan 2023 15:33:25 GMT
+
+//// Math ////
+The Math object is an object which contain inside of it different characteristics and function in the theme of mathematical calculations. 
+This object is different from the other objects by that it doesn't need to create a new object from it.
+This object is a built object which is meant to immediate use by the '.' operator.
+
+Math characteristics:
+    - Math.PI - this characteristic will return the value of pie, until 15 characters after the dot.
+        Example: 
+            alert(Math.PI);
+        It will show us: 3.141592653589793
+    - Math.SQRT2 - this characteristic will return the value of root square.
+        Example:        
+            alert(Math.SQRT2);
+        Here it will show us: 1.4142135623730951
+    - Math.SQRT1_2 - this characteristic will return the value of root square of 0.5.
+        Example:        
+            alert(Math.SQRT1_2);
+        Here it will show us: 0.7071067811865476
+
+Math functions: 
+    - Math.abs(number) - this function will get a number and return the absolute value of this number.
+        Example:
+            alert(Math.abs(-2.2));
+        Here it will show: 2.2
+    - Math.ceil(number) - this function will get a number and will return the whole closest bigger or equal number which we can find.
+        Example:
+            alert(Math.ceil(2.2));
+        Here it will show: 3
+    - Math.floor(number) - this function will get a number and will return the whole closest smaller or equal number which we can find.
+        Example:
+            alert(Math.floor(2.2));
+        Here it will show: 2
+    - Math.max(number, number) - this function will get two numbers and will return the biggest one from both of them.
+        Example:
+            alert(Math.max(2,6));
+        Here it will show: 6
+    - Math.min(number, number) - this function will get two numbers and will return the smallest one from both of them.
+        Example:
+            alert(Math.min(2,6));
+        Here it will show: 2
+    - Math.pow(number, number) - this function will get two numbers and will return the first number powered by the second number. 
+        Example:
+            alert(Math.pow(5,2));
+        Here it will show: 25
+    - Math.sqrt(number) - this function will get a numbers and will return it's square root.
+        Example:
+            alert(Math.sqrt(9));
+        Here it will show: 3
+    - Math.round(number)/td - this function will get a number and will round the number to the closest whole number.
+        Example:
+            alert(Math.round(2.49));
+        Here it will show: 2
+    - Math.random() - this function will return a random number between 0 to 1 - every time it will be a different number.
+        Example:
+            alert(Math.random());
+        Here it will show always show different number.

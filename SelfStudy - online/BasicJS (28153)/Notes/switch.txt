@@ -1,0 +1,71 @@
+Switch statement is giving us a kind of alternative for the if statement.
+
+The actions that we want the switch statement to check are found within the case and the break.
+
+After one of the cases in the switch statement is found, the break will finish the switch statement and will get out of the switch statement.
+
+Switch statement explanation:
+If the switch statement, after the 'switch' the variable will be found between the brackets.
+After every case, we will check for the value that we are accepting the variable to be equal to.
+Then after the ':', we will make every action we want our code to do if the value of the variable is indeed equal.
+Then, if the case in the switch statement is true, the break will finish the switch statement and will get out of the switch statement.
+
+    Example:
+        switch (day) {
+            case "Sunday":
+                alert("1");
+                break;
+            case "Monday":
+                alert("2");
+                break;
+            case "Tuesday":
+                alert("3");
+                break;
+            case "Wednesday":
+                alert("4");
+                break;
+            case "Thursday":
+                alert("5");
+                break;
+            case "Friday":
+                alert("6");
+                break;
+            case "Saturday":
+                alert("7");
+                break;
+        }
+
+If the 'break' won't appear in the switch statement, then all the actions in the switch statement will occur no matter what.
+
+If we have more than one case that we want to get the same result, we can delete the break and the actions we want for all of the cases, put all the cases one after the other, and then put the actions that we want for all of the cases and the 'break'.
+For example:
+    switch (day) {
+        case "Sunday":
+        case "Monday":
+        case "Tuesday":
+        case "Wednesday":
+        case "Thursday":
+            alert("08:00-18:00");
+            break;
+        case "Friday":
+            alert("08:00-12:00");
+            break;
+        case "Saturday":
+            alert("Closed");
+            break;
+    }
+
+We can also use a 'default' attribute.
+This means, that if none of the cases were found, the computer will show us the default scenario.
+For example:
+    switch (day) {
+        case "Sunday":
+            alert("08:00-18:00");
+            break;
+        case "Friday":
+            alert("08:00-12:00");
+            break;
+        default:
+            alert("Closed");
+            break;
+    }

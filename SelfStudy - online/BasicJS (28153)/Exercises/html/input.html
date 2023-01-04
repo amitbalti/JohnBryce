@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Exercise</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Input Exercise</h1>
+    <hr />
+    <script>
+      //   let num1 = +prompt("Give the first number");
+      //   let num2 = +prompt("Give the second number");
+      //   let num3 = +prompt("Give the third number");
+
+      //   let average = (num1 + num2 + num3) / 3;
+      //   console.log(average);
+
+      //   let sum = 0;
+      //   for (let i = 0; i < 3; i++) {
+      //     sum += +prompt("Give a number");
+      //   }
+      //   console.log(sum / 3);
+
+      //   let num = +prompt("Please enter a number");
+      //   let sum = 0;
+      //   let counter = 0;
+      //   for (let longNumber = num; longNumber > 0; ) {
+      //     let digit = longNumber % 10;
+      //     longNumber = (longNumber - digit) / 10;
+      //     sum += digit;
+      //     counter++;
+      //   }
+      //   console.log(sum / counter);
+
+      let input = prompt("Please enter numbers").trim();
+      let numbers = input.split(" ");
+      let sum = 0;
+      let counter = 0;
+      for (let pos = 0; pos < numbers.length; pos++) {
+        sum += +numbers[pos];
+        counter++;
+      }
+      console.log(sum / counter);
+    </script>
+  </body>
+</html>

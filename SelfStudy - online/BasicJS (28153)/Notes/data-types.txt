@@ -1,0 +1,32 @@
+There are different types of data that we can store.
+To find out the type of the variable we are using we can use this:
+        console.log(typeof());
+    Between the brackets we will write the name of the variable.
+    For example:
+        console.log(typeof(age));
+    This will be number.
+
+//// Number ////
+We have number.
+    For example: 
+        let age = 34;
+    The data that is being store in our age variable is a number type.
+We don't care if the number is whole or with remnant.
+    For example:
+        age = 37.2; 
+        This is still a number.
+
+//// String ////
+We have variable with the type of string.
+String is basically text which are found within "" or ''.
+    For example:
+        let firstName, lastName;
+        firstName = "Amit";
+        lastName = "Balteriski";
+
+//// Boolean ////
+Boolean type of variable means that the answer for the variable can either be 'true' or 'false'.
+    For example:
+      let isUserAgree = true;
+    Or it can be 
+      let isUserAgree = false;

@@ -1,0 +1,20 @@
+We have three types of loops - 
+    1. while loop.
+    2. for loop.
+    3. do while loop.
+
+A loop will give me the option to make a bunch of actions, until we tell it to stop.
+
+///// While Loop /////
+
+We will use the 'while' syntax. 
+Then between the brackets we will ask a boolean question.
+
+Example:
+    let number = 1;
+    while (number <= 100) {
+        console.log(number);
+        number++;
+    }
+Here while the number is between 1 and 100 including 100, then the console will print the number and then will move one number further.
+When the number will be equal to 101, our while loop will stop. 

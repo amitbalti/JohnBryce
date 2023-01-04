@@ -1,0 +1,18 @@
+FlowCharts are a diagram that will describe the algorithm.
+
+The flowchart is made up from junctions which are connected between them through a line.
+
+Outside of the junctions and lines, we write notes.
+
+///////// Junctions /////////
+
+There are three types of Junction:
+    1. Start and stop junctions.
+    2. Start junction is represented with ellipse and contain the title 'start'.
+        - Meaning - the beginning of the algorithm.
+        - The direction of the flow - the next junction will be in the direction of the line.
+    3. Stop junction is represented with ellipse and contain the title 'stop'.
+        - Meaning - the end of the algorithm.
+        - The direction of the flow - there is no other junctions.
+
+In every flowchart there is one start and one stop junctions.
