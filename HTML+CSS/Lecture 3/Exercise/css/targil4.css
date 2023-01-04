@@ -1,0 +1,80 @@
+body {
+  background-color: #9eb731;
+}
+
+.gatediv {
+  text-align: center;
+}
+.gate {
+  height: 300px;
+  z-index: -1;
+}
+
+.goal {
+  position: absolute;
+  top: 60px;
+  left: 260px;
+}
+.gk {
+  height: 150px;
+  width: 160px;
+  margin-left: 300px;
+  margin-bottom: 280px;
+}
+
+h1 {
+  text-align: right;
+  margin-left: 800px;
+  color: gold;
+  box-shadow: inset;
+}
+
+.football {
+  height: 40px;
+}
+
+.goal:hover h1 {
+  animation-name: goal;
+  animation-duration: 900ms;
+  animation-iteration-count: initial;
+}
+.goal:hover .football {
+  animation-name: ball;
+  animation-duration: 900ms;
+  animation-iteration-count: initial;
+}
+
+.goal:hover .gk {
+  animation-name: gk;
+  animation-duration: 900ms;
+  animation-iteration-count: initial;
+}
+
+@keyframes ball {
+  from {
+    transform: translateX(0vh) translateY(0vh) rotate(0deg);
+  }
+  to {
+    transform: translateX(68vh) translateY(-54vh) rotate(-360deg);
+  }
+}
+
+@keyframes gk {
+  from {
+    transform: translateX(0vh) translateY(0vh);
+  }
+  to {
+    transform: translateX(-20px) translateY(0vh) rotate(-70deg);
+  }
+}
+/* 
+@keyframes goal {
+  from {
+    font-size: 0;
+    transform: translateX(0vh) translateY(0vh);
+  }
+  to {
+    font-size: 100px;
+    transform: translateX(-100vh) translateY(-70vh);
+  }
+} */

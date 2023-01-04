@@ -1,0 +1,82 @@
+WWW = World Wide Web.
+W3C = The World Wide Web Consortium - the main international standards organization for the WWW.
+    W3C Markup Validation Service = http://validator.w3.org/
+In web server we have the client side and the server side.
+Client - can be anything that receives the info that is being sent from the Web Server.
+Web Browsers - a browser that gives users the ability to communicate through the internet and get info from the Web Servers.
+    - Major Web Browsers - Chrome, Firefox, Explorer, Opera, Safari and more.
+In order to communicate, computers need to "speak the same language". 
+Over the internet computers communicate with HTTP.
+Both server and client needs to understand HTTP.
+HTTP = HyperText Transfer Protocol - it's a request-response protocol. 
+    HTTP - common communication protocol.
+HTTPS = HyperText Transfer Protocol Secure - means we have a secure communication.
+
+Slide 13-
+Slide 14- Internet network is built on layers - UDP / TCP communication.
+Slide 15- IP - Internet Protocol.
+Today we are using IPv6.
+Clients usually obtain dynamic IP every time they connect.
+IP address is a unique numerical label assigned to every device in the cyberspace.
+Clients, Servers and other devices have there own IP address. For example: (slide 20) 
+IP address has 4 sections separated by dot, called IPv4. (slide 21)
+URI = Uniform Resource Identifier. (slide 23)
+SSL - secured socket layer - used in HTTPS.
+FTP = File Transfer Protocol - used for uploading and downloading files from servers.
+XML = eXtessible Markup Language - an old version of HTML.
+
+////////////////////////////////////////////////////////
+
+! + enter = Give us the basic HTML template.
+We are working with SPA - Single Page Application -> Everything will be in the same page
+
+
+////////////////////////////////////////////////////////
+
+Tags can have characteristics and inside info.
+We have two types of tags: 
+    <center></center> - center the text tag 
+    <hr/> - gives us a horizontal line.
+    <h1> until <h6> - gives our text different sizes of text - when h1 is the largest and h6 is the smallest.
+    <p> - create a space above and below the paragraph.
+    <ul> - unordered list.
+    <ol> - ordered list.
+    <li> - one item from the list.
+
+Remember to write where you got this from:
+    https://pexels.com/ - web for images
+    https://pixabay.com/ - web for images videos music and more. 
+
+
+Attribute: 
+    - The character of the tag. For example, in <img> we have the 'src' attribute.
+    - We have 'class' and 'id' attributes. 
+        - We use the 'class' and the 'id' with CSS for styling and for other programming languages.
+
+Make sure to divide the files into separate folders.
+
+HTML comments: <!-- -->
+CSS comments: /* */
+
+https://web.archive.org
+
+
+HW:
+-----
+Build CV - 
+    שם + שם משפחה + עיר + רישיון נהיגה (אם יש ואיזה)
+    להוסיף תמונה
+    לימודים - מוסדות לימוד
+    שירות צבאי
+    ניסיון תעסוקתי
+    שםות ברמת שליטה
+
+    DONE
+
+Go over the home lectures.
+
+
+
+Side notes:
+**** steve jobs book ****
+מסנן אור כחול - לקנות (יעזור)

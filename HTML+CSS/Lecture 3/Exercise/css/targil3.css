@@ -1,0 +1,83 @@
+body {
+  background-image: linear-gradient(90deg, rgba(138, 64, 138, 0.81), lightpink);
+  text-align: center;
+  font-family: monospace;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  color: rgb(80, 80, 80);
+}
+
+form {
+  height: 400px;
+  width: 400px;
+  /* border: 1px solid black; */
+  position: relative;
+  margin-top: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+input {
+  width: 300px;
+  height: 55px;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: lightyellow;
+  border: transparent;
+  border-radius: 5px;
+  color: black;
+  font-family: monospace;
+  font-size: 15px;
+}
+
+input:focus {
+  background-image: linear-gradient(90deg, rgb(71, 0, 122), white);
+}
+
+.myButton {
+  width: 150px;
+  height: 55px;
+  margin-bottom: 20px;
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: 1px solid #c584f3;
+  display: inline-block;
+  color: #ffffffdb;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 2px 2px 3px #540699;
+  background: linear-gradient(to left, lightpink 5%, #b281db 100%);
+  background-color: lightpink;
+  box-shadow: inset 0px 0px 8px 0px lightpink;
+  cursor: pointer;
+}
+
+.myButton:hover {
+  background: linear-gradient(to bottom, #b281db 5%, rgb(249, 193, 201) 100%);
+  background-color: #b281db;
+}
+
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+/* h1:hover {
+  animation-name: title;
+  animation-duration: 900ms;
+  animation-iteration-count: infinite;
+}
+
+@keyframes title {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */

@@ -1,0 +1,114 @@
+Only in HTML5 we start the doc with <!DOCTYPE html> - which tells us that we are using html5.
+
+In input we can use the 'placeholder' attribute to give the input a name that will disappear once we start typing.
+
+//////////// Forms ////////////
+
+In input we have different type attribute:
+    - 'text' - to write text.
+    - 'email' - to write email (with '@' and '.com/.co.il').
+    - 'tel' - to write phone number.
+    - 'checkbox' - we can choose more than one "answer".
+    - 'radio' - we can choose only one "answer" - the radio button needs to be grouped - so we need to give it a 'name' which will group all the relevant radio.
+    - 
+
+When we write 'checked' in the input (for example in 'checkbox' or 'radio') - will automatically check it - but we can change it.
+When we write 'disabled' in the input (for example in 'checkbox' or 'radio') - will automatically disable the option - but we can change it.
+
+We have 'select' tag which will give us a list of options which we can choose only one of them.
+    - Within the select tags we will write the options with the 'option' tag.
+    - To preselect one of the options (to show it first) we will use the 'selected' attribute.
+    - To disable one of the options we will use the 'disabled' attribute.
+
+We have the 'textarea' tag, which will give us a text box. 
+    - We will use the 'rows' and 'cols' attributes - to give the textarea a size.
+
+//////////// Table ////////////
+
+All the relevant tags for table:
+    - 'thead' - will give the heads of the tables.
+    - 'tr' - will give new row to the table.
+    - 'td' - inside the tr we will use it to give the table some data.
+    - 'tbody' - the body of the table with all the data. 
+
+'padding' - make the inner space be more spacious.
+
+//////////// CSS ////////////
+
+We have three types of CSS:
+
+    1. Inline styling - within the lines of the HTML sheet.
+    2. In the head section of the HTML sheet (we will write <style></style> and within it we will write the styling).
+    3. In a CSS doc which we will link to the HTML sheet.
+
+To use the outside CSS sheet, we will use 'id' and 'class'.
+The most common one being used is 'class'.
+We will write the 'id' and the 'class' within the tags. 
+
+'.' represents the 'class' and then we write the name of the class.
+
+'#' represents the 'id' and the we write the name of the class.
+
+'::' - selector, we can choose for example the first latter of the class.
+    Example: 
+        .story::first-letter{
+            font-size: 30px;
+        }
+
+CSS general tags (no need to write anything before):
+    - 'body' - will do styling to the whole page.
+
+'span' tag will be for a specific word or sentence.
+
+We can choose more than one 'class' per component but only one 'id'.
+
+The last styling is the one that makes the tone.
+
+To make the whole body of will go to the right, we will use 'direction: rtl' in the css. (Will move everything to the right - not only the text).
+
+The min of 'padding' and 'margin' will be 0px.
+
+ul > li - means that li is the child inside the ul.
+
+'%' - is relatively to the screen size.
+
+To give different components the same style, we will write it like that:
+    table,
+    th,
+    td {
+        border: 1px solid;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align: center;
+    }
+
+tr:nth-child(even) - nth-child - means any number inside the tr || even - means all the even numbers - 2,4,6,8 ect.
+tr:nth-child(odd) - nth-child - means any number inside the tr || odd - means all the odd numbers - 1,3,5,7 ect.
+
+To choose the first child of a component:
+    thead tr:first-child {
+        background-color: gray;
+    }
+
+To choose the last child of a component:
+    tr:last-child {
+        background-color: red;
+    }
+
+
+'kbd' tag means keyboard tag - it's written like a code is being written - when we want to show something like a code line.
+
+////////////////////////////////
+HW:
+    Style the CV
+////////////////////////////////
+
+*** References & Notes: ***
+
+https://www.fivver.com - a site that will style your site - with payment.
+
+https://www.htmlcheatsheet.com/ - 'cheat sheet' for html & css & JS. - choose Interactive Cheat sheet.
+
+https://www.w3schools.com/ - explanation to html & css & JS
+
+https://github.dev/zeev-mindali/class-89 - will make give us the code in VSCode online.

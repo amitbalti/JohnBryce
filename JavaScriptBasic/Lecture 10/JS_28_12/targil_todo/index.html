@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/todo.css" />
+    <script defer src="js/todo.js"></script>
+    <title>Todo</title>
+  </head>
+  <body>
+    <h1>Todo List</h1>
+    <hr />
+    <div class="listInfo">
+      <form action="javascript:handleData()">
+        <!-- Todo name -->
+        <input type="text" placeholder="Todo what?" id="todoName" />
+        <br /><br />
+
+        <!-- Who is responsible -->
+        <input type="text" placeholder="Who is responsible?" id="responsible" />
+        <br /><br />
+
+        <!-- Urgency level -->
+        <select id="urgency">
+          <option disabled selected>Choose task urgency</option>
+          <option value="Urgent" id="urgent">Urgent</option>
+          <option value="Not so urgent" id="medium">Not so urgent</option>
+          <option value="In your free time" id="light">
+            In your free time
+          </option>
+        </select>
+        <br /><br />
+
+        <!-- Done/Not? -->
+        <!-- <input type="checkbox" id="finished" />Did you finish the mission? -->
+        <!-- <br /><br /> -->
+
+        <!-- Submit/reset buttons -->
+        <input type="submit" />
+        <input type="reset" />
+      </form>
+    </div>
+    <br /><br />
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <th>What to do?</th>
+        <th>Responsibility</th>
+        <th>Urgency level</th>
+        <th>Finished?</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </thead>
+      <tbody id="todoList"></tbody>
+    </table>
+  </body>
+</html>

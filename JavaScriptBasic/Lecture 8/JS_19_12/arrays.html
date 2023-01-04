@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Arrays</h1>
+    <hr />
+    <script>
+      // Pop up window to the screen
+      // alert("Hello Class 89");
+
+      // var age = prompt("Enter your age");
+      // console.log("Your age is:", age);
+      // console.log("Year of birth", 2022 - age);
+
+      // var user = confirm("Are you stupid?");
+
+      var name1 = "Amit";
+      var name2 = "Yahel";
+      var name3 = "Yotam";
+      var name4 = "Yoav";
+      var name5 = "Simba";
+      var name6 = "Amos";
+      //   console.log(name1, name2, name3, name4, name5, name6);
+      var stam = []; // Empty array
+      var names = ["Amit", "Yahel", "Yotam", "Yoav", "Simba", "Amos"];
+      //   console.log(names[3]);
+      for (var index = 0; index < names.length; index++) {
+        console.log(names[index]);
+      }
+
+      console.log("=================");
+      console.log(names[names.length - 1]); //Print the last item in the array
+
+      console.log("=================");
+      // Print the last item in the array
+      names.push("Vanil");
+      for (var index = 0; index < names.length; index++) {
+        console.log(names[index]);
+      }
+
+      console.log("=================");
+      // This is equal
+      for (var index = 0; index < names.length; index++) {
+        console.log(names[index]);
+      }
+      // Functional proframing
+      // To this:
+      names.map((item) => console.log(item));
+      // This will map the names in the array - will go over all the variables in the array.
+
+      console.log("=================");
+
+      var namesWithE = names.filter((item) => item.includes("e"));
+      console.log(namesWithE);
+    </script>
+  </body>
+</html>

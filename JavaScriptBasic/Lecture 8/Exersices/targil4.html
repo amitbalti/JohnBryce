@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Targil 4</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Targil 4</h1>
+    <hr />
+    <script>
+      // My way:
+
+      const grades = [68, 78, 90, 50, 100, 66, 100, 80, 75, 55];
+
+      // Highest Score
+      var highest = Math.max(...grades);
+      console.log(`The highest grade is: ${highest}`);
+
+      // Lowest Score
+      var lowest = Math.min(...grades);
+      console.log(`The lowest grade is: ${lowest}`);
+
+      // Score avg
+      var sum = 0;
+      for (var i = 0; i < grades.length; i++) {
+        sum += grades[i];
+      }
+      //   console.log(sum);
+      var avg = sum / grades.length;
+      console.log(`The Average of all grades is: ${avg}`);
+
+      //   Below 70
+      var fail = grades.filter((item) => item < 70);
+      console.log(`The number of student which failed: ${fail.length}`);
+
+      //   Above 95
+      var amazing = grades.filter((item) => item > 95);
+      console.log(
+        `The number of student which were amazing: ${amazing.length}`
+      );
+
+      //   ZEEV's way:
+      /*
+      const grades = [68, 78, 90, 50, 100, 66, 100, 80, 75, 55];
+      const failedGrade = 70;
+      const excellentGrade = 95;
+      var highestGrade = 0;
+      var lowestGrade = 100;
+      var avg = 0;
+      var failed = 0;
+      var excellent = 0;
+
+      for (var index = 0; index < grades.length; index++) {
+        if (grades[index] > highestGrade) {
+          highestGrade = grades[index];
+        }
+        if (grades[index] < lowestGrade) {
+          lowestGrade = grades[index];
+        }
+        avg += grades[index]; // avg=avg+grades[index]
+        if (grades[index] < failedGrade) {
+          failed++;
+        }
+        if (grades[index] > excellentGrade) {
+          excellent++;
+        }
+      }
+      console.log("Highest Score:", highestGrade);
+      console.log("Lowest Score:", lowestGrade);
+      console.log("Average:", avg / grades.length);
+      console.log("Failed:", failed);
+      console.log("Excellent:", excellent);
+      */
+    </script>
+  </body>
+</html>

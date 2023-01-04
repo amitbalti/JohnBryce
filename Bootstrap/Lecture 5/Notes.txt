@@ -1,0 +1,28 @@
+data-bs-spy - is looking at the action the user is making and react accordingly.
+
+////////// Intro for Development //////////
+
+Variables needs to be named in the following ways:
+    - With underline between two words.
+        For example: zeev_mindali
+    - With Camel case after the first word.
+        For example: zeevMindali
+    - Caps Lock. When it's written with Caps lock it can't be changed!
+        For example: YEAR 2022
+
+
+modulo: 
+    Will give us the remnant of a number:
+        For example:
+            28 % 24 = 4
+            16 % 24 = 16
+            5 % 2 = 1
+            8 % 2 = 0
+            7,859,233 % 2 = 1
+            358 % 10 = 8
+            358/10 %10 = 5
+
+////////// HW //////////
+    1. Finish targil1real.html.
+    2. Finish bootstrap exercises in W3School.
+    3. Do מבוא לתכנות - pages 1-17.

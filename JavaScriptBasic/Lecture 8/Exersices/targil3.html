@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Targil 3</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Targil 3 - Kefel</h1>
+    <hr />
+    <script>
+      for (var row = 1; row <= 10; row++) {
+        var str = "";
+        // After every row it will go to the next row and start the calculation once again.
+        // For example it will do: 1 2 3 4 5 6 7 8 9 10
+        // Then it will go to the second row -> 2, and the 'str' will look like that: 2 4 8 10 12 14 16 18 20
+        // And it will continue until 10.
+        for (var col = 1; col <= 10; col++) {
+          str += row * col + "\t"; // '\t' will make a tab between the answers
+        }
+        console.log(str);
+      }
+
+      // While loop
+      var x = 5;
+      while (x < 10) {
+        console.log(x);
+        x++;
+      }
+
+      // Both are doing the same but with different amount of lines
+
+      // index loop = for loop
+      for (var x = 5; x < 10; x++) {
+        console.log(x);
+      }
+    </script>
+  </body>
+</html>

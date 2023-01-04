@@ -1,0 +1,59 @@
+.first {
+  height: 400px;
+  width: 150px;
+  border: 3px solid rgb(38, 38, 38);
+  background-color: rgb(38, 38, 38);
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: inset -20px -20px 60px 10px;
+}
+
+.second {
+  height: 300px;
+  width: 30px;
+  border: 3px solid rgb(38, 38, 38);
+  background-color: rgb(38, 38, 38);
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: inset -20px -20px 60px 10px;
+}
+figure {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: inset -20px -20px 60px 10px;
+  /* animation-name: light;
+  animation-duration: 3500ms;
+  animation-iteration-count: infinite; */
+}
+
+.red {
+  background-color: red;
+  border: 3px solid red;
+}
+
+.yellow {
+  background-color: yellow;
+  border: 3px solid yellow;
+}
+.green {
+  background-color: green;
+  border: 3px solid green;
+}
+/* 
+@keyframes light {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+} */

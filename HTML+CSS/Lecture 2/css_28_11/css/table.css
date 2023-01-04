@@ -1,0 +1,30 @@
+.center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
+}
+
+thead tr:first-child {
+  background-color: gray;
+}
+
+tr:nth-child(even) {
+  /* nth - means any number || even - means all the even numbers - 2,4,6,8 ect. */
+  background-color: lightblue;
+}
+tr:nth-child(odd) {
+  /* nth - means any number || odd - means all the odd numbers - 1,3,5,7 ect. */
+  background-color: lightgreen;
+}
+
+tr:last-child {
+  background-color: red;
+}

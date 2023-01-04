@@ -1,0 +1,168 @@
+We have few ways to work with JavaScript.
+    
+We can use it within the body of the html file - using the 'script' tag.
+Within the script we will use actions which we want to happen.
+    For example:
+    console.log("Hello Class 89!");
+        Will be used to help debugging problems.
+
+//////// Variables - General ////////
+We have different types of variables: Number / String / Object / Boolean / Undefined.
+    Some examples:
+         // Number:
+            var x = 5;
+            console.log(x);
+            console.log(typeof x);
+        // String:
+            var iAmString = "Amit";
+            console.log(iAmString);
+        // Undefined - If we will not put a value for a variable, it will be undefined, for example:
+            var iAmUndefiend;
+            console.log(typeof iAmUndefiend);
+
+//////// Variables - Rules ////////
+Rules for variables: 
+    - Variables always start with a lowercase letter.
+        For example: 
+            - var zeev, matan, amit, nadav, kunin;
+        Wrong examples: 
+            - var 1matan, @matan, $matan, -matan
+
+    - Variables can be written with camel case:
+        For example:
+            var mynameisamitbalteriskiandiamfromnatanya
+            var myNameIsAmitBalteriskiAndIAmFromNatanya
+    
+    - Variables can be written with underline between words:
+        For example:
+            var my_name_is_amit_balteriski_and_i_am_from_natanya;
+
+    - Don't write short names for variables 
+        For example:
+            x, b, d2. - WRONG
+
+    
+For a condition we will use 'if'.
+
+//////// Loops ////////
+For loops we have a 'while' loop, a 'do while' loop and the 'for' loop.
+Examples for the loops can be seen in 'loops.html' and in 'targil3.html' files.
+
+'\t' will make a tab between the answers
+    Example:
+         str += row * col + "\t";
+
+
+//////// Functions ////////
+We have two types of functions:
+    - Function that don't get anything and don't return anything
+        Example: 
+            function sayHi() {
+                console.log("Hello Arik (the other one)");
+            }
+            sayHi();
+    - Function that getting info, and not returning anything. What I am receiving is the parameter, what I am sending is the argument (args).
+        Example:
+            function sayHiTo(victimName) {
+                console.log("Noam say hi to", victimName);
+            }
+            sayHiTo("Lior"); 
+    - Function not getting and return a value.
+        Example:
+            function getNumber() {
+                // Gives a random number between 0-100
+                // 0.023029342 <- Math.random()
+                // 2.3029342 <- * 100
+                // 2 <- parseInt
+                return parseInt(Math.random() * 100);
+            }
+            var randomNumber = getNumber();
+            console.log(randomNumber);
+    - Function getting args, returning a value.
+        Example:
+            function power(base, exp) {
+                var res = base;
+                for (var counter = 1; counter < exp; counter++) {
+                res *= base;
+                }
+                return res;
+            }
+            var result = power(2, 5);
+            console.log(result);
+
+    - Function version 2 => Arrow function.
+        Example:
+            const powerV2 = (base, exp) => {
+                var res = base;
+                for (var counter = 1; counter < exp; counter++) {
+                res *= base;
+                }
+                return res;
+            };
+            console.log(powerV2(3, 7));
+
+'const' is a permanent variable.
+    Example:
+        const PI = 3.1415;
+        console.log(PI);
+        // PI = 2.124;  Will get an error, because the const can't be changed.
+
+//////// Arrays ////////
+
+To create a popup window, we will use 'alert()'.
+    Example:
+        alert("Hello Class 89");
+
+'prompt' example:
+    var age = prompt("Enter your age");
+    console.log("Your age is:", age);
+    console.log("Year of birth", 2022 - age);
+
+NaN - Not A Number.
+
+A confirm popup example:
+    var user = confirm("Are you stupid?");
+
+Arrays's first number starts with '0'.
+    var names = [
+        "Amit",
+        "Yahel",
+        "Yotam",
+        "Yoav",
+        "Simba",
+        "Amos",
+        "Ayelet",
+        "Guy",
+      ];
+      In here "Amit" number in the array is 0.
+
+We can't have a hard coded code.
+    Example:
+        for (var index = 0; index < names.length; index++) {
+            console.log(names[index]);
+        }
+        By writing names.length the code can change and is not hardcoded and we will still get a result that we are looking for.
+
+To find the last value in our array:
+    console.log(names[names.length - 1]);
+
+To push (to add) a new name to our array:
+    names.push("Vanil");
+
+We can map the variables in the array using 'map' function.
+    Example:
+        names.map((item) => console.log(item));
+
+        This is equal as writing:
+            for (var index = 0; index < names.length; index++) {
+                console.log(names[index]);
+            }
+We can filter the variables in the arrays using the 'filter' method.
+    Example:
+        var namesWithE = names.filter((item) => item.includes("e"));
+        console.log(namesWithE);
+
+//////// HW ////////
+
+    - Do targil5.html
+    - Go over the 'מבוא לתכנות' exercises and try to solve them using code.  

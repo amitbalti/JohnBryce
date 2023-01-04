@@ -1,0 +1,12 @@
+With the <script> tag we can add a JS file or we can write the JS code within the script tag.
+'var' is a variable. 
+Variables will be written like that:
+    var thisIsAnExample = ;
+    Between the equal sign and the ';', we have different types of variables that can be chosen from:
+        - number - any number.
+        - string - will be write between "".
+        - boolean - can be either 'true' or 'false'.
+        - function - can be written like that: () => {} - this is an arrow function.
+        - object - can be written like that: new Object().
+        - undefined - can be written by just the name of the variable - without make it equal to anything.
+

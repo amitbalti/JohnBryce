@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <div>
+      <h1>Job Offer</h1>
+      <hr />
+      <form action="">
+        <h3>Job offer:</h3>
+        <!-- Name -->
+        <input type="text" placeholder="Name" /><br /><br />
+        <!-- Email -->
+        <input type="email" placeholder="Email" /><br /><br />
+        <!-- Phone -->
+        <input type="tel" placeholder="Phone number" /><br />
+        <hr />
+        <!-- Location -->
+        <input type="checkbox" />North<br />
+        <input type="checkbox" />Center<br />
+        <input type="checkbox" />South<br />
+        <input type="checkbox" disabled checked />Tel-Aviv<br />
+        <input type="checkbox" disabled />Eilat<br />
+        <input type="checkbox" />Off-shore<br />
+        <hr />
+        <!-- Salary -->
+        <input type="radio" name="salary" checked /> -5,000>
+        <input type="radio" name="salary" /> 5,000-10,000
+        <input type="radio" name="salary" /> 10,000-15,000
+        <input type="radio" name="salary" /> 15,000-20,000
+        <input type="radio" name="salary" /> 20,000+
+        <hr />
+        <!-- Button -->
+        <button>Kill Bill</button>
+        <hr />
+        <!-- Car? -->
+        Have a car?
+        <input type="radio" name="hasCar" /> Yes
+        <input type="radio" name="hasCar" /> No
+        <hr />
+        <!-- Stupid example -->
+        <input type="checkbox" disabled checked />Are you stupid?
+        <hr />
+        <!-- Job title -->
+        <select>
+          <option selected disabled>Choose job title</option>
+          <option>Programer</option>
+          <option>QA</option>
+          <option>Automation</option>
+          <option>Manager</option>
+          <option>Devops</option>
+          <option>Other</option>
+        </select>
+        <hr />
+        <!-- Description -->
+        <textarea
+          cols="80"
+          rows="10"
+          placeholder="Tell me the story of your life..."
+        ></textarea>
+        <hr />
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+      </form>
+    </div>
+  </body>
+</html>

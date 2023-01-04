@@ -1,0 +1,45 @@
+targil_cars:
+יצירת טופס, המקבל את הפרטים הבאים:
+מספר רכב, text
+סוג (פרטי, אופנוע, משאית), select (option)
+בנזין/חשמלי/דיזל, radio button
+שנת ייצור, number
+האם טסט בתוקף checkbox
+שליחת מידע SUBMIT, איפוס מידע RESET
+
+הצגה של המידע בטבלת זברה מעוצבת עם הכנה לאפשרות מחיקה או עריכה
+
+'action' in form can be a function in js. For example, alert.
+
+
+//// JSON //// 
+Java Script Object Notation = JSON
+
+/////////
+
+stack - the first memory of the computer.
+primitive type - boolean / string / number.
+
+bit - 0/1
+byte - 8 bit
+kb - 1024 byte
+mg - 1024 kb
+gb - 1024 mb
+
+The smallest number you can save something is byte.
+So if we are saving boolean variable, it will be 1 byte.
+
+heap - a kind of variables that will be saved in this type of memory.
+For example, object.
+
+To make a NEW place in the heap memory for a new object, we will use 'new'.
+byRef
+
+//// targil2 /// 
+בנו מחדש את לוח המשימות, עם המידע הבא:
+שם המשימה
+באחריות של 
+דחיפות
+בוצע/לא בוצע
+עריכה
+מחיקה

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEX TOYS WEB PAGE -->
+    <title>My Guitars</title>
+    <!-- CSS for bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    />
+    <!-- JavaScript for bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      body {
+        text-align: center;
+        background-image: linear-gradient(rgb(132, 91, 15), black);
+      }
+      li {
+        margin-right: 50px;
+      }
+      li > a {
+        color: white;
+        text-decoration: none;
+      }
+      img {
+        margin-top: 10px;
+      }
+      input,
+      select,
+      textarea {
+        margin-top: 20px;
+        width: 90%;
+      }
+    </style>
+  </head>
+  <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+    <!-- 'data-bs-offset="50"' will make the nav bar be present even when we are rolling -->
+    <!-- menu / navbar -->
+    <nav
+      class="navbar navbar-expand-sm bg-dark fixed-top d-flex justify-content-around"
+    >
+      <!-- 'fixed-top' = a class that will fix the position -->
+      <ul class="navbar-nav">
+        <li>
+          <a href="#electric">Electric Guitars</a>
+        </li>
+        <li><a href="#acoustic">Acoustic Guitars</a></li>
+        <li><a href="#classic">Classic Guitars</a></li>
+        <li><a href="#ukelele">Ukelele</a></li>
+      </ul>
+      <!-- Add item button -->
+      <button
+        type="button"
+        class="btn btn-danger addGuitar"
+        data-bs-toggle="modal"
+        data-bs-target="#addGuitar"
+      >
+        Add Guitar
+      </button>
+    </nav>
+
+    <!-- Electric -->
+    <div id="electric" class="container-fluid" style="margin-top: 60px">
+      <div class="row d-flex justify-content-around">
+        <!-- Card design -->
+        <div class="card" style="width: 200px">
+          <img
+            class="card-img-top"
+            src="../img/targil1real/electric1.jpg"
+            alt="Who the F*** is alice"
+            width="100%"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Naked Guitar</h4>
+            <p>
+              Item name: Donner HUSH<br />
+              Description: Headless electrical guitar
+              <br />
+              Price: 3,500 ILS
+            </p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 200px">
+          <img
+            class="card-img-top"
+            src="../img/targil1real/electric2.jpg"
+            alt="Who the F*** is alice"
+            width="100%"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Red Guitar</h4>
+            <p>
+              Item name: Red Electric Guitar<br />
+              Description: Red Electric Guitar
+              <br />
+              Price: 3,000 ILS
+            </p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 200px">
+          <img
+            class="card-img-top"
+            src="../img/targil1real/electric3.jpg"
+            alt="Who the F*** is alice"
+            width="100%"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Purple Guitar</h4>
+            <p>
+              Item name: Purple Electric Guitar<br />
+              Description: Purple Electric Guitar
+              <br />
+              Price: 3,000 ILS
+            </p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 200px">
+          <img
+            class="card-img-top"
+            src="../img/targil1real/electric4.jpg"
+            alt="Who the F*** is alice"
+            width="100%"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Yellow Guitar</h4>
+            <p>
+              Item name: Yellow Electric Guitar<br />
+              Description: Yellow Electric Guitar
+              <br />
+              Price: 3,200 ILS
+            </p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br /><br />
+
+    <!-- Acoustic -->
+    <div id="acoustic" class="container-fluid">
+      <div class="row d-flex justify-content-around" style="margin-top: 60px">
+        <!-- Card design -->
+        <div class="card" style="width: 200px">
+          <img
+            class="card-img-top"
+            src="../img/targil1real/acoustic1.jpg"
+            alt="Who the F*** is alice"
+            width="100%"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Wheat Guitar</h4>
+            <p>
+              Item name: Wheat Acoustic Guitar<br />
+              Description: Wheat acoustic guitar
+              <br />
+              Price: 2,500 ILS
+            </p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 200px">
+          <img
+            class="card-img-top"
+            src="../img/targil1real/acoustic2.jpg"
+            alt="Who the F*** is alice"
+            width="100%"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Fade Guitar</h4>
+            <p>
+              Item name: Fade Acoustic Guitar<br />
+              Description: Fade acoustic guitar
+              <br />
+              Price: 2,700 ILS
+            </p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 200px">
+          <img
+            class="card-img-top"
+            src="../img/targil1real/acoustic3.jpg"
+            alt="Who the F*** is alice"
+            width="100%"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Green Guitar</h4>
+            <p>
+              Item name: Green Acoustic Guitar<br />
+              Description: Green acoustic guitar
+              <br />
+              Price: 2,900 ILS
+            </p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 200px">
+          <img
+            class="card-img-top"
+            src="../img/targil1real/acoustic4.jpg"
+            alt="Who the F*** is alice"
+            width="100%"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Wood Guitar</h4>
+            <p>
+              Item name: Wood Acoustic Guitar<br />
+              Description: Wood acoustic guitar
+              <br />
+              Price: 3,000 ILS
+            </p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+
+    <!-- Classic -->
+    <div id="classic" class="container-fluid">
+      <div class="row d-flex justify-content-around" style="margin-top: 60px">
+        <!-- Card design -->
+        <div class="card" style="width: 200px">
+          <img
+            class="card-img-top"
+            src="../img/targil1real/acoustic3.jpg"
+            alt="Who the F*** is alice"
+            width="100%"
+          />
+          <div class="card-body">
+            <h4 class="card-title">Green Guitar</h4>
+            <p>
+              Item name: Green Acoustic Guitar<br />
+              Description: Green acoustic guitar
+              <br />
+              Price: 2,900 ILS
+            </p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ukelele -->
+      <div id="ukelele" class="container-fluid">
+        <div class="row d-flex justify-content-around" style="margin-top: 60px">
+          <!-- Card design -->
+          <div class="card" style="width: 200px">
+            <img
+              class="card-img-top"
+              src="../img/targil1real/acoustic3.jpg"
+              alt="Who the F*** is alice"
+              width="100%"
+            />
+            <div class="card-body">
+              <h4 class="card-title">Green Guitar</h4>
+              <p>
+                Item name: Green Acoustic Guitar<br />
+                Description: Green acoustic guitar
+                <br />
+                Price: 2,900 ILS
+              </p>
+              <a href="#" class="btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div id="addGuitar" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Header -->
+            <div class="modal-header">
+              <h3 class="modal-title">Add New Guitar</h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+              <!-- data-bs-dismiss - with that we will chose the thing we want to close. In this case the modal.  -->
+            </div>
+            <!-- Body -->
+            <div class="modal-body">
+              <input type="text" placeholder="Item's Name" />
+              <input type="number" placeholder="ID number" />
+              <textarea
+                placeholder="Please describe the guitar you are adding"
+              ></textarea>
+              <input type="number" placeholder="Price" />
+              <input type="file" />
+            </div>
+            <!-- Footer -->
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-success"
+                data-bs-dismiss="modal"
+              >
+                Add Guitar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+if מקונן
+One if within another if.
+The second if is dependent on the first if. If the first if occurred, then the second if can be checked.
+
+/////////////
+
+loop is represented by circle
+
+/////////////
+
+When a number is represented like that: 5, when dividing the result will be represented as a whole number.
+When a number is represented like that: 5.0, when dividing the result will be represented as a fraction number.
+
+
+////// HW //////
+- Till page 26.

@@ -1,0 +1,47 @@
+////////////// Bootstrap ///////////////
+
+Two things we need to use in order to work with Bootstrap:
+    - We need to link a stylesheet to an external website:
+        <link
+         rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        />
+    - We need to link a JS to our HTML:
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    Both of the links are permanent (just need to change for the newer version).
+
+To start working with bootstrap, we need to use a div with a class, for example: class="container bg-warning"
+    'bg-warning' means: 'bg' = background. 'warning' = yellow.
+
+What special about bootstrap? 
+    - It will make things shorter. 
+    - It's solving the problem of responsiveness - it will make things look better per device. 
+
+With class 'container' it will give us margins in both left and right. - The main reason using 'container' is to have the option to put ads.
+With class 'fluid' it will not give us margins in both left and right.
+
+In bootstrap we can divide each row to 12 equal pieces.
+    Example:
+        <div class="row">
+            <span class="col-2 bg-danger">Amit</span>
+            <span class="col-8 bg-info">Balteriski</span>
+            <span class="col-2 bg-success">Class 89</span>
+        </div>
+        Here we are making the first span getting 2 pieces from the row, the second span getting 8 pieces from the row and the last span will get 2 pieces from the row. 
+        We have to write in the div 'class="row"'.
+
+Everything we need to know in bootstrap is div and classes.
+
+
+////////////// HW ///////////////
+
+1. Go over this link: https://www.w3schools.com/bootstrap5/index.php 
+    - Make the exercises & Quiz.
+
+////////////// Side Notes ///////////////
+
+cdn = content delivery network - the computer will chose the closest cdn to himself.
+As the version we are using is newer, it will be more secure to use.
+
+'&nbsp;' will give us a blank.

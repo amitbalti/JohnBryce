@@ -1,0 +1,30 @@
+img {
+  width: 15%;
+  position: relative;
+  animation-name: kangaroo;
+  animation-iteration-count: infinite;
+  animation-duration: 3500ms;
+}
+
+@keyframes kangaroo {
+  0% {
+    left: 0vh;
+    top: 0vh;
+  }
+  25% {
+    left: 80vh;
+    top: 0vh;
+  }
+  50% {
+    left: 80vh;
+    top: 80vh;
+  }
+  75% {
+    left: 0vh;
+    top: 80vh;
+  }
+  100% {
+    left: 0vh;
+    top: 0vh;
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeWork</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HomeWork</h1>
+    <hr />
+    <script>
+      let myNumber = prompt("Enter your number");
+      //   console.log("Type of variable:", typeof myNumber);
+
+      // מערך מונים
+      let digits = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+      // Method 1
+      //   let myNum = parseInt(myNumber);
+      //   let myNum = +myNumber; // Adding the '+' sign will make the string a number
+      //   console.log("Type of variable:", typeof myNum);
+      //   while (myNum > 0) {
+      //     let lastDigit = myNum % 10;
+      //     myNum = parseInt(myNum / 10);
+      //     digits[lastDigit]++;
+      //   }
+
+      // Method 2
+      for (let counter = 0; counter < myNumber.length; counter++) {
+        // let myDigit = +myNumber[counter];
+        // digits[myDigit]++;
+        digits[+myNumber[counter]]++;
+      }
+
+      // Display result
+      for (let counter = 0; counter < digits.length; counter++) {
+        console.log(counter, ":", digits[counter]);
+      }
+    </script>
+  </body>
+</html>

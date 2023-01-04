@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Targil 1</title>
+    <script defer src="../targil1/js/myjs.js"></script>
+    <style>
+      body {
+        text-align: center;
+      }
+      .Form {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        border: 1px solid black;
+        box-shadow: 5px 5px 5px;
+        width: 200px;
+      }
+
+      input {
+        width: 160px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      #res,
+      #res2 {
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>How much will you pay after Maaser?</h1>
+    <div class="Form">
+      <input type="number" placeholder="Please enter your salary" id="price" />
+      <input type="button" value="calc after maaser" onclick="calcMaaser()" />
+      <div id="res"></div>
+    </div>
+
+    <br /><br /><br />
+    <hr />
+    <br />
+    <h1>How much will you pay after Homesh?</h1>
+    <div class="Form">
+      <input type="number" placeholder="Please enter your salary" id="price" />
+      <input type="button" value="calc after homesh" onclick="calcHomesh()" />
+      <div id="res2"></div>
+    </div>
+  </body>
+</html>

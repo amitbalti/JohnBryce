@@ -1,0 +1,77 @@
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  /* background-image: linear-gradient(to right, #ffafbd, #ffc3a0); */
+  background-image: linear-gradient(to right, #ee9ca7, #ffdde1);
+}
+
+/* General tags */
+img {
+  height: 200px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3px 0 3px 0;
+  display: block;
+}
+
+table,
+th,
+td {
+  padding: 10px;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  border-bottom: 1px solid #ee9ca7;
+}
+
+caption {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+}
+
+hr {
+  border: 1px #ee9ca7;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: square;
+}
+
+/* My Tags */
+hed {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* My classes */
+.img1 {
+  text-align: center;
+  color: #bc4c6e;
+}
+
+.div1 {
+  margin-left: 5px;
+  font-size: 17px;
+  text-align: center;
+}
+
+/* General my classes */
+.top {
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.hr1 {
+  border: 1.5px solid #ee9ca7;
+}

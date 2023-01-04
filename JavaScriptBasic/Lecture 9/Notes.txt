@@ -1,0 +1,32 @@
+To add a JS file to the HTML file, we will use the '<script></script>' tag.
+With 'src=""' of the JS file.
+
+Because the script is at the top of the HTML page, we may have problems and errors.
+To solve it, some people put the 'script' tag at the end of the code - which may cause multiplication of the code.
+Some people will use the 'onload' in the body, like this:
+  <body onload="sayHiToHila()"> 
+    
+The correct way to solve it is with using 'defer' in the script.
+defer - will load the script after the body was fully uploaded.
+    Example:
+        <script defer src="../demo1_dom_js/js/myjs.js"></script>
+
+Using 'onclick' in button - will cause something when clicking on the button.
+'onclick' will get or a function or a action.
+
+//// Arrow function ////
+
+Until now we wrote: 
+    function addNumbers(num1,num2){
+        return num1+num2;
+    }
+
+From now on we can write:
+    const addNumber(num1,num2)=>{
+        return num1+num2;
+    }
+
+Those two ways are doing exactly the same.
+
+////// HW //////
+- Go over everything in enabley - the videos and also the targilim.

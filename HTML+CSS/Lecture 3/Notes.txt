@@ -1,0 +1,72 @@
+<tag>:first-child {
+}
+    Will give the things to the first div in the index.
+
+
+<tag>:nth-child() {
+}
+    Will give the div with the number which is written between the brackets.
+        For example:
+            div:nth-child(5) {
+                font-weight: bold;
+            }
+            This will create the 5th div on the index all be in bold.
+
+////////////////////////////////////////////////
+
+'keyframes' will create animation.
+
+We first need to make it in css like that:
+    For example:
+        @keyframes policeLight {
+            0% {
+                background-color: blue;
+            }
+            25% {
+                background-color: red;
+            }
+            50% {
+                background-color: blue;
+            }
+            75% {
+                background-color: red;
+            }
+        }
+
+        The percentages is the time line.
+
+    Next in the component we want to insert the animation on, we will write the name of the animation when using the 'animation-name' attribute and then we can use other attributes to give the component other settings.
+    For example:
+        figure {
+            animation-name: policeLight;
+            animation-duration: 3000ms;
+            animation-iteration-count: infinite;
+            animation-delay: 50ms;
+        }   
+
+'animation-duration' will give the animation the time the animation will set.
+'animation-iteration-count' - will make the animation have a limit according to the thing we will set. We can also set it to infinite.
+
+////////////////////////////////////////////////
+
+'position: realtive;' - means that the component will be positioned relatively to the "father".
+    For example:
+        <body>
+            <img/>
+        </body>
+
+        In this case, if we will put the 'img' tag position 'relative' so the 'img' will move relatively to the 'body' tag.
+
+
+'vh' will give us a better responsive animation than 'px', relatively to the screen of the device we are using.
+'vh' = View port Height. נותן את הקנה מידה מול המסך.
+
+To center all the content in the html - use 'justify-content: center;'
+
+////////////////////////////////
+*** References & Notes: ***
+HW -
+    To go over the traffic exercise again - redo it.
+    Make targil3 - add div and make it look better - DONE.
+    Make targil4 - DONE 
+    to do this: https://flexboxfroggy.com/#he - DONE 
