@@ -1,10 +1,9 @@
 # John Bryce - Full Stack Development Course
 
-Everything that we did on the course.
-We studied already:
+- Everything that we already did on the course:
 
-- HTML
-- CSS
-- Bootstrap
-- Basic JavaScript
-- Git
+* HTML
+* CSS
+* Bootstrap
+* Basic JavaScript
+* Git
