@@ -9,12 +9,37 @@
       body {
         text-align: center;
       }
+      input {
+        text-align: center;
+      }
     </style>
   </head>
   <body>
     <h1>Forms - Exercise 3</h1>
     <hr />
-
-    <script></script>
+    <input type="text" placeholder="Username" id="username" /><br /><br />
+    <input type="password" placeholder="Password" id="password" /><br /><br />
+    <input type="button" value="Login" onclick="clkLogin()" />
+    <input type="checkbox" name="" id="chkbox" value="remember" />Remember me?
+    <script>
+      const clkLogin = () => {
+        var user = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var chkbox = document.getElementById("chkbox");
+        if (chkbox.checked) {
+          alert(`
+            Your username is: ${user}.
+            Your password is: ${password}.
+            `);
+        } else {
+          alert(`Are you sure you don't want to save your details?`);
+        }
+        if (user == "" || password == "") {
+          alert("Please enter username and password!");
+        } else {
+          alert("Have a good day!");
+        }
+      };
+    </script>
   </body>
 </html>

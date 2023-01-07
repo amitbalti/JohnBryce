@@ -9,12 +9,81 @@
       body {
         text-align: center;
       }
+      input,
+      select {
+        text-align: center;
+      }
+      #name,
+      #age,
+      #address {
+        width: 180px;
+      }
     </style>
   </head>
   <body>
     <h1>Forms - Exercise 4</h1>
     <hr />
+    <form>
+      <input type="text" id="name" placeholder="Enter your name" /> <br /><br />
+      <input type="number" id="age" placeholder="Enter your age" /><br /><br />
+      <select id="city">
+        <option disabled selected id="dis">Choose city</option>
+        <option value="Tel Aviv">Tel Aviv</option>
+        <option value="Ra'anana">Ra'anana</option>
+        <option value="Kfar Saba">Kfar Saba</option>
+        <option value="Herzliya">Herzliya</option></select
+      ><br /><br />
+      <input
+        type="text"
+        id="address"
+        placeholder="Enter your address"
+      /><br /><br />
+      <input type="radio" name="gender" value="Female" /> Female
+      <input type="radio" name="gender" value="Male" /> Male <br /><br />
+      <input type="checkbox" name="chkHobbies" value="Music" />Music <br />
+      <input type="checkbox" name="chkHobbies" value="Draw" />Draw <br />
+      <input type="checkbox" name="chkHobbies" value="Read" />Read <br />
+      <input type="checkbox" name="chkHobbies" value="Rock Climbing" />Rock
+      climbing <br />
+      <input type="checkbox" name="chkHobbies" value="Cooking" />Cooking
+      <br /><br />
+      <input type="button" value="Submit Form" onclick="submitForm()" />
+    </form>
+    <script>
+      const submitForm = () => {
+        var name = document.getElementById("name").value;
+        var age = +document.getElementById("age").value;
+        var city = document.getElementById("city").value;
+        var address = document.getElementById("address").value;
+        var gender = document.getElementsByName("gender");
+        var genderChoice;
+        for (var i = 0; i < gender.length; i++) {
+          if (gender[i].checked) {
+            genderChoice = gender[i].value;
+          }
+        }
+        var hobbies = document.getElementsByName("chkHobbies");
+        var chosenHob = "";
+        for (var i = 0; i < hobbies.length; i++) {
+          if (hobbies[i].checked) {
+            chosenHob += hobbies[i].value + " ";
+          }
+        }
+        // console.log(`name: ${name}, age: ${age}, city: ${city}, address: ${address}, gender: ${genderChoice}, hobbies: ${chosenHob}`);
 
-    <script></script>
+        if (
+          name == "" ||
+          age == "" ||
+          city == "" ||
+          address == "" ||
+          !genderChoice ||
+          chosenHob.length == 0
+        ) {
+          alert("Please fill the form properly!");
+        } else {
+          alert(`Hello ${name}!`);
+        }
+      };
+    </script>
   </body>
 </html>
