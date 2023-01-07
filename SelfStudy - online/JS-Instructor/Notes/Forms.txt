@@ -1,0 +1,255 @@
+/// What is a form? ///
+    - There are inputs and areas that the user need to fill.
+    - The job of the inputs is to get info from the user.
+    - Usually, after the user has filled his info, the form with all the data is sent for the process of a internet server.
+
+/// Creating a form ///
+    - We need to create a form by using the <form></form> tag.
+    - Between the opening and closing form tag, there will be an html code with inputs, textarea and so on.
+    - We can add two attributes to the 'form' tag:
+        - action - the webpage which the data will be sent to for processing. Mostly it will be pages which ends with 'php', 'aspx', 'asp' ending and so on.
+        - method - here we can either put a 'get' or 'post'.
+            - The difference between 'get' and 'post' is that:
+                - In 'post' the data will be sent to processing as part of the request from the user computer to the server.
+                - In 'get' the data will be sent as part of a url, with something called 'Query String'.
+                - The main difference between them, is that by using the 'get' method, the user can save the url of the page with the parameters he defined to himself, and with the 'post' method, the user can save the url without the parameters.
+
+/// Input Controls ///
+    - To every form we can add a variety of controls which will be used to get info from the user. 
+    - Examples:
+        - textBox
+        - textArea
+        - password
+        - select
+        - checkBox
+        - radioButton
+        - hidden
+        - button
+        - submit
+    - All those controls will added to a form using the 'input' tag.
+    - After adding the controls, we can define some characteristics to them, which can affect the control behavior, while some will get behavior with JavaScript.
+    - Some of the characteristics of the controls:
+        - name - when the info of the form will be sent to processing, the info will be sent by couple of values and names.
+                 using 'name' we can identify the source of the control that sent the info.
+        - id - a characteristic that is suppose to be special to every control in the html page. This is being used a lot when writing code in JavaScript.
+
+/// Why we need JavaScript ///
+    - When we are creating forms using html only, the forms will be static - they won't respond to the action which we will make.
+    - Using JavaScript, we can add the forms some functions, and by that we can make the form dynamic, which will respond to the user actions.
+
+/// How we can combine JavaScript and Forms? ///
+    - To do that we need to get access from the html code.
+    - To do that we will use the 'document.getElementById('element id')' function.
+        - This function will get us access directly to the controller.
+    - For example:
+            <body>
+                <form>
+                    <input type="text" id="myTextBox" placeholder="Please type your name" />
+                    <input type="button" value="Click Me!" onclick="showGreeting()" />
+                </form>
+                <script>
+                    function showGreeting() {
+                        var t = document.getElementById("myTextBox");
+                        alert(`Hello ${t.value}`);
+                    }
+                </script>
+            </body>
+        Here when we click the button, we will get the data which the user will write in the input, and will show it in the alert popup message.
+
+/// Controllers types and examples ///
+    // Text Box // 
+        - <input type="text"/> - regular text box.
+        - <input type="password"/> - a text box which will be used for password. The difference between this and a regular text box is that here the text will be shown as dots and not as a text.
+        - <input type="hidden"/> - this will be a field which we will use to give data from the client computer to the server for processing. Unlike other controllers, here the user can't see the 'hidden' controller. This controller will only transfer data and for this the user doesn't need to be aware.
+        - <textarea></textarea> - a text box with multiple lines.
+            
+            - Example:
+                Here we are getting to the value which is saved in the textarea as a 'value' attribute.
+                    <body>
+                        <form>
+                            <textarea id="txtBox">This is my text.</textarea>
+                            <input type="button" value="Click Me!" onclick="ChangeValue()" />
+                        </form>
+                    </body>
+                    <script>
+                        function ChangeValue() {
+                            document.getElementById("txtBox").value = "And this is my new value.";
+                        }
+                    </script>
+    // select // 
+        - Sometimes we will need to show the user a list of values to choose from. 
+        - To do this we will need to use the <select> tag. 
+        - Inside of the <select> tag, there are a bunch of elements from type <option> which basically make the content of the list.
+            - Example:
+                    <select>
+                        <option>First Item</option>
+                        <option>Second Item</option>
+                        <option>Third Item</option>
+                    </select>
+        - When using JavaScript, it's best to know this controller:
+            - onchange - this event will take place every time the value in the 'select' list will change. With this event, actions can occur without clicking a button.
+        - With this controller, adding 'id' to the 'select' will get us to all the 'option' tags.
+        - The 'select' tag is wrapping all the 'option' tags, and it's basically being used as the "father" of all those tags.
+            - Another example:
+                    <body>
+                        <form>
+                            <select id="lstCities" onchange="ShowSelection()">
+                                <option>Arad</option>
+                                <option>Be'er Sheva</option>
+                                <option>Jerusalem</option>
+                                <option>Tel Aviv</option>
+                            </select>
+                        </form>
+                        <script>
+                            function ShowSelection() {
+                                var cities = document.getElementById("lstCities");
+                                for (var i = 0; i < cities.options.length; i++) {
+                                    if (cities.options[i].selected) {
+                                        alert(`${cities.options[i].innerHTML} in index ${i}`);
+                                    }
+                                }
+                            }
+                        </script>
+                    </body>
+                In this example, when changing the selected value from the list, a popup message will be shown with the selected value and it's number in the list (0 and so on).
+                In the loop we will "run" on every of the select options and we will show the innerHTML value and his number location.
+            - Another example:
+                    <body>
+                        <form>
+                            <select id="lstColors">
+                                <option value="r">Red</option>
+                                <option value="b">Blue</option>
+                                <option value="g">Green</option>
+                                <option value="o">Orange</option>
+                            </select>
+                            <input type="button" value="Get Value" onclick="ShowValue()" />
+                        </form>
+                        <script>
+                            function ShowValue() {
+                                var colors = document.getElementById("lstColors");
+                                var text;
+                                var value;
+                                for (var i = 0; i < colors.options.length; i++) {
+                                    if (colors.options[i].selected) {
+                                        text = colors.options[i].innerHTML;
+                                        value = colors.options[i].value;
+                                    }
+                                }
+                                        alert(`The value of ${text} is ${value}`);
+                            }
+                        </script>
+                    </body>
+        - A note for the 'option' tag - we can add in the option opening tag the attribute 'selected':  
+            It will look like that:
+                <option selected="selected">Jerusalem</option>
+    
+    // radio buttons // 
+        - When we want to use radio buttons we need to attach all of the buttons to the same group.
+        - To do that, we will give each of them the same 'name', by doing that they will be attached to the same group.
+            - Example:
+                <body>
+                    <form>
+                        <input type="radio" name="rdoGender" value="Male" checked="checked" /> 
+                        Male 
+                        <input type="radio" name="rdoGender" value="Female" />
+                        Female 
+                        <input type="button" value="Show Gender" onclick="showGender()" />
+                    </form>
+                    <script>
+                        const showGender = () => {
+                            var radios = document.getElementsByName("rdoGender");
+                            var choice;
+                            for (var i = 0; i < radios.length; i++) {
+                                if (radios[i].checked) {
+                                    choice = radios[i].value;
+                                }
+                            }
+                            alert(`The gender is ${choice}`);;
+                        }
+                    </script>
+                </body>
+    
+    // check boxes //
+        - Sometimes we would like to show the user options which their value can be either true or false - to do that, we should use check box.
+            - Example:
+                <body>
+                    <form>
+                        <input type="checkBox" id="chkAccept" /> 
+                        I accept the terms... 
+                        <input type="button" value="Click Me!" onclick="checkTerms()" />
+                    </form>
+                    <script>
+                        const checkTerms = () => {
+                            var terms = document.getElementById("chkAccept");
+                                if (terms.checked) {
+                                    alert("Thank you for accepting our terms.");
+                                }
+                            }
+                            alert("You have to accept our terms!");
+                    </script>
+                </body>
+            - Another example:
+                <body>
+                    <form id="frm">
+                        <input type="checkBox" name="chkHobbies" value="Ski" /> 
+                            Ski <br />
+                        <input type="checkBox" name="chkHobbies" value="Snowboard" /> 
+                            Snowboard <br />
+                        <input type="checkBox" name="chkHobbies" value="Computers" /> 
+                            Computers <br />
+                        <input type="checkBox" name="chkHobbies" value="Tracking" /> 
+                            Tracking <br />
+                        <input type="checkBox" name="chkHobbies" value="Music" /> 
+                            Music <br />
+                        <input type="checkBox" name="chkHobbies" value="Skateboard" /> 
+                            Skateboard <br />
+                        
+                        <input type="button" value="Show My Hobbies" onclick="showHobbies()" />
+                    </form>
+                    <script>
+                        const showHobbies = () => {
+                            var c = document.getElementsByName("chkHobbies");
+                            var msg = "";
+                            for (var i = 0; i < c.length; i++) {
+                                if (c[i].checked) {
+                                    msg += c[i].value + " ";
+                                }
+                            }
+                            alert(`Your hobbies are: ${msg}`);
+                    </script>
+                </body>
+        - submit() - this function will make the form to be sent to the server for processing.
+            - For example:
+                <body>
+                    <form id="myForm" method="get" action="http://www.google.com">
+                        <input type="checkBox" id="chkTerms" onclick="checkTerms()" />
+                        Do you accept our terms?
+                    </form>
+                    <script>
+                        const checkTerms = () => {
+                            if (document.getElementById("chkTerms").checked) {
+                                document.getElementById("myForm").submit();
+                            }
+                        }
+                    </script>
+                </body>
+        - onsubmit() - this event will run when the form will be sent to the server when we will press a button of type "submit". We can cancel the sending to the server by returning the value "false" in the running function.
+            - Example:
+                <body>
+                    <form id="frmMain" method="get" action="http://www.google.com" onsubmit="return ValidateForm()">
+                        Please enter your name:
+                        <input type="text" id="txtName" />
+                        <input type="submit" />
+                    </form>
+                    <script>
+                        const ValidateForm = () => {
+                            if (document.getElementById("txtName").value == "") {
+                                alert("The text box is required field");
+                                return false;
+                            }else{
+                                return true;
+                            }
+                        }
+                    </script>
+                </body>
+        - onreset - this event will occur when the form will be reset after pressing a button from type "reset".

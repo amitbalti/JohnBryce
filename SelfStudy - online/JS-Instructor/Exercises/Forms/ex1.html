@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms - Exercise 1</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Forms - Exercise 1</h1>
+    <hr />
+    <form>
+      <input type="radio" name="clrBack" value="green" />Green <br />
+      <input type="radio" name="clrBack" value="blue" />Blue <br />
+      <input type="radio" name="clrBack" value="red" />Red <br />
+      <input type="radio" name="clrBack" value="orange" />Orange <br />
+      <input type="radio" name="clrBack" value="purple" />Purple <br /><br />
+      <input
+        type="button"
+        value="Change Background Color!"
+        onclick="changeColor()"
+      />
+    </form>
+    <script>
+      const changeColor = () => {
+        var colors = document.getElementsByName("clrBack");
+        var choice;
+        for (var i = 0; i < colors.length; i++) {
+          if (colors[i].checked) {
+            choice = colors[i].value;
+          }
+        }
+        document.body.style.backgroundColor = choice;
+      };
+    </script>
+  </body>
+</html>

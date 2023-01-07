@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - Exercise 1 & 2</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Events - Exercise 1 & 2</h1>
+    <hr />
+    <textarea
+      id="textArea"
+      cols="30"
+      rows="10"
+      onfocus="changingColor()"
+      onblur="textMessage()"
+    ></textarea>
+    <script>
+      const changingColor = () => {
+        document.getElementById("textArea").style.color = "purple";
+      };
+      const textMessage = () => {
+        var message = document.getElementById("textArea").value;
+        alert(message);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+// What is an event? //
+    - Events happen in the computer all the time. Every mouse movement is an event, every click on a keyboard or on the mouse is an event, Even loading of a page is an event.
+    - Event - a message that sent from the object out.
+        - This message suppose to let the user of object know that something happen.
+        - Whoever is using the object can respond to the event and decide which action is suppose to occur next.
+    - Example for an event, is when we are standing on a url link, the cursor of the mouse is becoming a pointer - this is an event.
+    - Another example is with buttons, <input type="button"/> - this is an element that have to get an action for the clicking event in order to do something - otherwise, without any action, there is no meaning for the button.
+    - Those two events (hovering over a link, and clicking on an element) are the most common events. They are being used by the 'onmouseover' and 'onclick' events - which are the most used from all the events.
+    - Events are easily recognized by the 'on' word at the beginning of the event. After the 'on' word, the rest will describe what is happening in the event.
+
+    // 'register' to an event //
+        - In order for a specific function to happen in a specific event, a function needs to register to the event.
+        - The registration is called 'trigger'.
+        - 'trigger' is basically determine which function will occur as a respond to an event.
+        - The registration is showed as a attribute inside the proper tag.
+        - Example:
+                <script>
+                    const myFunc = () => {
+                        alert("Hello");
+                    } 
+                </script>
+                <body>
+                    <input type="button" onclick="myFunc()" value="Click me" />
+                </body>
+        The 'myFunc' is a function which will respond to the 'onclick' event by clicking the button.
+        When the button 'Click me' is clicked, an alert will pop up with the message "Hello".
+
+    An important Note - when 'triggering' a function, we need to use brackets at the end of the function name.
+
+    // Common Events // 
+        - onclick - used to trigger the event when clicking with the mouse.
+        - onmouseover - used to trigger the event when hovering with the mouse above the element.
+        - onmouseout - used to trigger the event when leaving the area of the element with the mouse.
+        - onmousedown - used to trigger the event when clicking on the left button of the mouse (without leaving the button).
+        - onmouseup -  used to trigger the event when stop clicking on the left button of the mouse (after clicking).
+        - onload - used to trigger the event when the page is loaded.
+        - onunload - used to trigger the event when the page is closed.
+        - onfocus - giving an access to a tag when focusing on an element.
+        - onblur - used to trigger the event when the leaving the focus element.
+        - onchange - used to trigger the event when changing something in the element.
+        - ondblclick - used to trigger the event when double clicking the mouse.
+        - oncontextmenu - used to trigger the event when clicking on the right button to open the menu.
+        - onkeypress - used to trigger the event when clicking on a specific key on the keyboard.
+    
+    // Canceling an event //
+        - There are two ways to cancel an event (in this case we will use the 'onclick' function):
+            1. <a href="page1.html" onclick="return false;">To Page 1</a> 
+            2. <a href="page2.html" onclick="event.returnValue=false;">To Page 2</a> 
+          Those actions will cancel the clicking event on the url. 
+          When the user will click on them, nothing will happen.
+        - The difference between those two ways:
+            1. The first way 'return false' will cause the cancellation of the event immediately, to exit the function and returning the control to the object that turn this event on.
+                Example:
+                    onclick="return false; alert('disabled');"
+                Here the action will stop the function immediately and it won't get to the 'alert' message.
+            2. The second way 'event.returnValue=false' will determine that the event will stop from happening, but the function inside this line will continue to happen until the end.
+                Example:
+                    onclick="event.returnValue=false; alert('disabled');"
+                Here the action will continue to happen until the end, and will let the user see the message, but it will still block the 'onclick' function to happen.

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - Exercise 3</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body onunload="closeTimes()">
+    <h1>Events - Exercise 3</h1>
+    <hr />
+    <br />
+    <img src="../img/github.png" onmouseenter="howMany()" id="picture" />
+    <script>
+      var times = 0;
+      const howMany = () => {
+        document.getElementById("picture").value = times += 1;
+        console.log(times);
+      };
+      const closeTimes = () => {
+        alert(times);
+      };
+    </script>
+  </body>
+</html>

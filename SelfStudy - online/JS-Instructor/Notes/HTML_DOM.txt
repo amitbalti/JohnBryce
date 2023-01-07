@@ -1,0 +1,118 @@
+JavaScript can change the content or the character of html tags.
+
+/// HTML DOM ///
+How can we get to the tag that we want?
+    - By using HTML DOM.
+    - DOM - Document Object Model.
+    - This means that the webpage builds models of objects of the html doc, and within it there are different components. On this model, the JavaScript is working on.
+
+/// The 'window' component ///
+The 'window' component - is always at the top, he is basically the senior. 
+He is the component that represent the entire web page, and all of the other components are inside of him.
+
+    // window characteristics //
+        - window.location - will give us back the url of the page. We can also change the value of this characteristic - this will cause the webpage to go to another webpage.
+    
+    // window functions // 
+        - window.alert(string) - this function will get a string and will show a message to the user which will contain the string.
+        - window.confirm(string) - this function will get a string and will show a checkbox which will contain two buttons - 'ok' and 'cancel'. This function will return a boolean value according to the user button choice.
+        - window.prompt(string, string) - this function will open a input box. The first string will the message that we wanted to tell to the user and will be printed on a window. The second string will be a default value to the input - the user can write instead of it his answer or leave it as it is.
+
+/// The 'document' component ///
+Right after the 'window' component, the 'document' component will be found.
+The 'document' component represents a web page itself which is found within the browser.
+With the 'document' component we can get access to the elements inside our html.
+Every time a new doc is loaded in the browser, there is a new 'document' component which map the entire page.
+The 'document' component contains many characteristics and functions.
+
+    // document characteristics //
+        - document.body - is giving access to the 'body' tag. 
+        - document.title - is allowing access to get/change the text inside the 'title' tag.
+        - document.fgColor - is allowing access to get/change the default color of the text inside the page.
+        - document.linkColor - is allowing access to get/change the color of the urls in the page.
+        - document.alinkColor - is allowing access to get/change the color of the urls while clicking on them in the page.
+        - document.vlinkColor - is allowing access to get/change the color of the activated (already been used) urls in the page.
+
+    // document functions // 
+        - document.write(string) - this function get a string and write it on the web page as a part of the html document - meaning a string can contain both text and tags.
+            Example:   
+                document.write("<h1>This is</h1>");
+            Important NOTE: this function will delete anything else that is found on the page - and will use only what we wrote to it as a string.
+         - document.getElementById(string) - this function get a string and which represents an 'id', from the html doc, of a specific tag and will return a reference to the object of this tag.
+            Example: 
+                var x = document.getElementById("s1"); 
+            In this example, the 's1' is an 'id' of a span tag which we can use the variable x to get access to this tag and get it out/change it's value.
+        - document.getElementsByName(string) - this function gets a string and returns kind of array of all the objects with the same 'name' or the same 'id' which match the string that was given to the function. This is another way to get to all the elements of the page and affect them.
+            Example:
+                var buttons = document.getElementsByName('btn');
+            Here we will get a bunch of elements that match the 'name' or the 'id' with the value 'btn'.
+        - document.getElementsByTagName(string) - this function will return a bunch of objects with the same tag name which match the string that was given to the function.
+            Example:
+                var tags = document.getElementsByTagName("input");
+            In this example we will get a bunch of elements with the tag of '<input>'.
+
+/// innerHTML / innerText ///
+
+    // innerText //
+        - This is a function that allows to get or change the text that is found between the opening and closing tags.
+        - It can be used only on tags that have a closing tags.
+        - It can NOT be activated on empty tags which doesn't have any inline text - for example - </br>.
+
+    // innerHTML //
+        - This function allows to get or change the html code that is found between the opening and closing tags. 
+        - It can be used only on tags that have a closing tags.
+        - It can NOT be activated on empty tags which doesn't have any inline text - for example - </br>.
+        - In this way we can put an html code and that the browser will translate it to how the code should look like.
+
+/// childNodes /// 
+This is a function that returns a bunch of all the elements which are found right below the element which is asking for this function.
+We can access this function also as a function when we will give it a parameter inside brackets '()'. 
+We will need to give it a place parameter inside the array and then we will get a direct reference to the desired element.
+
+    Example:
+        <script>
+            var x = document.body.childNodes(0).childNodes(1);
+            alert(x.src);
+        </script>
+        <body>
+            <a href="http://google.co.il">
+                <img src="img1.jpg"/>
+                <img src="img2.jpg"/>
+            </a>
+        </body>
+    In this example we can see that inside the body tag, there is a <a> tag which inside of it we have two <img> tags.
+    In the JavaScript code, there is a turn to the document object, which inside of it there is the body tag. 
+    Then we are turning to childNodes(0) - in this case is the <a> tag.
+    Then we are turning to childNodes(1) - in this case is the <img/> tag.
+    The value that we will get - will get into the variable x. 
+    Then the variable x is containing the second <img/> tag and trough the variable we can get to the characteristics/functions of this tag. 
+    Finally we would like to see the 'src' of the variable x.
+
+/// collections ///
+There are different collections which are built inside the DOM which we can use.
+Those collections are like arrays which holds objects for a specific type and that we can access them using square brackets - '[]'.
+Every one of them have the 'length' characteristic (like in array) which returns the number of elements in the collection.
+Those collections are being usually used to perform a specific action on a bunch of elements inside the page.
+We can also get to element trough the right collection.
+
+    // Useful collections //
+        - forms[] - will return all the forms inside the page by the order of their code.
+        - anchors[] - will return all the elements of the <a> tag in the page.
+        - images[] - will return all the elements of the <img/> tag in the page.
+        - links[] - will return all the elements of the <a> tag with the 'href' characteristic.
+
+    Example:
+        <body>
+            <a href="http://google.co.il>To google site</a>
+            <br/>
+            <a href="http://walla.co.il>To walla site</a>
+            <br/>
+            <a href="http://ynet.co.il>To ynet site</a>
+            <script>
+                for (var i = 0; i <document.links.length; i++){
+                    alert(document.links[i].href);
+                }
+            </script>
+        </body>
+    In this example we can see a loop which runs on all the links in the page and return the url of any of them and where it will reach (href).
+    

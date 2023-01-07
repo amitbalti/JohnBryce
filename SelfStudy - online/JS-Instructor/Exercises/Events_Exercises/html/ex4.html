@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - Exercise 4</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Events - Exercise 4</h1>
+    <hr />
+    <textarea name="" id="txt1" cols="20" rows="10"></textarea>
+    <textarea name="" id="txt2" cols="20" rows="10"></textarea>
+    <textarea name="" id="txt3" cols="20" rows="10"></textarea>
+    <br /><br />
+    <button onclick="message()">Submit</button>
+    <script>
+      let txt1 = document.getElementById("txt1");
+      let txt2 = document.getElementById("txt2");
+      let txt3 = document.getElementById("txt3");
+      const message = () => {
+        if (txt1.value == false || txt2.value == false || txt3.value == false) {
+          alert("Error! Please type something in each of the text areas");
+        } else {
+          alert(`${txt1.value}, ${txt2.value}, ${txt3.value}`);
+        }
+      };
+    </script>
+  </body>
+</html>
