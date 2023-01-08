@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drones Company</title>
+    <link rel="stylesheet" href="../css/drone.css" />
+    <script src="../js/drone.js"></script>
+  </head>
+  <body>
+    <h1>Drones Company</h1>
+    <hr />
+    <div class="Box">
+      <form action="javascript:myAction()" id="myForm">
+        <!-- User name -->
+        <input type="text" placeholder="Enter name" id="userName" /><br /><br />
+        <!-- Date of receiving -->
+        <label for="receiveDate">Date of receiving? </label>
+        <input type="date" id="receiveDate" /><br /><br />
+        <!-- User phone number -->
+        <input
+          type="number"
+          placeholder="Phone number"
+          id="userPhone"
+        /><br /><br />
+        <!-- User address -->
+        <input
+          type="text"
+          placeholder="Enter address"
+          id="userAddress"
+        /><br /><br />
+        <!-- VIP or NOT -->
+        <input type="radio" name="isVIP" value="Not VIP" />Not VIP
+        <input type="radio" name="isVIP" value="VIP" />VIP<br /><br />
+        <!-- Drone model -->
+        <input
+          type="text"
+          placeholder="Drone Model"
+          id="droneModel"
+        /><br /><br />
+        <!-- What happened? -->
+        <textarea
+          id="probDesc"
+          rows="5"
+          cols="40"
+          placeholder="Description of the problem"
+        ></textarea
+        ><br /><br />
+        <!-- How to treat? -->
+        <textarea
+          id="howToFix"
+          rows="5"
+          cols="40"
+          placeholder="Describe the fixing process"
+        ></textarea
+        ><br /><br />
+        <!-- When it will be fixed? -->
+        <!-- Type of warranty -->
+        <select id="warrantyType">
+          <option value="" disabled selected>Choose your warranty type:</option>
+          <option value="Regular">Regular</option>
+          <option value="Expanded">Expanded</option>
+          <option value="None">None</option>
+        </select>
+        <br /><br />
+
+        <input type="submit" />
+        <input type="reset" />
+      </form>
+    </div>
+    <br /><br />
+    <table>
+      <thead>
+        <tr>
+          <th>Date received</th>
+          <th>When will be fixed?</th>
+          <th>Total days left</th>
+          <th>Costumer name</th>
+          <th>Costumer phone</th>
+          <th>How to fix?</th>
+        </tr>
+      </thead>
+      <tbody id="costumerData"></tbody>
+    </table>
+    <br />
+    <div id="myResult"></div>
+  </body>
+</html>
