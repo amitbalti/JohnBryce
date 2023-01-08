@@ -7,6 +7,7 @@ h1 {
   color: rgb(51, 67, 86);
 }
 
+#myResultBox,
 .Box {
   border: 1px solid whitesmoke;
   box-shadow: 5px 5px 5px;
@@ -17,6 +18,9 @@ h1 {
   border-radius: 30px;
 }
 
+#myResultBox {
+  background-color: rgb(241, 183, 191);
+}
 input,
 #submitBtn,
 textarea {
@@ -36,17 +40,17 @@ td {
   border: 1px solid gray;
   border-collapse: collapse;
   padding: 10px;
-  color: steelblue;
+  color: black;
 }
 
 th {
   background-color: lightgray;
 }
 
-tr:nth-child(odd) {
-  background-color: lightcyan;
+tr:nth-child(even) {
+  background-color: rgb(246, 225, 248);
 }
 
 tr:nth-child(odd) {
-  background-color: lightyellow;
+  background-color: rgb(238, 238, 226);
 }

@@ -84,5 +84,5 @@ const makeTable = () => {
   document.getElementById("costumerData").innerHTML = data;
   document.getElementById(
     "myResult"
-  ).innerHTML = `Need to be fixed: ${inFixDrones} Already fixed: ${fixedDrones}  How many VIPs: ${vips} Total drones: ${totalDrones}`;
+  ).innerHTML = `<div id="myResultBox">Need to be fixed: ${inFixDrones} Already fixed: ${fixedDrones}  How many VIPs: ${vips} Total drones: ${totalDrones}</div>`;
 };
