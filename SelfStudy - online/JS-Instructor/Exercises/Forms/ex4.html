@@ -27,7 +27,7 @@
       <input type="text" id="name" placeholder="Enter your name" /> <br /><br />
       <input type="number" id="age" placeholder="Enter your age" /><br /><br />
       <select id="city">
-        <option disabled selected id="dis">Choose city</option>
+        <option disabled selected value="">Choose city</option>
         <option value="Tel Aviv">Tel Aviv</option>
         <option value="Ra'anana">Ra'anana</option>
         <option value="Kfar Saba">Kfar Saba</option>
@@ -69,7 +69,6 @@
             chosenHob += hobbies[i].value + " ";
           }
         }
-        // console.log(`name: ${name}, age: ${age}, city: ${city}, address: ${address}, gender: ${genderChoice}, hobbies: ${chosenHob}`);
 
         if (
           name == "" ||

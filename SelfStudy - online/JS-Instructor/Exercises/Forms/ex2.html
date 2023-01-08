@@ -16,54 +16,58 @@
     <hr />
     <input type="number" id="num1" />
     <input type="number" id="num2" /><br /><br />
-    <input type="button" id="plus" value="Addition" onclick="plus()" />
-    <input type="button" id="minus" value="Subtraction" onclick="minus()" />
+    <input type="button" id="plus" value="Addition" onclick="mathCalc('+')" />
+    <input
+      type="button"
+      id="minus"
+      value="Subtraction"
+      onclick="mathCalc('-')"
+    />
     <input
       type="button"
       id="multiply"
       value="Multiplication"
-      onclick="multiply()"
+      onclick="mathCalc('*')"
     />
-    <input type="button" id="divide" value="Division" onclick="divide()" />
+    <input type="button" id="divide" value="Division" onclick="mathCalc('/')" />
     <script>
-      const plus = () => {
+      const mathCalc = (op) => {
         var num1 = +document.getElementById("num1").value;
         var num2 = +document.getElementById("num2").value;
-        alert(`${num1} + ${num2} = ${num1 + num2}`);
+        if (num1 == "" || num2 == "") {
+          alert("Please enter a number");
+          return;
+        }
+        if (op == "+") {
+          alert(`${num1} + ${num2} = ${num1 + num2}`);
+        } else if (op == "-") {
+          alert(`${num1} - ${num2} = ${num1 - num2}`);
+        } else if (op == "*") {
+          alert(`${num1} * ${num2} = ${num1 * num2}`);
+        } else if (op == "/") {
+          alert(`${num1} / ${num2} = ${num1 / num2}`);
+        }
       };
-      const minus = () => {
-        var num1 = +document.getElementById("num1").value;
-        var num2 = +document.getElementById("num2").value;
-        alert(`${num1} - ${num2} = ${num1 - num2}`);
-      };
-      const multiply = () => {
-        var num1 = +document.getElementById("num1").value;
-        var num2 = +document.getElementById("num2").value;
-        alert(`${num1} * ${num2} = ${num1 * num2}`);
-      };
-      const divide = () => {
-        var num1 = +document.getElementById("num1").value;
-        var num2 = +document.getElementById("num2").value;
-        alert(`${num1} / ${num2} = ${num1 / num2}`);
-      };
-      // const mathCalc = () => {
+      // const plus = () => {
       //   var num1 = +document.getElementById("num1").value;
       //   var num2 = +document.getElementById("num2").value;
-      //     if (addition) {
-      //       //   alert(`${num1} + ${num2} = ${num1 + num2}`);
-      //       alert(num1 + num2);
-      //     } else if (subtraction) {
-      //       //   alert(`${num1} - ${num2} = ${num1 - num2}`);
-      //       alert(num1 - num2);
-      //     } else if (multiplication) {
-      //       //   alert(`${num1} * ${num2} = ${num1 * num2}`);
-      //       alert(num1 * num2);
-      //     } else if (division) {
-      //       //   alert(`${num1} / ${num2} = ${num1 / num2}`);
-      //       alert(num1 / num2);
-      //     }else{
-      //    }
-      //   }
+      //   alert(`${num1} + ${num2} = ${num1 + num2}`);
+      // };
+      // const minus = () => {
+      //   var num1 = +document.getElementById("num1").value;
+      //   var num2 = +document.getElementById("num2").value;
+      //   alert(`${num1} - ${num2} = ${num1 - num2}`);
+      // };
+      // const multiply = () => {
+      //   var num1 = +document.getElementById("num1").value;
+      //   var num2 = +document.getElementById("num2").value;
+      //   alert(`${num1} * ${num2} = ${num1 * num2}`);
+      // };
+      // const divide = () => {
+      //   var num1 = +document.getElementById("num1").value;
+      //   var num2 = +document.getElementById("num2").value;
+      //   alert(`${num1} / ${num2} = ${num1 / num2}`);
+      // };
     </script>
   </body>
 </html>
