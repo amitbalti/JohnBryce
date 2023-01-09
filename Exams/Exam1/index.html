@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link rel="stylesheet" href="css/products.css" />
+    <script refer src="js/products.js"></script>
+  </head>
+  <body>
+    <h1>Add Product</h1>
+    <hr />
+    <div class="Box">
+      <form action="javascript:addProduct()" id="myForm">
+        <!-- Product name -->
+        <input
+          type="text"
+          placeholder="Product name"
+          id="prodName"
+        /><br /><br />
+
+        <!-- Price of the product -->
+        <input
+          type="number"
+          placeholder="Product price"
+          id="prodPrice"
+        /><br /><br />
+
+        <!-- Categories -->
+        <select id="prodCategory">
+          <option value="" disabled selected>
+            Choose your product category:
+          </option>
+          <option value="Drinks">Drinks</option>
+          <option value="Meat">Meat</option>
+          <option value="Dairy">Dairy</option>
+          <option value="Snacks">Snacks</option>
+          <option value="Basic">Basic</option>
+        </select>
+        <br /><br />
+
+        <!-- Picture of the product - using link -->
+        <input
+          type="text"
+          placeholder="Product image - url"
+          id="prodImg"
+        /><br /><br />
+
+        <input type="submit" value="Add Product" id="buttons" />
+        <input type="reset" id="buttons" />
+      </form>
+    </div>
+    <br /><br />
+    <h2>My Cart</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Image</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="cartData"></tbody>
+    </table>
+    <br />
+  </body>
+</html>

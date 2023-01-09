@@ -86,3 +86,5 @@ const makeTable = () => {
     "myResult"
   ).innerHTML = `<div id="myResultBox">Need to be fixed: ${inFixDrones} Already fixed: ${fixedDrones}  How many VIPs: ${vips} Total drones: ${totalDrones}</div>`;
 };
+
+('<img src=""/>');
