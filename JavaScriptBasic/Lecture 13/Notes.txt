@@ -1,0 +1,24 @@
+Example for object:
+    object {
+        owner="", 
+        date="", 
+        vip="", 
+        manufacture = "", 
+    }
+
+    Here the keys are the permanent values - owner, date, vip, manufacturer.
+    The values are the properties that will be changed in the keys.
+
+Local storage - data that will be saved on our local storage - our computer - someone else can't get access to our storage when using other computer.
+
+To save on the local storage, we will use this in the JavaScript:
+    This will convert the object into a JSON string:
+        - localStorage.setItem("myData", JSON.stringify(droneList));
+            - "myData" is the key.
+    This will convert the JSON into an object.
+        - droneList = JSON.parse(localStorage.getItem("myData"));
+        
+
+When using 'setItem' - we will create the local storage object.
+When using 'getItem' - we will get the data from the local storage.
+
