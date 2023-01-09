@@ -1,0 +1,9 @@
+We are using 'main' as our project main folder.
+Branch - Another "desktop" that we will have all the files from the main folder .
+       - The branch have files that won't be in the main folder until we merge them together. 
+       - When we want to, we can merge the files from the branch into the main folder.
+
+    "git checkout -b newbranch" - will create a new branch.
+
+Fork - repository of someone else.
+Branch - my own - can use on someone else's project after doing 'fork'.
