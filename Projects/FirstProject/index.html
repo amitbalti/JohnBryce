@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task board</title>
+    <link rel="stylesheet" href="css/project1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script refer src="js/project1.js"></script>
+  </head>
+  <body>
+    <h1>My Task Board</h1>
+    <hr />
+    <div class="Box">
+      <form action="javascript:addProduct()" id="myForm">
+        <!-- Task Description -->
+        <label for="desDate">What is your task? </label>
+        <input type="text" placeholder="" id="taskDesc" /><br /><br />
+
+        <!-- Destination Date -->
+        <label for="desDate">Set destination date for your task: </label>
+        <input type="date" id="desDate" /><br /><br />
+
+        <!-- Destination Hour -->
+        <label for="desDate">Set destination hour for your task: </label>
+        <input type="time" id="desHour" /><br /><br />
+
+        <input type="submit" value="Add Task" id="buttons" />
+        <input type="reset" id="buttons" />
+      </form>
+    </div>
+    <br /><br />
+    <h2>My Cart</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Image</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="cartData"></tbody>
+    </table>
+    <br />
+  </body>
+</html>

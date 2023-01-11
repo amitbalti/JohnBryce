@@ -1,0 +1,62 @@
+body {
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  text-align: center;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap");
+h1,
+h2 {
+  color: black;
+}
+
+.Box {
+  border: 1px solid whitesmoke;
+  box-shadow: 5px 5px 5px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+input {
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid gray;
+  width: 250px;
+  margin-left: 20px;
+}
+
+label {
+  /* text-align: left; */
+}
+#buttons {
+  width: 90px;
+}
+
+table {
+  margin: auto;
+  margin-top: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  padding: 10px;
+  color: black;
+}
+
+th {
+  background-color: rgb(193, 174, 193);
+}
+
+tr:nth-child(even) {
+  background-color: rgb(210, 237, 210);
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(195, 220, 228);
+}
