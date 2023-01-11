@@ -11,23 +11,25 @@ const addProduct = () => {
   document.getElementById("myForm").reset();
 };
 
-const deleteRow = () => {
-  var td = event.target.parentNode;
-  var tr = td.parentNode;
-  tr.parentNode.removeChild(tr);
+const deleteRow = (i) => {
+  // var td = event.target.parentNode;
+  // var tr = td.parentNode;
+  // tr.parentNode.removeChild(tr);
+  myData.splice(i, 1);
+  makeTable();
 };
 
 const makeTable = () => {
   var data = "";
 
-  myData.map((item) => {
+  myData.map((item, i) => {
     data += `
             <tr id="row">
                 <td>${item.prodName}</td>
                 <td>${item.prodPrice}</td>
                 <td>${item.prodCategory}</td>
                 <td><img src="${item.prodImg}" width=100/></td>       
-                <td><input type="button" value="Delete" onclick="deleteRow()" id="buttons"/></td>         
+                <td><input type="button" value="Delete" onclick="deleteRow(${i})" id="buttons"/></td>         
             </tr>
         `;
   });
