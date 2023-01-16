@@ -2,12 +2,15 @@ body {
   font-family: "Caveat", cursive;
   font-size: 22px;
   text-align: center;
+  background-image: url(../img/tile.jpg);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap");
+
 h1,
 h2 {
   color: black;
+  font-weight: solid;
 }
 
 .Box {
@@ -16,44 +19,75 @@ h2 {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: -15px;
   padding: 20px;
   border-radius: 30px;
+  background-image: url(../img/formbg.jpg);
 }
 
 input {
   border-radius: 15px;
   text-align: center;
-  border: 1px solid gray;
+  border: 1px solid #adadad;
   width: 250px;
   margin-left: 20px;
+  margin-top: 16px;
+  background-color: #f7f7f7;
+}
+
+label {
+  font-size: 23px;
+}
+textarea {
+  background-color: transparent;
+  border: 8px double orangered;
+  border-radius: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Caveat", cursive;
+  padding-top: 0px;
 }
 
 #buttons {
   width: 90px;
 }
 
-table {
-  margin: auto;
+.noteBox {
+  width: 200px;
+  height: 250px;
+  margin-left: 33px;
   margin-top: 20px;
+  margin-bottom: 25px;
+  background-image: url(../img/notebg.png);
+  float: left;
+  /* Need to make it for each of the notes (now they are doing it all together):*/
+  /* animation-name: fadeIn; */
+  /* animation-duration: 1s;     */
 }
 
-table,
-th,
-td {
-  border: 1px solid gray;
-  border-collapse: collapse;
-  padding: 10px;
-  color: black;
+.setDate {
+  margin-left: -90px;
 }
 
-th {
-  background-color: rgb(193, 174, 193);
+.setHour {
+  margin-top: -10px;
+  margin-left: -140px;
 }
 
-tr:nth-child(even) {
-  background-color: rgb(210, 237, 210);
+.description {
+  width: 160px;
+  height: 150px;
+  margin-top: 40px;
+  margin-right: 20px;
+  overflow: scroll;
+  display: inline-block;
 }
 
-tr:nth-child(odd) {
-  background-color: rgb(195, 220, 228);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -1,0 +1,23 @@
+We can't use both let and var on the same variable.
+A wrong example:
+    let a = 4;
+    {
+        var a;
+        console.log(a);
+    }
+
+We will not use any global variables anymore!
+To do that, at the top of the page we will use: "use strict";
+This will not let us to define global variables.
+
+
+//////
+'prototype' - how to create stuff that will occur automatically.
+Using prototype - we can change an existing object.
+With prototype we can change not only variables.
+
+Prototypes are the mechanism by which JavaScript objects inherit features from one another. 
+
+////// 
+
+DTTC => Do Not Touch The Code

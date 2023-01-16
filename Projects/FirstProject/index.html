@@ -16,12 +16,17 @@
   </head>
   <body>
     <h1>My Task Board</h1>
-    <hr />
     <div class="Box">
-      <form action="javascript:addProduct()" id="myForm">
+      <form action="javascript:addTask()" id="myForm">
         <!-- Task Description -->
-        <label for="desDate">What is your task? </label>
-        <input type="text" placeholder="" id="taskDesc" /><br /><br />
+        <label for="taskDesc">What is your task? </label><br />
+        <textarea
+          placeholder="Type here..."
+          id="taskDesc"
+          cols="60%"
+          rows="4"
+        ></textarea
+        ><br /><br />
 
         <!-- Destination Date -->
         <label for="desDate">Set destination date for your task: </label>
@@ -36,19 +41,8 @@
       </form>
     </div>
     <br /><br />
-    <h2>My Cart</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Category</th>
-          <th>Image</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="cartData"></tbody>
-    </table>
+    <div id="stickyNote"></div>
+
     <br />
   </body>
 </html>
