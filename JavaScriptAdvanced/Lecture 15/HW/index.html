@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="js/myjs.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/mycss.css" />
+  </head>
+  <body>
+    <h1>משרד הרישוי</h1>
+    <hr />
+    <div class="Box">
+      <input
+        type="text"
+        placeholder="Enter a car license"
+        id="lpr"
+      /><br /><br />
+      <input type="button" value="Locate" onclick="checkCarInfo()" />
+    </div>
+    <!-- <div id="res"></div> -->
+    <table>
+      <thead>
+        <tr>
+          <th>Car Type</th>
+          <th>Is expired?</th>
+          <th>Disable?</th>
+        </tr>
+      </thead>
+      <tbody id="res"></tbody>
+    </table>
+  </body>
+</html>

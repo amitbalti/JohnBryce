@@ -1,0 +1,41 @@
+
+///// AJAX //////
+
+AJAX - Asynchronous JavaScript And Xml
+    - Sending AJAX requests allowing asynchronous communication.
+    - AJAX allowing to send and get info in different formats, including HTML, XML, JSON and Text.
+    - In static request the page in the webpage freeze until the page coming back from the server and is shown to the client.
+    - In AJAX request, the page can communicate with the server and in the mean time allow the client to perform more actions in the page.
+    - Static web page is less intuitive to the client then AJAX web page.
+    - AJAX requests reduce the volume of the data between the server to the client.
+    - AJAX engine return object HttpRequest.
+
+Ready State:
+    - ReadStat return values that indicate the current status of AJAX request:
+        0. UNINITIALIZED - 'open()' has not been called yet.
+        1. LOADING - 'send()' has not been called yet.
+        2. LOADED - 'send()' has been called, and headers and status are available.
+        3. INTERACTIVE - downloading 'responseText' holds partial data. 
+        4. COMPLETED - the operation is complete.
+
+Static request and AJAX request:
+    - Static request:
+        - Client side: UI is sent to the backend process by http request.
+        - Server side: the backend process send http response (css+html+js) to the UI.
+    - AJAX request:
+        - Client side: UI is sent by a JavaScript call to AJAX engine which send to the backend process by http request.
+        - Server side: the backend process send http response (xml/json/jsonp..) to the AJAX engine which send to the UI html+css+data.
+
+
+JSON - JavaScript Object Notation.
+    - JSON is a common format to transforming data from server to client.
+    - JSON contain the data in a 'key' and 'value' format.
+
+AJAX in jQuery environment:
+    - In jQuery library there are many functions, which allows a comfortable wrapping to perform AJAX requests.
+    - Some examples:
+        - $.ajax(options)
+        - $.get(url, [data], [callback], [type])
+        - $.post(url, [data], [callback], [type])
+        - $.load(url)
+        - $.getJSON(url, [data], [callback], [type])

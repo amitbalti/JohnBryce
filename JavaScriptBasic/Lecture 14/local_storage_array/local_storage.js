@@ -1,5 +1,4 @@
 //
-//
 
 const writeValue = (key, value) => {
   localStorage.setItem(key, value);

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="country"></div>
+  </body>
+  <script>
+    let countries =
+      "http://api.countrylayer.com/v2/all?access_key=38ac3e4bb5fb9be85b2b600c88127318";
+
+    $.get(countries, (data) => {
+      for (i = 0; i < 10; i++) {
+        console.log(data[Math.floor(Math.random() * data.length + 1)].capital);
+        console.log(data[Math.floor(Math.random() * data.length + 1)].name);
+        console.log(
+          data[Math.floor(Math.random() * data.length + 1)].alpha2Code
+        );
+        console.log(data[Math.floor(Math.random() * data.length + 1)].region);
+      }
+    });
+  </script>
+</html>

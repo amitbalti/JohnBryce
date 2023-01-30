@@ -1,0 +1,37 @@
+
+///// Types /////
+We can divide JavaScript into two category types: 
+    1. Primitive types, which includes:
+        - String.
+        - Boolean.
+        - Number.
+        - Null.
+        - Undefined.
+        - Symbol (new in ES6 version).
+    2. Object types, which includes:
+        - Usually any type which isn't included within the primitive types.
+        - Some common built in JS objects:  
+            - Date - defines objects which represents dates.
+            - RegExp - defines objects which represent regular expressions (pattern-matching).
+            - Error- defines objects which represent errors that can happen while we are running JS.
+        - Object is a collective of settings which every setting have a name and a value (or a primitive value like number or an object).
+        - Regular JS object is an unordered collection of keys and values.
+        - JS also define an ordered collection, which is known as an Array, which represents ordered collection of numbered values by a numerical index and not by a string key.
+        - Function is defined as an object type in JS.
+
+///// Mutable and Immutable types /////
+    - Mutable - a value of a variable which can change. 
+              - objects are mutable.
+    - Immutable - number, boolean, null, undefined, string are immutable and cannot be changed.
+                - we can reach the text for every index of a string, but JS isn't allow the option to change the text of an existing string.
+
+///// Ref type VS Value type /////
+    - Variables from type Value are primitive variables (like string, boolean, number), and when the variable is created within the memory, it will contain inside the variable area, the value.
+    - Variables from type Ref are object type variables, and the variable will turn to the area where the object is created.
+
+    - Why is it important? 
+        - When comparing two value type variables, we will check if they both contain the same value.
+        - When comparing two ref type variables, we will check if they both turning to the same object.
+
+    - When we will change a copy of the primitive variable, the original variable will not be affected.
+    - When we will change a copy of non primitive variables, the original variable will be affected because it is pointing to the same object which is value was copied from.

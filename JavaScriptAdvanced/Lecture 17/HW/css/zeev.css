@@ -1,0 +1,26 @@
+body {
+  text-align: center;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Box {
+  border: 1px solid black;
+  box-shadow: 2px 2px 5px 2px;
+  border-radius: 20px;
+  width: 170px;
+  height: 170px;
+  padding-top: 25px;
+  margin: 10px;
+}
+
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 80%; /* Full-width */
+  background: yellowgreen; /* Grey background */
+}

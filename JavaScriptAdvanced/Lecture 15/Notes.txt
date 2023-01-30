@@ -1,0 +1,18 @@
+Three main primitive types - Number, Boolean, String.
+We have Object, Array, Math, Date - to those we can expand it's ability.
+To do that we can use prototype.
+
+addEventListener() - 
+
+callback function - 
+
+In order to get to a server - we need to have the API (how I am getting) and the endpoint (where I am getting to).
+
+'fetch()' - getting url and receiving a response.
+
+HW:
+קלטו מספר רכב, ובדקו האם מדובר ברכב פרטי/משאית/אופנוע -שלוש קריאות שונות.
+בנוסף הציגו האם מדובר ברכב נכים או לא.
+במידה ומדובר ברכב פרטי, האם יש לו טסט בתוקף
+בדקו האם הרכב בכלל הורד מהכביש והציגו הדגשה לנושא
+במידה ויש קריאות שירות לרכב, הציגו את קריאות השירות לרכב RECALL

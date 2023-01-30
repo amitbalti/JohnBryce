@@ -1,0 +1,14 @@
+body {
+  text-align: center;
+}
+
+.donor {
+  position: fixed;
+  top: 60px;
+  right: 50px;
+  width: 300px;
+  height: 80px;
+  border: 2px dashed green;
+  box-shadow: 2px 2px 2px 2px black;
+  font-size: 30px;
+}
