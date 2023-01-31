@@ -5,18 +5,17 @@ document.addEventListener("DOMContentLoaded", function () {
 const addTask = () => {
   var myTask = new Object();
   myTask.taskDesc = document.getElementById("taskDesc").value;
-  var date = new Date(document.getElementById("desDate").value).toISOString();
-  myTask.desDate = prettifyDate(date);
+  var date = new Date(document.getElementById("desDate").value)
+    .toJSON()
+    .split("T")[0]
+    .split("-")
+    .reverse()
+    .join("/");
+  myTask.desDate = date;
   myTask.desHour = document.getElementById("desHour").value;
   addTaskLocal(myTask);
   showTaskList(true); // When a new task is added to showTaskList
   document.getElementById("myForm").reset();
-};
-
-const prettifyDate = (date) => {
-  const myDate = date.toString().split("T")[0];
-  const myNewDate = myDate.split("-");
-  return `${myNewDate[2]}/${myNewDate[1]}/${myNewDate[0]}`;
 };
 
 const getTaskList = () => {
@@ -44,6 +43,33 @@ const deleteRow = (i) => {
     showTaskList(); // Show new task list with animation of the 'removed' class
   }, 500);
 };
+
+// const descErrorMessage = () => {
+//   var error = document.getElementById("error1");
+//   if (document.getElementById("taskDesc").value) {
+//     error.innerHTML = "";
+//   } else {
+//     error.innerHTML = "Please enter a valid description!";
+//   }
+// };
+
+// const dateErrorMessage = () => {
+//   var error = document.getElementById("error2");
+//   if (document.getElementById("desDate").value) {
+//     error.innerHTML = "";
+//   } else {
+//     error.innerHTML = "Please enter a valid date!";
+//   }
+// };
+
+// const hourErrorMessage = () => {
+//   var error = document.getElementById("error3");
+//   if (document.getElementById("desHour").value) {
+//     error.innerHTML = "";
+//   } else {
+//     error.innerHTML = "Please enter a valid time!";
+//   }
+// };
 
 const showTaskList = (added) => {
   // 'added' param only when new task added

@@ -24,18 +24,21 @@
       <form action="javascript:addTask()" id="myForm">
         <!-- Task Description -->
         <label for="taskDesc">What is your task? </label><br />
-        <textarea placeholder="Type here..." id="taskDesc"></textarea
-        ><br /><br />
+        <textarea placeholder="Type here..." id="taskDesc"></textarea><br />
+        <!-- <span id="error1"></span><br /> -->
 
         <!-- Destination Date -->
         <label for="desDate">Set destination date for your task: </label>
-        <input type="date" id="desDate" /><br /><br />
+        <input type="date" id="desDate" /><br />
+        <!-- <span id="error2"></span><br /> -->
 
         <!-- Destination Hour -->
         <label for="desDate">Set destination hour for your task: </label>
-        <input type="time" id="desHour" /><br /><br />
+        <input type="time" id="desHour" /><br />
+        <!-- <span id="error3"></span><br /> -->
 
         <input type="submit" value="Add Task" class="btn-success" />
+        <!-- onclick="dateErrorMessage(); hourErrorMessage(); descErrorMessage()" -->
         <input type="reset" id="buttons" class="btn-danger" />
       </form>
     </div>
