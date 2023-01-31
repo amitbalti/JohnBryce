@@ -7,6 +7,10 @@ body {
 
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap");
 
+h1 {
+  font-size: 40px;
+}
+
 h1,
 h2 {
   color: black;
@@ -44,12 +48,12 @@ textarea {
   background-color: transparent;
   border: 8px double rgb(249, 100, 46);
   border-radius: 15px;
-  font-size: 25px;
+  font-size: 23px;
   font-weight: bold;
   font-family: "Caveat", cursive;
   margin: 1%;
   width: 70%;
-  height: 100px;
+  height: 130px;
 }
 
 .btn-success,

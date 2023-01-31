@@ -1,0 +1,49 @@
+SEE THE LECTURE OF THE 30/01 FROM 13:00 Oclock till the end - AGAIN!!!
+
+סיבוכיות - complexity
+
+Why do we need to know complexity (סיבוכיות)?
+    - What is the scenario?
+            - Develop a code to solve a problem.
+        - One of the demands is to solve the problem quickly.
+          The teammates will show few solutions - they are all working.
+          How will you know which solution to chose? 
+    
+    - Almost in every job interview, there are complexity (סיבוכיות) questions.
+      As it coming to the interviewer, understanding complexity (סיבוכיות) means, understanding the data structure - what influence the code, at the end of the day, is the writer.
+
+What is complexity (סיבוכיות)?
+    - Complexity (סיבוכיות) is a rough range that it's purpose is to allow coders, to evaluate the speed of their algorithm.
+    - Meaning, because almost every coding problem, we can solve in number of ways. 
+      Understanding complexity (סיבוכיות), allowing to choose the best way to solve - speed wise.
+
+How to measure complexity (סיבוכיות)?
+    - First - Complexity (סיבוכיות) isn't measuring speed. 
+              Complexity (סיבוכיות) measuring mainly the effect of the amount of parameters on the speed.
+            - Example: you developed a program which scans products in e-bay and searching for products.
+                       the testing shows that the program is working. 
+                       But! for n products, the algorithm makes n! actions.
+                        In fact, the testing where on 4 products, which made 4! actions, meaning, 24 actions finished really fast, what showed that everything is working, while it was false.
+                        If the product will need to make 10 actions, it will need to make 10! actions, which are 3628800 actions and so on.
+    - Complexity (סיבוכיות) is something that measure the speed of the algorithm.
+      Checking algorithm for 4 products seems okay, but bigger amount of products, like 24, will make the program to be stuck.
+    - Complexity (סיבוכיות) of algorithm is measured by the amount of loops it will need to make (in the worst case).
+        - Example: in case that the algorithm needs to scan an array with n cells, and to search if the value 7 is contained in the array.
+                    - It is possible that we can find it in the second cell, but in the worst case scenario, 7 won't be in the array at all.
+                    - In this case, the algorithm will need to scan the whole array in order to recognize it (scanning of n variables).
+                    - Complexity (סיבוכיות) of the algorithm in this case will be called O(n). - O of n.
+
+- What are the time complexity (סיבוכיות) of accessing a cell in the array?
+    - We have an array with 1 million cells (new = array int[] int[1000000]).
+        - Question: what is time complexity (סיבוכיות) of accessing the 500,000 cell?
+        - Answer: behind the array, hiding a pointer to the first cell of the array (numerical url of the first cell in the array).
+                  every variable of the array is an int.
+                  in Java, a variable from type int catching 4 memory cells.
+                  an array is a sequential data structure, which sits as one solidified memory.
+                    Example - a 100 variables array from type int, will catch 400 blocks in memory (100 X 4).
+                Based on everything above, to find the 500,000 cell in the array, we can do that by the next equation: the name of the array + 500,000 * 4.
+                    - This calculation is happening without loop, therefore:
+                        - Time complexity (סיבוכיות) accessing the single cell in the array is O(1) - O of 1.
+
+- What O(1) is?
+    - O(1) means (PAGE 16)
