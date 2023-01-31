@@ -27,22 +27,7 @@ h1 {
   padding: 20px;
   border-radius: 30px;
   background-image: url(../img/formbg.jpg);
-  background-size: contain;
-}
-
-label {
-  font-size: 25px;
-  font-weight: bolder;
-  width: 50%;
-  margin-top: 1%;
-}
-
-input {
-  border-radius: 15px;
-  border: 1px solid #adadad;
-  width: 20%;
-  height: 10%;
-  background-color: #f7f7f7;
+  background-size: 90%;
 }
 
 textarea {
@@ -52,7 +37,7 @@ textarea {
   font-size: 23px;
   font-weight: bold;
   font-family: "Caveat", cursive;
-  margin-top: 3%;
+  margin-bottom: 2%;
   width: 70%;
   height: 130px;
 }
@@ -65,12 +50,19 @@ textarea::placeholder {
   padding-top: 1%;
 }
 
-#error1,
-#error2,
-#error3 {
-  color: red;
-  font-size: 20px;
+label {
+  font-size: 25px;
   font-weight: bolder;
+  width: 50%;
+  margin-bottom: 2%;
+}
+
+input {
+  border-radius: 15px;
+  border: 1px solid #adadad;
+  width: 20%;
+  height: 10%;
+  background-color: #f7f7f7;
 }
 
 .btn-success,
@@ -78,6 +70,14 @@ textarea::placeholder {
   width: 20%;
   height: 5%;
 }
+
+/* #error1,
+#error2,
+#error3 {
+  color: red;
+  font-size: 20px;
+  font-weight: bolder;
+} */
 
 .noteBox {
   width: 200px;
