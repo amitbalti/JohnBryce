@@ -1,0 +1,12 @@
+class folder in our project - in shortcut - cls.
+
+35 mintues of the class - look again.
+After 2 HOURS = GO OVER IT!
+ALSO - TEST NEXT WEDNESDAY! GO OVER JQUERY AND AJAX!!!
+
+gettering and settering - gettering means get something. settering means set something.
+
+When using 'get' we can use the 'return'. 
+When using 'set' we will not use the 'return'.
+
+Using OOP makes the program have less problems and mistakes.

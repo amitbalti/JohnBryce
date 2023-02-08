@@ -1,0 +1,459 @@
+Scripts - files that we are making the computer to start for us.
+
+npm - Node Package Manager:
+        - allows me to install packages that people created, into my project.
+
+When starting a new TS project:
+    1. We will right click on the correct folder.
+    2. We will click 'open in integrated terminal'.
+    3. In the terminal, we will write: 'npm init -y' - which will create a new package.json file.
+    4. We will change the name and the description of the package.json file.
+    5. Change in the 'main' in the package.json file from index.js to our main file that we are using, for example index.ts (when using TypeScript).
+    6. We will then write in the terminal: 'npm install nodemon' (and will make sure that is found in the dependencies section in our package.json file).
+        Note: "nodemon": "^2.0.20", (can be any version number)
+    7. We will then write in the terminal: 'npm install ts-node' (and will make sure that is found in the dependencies section in our package.json file).
+        Note: "ts-node": "^10.9.1", (can be any version number)
+
+    NOTE: sometimes we need to close and reopen the package.json file to make sure that all the dependencies are there.
+    NOTE: Instead of doing 6 and 7 commands, we will run - 'sudo npm i -g nodemon' and 'sudo npm i -g ts-node' - which will install both of them globally to our computer, so we will not have to install them for every project.
+   
+    8. When we are uploading a project to our git, we will do it without the node_modules file.
+       We will add a file in our project named: '.gitignore', and in it we will write: 'node_modules'.
+       
+         
+    9. We will add in the 'scripts' 'start': "nodemon --exec ts-node index.ts",
+
+    How to remove the 'node_modules'? 
+        - We will write in the terminal: 'rm -r .\node_modules\'
+    When we are downloading a project from git, we will get it without node_modules. 
+    How to get back the node_models?   
+        - 'npm install'. - It will download it with all the relevant dependencies we set for our project which are found in the 'package.json' file.
+
+
+    10. We are creating a new file names: 'index.ts'.
+    11. We will run in the terminal: 'npm start' to initialize the file & the project.
+        - Now the nodemon will run in the terminal, and we will see all the relevant changes.
+        - When I say to the terminal, 'npm start', it will run the 'start' script that we defined in the 'package.json' file.
+
+
+
+///// TypeScript /////
+
+What is TypeScript?
+    - TypeScript is a programming language that is a superset (a set which includes another sets or set) of JavaScript. 
+    - It is used to write large scale, complex applications and provides optional type checking, improved code navigation and better error reporting.
+
+Why we use TypeScript:
+    1. Improved code quality and maintainability: 
+        - TypeScript provides type checking, which helps catch errors before the code is even executed. 
+        - This makes it easier to identify and fix bugs, and makes the code easier to maintain and update.
+    2. Better tooling and integration: 
+        - TypeScript is supported by many popular development tools, such as VSCode and Webpack, making it easier to integrate with existing projects.
+    3. Increased productivity: 
+        - TypeScript provides better code navigation, improved error reporting, and other features that can increase productivity.
+
+How to use TypeScript:
+    Create a TypeScript file: 
+        - You can create a TypeScript file with the extension ".ts".
+
+
+///// Types in TypeScript /////
+
+TypeScript provides a type system for variables, functions, and objects. 
+Types help the developer to identify and prevent errors before the code is executed. 
+
+The following are the basic types in TypeScript:
+        1. Number: Represents numerical values. 
+        2. String: Represents a sequence of characters.
+        3. Boolean: Represents a true/false value.
+        4. Array: Represents a collection of values.
+        5. Any: Represents any type. 
+        6. Null: Represents a null value.
+        7. Undefined: Represents an undefined value.
+
+/// Strict Mode in TypeScript: ///
+    - TypeScript has a strict mode that provides additional type checking and ensures that the code is written in a more structured way.
+    - The strict mode has the following restrictions:
+        1. No Implicit (suggested) Any: 
+            - The type of a variable, function, or object must be explicitly specified if not otherwise inferable (can not conclude).
+            - Enabling "No Implicit Any" in strict mode helps to catch type errors and ensures that the code is written in a more structured way.
+        2. Strict Null Checks: 
+            - The type system distinguishes between null and undefined.
+            - Example:
+                    // without strict null checks
+                    let name = null;
+                    name = "John Doe";
+                    console.log(name);
+
+                    // with strict null checks
+                    let name: string | null = null;
+                    name = "John Doe";
+                    console.log(name);
+
+                - In the first example, we have a variable named 'name' without any explicit type specified. 
+                  The variable is assigned a value of null, but later it is assigned a value of "John Doe", which is a string.
+                  In this case, TypeScript will allow the assignment of a different type to the same variable.
+                - In the second example, we have the same variable named 'name' with an explicit type 'string | null'. 
+                  The '|' symbol means that the variable can be of type 'string' OR 'null'. 
+                  In strict 'null' checks mode, TypeScript will enforce that the variable must be of type 'string' or 'null'. 
+                  If we try to assign a value of a different type to the variable, TypeScript will report an error and the code will not compile.
+                - Enabling "Strict Null Checks" in strict mode helps to catch type errors related to 'null' values and ensures that the code is written in a more structured way.
+        3. Strict Function Types: 
+            - Functions must be declared with a precise function signature, including the type of each argument and the return type.
+            - Example:
+                    // without strict function types
+                    function add(a, b) {
+                        return a + b;
+                    }
+
+                    // with strict function types
+                    function add(a: number, b: number): number {
+                        return a + b;
+                    }
+                - In this example, we have a function named 'add' that takes two arguments 'a' and 'b' and returns their sum.
+                - In the first example, there are no explicit types specified for the parameters or the return type. 
+                  So, TypeScript will use the implicit type any for the parameters and the return value.
+                - In the second example, the strict function type is enabled and the types for the parameters and the return value are explicitly specified. 
+                  In this case, TypeScript will enforce that 'a' and 'b' must be of type number and the return value must be of type number.
+                - If we try to call 'add' with arguments of different types, TypeScript will report an error and the code will not compile. 
+                  This helps to catch errors before the code is executed and ensures that the code is written in a more structured way.
+        4. Strict Property Initialization: 
+            - Properties must be initialized when declared or within a constructor.
+            - Example:
+                    // without strict property initialization
+                    class User {
+                        name: string;
+                    }
+
+                    const user = new User();
+                    user.name = "John Doe";
+                    console.log(user.name);
+
+                    // with strict property initialization
+                    class User {
+                        name!: string;
+                    }
+
+                    const user = new User();
+                    user.name = "John Doe";
+                    console.log(user.name);
+                - In the first example, we have a class named 'User' with a property named 'name' of type 'string'. 
+                  The property is not initialized when the class is represented. 
+                  In this case, TypeScript will allow the property to be undefined.
+                - In the second example, we have the same class 'User' with the same property 'name', but with a '!' symbol after the type. 
+                  The '!' symbol means that the property is non-nullable and must be initialized. 
+                  In strict property initialization mode, TypeScript will enforce that the property must be initialized. 
+                  If we try to access the property without initializing it, TypeScript will report an error and the code will not compile.
+                - Enabling "Strict Property Initialization" in strict mode helps to catch errors related to uninitialized properties and ensures that the code is written in a more structured way.
+        5. Disallow Unused Variables: 
+            - Variables must be used or declared as unused.
+            - Example:
+                    // without disallow unused variables
+                    let name = "John Doe";
+
+                    // with disallow unused variables
+                    let name = "John Doe";
+                    console.log(name);
+
+                - In the first example, we have a variable named 'name' with a value of "John Doe". 
+                  This variable is not used anywhere in the code. 
+                  In this case, TypeScript will allow the variable to be declared but unused.
+                - In the second example, we have the same variable named 'name' with the same value, but it is used in a console.log statement. 
+                  In strict mode with "Disallow Unused Variables" enabled, TypeScript will enforce that every declared variable must be used in the code. 
+                  If we declare a variable but do not use it, TypeScript will report an error and the code will not compile.
+                - Enabling "Disallow Unused Variables" in strict mode helps to catch errors related to unused variables and ensures that the code is written in a more structured way.
+    - Enabling strict mode in TypeScript can make the code more strong, catch more errors, and increase the overall quality of the code. 
+
+/// What is a class? /// 
+       
+    - A class in TypeScript is a blueprint for creating objects that wrap data and behavior. 
+    - To simplify that: A class in TypeScript is like a recipe or a template for creating similar objects. 
+    - A class defines a set of properties (variables) and methods (functions) that are common to all objects created from that class. 
+      In other words, it's a way to define a template for a specific type of object, and then create multiple instances of that object. 
+      Just like how we can define a blueprint for a car and then create multiple cars from that blueprint, we can define a blueprint for an object in TypeScript and then create multiple instances of that object.
+
+    - Some examples for class:
+        1. For example, if you have a bunch of cats, you can create a class called "Cat" that defines what all cats have in common, like a name and a breed. 
+           Then, you can use that class to create specific cats, like "Fluffy" the Persian or "Whiskers" the Siamese.
+           So, the class is like the blueprint for what a cat is, and the specific cats you create from that class are like individual items made from the blueprint.
+             - Here is an example:
+                    class Cat {
+                        name: string;
+                        breed: string;
+
+                        constructor(name: string, breed: string) {
+                            this.name = name;
+                            this.breed = breed;
+                        }
+
+                        meow() {
+                            console.log(`${this.name} says meow!`);
+                        }
+                    }
+
+                    const Fluffy = new Cat("Fluffy", "Persian");
+                    const Whiskers = new Cat("Whiskers", "Siamese");
+
+                    Fluffy.meow(); // Fluffy says meow!
+                    Whiskers.meow(); // Whiskers says meow!
+              In this example, the Cat class defines what all cats have (a name and a breed) and what they can do (meow). 
+              Then, we create two specific cats, Fluffy and Whiskers, from that class and give them their own names and breeds. 
+              Finally, we call the meow method on each of them to make them meow.
+        2. Another example:
+                class Food {
+                    name: string;
+                    ingredients: string[];
+                    preparationTime: number;
+
+                    constructor(name: string, ingredients: string[], preparationTime: number) {
+                        this.name = name;
+                        this.ingredients = ingredients;
+                        this.preparationTime = preparationTime;
+                    }
+
+                    cook() {
+                        console.log(`Cooking ${this.name} which takes ${this.preparationTime} minutes.`);
+                    }
+                }
+
+                const pizza = new Food("Pizza", ["dough", "tomato sauce", "cheese", "toppings"], 15);
+                const salad = new Food("Salad", ["lettuce", "tomatoes", "carrots", "dressing"], 5);
+
+                pizza.cook(); // Cooking Pizza which takes 15 minutes.
+                salad.cook(); // Cooking Salad which takes 5 minutes.
+            In this example, the 'Food' class defines what all food items have (a 'name', 'ingredients', and 'preparation time') and what they can do ('be cooked'). 
+            Then, we create two specific food items, pizza and salad, from that class and give them their own 'names', 'ingredients', and 'preparation times'. 
+            Finally, we call the cook method on each of them to cook the food.
+
+What is a constructor? 
+    - The constructor is a special method in a class that gets called when an object is created from that class. 
+    - It's used to set the initial values for the properties of the object. 
+    - In other words, when you create an object from a class, the constructor is automatically called to set up the object.
+    - Here's an example using the Cat class from earlier:
+            class Cat {
+                name: string;
+                breed: string;
+
+                constructor(name: string, breed: string) {
+                    this.name = name;
+                    this.breed = breed;
+                }
+
+                meow() {
+                    console.log(`${this.name} says meow!`);
+                }
+            }
+
+            const Fluffy = new Cat("Fluffy", "Persian");
+
+            Fluffy.meow(); // Fluffy says meow!
+        - In this example, when we create the Fluffy cat using new Cat("Fluffy", "Persian"), the constructor is automatically called and it sets the values of 'name' and 'breed' for the Fluffy cat.
+        - The constructor can also accept 'parameters', which allows you to pass values to the constructor when you create the object. 
+          These parameters can be used to set the initial values for the properties of the object. 
+          In the example, the constructor takes 'name' and 'breed' as 'parameters' and sets the values of 'name' and 'breed' 'properties' of the Cat object accordingly.
+
+/// What is the difference between class, parameter, properties and methods? ///
+
+    1. Class: 
+        - A class is a blueprint for creating objects that wrap data and behavior. 
+        - It defines a set of properties (variables) and methods (functions) that are common to all objects created from that class.
+    2. Properties: 
+        - Properties are variables that are defined inside a class. 
+        - They represent the data associated with an object created from the class. 
+        - In TypeScript, you can specify the type of a property using the colon ':' operator.
+    3. Parameters: 
+        - Parameters are variables that are passed to a 'method' or a 'constructor'. 
+        - They allow you to pass values to the 'method' or the 'constructor' and use those values inside the 'method' or the 'constructor'.
+    4. Methods: 
+        - Methods are 'functions' that are defined inside a class. 
+        - They represent the 'behavior' of an object created from the class. 
+        - A method can accept 'parameters', just like any other function, and it can use 'properties' and 'other methods' of the object it is a part of.
+        
+    - Here's an example to show the difference between these concepts:  
+            class Cat {
+                name: string; // Property
+                breed: string; // Property
+
+                constructor(name: string, breed: string) { // Constructor with parameters
+                    this.name = name; // Setting the value of property 'name'
+                    this.breed = breed; // Setting the value of property 'breed'
+                }
+
+                meow(volume: string) { // Method with parameter
+                    console.log(`${this.name} says meow at ${volume} volume!`); // Using properties and parameters
+                }
+            }
+
+            const Fluffy = new Cat("Fluffy", "Persian"); // Creating an object 'Fluffy' with constructor parameters 'Fluffy' and 'Persian'
+
+            Fluffy.meow("high"); // Calling the method 'meow' with parameter 'high' 
+            // Output: Fluffy says meow at high volume!
+        - In this example, we define a CLASS 'Cat' with TWO PROPERTIES 'name' and 'breed' and a CONSTRUCTOR with TWO PARAMETERS 'name' and 'breed' that sets the values of the PROPERTIES. 
+        - We also have a METHOD 'meow' with a PARAMETER 'volume' that uses the PROPERTIES and the PARAMETER. 
+        - Finally, we create an OBJECT 'Fluffy' from the CLASS 'Cat' and call the METHOD 'meow' with a PARAMETER 'high'.
+
+Why: 'let myNum: String =" " + 2;' is still a string variable?
+    - In TypeScript, the "+" operator is used for string concatenation (linking) when at least one of the operands (the quantity on which an operation is to be done) is a string. 
+    - In this expression '" " + 2', the first operand is a string, so TypeScript converts the number '2' to a string and performs string concatenation. 
+    - As a result, 'myNum' is of type 'string'.
+
+/// What is OOP? /// 
+
+    - OOP (Object-Oriented Programming). 
+    - OOP in TypeScript is a programming format that uses 'objects' and 'classes' to organize and structure code in a way that makes it easy to understand, maintain, and scale. 
+    - TypeScript is a strongly typed, object-oriented language that builds on JavaScript, providing features such as classes, interfaces, and inheritance, making it an ideal choice for building large-scale, modular applications. 
+    - OOP allows developers to wrap data and behavior within objects and classes, making it easier to manage the complexity of an application as it grows over time.
+        
+        - Here's an example of using OOP in TypeScript to create a simple Person class:
+                class Person {
+                    name: string;
+                    age: number;
+
+                    constructor(name: string, age: number) {
+                        this.name = name;
+                        this.age = age;
+                    }
+
+                    greet() {
+                        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+                    }
+                }
+
+                const person = new Person('John Doe', 30);
+                person.greet(); // Output: Hello, my name is John Doe and I am 30 years old.
+            - In this example, the 'Person' CLASS has TWO PROPERTIES, 'name' and 'age', and a METHOD 'greet' that logs a greeting message to the console. 
+              The CONSTRUCTOR is a special METHOD that is called when an instance of the CLASS is created, and it allows you to set the initial values of the object's properties.
+        - Here's another example of using inheritance in TypeScript:
+                class Animal {
+                    species: string;
+
+                    constructor(species: string) {
+                        this.species = species;
+                    }
+
+                    makeSound() {
+                        console.log('Some animal sound');
+                    }
+                }
+
+                class Dog extends Animal {
+                    breed: string;
+
+                    constructor(breed: string) {
+                        super('Dog');
+                        this.breed = breed;
+                    }
+
+                    makeSound() {
+                        console.log('Woof woof!');
+                    }
+                }
+
+                const dog = new Dog('Labrador');
+                dog.makeSound(); // Output: Woof woof!
+                console.log(dog.species); // Output: Dog
+            - In this example, we have an 'Animal' CLASS with a single METHOD 'makeSound' that logs a generic 'animal' sound to the console. 
+              We then create a 'Dog' CLASS that extends the 'Animal' CLASS, adding a 'breed' PROPERTY and overriding the 'makeSound' METHOD to log a specific 'dog' sound. 
+              The 'super' KEYWORD is used to call the CONSTRUCTOR of the parent CLASS and pass in the 'species' of the 'animal'.
+
+
+
+If I don't want to declare all the properties within the new class. Can I do it?
+    - Yes, you can! 
+        - If you don't want to declare all the properties of a class, you can use a 'partial type' to make the class properties optional. 
+        - The 'partial type' allows you to create objects with a subset of the properties defined in the class.
+            - Here's an example:
+                    class Cat {
+                        name: string;
+                        breed: string;
+                        color?: string;
+
+                        constructor(name: string, breed: string, color?: string) {
+                            this.name = name;
+                            this.breed = breed;
+                            this.color = color;
+                        }
+
+                        meow() {
+                            console.log(`${this.name} says meow!`);
+                        }
+                    }
+
+                    const Fluffy = new Cat("Fluffy", "Persian");
+
+                    Fluffy.meow(); // Fluffy says meow!
+                - In this example, the PROPERTY 'color' is declared as OPTIONAL by using a question mark '?' AFTER the PROPERTY name. 
+                  When creating the 'Fluffy' cat, we don't provide a 'value' for 'color', but the object is still created successfully because color is OPTIONAL. 
+                  If we had declared color without the question mark, we would have to provide a value for color when creating the object.
+
+Can we declare an optional property in other way?
+    - Yes. Instead of using the question mark '?', you can set the PROPERTY to 'undefined' or 'null' in the class CONSTRUCTOR OR in a METHOD.
+        - Here's an example:
+                class Cat {
+                    name: string;
+                    breed: string;
+                    color: string | undefined;
+
+                    constructor(name: string, breed: string, color?: string) {
+                        this.name = name;
+                        this.breed = breed;
+                        this.color = color;
+                    }
+
+                    meow() {
+                        console.log(`${this.name} says meow!`);
+                    }
+                }
+
+                const Fluffy = new Cat("Fluffy", "Persian");
+
+                Fluffy.meow(); // Fluffy says meow!
+            - In this example, the PROPERTY 'color' is declared as a union type of 'string' and 'undefined'. 
+              When creating the Fluffy cat, we don't provide a 'value' for 'color', so it is automatically set to 'undefined'. 
+              If we provide a 'value' for 'color' when creating the object, the value of color will be set to that value.
+
+/// Imports and Exports ///
+
+    - 'import' and 'export' in TypeScript allow you to split your code into smaller, reusable pieces.
+        - 'import' is used to bring in code from another file or library into your current file. 
+           This allows you to use that code as if it was written in your file.
+        - 'export' is used to make code in your file available for use in other files. 
+           You can export values, objects, or functions that you want to make available for other parts of your code to use.
+        - Think of it like getting a package from a store. 
+          The 'import' statement is like bringing the package into your home, while the 'export' statement is like sending the package to someone else's home.
+
+    - Here's a simple example. Let's say you have two TypeScript files: 'math.ts' and 'app.ts'.
+            - 'math.ts' file:
+                    export function add(a: number, b: number): number {
+                        return a + b;
+                    }
+
+                    export function subtract(a: number, b: number): number {
+                        return a - b;
+                    }
+            - 'app.ts' file:
+                    import { add, subtract } from './math';
+
+                    console.log(add(2, 3));  // 5
+                    console.log(subtract(5, 2));  // 3
+        - In the example above, we have two functions 'add' and 'subtract' in the 'math.ts' file. 
+          These functions are 'exported' using the 'export statement', which makes them available for import in other files.
+          In the 'app.ts' file, we 'import' these functions using the 'import statement', and use them as if they were written in the same file.
+    - Another example, using a class. Let's say you have two TypeScript files: 'person.ts' and 'app.ts'.
+            - 'person.ts' file:
+                export class Person {
+                    constructor(name: string, age: number) {}
+
+                    greet() {
+                        console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
+                    }
+                }
+            - 'app.ts' file:
+                import { Person } from './person';
+
+                const john = new Person('John Doe', 30);
+                john.greet();  // Hi, I'm John Doe and I'm 30 years old.
+        - In this example, we have a CLASS 'Person' in the 'person.ts' file. 
+          This CLASS is exported using the 'export statement', making it available for import in other files.
+        - In the 'app.ts' file, we 'import' the Person CLASS using the 'import statement' and create an instance of the CLASS. 
+          We can then use the greet method as if it was written in the same file.

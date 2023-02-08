@@ -1,0 +1,22 @@
+class will always create one object and not a group of objects.
+
+'protected' will become 'public' if 
+
+We can inherit one class ONLY!
+
+בעיית המעויין - אפשר להוריש כמה שרוצים ולרשת רק אחד
+
+SUM UP THE BOOK ZEEV SENT US
+
+super - from the father class.
+this - from the current class.
+
+First:
+    Learn to the exam!!!!!!
+
+Next: 
+    HW: 
+        Read pages 67-86 and make all the Exercises.
+
+Finally:
+    Do the second project.
