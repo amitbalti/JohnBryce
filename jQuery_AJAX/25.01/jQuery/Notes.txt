@@ -1,0 +1,405 @@
+$(document).ready - what to perform when everything is loaded, when the DOM was built.
+
+/// jQuery is a JavaScript library which: ///
+    - Simplify common tasks.
+    - Shorten JavaScript code.
+    - Provides easier and familiar ways to choose elements from the DOM.
+    - Contain associated libraries (like jQuery UI) which provides advances UI components. 
+    - It's a comfortable base for creating AJAX requests.
+    - Embedded in platforms like: Samsung, Microsoft and so on.
+    - jQuery was built by Google.
+    - jQuery is a library that updates all the time, but the updates in it are done really slowly. Every update that someone suggest they are checking it very deeply. After they made sure it's working properly, they are adding it to the library. Which makes it a pretty safe library.
+
+jQuery code is supported by all the familiar browsers.
+
+/// jQuery syntax: ///
+    $(selector).action
+
+        - $ - every time we will use a function from jQuery library, we will first use the '$' in the beginning.
+        - (selector) - choosing the element which we would like to make an action on.
+        - .action - performing the action of the element we chosen.
+
+            - For example, I can choose as a 'selector' all the 'div's in my page, and as a 'action' to tell the code to number them.
+
+    - Every time we will work with jQuery, we will start with the '$' sign, to indicate we are going to work with jQuery.
+    - Then we will choose the relevant 'selector' - on what we will want to work.
+    - Finally, we will choose the 'action' to choose what we want to do with the 'selector'.
+
+jQuery requires a former knowledge in HTML, CSS and JavaScript.
+
+/// How to include jQuery in our code? ///
+    There are two methods to include jQuery in our code: (we will use the second method)
+        1. To do that, we will need to download
+           jQuery as a local library.
+           Then we will need to copy the file we installed into the website we are building, putting it in our 'head' section of the HTML.
+        2. We will use the second option, which
+           is CDN. This is due to the fact that the CDN updates with the latest version of jQuery.
+           We will put the CDN link in the 'head' section of the HTML, and the CDN rule is to find the closest server to me and will download it from there.
+
+/// How to start working with jQuery? /// 
+        - When I will start working with a certain website, and this website start loading, we have a program called the DOM (Document Object Model), which builds all the website - everything within the body.
+        - If I will try to go to a certain element, when the DOM wasn't built yet, we will get an error message - 'element not found'.
+    - Therefore, we will use $(document).ready. 
+        - $ - will start our work with jQuery.
+        - (document) - will get to the 'document' element = the DOM.
+        - .ready - the action we will perform. Meaning, after everything in the DOM is loaded, the document will be ready and you can make actions. - Parallel to 'onload' when calling a function.
+        The difference between the 'onload' to the 'document.ready' is that in the 'document.ready' we can see immediately on what we are talking about, and with the 'onload' the body is calling the 'onload' function, and then it will look for the relevant function is called in the 'onload', we will go to the function and then we will understand.
+
+/// $(document).ready stages: ///
+    1. The page is being downloaded using HTTP.
+        - We will get everything as a string.
+    2. Then we will move to HTML parsed - meaning, the engine we are using, will take the string, and will make it into a proper webpage. - The HTML parsed is the engine which is being created.
+    3. DOM created - the DOM is being build, and then I can see the page.
+    4. Only when the DOM was built, the DOM is throwing at me an event - Document ready fired.
+    5. After the Document ready was fired, the handler executed - the '$(document).ready' was "turned on".
+
+    There is a shorter way to write '$(document).ready':
+        $(function() {});
+
+/// jQuery Selectors /// 
+Selector - the element which we will make the ;'action' on.
+        Selectors are being used to choose a certain element in the page:
+            - jQuery selectors return a group in the shape of an array.
+            - Using selectors we can continue performing different manipulations (which are provided by jQuery) on the chosen elements.
+            - Every selector in jQuery will start with the prefix of $().
+            - The selectors are made out of CSS selectors and special jQuery selectors.
+        
+        jQuery selectors are divided into 8 subgroups:
+            1. Form Selectors:  
+                :button, :input, :checkbox, :password, :checked, :radio, :disabled, :reset, :enabled, :selected, :focus, :submit, :file, :text, :image. 
+            2. Visibility Filter Selectors: 
+                :hidden, :visible. 
+            3. Basic Filter Selectors:
+                :animated, :last, :ea(), :lt(), :even, :not(), :first, :odd, :et(), :root, :header, :target, :lane().
+            4. Child Filter Selectors:
+                :first-child, :nth-last-of-type(), :first-of-type, :last-child, :nth-of-type(), :last-of-type, :only-child, :nth-child(), :only-of-type(), :nth-last-child().
+            5. Basic Selectors:
+                *, .class, element, #id, selector1, selectorN....
+            6. Attribute Selectors:
+                [name="value"], [name|="value"], [name!="value"], [name*="value"], [name^="value"], [name~="value"], [name], [name$="value"], [name="value"][name2="value2"]
+            7. Hierarchy Selectors:
+                parent>child, ancestor, descendant, prev + next, prev ~ siblings.
+            8. Content Selectors: 
+                :contains(), :empty, :has(), :parent.
+
+    DOM Traversing:
+        - DOM traversal functions - different functions which constitute powerful toll for choosing elements according to the relevant conditions:
+            - ()Filtering, ()slice, ()not, ()contents, ()children, ()find, ()siblings.
+            - ()eq - equal.
+            - ()filter.
+            - ()first - the first one. 
+            - ()has - does he have? 
+            - ()is - is it the type we are looking for?
+            - ()last - the last one.
+            - ()each - each of them. 
+            - ()parent - who is the dad? 
+            - ()parents - who is the grandfather and so on.
+            - ()next - if we want the next div.
+            - ()prev - if we want the previous div.
+
+        - Some examples:
+            <body>
+                <ul>
+                    <li>0</li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </body>
+
+            <script>
+                $(function () {
+                    $('li:eq(1)').parent() // will select the <ul>.
+
+                    $('li:eq(1)').prev() // will select the first <li>.
+
+                    $('li:eq(1)') // will select the second <li>.
+
+                    $('li:eq(1)').next() // will select the third <li>.
+
+                    $('li:eq(1)').parent().children() // will select all <li>s.
+
+                    $('li:eq(1)').nextAll() // will select all the <li>s after the second <li>.
+
+                    $('li:eq(1)').prevAll() // will select all the <li>s before the second <li>.
+                
+                })
+            </script>
+            
+/// Chaining /// 
+    jQuery allows the use of chaining function:
+        - With this method we can perform different functions on the returned object from the selector.
+        - Between function to function '.' (dot) will separate.
+        - This way of writing is really common and make the code shorter.
+
+        - Example:  
+            $('.content').find('h3').eq(2);
+                - First - ('.content') - will
+                  return an array with all the elements of class 'content'.
+                - Second - .find('h3') - will
+                  return an array with all the elements of type 'h3' which have class 'content'.
+                - Third - .eq(2) - will return
+                  all the elements of type 'h3' with class 'content' which is in the second place in the index (which is the third place in an array).
+
+/// DOM Manipulation in jQuery /// 
+    // Changing the content of elements // 
+        - jQuery consists the next functions:
+            - html() - for reading the content of the 'html' element.
+            - html(value) - for changing the content of the 'html' elements.
+            - text() - for reading the text of the element.
+            - text(value) - for changing the text of the elements.
+
+        - The main difference between 'html' and 'text' - in 'text' it will ignore the 'html' tags, for example, 'div'. 
+
+            - val() - for reading the content of the value of the input box.
+            - val(value) - for changing the content of the value of the input box.
+                Example for 'val()':
+                    <body>
+                        <input type="text" value="First text Box" /><br />
+                        <input type="text" value="Second text Box" />
+                    </body>
+
+                    <script>
+                        $("input").val() // Will show 'First text Box' and can change the value of all the input tags within the body.
+
+                        $($("input")[0]).val() // Will show 'First text Box' and can change only the input in the 0 index - the first input in the body.
+
+                        $($("input")[1]).val() // Will show 'Second text Box' and can change only the input in the 1 index - the second input in the body.
+
+                         $("input").val("Changed val") // here it will change all the input values to 'Changed val' from it's original value.
+                    </script>
+
+        - attribute change: (attribute will take the characteristic of an element)
+            - attr(name-characteristic) - calling attribute of a certain element.
+            - attr(value, name-characteristic) - will change the attribute of a certain element.
+            
+            Example:
+                <body>
+                    <input type="text"/>
+                </body>
+
+                <script>
+                    $("input").attr("type") // will show the type name of the input element.
+
+                    $("input").attr("type", "date") // will change the type of the input element from the current type to the new type we wrote after the ','.
+                </script>
+
+        - Class change:
+            - hasClass(name of class) - checking if the element is related to any class.
+            - addClass(name of class) - relating element to a certain class.
+            - removeClass(name of class) - removing the belonging of an element to a certain class.
+            - toggleClass(name of class) - action related to the element condition:
+                - If the element is related to a certain class - the belonging will be removed.
+                - If the element is not related to a certain class - he will be attached.
+            Example:
+                <style>
+                    .classic{
+                        background-color:red;
+                    }
+                </style>
+
+                <body>
+                    <p id="p1" class="classic">first line</p>
+                    <p id="p2">second line</p>
+                </body>
+
+                <script>
+                    $("#p1").hasClass("classic")
+                        // The answer will be true, and the background will be red.
+                    
+                    $("#p2").hasClass("classic")
+                        // The answer will be false, and the background will stay transparent.
+
+                    $("#p2").addClass("classic")
+                        // The background will be red.
+
+                    $("#p1").removeClass("classic")
+                        // The background will be transparent, because the class of the red background color will be removed.
+                </script>
+            
+            - Styling setting change:
+                - CSS change:
+                    - css(name) - calling for a styling characteristic of a certain element.
+                    - css(name, value) - editing the styling characteristic of the elements.
+                    - css(name, name) - calling for number of styling characteristics of the element.
+                    - css(name:value, name:value) - editing multiple number of styling characteristics of the elements.
+
+                Example:
+                    <script>
+                        $("p").css("background-color") 
+                            // Is showing 'rgba(0, 0, 0, 0)' - black. 
+                        
+                        $("p").css("background-color", "yellow") 
+                            // Will change the background color of the 'p' element to 'yellow'.
+                        
+                        $("tr:even").css("background-color", "red") 
+                            // Will change the background color of the even 'tr' element to red.
+
+                        $("tr:odd").css(("background-color":"black", "color":"white", "font-size":"20px"))
+                            // Will change the background color of the odd 'tr' element to 'black', the color of the font to 'white' and the font size to '20px'.
+                    </script>
+
+    // Adding elements //
+        - Functions for addition / removing / changing elements:
+            .clone(), .wrap(), .wrapAll(), .wrapInner(), .append(), .appendTo(), .prepend(), .prependTo(), .after(), .before(), .insertAfter(), .insertBefore(), .detach(), .empty(), .remove(), .unwrap(), .replaceAll(), .replaceWith().
+        
+            Example: 
+                <script>
+                    $('h1').before(<p style="color:red">before</p>)
+                    // Before the h1 there will be added a 'p' element with the color 'red' and the value of 'before'.
+                
+                    $('h1').after(<p style="color:red">after</p>)
+                        // After the h1 there will be added a 'p' element with the color 'red' and the value of 'after'.
+
+                    $('<p style='color:red'>prepend</p>').prependTo("#listId")
+                        // Will come before the id of 'listId'.
+                
+                    $('li').wrapAll("<p style='color:red'>wrapAll</p>")
+                        // The 'p' element 'wrapAll' will "wrap" the 'li' elements in the body.
+                </script>
+                
+/// Events in jQuery ///
+    // Adding events to elements // 
+        - 'Event' is an event which occurs according to specific actions that the client performs in the browser. 
+            - For example, the next events:
+                - Select, Submit, change, click, Focus, mousedown, Mouseout.
+                - mouseenter - what I want to do when the mouse is entering a text box.
+                - mouseleave - when I want to leave the text box. 
+                - Mouseover - a kind of toggle.
+                - Mousemove - a movement of the mouse.
+                - Mouseup - when I removed my finger from the mouse.
+                - Resize, Scroll - all the things of changing sizes.
+                - blur - blurring something.
+                - dbclick - an event when two fingers are on the action, for example zoom in.
+                - keydown - when pressing the keyboard key.
+                - keyup - when releasing the keyboard key.
+                - keypress - when pressing a key in keyboard.
+        - Event Object is created when an event is occurring, he is transferred to the executed event, and contains the next parameters: 
+            event.currentTarget, event.delegateTarget, event.data, event.isDefaultPrevented(), event.isImmediatePropagationStopped(), event.isPropagationStopped(), event.metaKey, event.namespace, event.pageX, event.pageY, event.preventDefault(), event.relatedTarget, event.result, event.stopImmediatePropagation(), event.stopPropagation(), event.target, event.timeStamp, event.type, event.which.
+        - In jQuery - we can add events to elements in the following ways:  
+            - Full syntax:
+                $(SELECTOR).on("NAME OF EVENT",function(OPTIONAL-receiving param which represents the event){});
+
+                    Example:
+                        <body>
+                            <button>I have an event</button>
+                        </body>
+
+                        <script>
+                            $(function () {
+                                $("button").on("click",function () {
+                                    alert("Event done");
+                                }   
+                            })
+                        </script>
+                    When clicking on the button an alert will pop up.
+            
+            - Abbreviated syntax:
+                $(SELECTOR).NAME_OF_EVENT(function(OPTIONAL-receiving param which represents the event){});
+
+                    Example:
+                        <body>
+                            <button>I have an event</button>
+                        </body>
+
+                        <script>
+                            $(function () {
+                                $("button").click(function () {
+                                    alert("Event done");
+                                }   
+                            })
+                        </script>
+                    When clicking on the button an alert will pop up.
+
+    // An example for using the Event Object: // 
+            <script>
+                $(function () {
+                    $(document).on("mousemove", function (event) {
+                        console.log(`pageX: ${event.pageX}, pageY: ${event.pageY}`);
+                    })
+                })
+            </script>
+        Here, every time the mouse will move, the event data will be written in the console.
+
+
+    // One time event example: //
+            <body>
+                <button>I have an event</button>
+            </body>
+
+            <script>
+                $(function () {
+                    $("button").one("click",function () {
+                        alert("Event done");
+                    }   
+                })
+            </script>
+        Here we will tie the event using the function 'one' which acts like 'on' but only one time.
+        Clicking the button for the first time will make the event occur.
+        When clicking the button for the second time, the event won't occur.
+
+    // Removing events from elements // 
+        - In jQuery we can remove events from elements in the following ways:
+            - Removing a specific event:
+                $(SELECTOR).off("EVENT NAME");
+            - Removing all of the events:   
+                $(SELECTOR).off();
+            
+        - Example:
+            <body>
+                <button>I have an event</button>
+            </body>
+
+            <script>
+                $(function () {
+                    $("button").on("click",function () {
+                        alert("Event done");
+                    }   
+                    $("button").off("click"); 
+                })
+            </script>
+        Here in the 'off' event, we are removing the event which we attached to the button when clicking on the button (using the 'on' event).
+        By that, when clicking the button, the event will not occur.
+
+/// Effects in jQuery ///
+    // Effects // 
+        - jQuery allows us to hide and show elements without removing them from the DOM, using the effects:
+            - .hide(), .show(), .stop(), .fadeIn(), .fadeOut(), .fadeTo(), .fadeToggle(), .slideDown(), .slideToggle(), .slideUp().
+            - .toggle() - if I see it turn it off, if it turned off turn it on.
+            - .animate() - making animation.
+    // Setting time to the effect // 
+        - We can define speed to the effect. 
+        - 'slideUp' examples:
+            $("div").slideUp("slow");
+            $("div").slideUp("fast");
+            $("div").slideUp(300); // time in milliseconds 
+
+        - 'hide' example:
+            $("p").hide(); // Will hide the element from the page - but it won't be removed.
+
+        - 'animate' example:
+            <body>
+                <div style= "height: 400px; background-color: red; width: 100%;">
+                    Hello
+                </div>
+            </body>
+            <script>
+                $("div").animate({
+                        height: '100px',
+                        opacity: '0.4'
+                    }, 'slow'); 
+            </script>
+            Here it will show the div opacity as 0.4 instead of 1, and it will also increase the height of the div, it will occur in 'slow' speed.
+
+        - 'delay' example:
+            <body>
+                <div>
+                    Hello animate
+                </div>
+            </body>
+            <script>
+                $("div").slideUp(300).delay(900).fadeIn(300);
+            </script>
+            Here the effect 'fadeIn' will occur after 0.9 seconds (or 900 milliseconds).
+
+/// AJAX in jQuery ///

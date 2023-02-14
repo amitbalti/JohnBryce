@@ -2,7 +2,7 @@ import Pilot from "./cls/Pilot";
 import FlightAttendant from "./cls/FlightAttendant";
 import GroundSteward from "./cls/GroundSteward";
 import Passenger from "./cls/Passenger";
-import Person from "./cls/Person";
+// import Person from "./cls/Person";
 
 // 1) Pilot
 let pilot = new Pilot("Guy", "Balteriski", 15, 123456);

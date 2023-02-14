@@ -1,0 +1,113 @@
+
+/// Intro to Ajax /// 
+    AJAX = Asynchronous JavaScript And XML.
+        - Sending Ajax requests allows us asynchronous communication.
+        - Ajax allows us to send and receive info in different formats, including HTML, XML, JSON and text.
+        - In static request, the webpage is freezing until a new page returns from the server and is shown to the client.
+        - In Ajax request, the webpage can communicate with the server, and in the meantime allows the client to perform extra functions in the page.
+        - Static internet webpage is less intuitive to the client then a Ajax webpage.
+        - Ajax requests decrease the volume of data transformations between the server and the client.
+        - Ajax engine returns HttpRequest object.
+
+    // Ready state // 
+        Stage 0: When I begin to call to Ajax, the first action is UNINITIALIZED. 
+                    Meaning, I still didn't perform any action.
+                    I open the communication, but still didn't perform any action.
+                    open() has not been called yet.
+        Stage 1: LOADING state. 
+                    Meaning, I sent an action, but still didn't got an answer.
+                    That's the stage where I will have the loading circle.
+                    send() has not been called yet.
+        Stage 2: LOADED state.
+                    Meaning, I already have headers and status available.
+                    The headers
+                    send() has been called, and headers and status are available.
+        Stage 3: INTERACTIVE state.
+                    Meaning, downloading.
+                    This is the stage where I can show the loading state of a img for example. For example to show percentages of the loading img.
+                    Downloading responseText holds partial data.
+        Stage 4: COMPLETED state.
+                    Meaning, I received the whole data, and I can start now showing it.
+                    The operation is complete.
+    
+    // Static request and an Ajax request // 
+        - In static request:
+            - I have UI (user interface) and BE (backend).
+            - Sending request and receiving an answer (which includes css, html, and javascript).
+            - That's a bad way to work. This is a much larger data. Which immediately makes it much slower.
+            - If I want to change something, I need to change something both in the UI and the BE.
+
+        - In Ajax request:
+            - The client side will be the side which will build me the data itself.
+            - Meaning, that I will use either the client side or the server side.
+
+        - I have a few types of requests:
+            - PATCH - we are not really using it anymore.
+            - GET - is meant to get data - it is limited to 256 notes only. For example, an img I can't get or send with a GET request.
+                    GET carries request parameter appended in URL string.
+            - POST - it will be an object which will be sent together with the request, and it can receive until 2GB. If I have something which is larger than 2GB, using POST, slice it into pieces, and send every piece separately.
+                     POST carries request parameter in message body which makes it more secure way of transferring data from client to server.
+            - PUT - when I am updating the data.
+            - DELETE - when I want to delete the data.
+
+        - Every request that I send, I receive a response back.
+            - The response will include headers and status code.
+            - Status code is a series of numbers which are telling us few things:
+                - 200 series - meaning that everything is okay.
+                - 400 series - meaning an error in the server side.
+                - 500 series - meaning that the server crashed.
+
+        - I have the option to send info/data with GET, and to receive it's response.
+            - I can receive the response or RAW - as a string. Or as a JSON.
+        
+        - When I see all the parameters in URL itself, I can know that I am dealing with GET request.
+    
+    // JSON // 
+        JSON - JavaScript Object Notation.
+        - JSON is a common format for transferring data between the server and the client.
+        - JSON consists the data in a construction of key and value.
+        - If I have data in JSON construction, I can do JSON.parse(), which makes it easier to get to the data which is found within the JSON.
+        - JSON example:
+            var a = { "course": "jQuery", "students": 30, "location": ["Tel-Aviv", "Jerusalem"]}
+    
+/// AJAX in jQuery ///
+    - In jQuery library there are many functions, which constitutes comfortable wrapping for making AJAX requests.
+    - For example:
+        $.ajax(options)
+        $.get(url, [data], [callback], [type])
+        $.post(url, [data], [callback], [type])
+        .load(url) // less used.
+        $.getJSON(url, [data], [callback], [type])
+
+        // callback - will occur only after I have received a response.
+        // type - what is the type I am accepting to receive - JSON, string and so on. 
+
+    // $.ajax //
+        <body>
+            <div id="divId"></div>
+        </body>
+
+        <script>
+            $.ajax({ 
+                url: "https://google.com", // what is my endpoint?
+                method: "GET", // what is my method?
+                success: function(data){ // if we succeeded, we will do callback.
+                    $("div").text(JSON.stringify(data));
+                }, 
+                dataType: "json"
+            })
+        </script>
+
+    // $.get //
+        <body>
+            <div id="divId"></div>
+        </body>
+
+        <script>
+            $.get(
+                "https://google.com", // what is my endpoint?
+                function(data){ // callback
+                    $("div").text(JSON.stringify(data));
+                }, "json" // how I want to receive it - in this case, JSON.
+            );
+        </script>

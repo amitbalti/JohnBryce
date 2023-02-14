@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animate</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        // $("img").slideUp(1000).slideDown(1000);
+        // $("img").fadeOut(1000).fadeIn(1000);
+        // $("img").fadeOut(1000).delay(1000).fadeIn(1000);
+        // To make the effect occur continuously:
+        setInterval(() => {
+          $("img").fadeOut(1000).delay(500).fadeIn(1000).delay(500);
+        }, 1000);
+      });
+    </script>
+  </head>
+  <body>
+    <img src="img/classic3.jpg" width="300" />
+  </body>
+</html>
