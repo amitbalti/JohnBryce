@@ -1,75 +1,83 @@
 const url = "https://restcountries.com/v3.1/all";
 let allCountries = [];
 let totalPopulation = 0;
-let myCountries = {};
+// let myCountries = {};
+let myCountries = 5;
 const myRegions = {};
 
 $(async () => {
   allCountries = await $.get(url);
   $("totCountries").html(myCountries);
-  getData(myCountries);
-  //   getCountriesData(countries);
+  //   getData(myCountries);
+  getCountriesData(myCountries);
+  //   stats();
   //   $("#allCountries").html(countries);
   //   getData(countries);
   //   $("#allCountries").on("click", (value) => {
   //     $("#totCountries").html(countries);
   //   });
-  stats();
 });
 
 const getData = (total) => {
   $("#container").html("");
   for (let counter = 0; counter < total; counter++) {
     const randomNum = Math.floor(Math.random() * allCountries.length);
-    // countries +=
     $("#container").append(`
                         ${allCountries[randomNum].name.common}
                         ${allCountries[randomNum].population}
                   `);
-    if (myCountries[allCountries[counter]] == null) {
-      myCountries[allCountries[counter]] = 1;
+    // if (myCountries[allCountries[counter]] == null) {
+    //   myCountries[allCountries[counter]] = 1;
+    // } else {
+    //   myCountries[allCountries[counter]] += 1;
+    // }
+  }
+};
+
+// const stats = () => {
+//   for (singleCountry in myCountries) {
+//     console.log(singleCountry);
+//     console.log(myCountries[singleCountry]);
+//   }
+// };
+
+const getCountriesData = (total) => {
+  $("#countryData").html("");
+  for (let counter = 0; counter < total; counter++) {
+    const randomNum = Math.floor(Math.random() * allCountries.length);
+    $("#countryData").append(`
+                          <tr class="Box">
+                            <td>${allCountries[randomNum].name.common}</td>
+                            <td>${allCountries[randomNum].population}</td>
+                          </tr>
+                      `);
+
+    // Regions
+    if (myRegions[allCountries[counter].region] == null) {
+      myRegions[allCountries[counter].region] = 1;
     } else {
-      myCountries[allCountries[counter]] += 1;
+      myRegions[allCountries[counter].region] += 1;
     }
+
+    let regionTable = "";
+    for (singleRegion in myRegions) {
+      regionTable += `<tr><td><b>${singleRegion}</b></td><td>${myRegions[singleRegion]}</td></tr>`;
+    }
+    $("#regionData").html(regionTable);
   }
 };
-
-const stats = () => {
-  for (singleCountry in myCountries) {
-    console.log(singleCountry);
-    console.log(myCountries[singleCountry]);
-  }
-};
-
-// const getCountriesData = (total) => {
+// const getRegionData = (total) => {
 //   $("#countryData").html("");
 //   for (let counter = 0; counter < total; counter++) {
 //     const randomNum = Math.floor(Math.random() * allCountries.length);
 //     $("#countryData").append(`
-//                           <tr class="Box">
-//                             <td>${allCountries[randomNum].name.common}</td>
-//                             <td>${allCountries[randomNum].population}</td>
-//                           </tr>
-//                       `);
-
-//   if (myRegions[allCountries[counter].region] == null) {
-//     myRegions[allCountries[counter].region] = 1;
-//   } else {
-//     myRegions[allCountries[counter].region] += 1;
-//   }
-//   }
-//   const getRegionData = (total) => {
-//     $("#countryData").html("");
-//     for (let counter = 0; counter < total; counter++) {
-//       const randomNum = Math.floor(Math.random() * allCountries.length);
-//       $("#countryData").append(`
 //                             <tr class="Box">
-//                               <td>${allCountries[randomNum].name.common}</td>
+//                               <td>${allCountries[randomNum].region}</td>
 //                               <td>${allCountries[randomNum].population}</td>
 //                             </tr>
 //                         `);
-//     }
-//   };
+//   }
+// };
 
 // totalPopulation += allCountries[randomNum].population;
 
@@ -147,4 +155,3 @@ const stats = () => {
 // //                           <td>${allCountries[randomNum].population}</td>
 // //                       </tr>
 // //                     `);
-// //
