@@ -1,0 +1,17 @@
+/* body{} */
+
+#header {
+  padding: 30px;
+  background: black;
+  color: #23b574;
+  font-size: 20px;
+  width: auto;
+  height: 25%;
+}
+
+.headerImg {
+  width: 130px;
+  float: right;
+  height: 129px;
+  border-radius: 10px;
+}

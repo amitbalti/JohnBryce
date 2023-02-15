@@ -17,34 +17,35 @@
 
 const url = "https://restcountries.com/v3.1/all";
 // const total = 50;
-let total = 0;
-$(function () {
-  getData();
-});
+// let total = 0;
+let allCountries = [];
 
 $(function () {
   $("#myRange").on("input", (value) => {
     $("#totalCountries").html(`${value.target.value}`);
-    total = value.target.value;
-    // console.log(total);
+    getData(value.target.value);
   });
 });
 
-const getData = () => {
-  $.get(url, (data) => {
-    for (let counter = 0; counter < total; counter++) {
-      const randomNum = Math.floor(Math.random() * data.length);
-      $("#container").append(`
+$(async function () {
+  allCountries = await $.get(url);
+});
+
+const getData = (total) => {
+  $("#container").html("");
+  for (let counter = 0; counter < total; counter++) {
+    const randomNum = Math.floor(Math.random() * allCountries.length);
+    // console.log(allCountries[randomNum]);
+    $("#container").append(`
                     <div class="Box">
-                        <img src=${data[randomNum].flags.png} width=100 /><br/>
-                        ${data[randomNum].name.common} <br/>
-                        ${data[randomNum].capital} <br/>
-                        ${data[randomNum].population} <br/>
-                        ${data[randomNum].continents}
+                        <img src=${allCountries[randomNum].flags.png} width=100 /><br/>
+                        ${allCountries[randomNum].name.common} <br/>
+                        ${allCountries[randomNum].capital} <br/>
+                        ${allCountries[randomNum].population} <br/>
+                        ${allCountries[randomNum].continents}
                     </div>
                 `);
-    }
-  });
+  }
 };
 
 /*const mockData = {

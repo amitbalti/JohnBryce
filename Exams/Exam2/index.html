@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Countries</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="js/countries.js"></script>
+    <link rel="stylesheet" href="css/countries.css" />
+  </head>
+  <body>
+    <h1>Countries of the world</h1>
+    <hr />
+    <div class="Box">
+      <form id="myForm">
+        <!-- All button -->
+        <button id="allCountries">All Countries</button>
+        <br /><br />
+
+        <!-- Select country -->
+        <input type="text" placeholder="Search for countries" />
+        <button>Search</button>
+        <br /><br />
+      </form>
+    </div>
+    <h2>Stats:</h2>
+    <div id="container"></div>
+    Number of Countries: <span id="totCountries">0</span><br />
+    Total Countries Population: <span id="totalPop">0</span><br />
+    Average Population: <span id="avgPop">0</span><br /><br />
+
+    <!-- Country data -->
+    <table>
+      <thead>
+        <tr>
+          <th>Country Name</th>
+          <th>Number Of Citizens</th>
+        </tr>
+      </thead>
+      <tbody id="countryData"></tbody>
+    </table>
+
+    <!-- Regions data -->
+    <table>
+      <thead>
+        <tr>
+          <th>Region</th>
+          <th>Number Of Countries</th>
+        </tr>
+      </thead>
+      <tbody id="regionData"></tbody>
+    </table>
+
+    <!-- Currencies data -->
+    <table>
+      <thead>
+        <tr>
+          <th>Currency</th>
+          <th>Number Of Countries</th>
+        </tr>
+      </thead>
+      <tbody id="currencyData"></tbody>
+    </table>
+  </body>
+</html>

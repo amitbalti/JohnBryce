@@ -1,0 +1,60 @@
+body {
+  text-align: center;
+  background-image: linear-gradient(90deg, rgb(241, 183, 191), white);
+}
+
+h1,
+h2 {
+  color: rgb(80, 90, 102);
+}
+
+.Box {
+  border: 1px solid whitesmoke;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+input {
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid gray;
+  width: 250px;
+}
+
+#buttons {
+  width: 90px;
+}
+
+table {
+  margin: auto;
+  margin-top: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  padding: 10px;
+  color: black;
+}
+
+th {
+  background-color: rgb(193, 174, 193);
+}
+
+tr:nth-child(even) {
+  background-color: rgb(210, 237, 210);
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(195, 220, 228);
+}
+
+span {
+  /* background-color: rgb(195, 220, 228); */
+  font-size: 20px;
+}
