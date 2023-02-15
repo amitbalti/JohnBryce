@@ -1,157 +1,92 @@
 const url = "https://restcountries.com/v3.1/all";
-let allCountries = [];
-// let totalCountries = 0;
-let totalPopulation = 0;
-let avgPopulation = 0;
-// let myNewCountries = {};
-let myCountries = 2;
-const myRegions = {};
-const myCurrencies = {};
+const searchUrl = "https://restcountries.com/v3.1/name/";
 
-$(async () => {
-  allCountries = await $.get(url);
-  $("totCountries").html(myCountries);
-  getCountriesData(myCountries);
-});
+async function getAllCountries() {
+  return await $.get(url);
+}
 
-const getCountriesData = (total) => {
+async function findCountries(name) {
+  return await $.get("https://restcountries.com/v3.1/name/" + name);
+}
+const getCountriesData = (data) => {
+  let totCountries = 0;
+  let totalPopulation = 0;
+  let regions = {};
+  let currencies = {};
+
   // Countries
   $("#countryData").html("");
-  for (let counter = 0; counter < total; counter++) {
-    const randomNum = Math.floor(Math.random() * allCountries.length);
+  for (let counter = 0; counter < data.length; counter++) {
+    let item = data[counter];
+    totCountries++;
+    totalPopulation += item.population;
+
+    let region = item.region;
+    regions[region] = (regions[region] || 0) + 1;
+
+    if (item.currencies) {
+      Object.keys(item.currencies).forEach((currency) => {
+        currencies[currency] = (currencies[currency] || 0) + 1;
+      });
+    }
+
     $("#countryData").append(`
                           <tr class="Box">
-                            <td>${allCountries[randomNum].name.common}</td>
-                            <td>${allCountries[randomNum].population}</td>
+                            <td>${item.name.common}</td>
+                            <td>${item.population}</td>
                           </tr>
                       `);
-
-    // Num Countries stats
-    $("#totCountries").html(myCountries);
-
-    // Population stats
-    totalPopulation += allCountries[randomNum].population;
-    $("#totalPop").html(totalPopulation);
-
-    // Average population stats
-    avgPopulation += allCountries[randomNum].population / myCountries;
-    $("#avgPop").html(avgPopulation);
-
-    // Regions
-    if (myRegions[allCountries[counter].region] == null) {
-      myRegions[allCountries[counter].region] = 1;
-    } else {
-      myRegions[allCountries[counter].region] += 1;
-    }
-
-    let regionTable = "";
-    for (singleRegion in myRegions) {
-      regionTable += `<tr><td>${singleRegion}</td><td>${myRegions[singleRegion]}</td></tr>`;
-    }
-    $("#regionData").html(regionTable);
-
-    // Currencies
-    // if (myCurrencies[allCountries[counter].currencies] == null) {
-    //   myCurrencies[allCountries[counter].currencies] = 1;
-    // } else {
-    //   myCurrencies[allCountries[counter].currencies] += 1;
-    // }
-
-    // let currencyTable = "";
-    // for (singleCurrency in myCurrencies) {
-    //   //   currencyTable += `<tr><td>${singleCurrency}</td><td>${myCurrencies[singleCurrency]}</td></tr>`;
-    //   currencyTable += singleCurrency;
-    // }
-    // $("#currencyData").html(currencyTable);
-    // console.log($("#currencyData").html(currencyTable));
   }
+
+  // Regions
+  $("#regionData").html("");
+  Object.keys(regions).forEach((region) => {
+    let numCountries = regions[region];
+
+    $("#regionData").append(`
+                          <tr class="Box">
+                            <td>${region}</td>
+                            <td>${numCountries}</td>
+                          </tr>
+                      `);
+  });
+
+  // Currencies
+  $("#currencyData").html("");
+  Object.keys(currencies).forEach((currency) => {
+    let numCountries = currencies[currency];
+
+    $("#currencyData").append(`
+                           <tr class="Box">
+                             <td>${currency}</td>
+                             <td>${numCountries}</td>
+                           </tr>
+                       `);
+  });
+
+  // Num Countries stats
+  $("#totCountries").html(totCountries);
+
+  // Population stats
+  $("#totalPop").html(totalPopulation);
+
+  // Average population stats
+  let avgPopulation = totalPopulation / totCountries;
+  $("#avgPop").html(avgPopulation);
 };
-// const getRegionData = (total) => {
-//   $("#countryData").html("");
-//   for (let counter = 0; counter < total; counter++) {
-//     const randomNum = Math.floor(Math.random() * allCountries.length);
-//     $("#countryData").append(`
-//                             <tr class="Box">
-//                               <td>${allCountries[randomNum].region}</td>
-//                               <td>${allCountries[randomNum].population}</td>
-//                             </tr>
-//                         `);
-//   }
-// };
 
-// totalPopulation += allCountries[randomNum].population;
+// When clicking on All / search buttons
+$(function () {
+  // Define the function to handle the "All" button click event
+  $("#allCountries").click(async function () {
+    let data = await getAllCountries();
+    getCountriesData(data);
+  });
 
-// if (myRegions[allCountries[randomNum].region] == null) {
-
-//   myRegions[allCountries[randomNum].region] = 1;
-// } else {
-
-//   myRegions[allCountries[randomNum].region] += 1;
-// }
-
-//   $("#total").html(totalPopulation);
-//   $("#totalArea").html(totalArea);
-
-//   makeHorTable();
-//   makeVerTable();
-
-/** */
-// const allUrl = "https://restcountries.com/v3.1/all";
-// let allCountries = [];
-// let totalCountries = 0;
-
-// $(async () => {
-//   allCountries = await $.get(allUrl);
-// });
-
-// $(
-//   async function () {
-//     console.log(
-//       $("#allCountries").on("click", (value) => {
-//         $("#totCountries").html(`${value.target.value}`);
-//       })
-//     );
-//   }
-
-//   $("#allCountries").on("click", (value) => {
-//     // totalCountries += $("#totCountries").html(`${value.target.value}`);
-//     // getData(value.target.value);
-//   });
-// );
-
-// const getData = (total) => {
-//   $("#container").html("");
-//   for (let counter = 0; counter < total; counter++) {
-//     const randomNum = Math.floor(Math.random() * allCountries.length);
-//     $("#container").append(`
-//                     <div class="Box">
-//                         ${allCountries[randomNum].name.common}<br/>
-//                         ${allCountries[randomNum].population}<br/>
-//                     </div>
-//                 `);
-//   }
-// };
-// // console.log(getData());
-// // const getCountriesData = (total) => {
-// //   $("#container").html("");
-// //   for (let counter = 0; counter < total; counter++) {
-// //     const randomNum = Math.floor(Math.random() * allCountries.length);
-// //     $("#container").append(`
-// //                     <tr class="Box">
-// //                         <td>${allCountries[randomNum].name.common}</td>
-// //                         <td>${allCountries[randomNum].population}</td>
-// //                     </tr>
-// //                   `);
-// //   }
-// // };
-
-// // const getRegionsData = (total) => {
-// //   $("#container").html("");
-// //   for (let counter = 0; counter < total; counter++) {
-// //     const randomNum = Math.floor(Math.random() * allCountries.length);
-// //     $("#container").append(`
-// //                       <tr class="Box">
-// //                           <td>${allCountries[randomNum].name.common}</td>
-// //                           <td>${allCountries[randomNum].population}</td>
-// //                       </tr>
-// //                     `);
+  $("#searchBtn").click(async function () {
+    // Get the user input
+    let searchTerm = $("#searchInput").val();
+    let data = await findCountries(searchTerm);
+    getCountriesData(data);
+  });
+});
