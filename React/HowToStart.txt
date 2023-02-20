@@ -1,0 +1,24 @@
+React is made up of components.
+React main idea is to be SPA - Single Page Application.
+Every component is created for itself. 
+One component won't be affected by other, and vice verca.
+React is way faster because we can take care of one component without needing to think on another component or on the entire application.
+Component for react is like a tag in html.
+
+//// How to start React App? ////
+How to start React project:
+    1. 'npm i -g create-react-app' (will be installed globally on the computer)
+    2. 'npm i -g react-cli-snippets'
+    3. 'create-react-app react-is-easy --template typescript' - 'react-is-easy' can be replaced with any other name. '-template typescript' meaning the the base of the project.
+    4. cd relevant-file-that-we-created
+    5. npm start
+    
+To create components:
+    1. Open terminal
+    2. cd name-of-the-relevant-file
+    3. create fc Layout/MainLayout
+        - This will create a component folder
+        - Then a Layout folder.
+        - Inside the Layout folder it will create a MainLayout folder.
+    4. Then we changed the 'App' component in the index.tsx to the 'MainLayout' component.
+    5. We run 'npm start'

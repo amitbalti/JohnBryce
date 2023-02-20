@@ -1,0 +1,17 @@
+a {
+  color: darkslateblue;
+
+  font-size: 25px;
+  padding: 30px;
+  text-decoration: none;
+}
+a:hover {
+  font-size: 42px;
+  color: #da930f;
+}
+
+hr {
+  border-style: dotted;
+  color: darkslateblue;
+  width: 50%;
+}

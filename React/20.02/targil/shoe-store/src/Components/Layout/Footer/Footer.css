@@ -1,0 +1,10 @@
+h2 {
+  margin-top: 35px;
+}
+
+span {
+  font-size: 30px;
+  font-weight: bold;
+  color: darkslateblue;
+  text-decoration: overline underline dotted;
+}
