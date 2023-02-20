@@ -2,6 +2,7 @@
     1. Finish the exam. - DONE
     2. Go over the HW from the last lecture.
         Read pages 67-86 and make all the Exercises.
-            - Check page 69 with dad.
-    3. Do the second project.
-        Do the second project.
+            - Check page 69 with dad. - DONE
+    3. Do React HW - DONE.
+    4. Learn with chatGPT about react.
+    5. Do the second project.

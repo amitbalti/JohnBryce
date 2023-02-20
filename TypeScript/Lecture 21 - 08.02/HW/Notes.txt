@@ -7,22 +7,44 @@
 
     - Right planning of hierarchy, needs to think of future needs that might evolve.
 
-    // Inheritance Execution //
-        - In order to execute the inheritance, we need to right in the inheritor class which is the inherit class. 
-            It will be done in the same way:
-                class Person {
-                }
+        // Inheritance Execution //
+            - In order to execute the inheritance, we need to right in the inheritor class which is the inherit class. 
+                It will be done in the same way:
+                    class Person {
+                    }
 
-                class Worker extends Person{
-                }
+                    class Worker extends Person{
+                    }
 
-                Worker = Derivative class.
-                Person = Base class.
-        
-        - Important points for inheritance:
-            1. The relation of inheritance is going one way:
-                -  To the base class there is no info about the derivative class, and it can't get access to the stuff inside the derivative class.
-            2. The derivative class gets all the characteristics and functions from the base class and can access them (ONLY if they are NOT private).
-                - It's like in the real world - every kid inherit the genes from it's parents, but the genes of the parents won't be affected by the genes of their kids.
-            3. The usage of the inheritor class is used as a regular class.
-            4. In inheritance, every 
+                    Worker = Derivative class.
+                    Person = Base class.
+            
+            - Important points for inheritance:
+                1. The relation of inheritance is going one way:
+                    -  To the base class there is no info about the derivative class, and it can't get access to the stuff inside the derivative class.
+                2. The derivative class gets all the characteristics and functions from the base class and can access them (ONLY if they are NOT private).
+                    - It's like in the real world - every kid inherit the genes from it's parents, but the genes of the parents won't be affected by the genes of their kids.
+                3. The usage of the inheritor class is used as a regular class.
+                4. In inheritance, every derivative class can become a base class of other derivative classes. For example, class A can inherit to class B, and in class B(which is the inheritor of class A) can inherit to class C, and so on. This chain is also called multilevel inheritance.
+                5. Elements which are defined as private, moving on in inheritance, but they can't be reached in the inheritor class.
+                    For example:
+                        class Person {
+                            private agePerson: number;
+                        }
+
+                        class Student extends Person {
+                            public get ageInfo(): number {
+                                return this.agePerson; 
+                            }
+                        }
+
+                        This will give us error message, because we tried to reach the inherit class but for a private characteristic.
+            - In TypeScript, class can inherit one class only. Therefore, if we will try to create a Student class and to inherit both Person and Parent, we will get an error.
+            - On the other hand, one class can inheritor for more than one class - with no limit.
+            - Therefore, we can create a Parent class which inherit from Person, and also Student which inherit from Person.
+
+    /// Access Permission of class members: // 
+        // Access Specifier //
+            - public - 
+            - private -
+            - protected -
