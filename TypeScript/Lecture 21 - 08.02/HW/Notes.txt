@@ -1,0 +1,28 @@
+///// Inheritance //////
+    - Inheritance is one of the most important principles im developing OOP.
+
+    - Each inheritance is made up of two degrees:
+        - Base class - it's the inherit class (base class / super class).
+        - Derivative class - is the inheritor class (derived class / sub class).
+
+    - Right planning of hierarchy, needs to think of future needs that might evolve.
+
+    // Inheritance Execution //
+        - In order to execute the inheritance, we need to right in the inheritor class which is the inherit class. 
+            It will be done in the same way:
+                class Person {
+                }
+
+                class Worker extends Person{
+                }
+
+                Worker = Derivative class.
+                Person = Base class.
+        
+        - Important points for inheritance:
+            1. The relation of inheritance is going one way:
+                -  To the base class there is no info about the derivative class, and it can't get access to the stuff inside the derivative class.
+            2. The derivative class gets all the characteristics and functions from the base class and can access them (ONLY if they are NOT private).
+                - It's like in the real world - every kid inherit the genes from it's parents, but the genes of the parents won't be affected by the genes of their kids.
+            3. The usage of the inheritor class is used as a regular class.
+            4. In inheritance, every 

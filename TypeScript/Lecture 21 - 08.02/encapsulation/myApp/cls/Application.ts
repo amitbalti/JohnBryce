@@ -1,8 +1,8 @@
 class Application {
-  private appName: string = "";
-  private appPrice: number = 0;
-  private appSize: number = 0;
-  private rating: number = 0;
+  protected appName: string = "";
+  protected appPrice: number = 0;
+  protected appSize: number = 0;
+  protected rating: number = 0;
 
   constructor(
     appName: string,
@@ -23,7 +23,9 @@ class Application {
 
   public setAppPrice(appPrice: number) {
     if (appPrice < 0) {
-      console.log("The app price must be greater than zero");
+      console.log(
+        `The ${this.appName} application price must be greater than zero`
+      );
       return;
     }
     this.appPrice = appPrice;
@@ -31,7 +33,7 @@ class Application {
 
   public setAppSize(appSize: number) {
     if (appSize < 0) {
-      console.log("The app size must be positive");
+      console.log(`The ${this.appName} application size must be positive`);
       return;
     }
     this.appSize = appSize;
@@ -39,7 +41,9 @@ class Application {
 
   public setRating(rating: number) {
     if (rating < 1 || rating > 5) {
-      console.log("The rating must be between 1 and 5");
+      console.log(
+        `The rating of ${this.appName} application must be between 1 and 5`
+      );
       return;
     }
     this.rating = rating;
@@ -65,16 +69,18 @@ class Application {
   // methods
   public print(): string {
     return `
-    App name: ${this.getAppName()}
-    App price: ${this.getAppPrice()}
-    App size: ${this.getAppSize()}
-    App rating: ${this.getRating()}
+      App name: ${this.getAppName()}
+      App price: ${this.getAppPrice()}
+      App size: ${this.getAppSize()}
+      App rating: ${this.getRating()}
     `;
   }
 
   public changePrice(percent: number) {
     if (percent < 10 || percent > 50) {
-      console.log("Value must be between 10 and 50");
+      console.log(
+        `The value of ${this.appName} application must be between 10 and 50`
+      );
       return;
     }
     this.setAppPrice(this.getAppPrice() * (1 - percent / 100));

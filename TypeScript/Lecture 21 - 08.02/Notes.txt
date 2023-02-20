@@ -12,7 +12,7 @@ super - from the father class.
 this - from the current class.
 
 First:
-    Learn to the exam!!!!!!
+    Learn to the exam!!!!!! DONE
 
 Next: 
     HW: 

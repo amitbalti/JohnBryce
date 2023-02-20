@@ -9,9 +9,9 @@ When starting a new TS project:
     3. In the terminal, we will write: 'npm init -y' - which will create a new package.json file.
     4. We will change the name and the description of the package.json file.
     5. Change in the 'main' in the package.json file from index.js to our main file that we are using, for example index.ts (when using TypeScript).
-    6. We will then write in the terminal: 'npm install nodemon' (and will make sure that is found in the dependencies section in our package.json file).
+    6. We will then write in the terminal: 'npm install nodemon' (to install globally(meaning one time)- 'npm i --g nodemon') (and will make sure that is found in the dependencies section in our package.json file).
         Note: "nodemon": "^2.0.20", (can be any version number)
-    7. We will then write in the terminal: 'npm install ts-node' (and will make sure that is found in the dependencies section in our package.json file).
+    7. We will then write in the terminal: 'npm install ts-node' (to install globally(meaning one time)- 'npm i --g ts-node') (and will make sure that is found in the dependencies section in our package.json file).
         Note: "ts-node": "^10.9.1", (can be any version number)
 
     NOTE: sometimes we need to close and reopen the package.json file to make sure that all the dependencies are there.

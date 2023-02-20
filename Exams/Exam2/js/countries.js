@@ -6,8 +6,9 @@ async function getAllCountries() {
 }
 
 async function findCountries(name) {
-  return await $.get("https://restcountries.com/v3.1/name/" + name);
+  return await $.get(searchUrl + name);
 }
+
 const getCountriesData = (data) => {
   let totCountries = 0;
   let totalPopulation = 0;
@@ -16,8 +17,7 @@ const getCountriesData = (data) => {
 
   // Countries
   $("#countryData").html("");
-  for (let counter = 0; counter < data.length; counter++) {
-    let item = data[counter];
+  data.forEach(item=>{
     totCountries++;
     totalPopulation += item.population;
 
@@ -37,9 +37,12 @@ const getCountriesData = (data) => {
                           </tr>
                       `);
   }
+  )
 
   // Regions
   $("#regionData").html("");
+  // console.log(regions);
+  // console.log(Object.keys(regions));
   Object.keys(regions).forEach((region) => {
     let numCountries = regions[region];
 
