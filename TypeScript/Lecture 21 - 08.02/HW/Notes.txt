@@ -43,8 +43,10 @@
             - On the other hand, one class can inheritor for more than one class - with no limit.
             - Therefore, we can create a Parent class which inherit from Person, and also Student which inherit from Person.
 
-    /// Access Permission of class members: // 
-        // Access Specifier //
-            - public - 
-            - private -
-            - protected -
+    /// Access Permission of class members: //
+        After we studied inheritance, we can get to know another access specifier: 
+            // Access Specifier //
+                - public - to public member there is universal accessbility from anywhere (within the class itself, within the derivative and through the object).
+                         - if we didn't defined access allowence for a class member, it will be public as default.
+                - private - to private class members 
+                - protected -

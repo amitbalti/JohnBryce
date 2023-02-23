@@ -1,1 +1,29 @@
 ///// React /////
+
+//// Hooks ////
+    - useState
+    - useEffect
+
+// onChange // <==> MORE EXPLANATION
+    - onChange can get either a function or an arrow function.
+        - When using a direct arrow function, we will use it directly, an example:
+            <input
+                type="text"
+                onChange={(args) => {
+                setGroom(args.target.value);
+            }} />
+        - When we are using a function, we will use it like that:
+            const changeGroomName = (args: SyntheticEvent) => {
+                // let myValue = args.target; // acts like an event.
+                // let myValue = args.target as HTMLInputElement; // The first action I want it to do - will act like an html input element.
+                let myValue = (args.target as HTMLInputElement).value; // The second action - will take the value from the html input element.
+                setGroom(myValue); // will set the groom value to myValue - which I defined the line above.
+            };
+            <input type="text" onChange={changeGroomName} />
+
+    - We will use the arrow function if the function is short. 
+    - If the function is long, we should use a regular function and implement it into the onChange.
+
+//// SyntaticEvents ////
+
+//// Polymorphizem ////
