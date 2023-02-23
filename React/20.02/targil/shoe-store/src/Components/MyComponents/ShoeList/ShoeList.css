@@ -1,0 +1,14 @@
+.ShoeList {
+  text-align: center;
+  margin-top: 5px;
+}
+
+ul {
+  display: inline-block;
+  /* text-align: left; */
+  /* list-style: square; */
+  list-style: none;
+  direction: ltr;
+  font-size: 22px;
+  font-weight: bold;
+}

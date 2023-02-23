@@ -46,7 +46,171 @@
     /// Access Permission of class members: //
         After we studied inheritance, we can get to know another access specifier: 
             // Access Specifier //
-                - public - to public member there is universal accessbility from anywhere (within the class itself, within the derivative and through the object).
-                         - if we didn't defined access allowence for a class member, it will be public as default.
-                - private - to private class members 
-                - protected -
+                - public - to public member there is universal accessability from anywhere (within the class itself, within the derivative and through the object).
+                         - if we didn't defined access allowance for a class member, it will be public as default.
+                - private - private class members are accessible only within their defining class. 
+                          - If we will try and reach them through an external class, or through an object, we will get an error. 
+                - protected - protected class members are accessible within their defining class and their derivative class.
+                            - If we will try and reach protected class members from a class which isn't derivative class, or through an object, we will get an error.
+
+    /// Inheritance vs Encapsulation ///
+        // The differences between Encapsulation and Inheritance // 
+            1. Usage:
+                - Inheritance - when X is like Y, then X inherit from Y.
+                - Encapsulation - when X is not like Y, but have one of Y's characteristics, then X include Y.
+            2. Reset using 'new':
+                - Inheritance - is done only once (when building an object from the inherit class, and it automatically calling to the constructor of the inherited class).
+                - Encapsulation - is done twice: need to create an explicit call to the constructor of the included object, which contains 'undefined', and we will need to create an object for which he will call.
+            3. Accessability:   
+                - Inheritance - object from the inheritor class can access directly to all the public characteristics (if it's from the inherited class or from the inheritor class itself).
+                - Encapsulation - object from the inheritor class can access directly to all the public characteristics of it's own class. 
+                                - if we will want to access the characteristics of the inheritor class, we will need to access it with the name of the inheritor class name, and through it to the name of the characteristic within the inheritor class.
+                                
+    /// Super ///
+        - When talking about inheritance, with addition the reserved word 'extends', which is used to execute the inheritance, there is also the reserved word 'super' which allowing us the next actions:
+            1. Calling to the constructor of the base class within the derivative class.
+            2. Calling to a function of the base class within the derivative class.
+        
+            Note - with the 'super' we cannot access the characteristics of the base class within the derivative class (accessing to the characteristics of the base class within the derivative class, will be done using the reserved word 'this').
+        
+        - Calling to the base class constructor within the derivative class:   
+            - In TypeScript, we can define the constructor also in the base class and it's derivatives.
+              But, if we defined a constructor in the derivative class, we need to call the constructor of the base class from the constructor of the derivative class by using the 'super()', otherwise we will get an error.
+        - Implicit call:
+            - When we will create the derivative class without a constructor, we can see that even though there wasn't a call to the base class constructor, the code is proper and we won't get an error. 
+              The reason for it is that the compiler is creating an 'implicit call', meaning:
+              We didn't have an constructor, therefore, a default constructor was built - an empty constructor. In the derivative class, we will get a default constructor which a 'super()' call will be called automatically, which will call the base class.
+              The reason for it, like we said, the 'implicit call' is automatically created.
+              But, if we will define a constructor in the derivative class, an 'implicit call' will no longer be executed, and if in the derivative class we won't call explicitly to the base class constructor, we will get an error.
+            
+            Note - every time we will create a 'show' of the derivative class (using 'new'), first the base class constructor will be executed, and only afterwards the derivative class constructor will be execute.
+                An example:
+
+                    class Person {
+                        public constructor() {
+                            document.write("Person constructor<br/>");
+                        }
+                    }
+
+                    class Student extends Person {
+                        public constructor() {
+                            super();
+                            document.write("Student constructor<br/>");
+                        }
+                    }
+
+                    In this example, we will first get in the document "Person constructor" - which is the base class (Person) constructor.
+                    And then we will get in the document "Student constructor" - which is the derivative class (Student) constructor.
+            
+        - Calling to a base class constructor which receives params:
+            - Up until now, we saw that a call from the derivative class constructor to the base class constructor is created using 'super()', which the brackets remain empty - meaning, that the base class constructor isn't getting any parameters.
+                - In a case where the base class constructor is receiving parameters, we need to add them up into the 'super()' brackets, otherwise we will get an error.
+                - For example:
+                    class Person {
+                        public age: number;
+                        public constructor(age: number) {
+                            this.age = age;
+                        }
+                    }
+
+                    class Student extends Person {
+                        public grade: number;
+                        public constructor(age: number, grade:number) {
+                            super(age);
+                            this.grade = grade;
+                        }
+                    }
+
+                    When calling the derivative class:
+                        let student: Student = new Student(17,100)
+                                                              age,grade  
+
+            Note - in the inheritance hierarchy, all the constructors will be executed by order. From the most base class constructor, until the constructor from which we created the objet.
+            
+        - Calling a function of the base class from the derivative class:   
+            - Using the reserved word 'super', we can also get access to function of the base class within the derivative class.
+            - An example:
+                    class A {
+                        public funcA(): void {
+                            document.write("funcA <br/>");
+                        }
+                    }
+
+                    class B extends A {
+                        public funcB(): void {
+                            super.funcA();
+                            document.write("funcB <br/>");
+                        }
+                    }
+
+                    class C extends B {
+                        public funcC(): void {
+                            super.funcB();
+                            document.write("funcC <br/>");
+                        }
+                    }
+
+                    let c: C = new C();
+                    c.funcC();
+                Here in the document we will get: 'funcA', then in the row after 'funcB', and finally in the next row we will get 'funcC'.
+    /// Overriding ///
+        - When the derivative classes execute 're-declare' and 're-implement' to a function from the base class, they can extend the execution which was defined in the base class, and add access from the function to new characteristics which exists only in the derivative classes, or to add application and logic functions which have personal fit to the derivative classes.
+        - This state is called 'override' - which is basically overriding functions.
+        - Overriding functions can be done in the next terms:
+            1. Both in the base and the derivative classes - when the name of the function is the same.
+            2. Both in the base and the derivative classes - when the returned value from the function will be from the same type.
+            3. Both in the base and the derivative classes - when the parameters which are being accepted to the function are from the same type.
+        - There are several cases where we can create public functions with the same name, even though we didn't meet the two last rules, but those cases are exceptional - which means it's unusual to use them in the industry.
+        - An example:
+                class Food {
+                    public print(): void {
+                        document.write("Food class <br/>");
+                    }
+                }
+
+                class Vegetable extends Food {
+
+                }
+
+                let vegetable1: Vegetable = new Vegetable();
+                vegetable1.print();
+        Here the 'Food class' will be printed on the document - which is the 'print()' function that came from the base class.
+        - Another example:
+                class Food {
+                    public print(): void {
+                        document.write("Food class <br/>");
+                    }
+                }
+
+                class Vegetable extends Food {
+                    public print(): void { // This is overriding of the 'print()' function that came from the base class.
+                        document.write("Vegetable class <br/>");
+                    }
+                }
+
+                let vegetable1: Vegetable = new Vegetable();
+                vegetable1.print();
+            Here the 'Vegetable class' will be printed on the document - which is the 'print()' function that came from the derivative class - this is basically an overriding.
+            Meaning:
+                - Object from type Food (from the base class), will execute the function 'print()' which is within the Food class.
+                - Object from type Vegetable (derivative class), will execute the function 'print()' which is within the Vegetable class - this is why it's called 'override' - if in the derivative class there wasn't a 'print()' function, we would get the output of the 'print()' function that came from the base class - which in this case is the Food class.
+                - By creating the 'print()' function in the derivative class, we override the output of the base class.
+        - How can we get access from the derivative class to the 'print()' function of the base class?
+            - Here, the reserved word 'super' will become helpful, and with it we can get access from the derivative class to the 'print()' function of the base class.
+                - Here is an example:
+                    class Food {
+                        public print(): void {
+                            document.write("Food class <br/>");
+                        }
+                    }
+
+                    class Vegetable extends Food {
+                        public print(): void { 
+                            super.print();
+                            document.write("Vegetable class <br/>");
+                        }
+                    }
+                    let vegetable1: Vegetable = new Vegetable();
+                    vegetable1.print();
+                Here we will first get 'Food class' and in the next column we will get 'Vegetable class'.
+            Note - we can't override functions with 'private' accessability.

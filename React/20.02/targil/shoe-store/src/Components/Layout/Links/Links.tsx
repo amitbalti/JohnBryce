@@ -1,3 +1,4 @@
+import Clock from "../../MyComponents/Clock/Clock";
 import "./Links.css";
 import LinksData from "./LinksData/LinksData";
 
@@ -22,6 +23,8 @@ function Links(): JSX.Element {
   ];
   return (
     <div className="Links">
+      <Clock />
+
       <h1 className="headTitle">לינקים מומלצים לנעליים</h1>
       <h3>
         {links.map((link) => (
