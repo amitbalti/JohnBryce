@@ -1,4 +1,29 @@
-/* body{} */
+/* Choose the fonts */
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Titillium+Web:wght@300&family=Tilt+Neon&family=Orbitron:wght@500&family=Righteous&family=Tourney:ital,wght@1,200&display=swap");
+
+body {
+  /* font-family: "Nunito", sans-serif; */
+  /* font-family: "Righteous", cursive; */
+  /* font-family: "Tourney", cursive; */
+  /* font-family: "Tilt Neon", cursive; */
+
+  font-family: "Orbitron", sans-serif;
+}
+
+h1 {
+  font-family: "Tourney", cursive;
+  font-size: 60px;
+  position: fixed;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-family: "Tilt Neon", cursive;
+}
+
+h5 {
+  font-family: "Titillium Web", sans-serif;
+}
 
 #header {
   padding: 30px;
@@ -6,12 +31,95 @@
   color: #23b574;
   font-size: 20px;
   width: auto;
-  height: 25%;
+  height: 130px;
+  position: relative;
 }
 
 .headerImg {
-  width: 130px;
+  width: 100px;
   float: right;
-  height: 129px;
+  height: 95px;
   border-radius: 10px;
+  position: relative;
 }
+
+.wholeBar {
+  width: 85%;
+  text-align: center;
+  float: left;
+}
+
+.navBar {
+  display: flex;
+  width: 40%;
+  justify-content: space-evenly;
+  text-align: center;
+  float: left;
+  margin-top: 3%;
+}
+
+.searchBar {
+  justify-content: flex-end;
+  float: right;
+  margin-top: 3%;
+}
+
+nav {
+  color: #23b574;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: black;
+  border-radius: 30px;
+  border: 1px solid black;
+  padding: 7px;
+}
+
+nav:hover {
+  color: black;
+  background-color: #23b574;
+  border: 1px solid #23b574;
+  cursor: pointer;
+}
+
+.searchBtn {
+  color: #23b574;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: black;
+  border-radius: 30px;
+  border: 2px solid black;
+  padding: 7px;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+}
+
+.searchBtn:hover {
+  color: black;
+  background-color: #23b574;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.searchInp {
+  border-radius: 20px;
+  padding: 7px;
+  text-align: center;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+}
+
+#allCoins {
+  width: 80%;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 1/3 */
+}
+
+#allCoins div {
+  border: 1px solid lightgray;
+  float: left;
+}
+
+/* .moreInfoBtn {
+  background-color: blue;
+} */

@@ -7,7 +7,7 @@ function Footer(this: any): JSX.Element {
   return (
     <div className="Footer">
       <h2>
-        &copy; כל הזכויות שמורות - מוישה אופניק אתרים | | <span>{year}</span>
+        &copy; כל הזכויות שמורות - עמית בלטריסקי | <span>{year}</span>
       </h2>
     </div>
   );
