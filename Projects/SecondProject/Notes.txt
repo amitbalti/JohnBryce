@@ -1,0 +1,3 @@
+1. Make everything to look good also in smaller screens - phone and ect.
+2. Make the image in the header section to stay in the right even if the console is open.
+3. Make the top bar and the nav bar and the search bar stay where they are when sliding the page down and up.
