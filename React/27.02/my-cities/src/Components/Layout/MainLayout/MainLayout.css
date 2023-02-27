@@ -1,0 +1,25 @@
+.MainLayout {
+  height: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 15% 75% 10%;
+  /* 15 - on top, 80 - in the middle, 5 - on the bottom of the page */
+  grid-template-columns: repeat(6, 1fr);
+  /* creating each square to 1/6 from the screen */
+}
+
+.MainLayout > header,
+.MainLayout > footer {
+  grid-column: span 6;
+  /* Taking 6 cells and making them into one - migrating them */
+}
+
+.MainLayout > main {
+  grid-column: span 5;
+}
+
+/* Making it to the whole component and all of it's inner components */
+.MainLayout,
+.MainLayout > * {
+  border: 1px solid black;
+}

@@ -1,0 +1,186 @@
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  #header {
+    padding: 30px;
+    background: black;
+    color: #23b574;
+    font-size: 20px;
+    width: 100%;
+    height: 105px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+  }
+
+  .headerImg {
+    width: 100px;
+    float: right;
+    height: 95px;
+    border-radius: 10px;
+    z-index: 1;
+    margin-top: -20px;
+    margin-right: -30px;
+  }
+
+  .wholeBar {
+    height: 50px;
+    width: 100%;
+    display: inline-block;
+    position: fixed;
+    top: 105px;
+    z-index: 1;
+    left: 0;
+    background-color: white;
+  }
+
+  nav {
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  nav li {
+    color: #23b574;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: black;
+    border-radius: 30px;
+    border: 1px solid black;
+    padding: 7px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    margin-left: 7px;
+    position: sticky;
+  }
+
+  nav li:hover,
+  .searchBtn:hover {
+    color: black;
+    background-color: #23b574;
+    border: 1px solid #23b574;
+    cursor: pointer;
+  }
+
+  form {
+    display: inline-block;
+    float: right;
+    margin-top: -63px;
+    margin-right: 7px;
+  }
+
+  .searchInp {
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 85px;
+    height: 35px;
+    display: inline-block;
+  }
+
+  .searchBtn {
+    color: #23b574;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: black;
+    border-radius: 30px;
+    border: 2px solid black;
+    padding: 7px;
+    margin-top: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Orbitron", sans-serif;
+  }
+
+  #allCoins {
+    width: 91%;
+    flex-direction: column;
+    display: grid;
+    margin-top: 180px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    grid-template-columns: repeat(3, 1fr); /* 1/3 */
+  }
+
+  #allCoins div {
+    border: 1px solid lightgray;
+    float: left;
+    padding: 15px;
+    height: 115px;
+  }
+
+  #allCoins h2 {
+    font-size: 18px;
+  }
+
+  #allCoins h5 {
+    font-size: 10px;
+  }
+
+  .moreInfoBtn {
+    margin-top: 2px;
+    bottom: 0;
+    width: 70px;
+    height: 25px;
+    padding: 2px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: "Tilt Neon", cursive;
+  }
+
+  /* The switch - the box around the slider */
+  .switch {
+    position: relative;
+    float: right;
+    width: 23px;
+    height: 15px;
+    margin-top: 3px;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    left: 3px;
+    bottom: 2.5px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+}
