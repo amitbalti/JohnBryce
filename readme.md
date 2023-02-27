@@ -8,5 +8,7 @@ We studied already:
 - Bootstrap
 - Basic JavaScript
 - Git
-
-This is a test
+- jQuery
+- AJAX
+- TypeScript
+- React
