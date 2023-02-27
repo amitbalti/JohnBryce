@@ -7,6 +7,7 @@ const addTask = () => {
   myTask.taskDesc = document.getElementById("taskDesc").value;
   var date = "";
   if (document.getElementById("desDate").value.length > 0) {
+    // How to make the date into the relevant format I want.
     date = new Date(document.getElementById("desDate").value)
       .toJSON()
       .split("T")[0]

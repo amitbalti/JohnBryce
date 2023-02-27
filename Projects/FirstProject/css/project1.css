@@ -123,16 +123,16 @@ input {
 .description::-webkit-scrollbar {
   height: 4px;
   width: 4px;
-  background: transparent;
+  background: lightgoldenrodyellow;
 }
 
 .description::-webkit-scrollbar-thumb:horizontal {
-  background: lightyellow;
+  background: lightslategrey;
   border-radius: 10px;
 }
 
 .description::-webkit-scrollbar-thumb:vertical {
-  background: lightyellow;
+  background: lightslategrey;
   border-radius: 10px;
 }
 
