@@ -1,0 +1,44 @@
+.DonationInfo ::placeholder {
+  text-align: center;
+  font-size: 15px;
+}
+
+.DonationInfo input,
+.DonationInfo textarea {
+  font-size: 20px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  padding: 8px;
+  margin-top: 2%;
+}
+
+.DonationInfo button {
+  width: 35%;
+  font-size: 20px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 20px;
+  cursor: pointer;
+  color: rgb(91, 83, 143);
+  font-weight: bold;
+  padding: 8px;
+  margin-top: 2%;
+}
+
+.DonationInfo button:hover {
+  background-color: rgb(91, 83, 143);
+  color: orange;
+  border: 1px solid rgb(91, 83, 143);
+}
+
+.DonationInfo form {
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+}

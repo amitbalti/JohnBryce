@@ -1,3 +1,8 @@
-1. Make everything to look good also in smaller screens - phone and ect.
-2. Make the image in the header section to stay in the right even if the console is open.
-3. Make the top bar and the nav bar and the search bar stay where they are when sliding the page down and up.
+Project Todo list:
+        1. Make the search bar work.
+        2. Make the info button to show usd, eur, ils.
+    DONE - 3. Make the user to select only 5 coins (using bootstrap modal).
+        4. Make live reports.
+        5. Make the about page.
+        6. Make every button in the nav bar to work.
+        7. Make everything to look good also in smaller screens - phone and ect. 

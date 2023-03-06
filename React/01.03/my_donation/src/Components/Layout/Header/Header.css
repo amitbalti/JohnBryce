@@ -1,0 +1,23 @@
+.Header {
+  padding-top: 9px;
+}
+
+.Header h1 {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.MenuItems {
+  color: rgb(91, 83, 143);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(91, 83, 143);
+}

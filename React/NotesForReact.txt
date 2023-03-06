@@ -24,6 +24,8 @@
     - We will use the arrow function if the function is short. 
     - If the function is long, we should use a regular function and implement it into the onChange.
 
-//// SyntaticEvents ////
+//// SyntacticEvents ////
 
-//// Polymorphizem ////
+//// Polymorphism ////
+
+//// Interface in React ////

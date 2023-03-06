@@ -216,4 +216,27 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.modalStyle {
+  color: darkorange;
+}
+
+.modal-title {
+  font-family: "Orbitron", sans-serif;
+  font-weight: bolder;
+  font-size: 23px;
+  width: 100%;
+  color: #f25e0f;
+}
+
+#removedCoin {
+  text-align: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  padding: 3px;
+  width: 80px;
+  text-transform: uppercase;
+}
+
 /* For phones: */
