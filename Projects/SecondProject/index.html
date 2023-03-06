@@ -23,17 +23,20 @@
       integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
       crossorigin="anonymous"
     ></script>
-    <!--
-       my js and css -->
+    <!-- my js and css -->
     <script refer src="js/crypto.js"></script>
-    <!-- <script refer src="js/coinModal.js"></script> -->
     <link rel="stylesheet" href="css/crypto.css" />
-    <link rel="stylesheet" href="css/phoneModal.css" />
-    <link rel="stylesheet" href="css/ipadModal.css" />
   </head>
   <body>
+    <!-- Loading spinner -->
+    <div id="progress-bar">
+      <!-- <img src="assets/coinAnimation.gif" alt="Loading..." /> -->
+      <img src="assets/giphyCoin.gif" alt="Loading..." />
+    </div>
+
     <div id="header">
-      <img src="img/cryptoniteLogo.png" class="headerImg" />
+      <!-- <img src="assets/cryptoniteLogo.png" class="headerImg" /> -->
+      <img src="assets/btcoin2.png" class="headerImg" />
       <h1>Cryptonite</h1>
     </div>
     <div class="wholeBar">
@@ -64,14 +67,6 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="coinModalLabel">Selection of coins</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
           </div>
           <div class="modal-body"></div>
           <div class="modal-footer">

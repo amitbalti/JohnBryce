@@ -1,5 +1,97 @@
 ///// React /////
+    - React is a popular JavaScript library for building UIs.
+    - React developed by Facebook and gained widespread adoption due to its performance, flexibility, and ease of use.
+    - React uses a component-based architecture where UI elements are broken down into reusable building blocks called components.
+    - Each component is responsible for rendering a part of the UI, and can be composed with other components to create more complex UIs.
+    - React uses a declarative (הצהרתי) approach to rendering, which means that you describe what you want your UI to look like, and React figures out how to make it happen. This makes it easier to reason about and debug your code.
+    - React is also highly extensible and has a large ecosystem of third-party libraries and tools. 
+    - React is used by many popular websites and applications, including Facebook, Instagram, Airbnb, and Dropbox.
+    - React is the most popular SPA technology.
+    - React knows when a change was occurring and what should be updated in the DOM.
 
+    //// SPA ////
+        /// What is SPA? ///
+            - SPA is a Single Page Application.
+            - SPA is a web application that loads a single HTML page and dynamically updates the content as the user interacts with the application. 
+            - Instead of navigating to different pages, the user stays on the same page and the application updates the content using TypeScript (or JavaScript).
+            - React is often used to build SPAs because it provides a simple and efficient way to manage complex UI components.
+            - React SPAs typically have a main component that renders the entire application. When the user interacts with the application, React updates the component tree and re-renders the component with the new state.
+            - One of the key benefits of React SPA is its fast performance. 
+                - Because the application only needs to load once, subsequent interactions with the application are much faster than a traditional website that requires a full page reload for each interaction.
+            - Another benefit of React SPA is the ability to create complex UIs with reusable components.
+                - React components can be composed and reused across different parts of the application, making it easier to maintain and update the code.
+            - To build a React SPA, you typically use a router to handle the different URLs and routes within the application. 
+                - React Router is a popular library for managing routing in React SPAs.
+
+    //// React Components ////
+        - Components are the building blocks of UIs.
+            - They are like small, reusable pieces of code that you can use to create a larger application.
+        - A component can be thought of as a self-contained module that performs a specific function and can be composed with other components to create a complete UI.
+        - There are two types of components in React:
+            1. Functional components.
+                - Functional components are simpler and more lightweight compared to class components.
+                - Functional components are just JavaScript functions that accepts properties (or 'props') as input and return React elements as output.
+                - They are easy to write and can be very efficient, especially for simpler components.
+                - Functional components are typically used when you don't need to manage state or use lifecycle methods.
+                - Functional components are also useful for creating reusable UI components that don't need to maintain any state. 
+                - Here is an example:
+                    function Greeting(props) {
+                        return <h1>Hello, {props.name}!</h1>;
+                    }
+            2. Class components.
+                - Class components are more complex and are written ad ES6 classes that extend the 'React.Component' class.
+                - They can have state, and can use lifecycle methods to manage their behavior.
+                - Class components are typically used when you need to manage state or use lifecycle methods. 
+                - They are also useful for creating components that have more complex behavior and logic.
+                - Here is an example of class component that counts the number of seconds:
+                    class Timer extends React.Component {
+                        constructor(props) {
+                            super(props);
+                            this.state = { seconds: 0 };
+                        }
+
+                        componentDidMount() {
+                            this.interval = setInterval(() => {
+                            this.setState({ seconds: this.state.seconds + 1 });
+                            }, 1000);
+                        }
+
+                        componentWillUnmount() {
+                            clearInterval(this.interval);
+                        }
+
+                        render() {
+                            return <div>Seconds: {this.state.seconds}</div>;
+                        }
+                    }
+                - In this example, the 'Timer' class is a class component that initializes its state with a 'seconds' property and starts a timer user 'componentDidMount'. 
+                    - The timer updates the 'seconds' property every second by calling 'setState'. 
+                    - The 'componentWillUnmount' method is used to clean up the timer when the component is removed from the DOM.
+                    - The 'render' method returns a 'div' element that displays the current number of seconds.
+        
+        - In summary, functional components are simpler and more lightweight, while class components are more complex and offer more functionality. 
+        - Both types of components can be used together to create more complex UIs.
+                
+
+                
+        - Components are like functions or classes in other programming languages, and they are responsible for rendering part of the UI. 
+        - In React, a component can be either a function component or a class component.
+
+        - A function component is a JavaScript function that accepts props as an argument and returns a React element.
+            Here is an example of a simple function component:
+                type GreetingProps = {
+                    name: string;
+                }
+
+                const Greeting = (props: GreetingProps) => {
+                    return <h1>Hello, {name}!</h1>;
+                }
+            In this example, the 'Greeting' component accepts a prop called 'name' of type 'string'. The 'name' prop is passed as an argument to the function component, and used to display a personalized greeting.
+        
+        - Components can also have state, which is a way to store and manage data within a component. 
+        - State is typically used to represents data that can change over time, such as form inputs of user interactions.
+
+    
 //// Hooks ////
     - useState
     - useEffect
