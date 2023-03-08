@@ -13,7 +13,7 @@ function SingleDonation(props: SingleProps): JSX.Element {
         {props.donationSum === 0 ? "Other" : props.donationSum}
       </div>
       <br />
-      <button onClick={() => navigate(`/info/${props.donationSum}`)}>
+      <button onClick={() => navigate(`/info/${props.donationSum}/0/0/0`)}>
         Donate
       </button>
     </div>

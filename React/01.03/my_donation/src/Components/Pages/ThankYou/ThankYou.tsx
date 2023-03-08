@@ -8,6 +8,8 @@ function ThankYou(): JSX.Element {
       <h1>Goodbye, and thanks for the fish</h1>
       <hr />
       <button onClick={() => navigate("/")}>To Home Page...</button>
+      <br />
+      <button onClick={() => navigate("/list")}>To Our Donation List...</button>
     </div>
   );
 }

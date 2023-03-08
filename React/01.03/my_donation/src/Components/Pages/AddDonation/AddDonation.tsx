@@ -6,9 +6,8 @@ function AddDonation(): JSX.Element {
 
   return (
     <div className="AddDonation">
-      <h1>Add Donation</h1>
       {paymentSums.map((item) => (
-        <SingleDonation donationSum={item} />
+        <SingleDonation key={item} donationSum={item} />
       ))}
     </div>
   );
