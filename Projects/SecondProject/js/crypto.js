@@ -2,27 +2,33 @@ const coinsUrl = "https://api.coingecko.com/api/v3/coins/list";
 const coinsRateUrl = "https://api.coingecko.com/api/v3/coins";
 
 async function getAllCoins() {
-  $("#progress-bar").show(); // show progress bar
-  return await $.get(coinsUrl, {
-    beforeSend: function () {
-      $("#progress-bar").show();
-    },
-    complete: function () {
-      $("#progress-bar").hide();
-    },
-  });
+  // $("#progress-bar").show(); // show progress bar
+  return await $.get(
+    coinsUrl
+    //   , {
+    //   beforeSend: function () {
+    //     $("#progress-bar").show();
+    //   },
+    //   complete: function () {
+    //     $("#progress-bar").hide();
+    //   },
+    // }
+  );
 }
 
 async function getAllCoinsRate() {
-  $("#progress-bar").show(); // show progress bar
-  return await $.get(coinsRateUrl, {
-    beforeSend: function () {
-      $("#progress-bar").show();
-    },
-    complete: function () {
-      $("#progress-bar").hide();
-    },
-  });
+  // $("#progress-bar").show(); // show progress bar
+  return await $.get(
+    coinsRateUrl
+    //   , {
+    //   beforeSend: function () {
+    //     $("#progress-bar").show();
+    //   },
+    //   complete: function () {
+    //     $("#progress-bar").hide();
+    //   },
+    // }
+  );
 }
 
 // async function findCoins(coinName) {
