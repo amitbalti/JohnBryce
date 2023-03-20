@@ -93,6 +93,7 @@
 
     
 //// Hooks ////
+Functions of React that are built in and meant to help building stuff.
     - useState
     - useEffect
 
