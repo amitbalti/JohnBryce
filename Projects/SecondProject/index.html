@@ -11,6 +11,8 @@
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"
     ></script>
+    <!-- Charts -->
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -29,10 +31,9 @@
   </head>
   <body>
     <!-- Loading spinner -->
-    <!-- <div id="progress-bar"> -->
-    <!-- <img src="assets/coinAnimation.gif" alt="Loading..." /> -->
-    <!-- <img src="assets/giphyCoin.gif" alt="Loading..." /> -->
-    <!-- </div> -->
+    <div id="progress-bar">
+      <img src="assets/giphyCoin.gif" alt="Loading..." />
+    </div>
 
     <div id="header">
       <!-- <img src="assets/cryptoniteLogo.png" class="headerImg" /> -->
@@ -42,17 +43,79 @@
     <div class="wholeBar">
       <nav class="navBar">
         <ul>
-          <li>Home</li>
-          <li>Live Reports</li>
-          <li>About</li>
+          <li onclick="showMain()">Home</li>
+          <li onclick="showLiveRepo()">Live Reports</li>
+          <li onclick="showAbout()">About</li>
         </ul>
-        <form class="searchBar">
+        <div class="searchBar">
           <input type="text" placeholder="Which coin?" class="searchInp" />
-          <button class="searchBtn">Search</button>
-        </form>
+          <button id="searchBtn" class="searchBtn">Search</button>
+        </div>
       </nav>
     </div>
-    <div id="allCoins"></div>
+
+    <div id="wrapper" class="coins">
+      <div id="allCoins"></div>
+      <div id="liveReports">
+        <h1>My Coins - Live Report</h1>
+        <div id="chartContainer"></div>
+      </div>
+      <div id="about" class="aboutMain">
+        <h1>About Cryptonite</h1>
+        <div class="allAbout">
+          <!-- <div class="card">
+            <img
+              class="card-img-top"
+              src="./assets/myImg.JPG"
+              alt="Card image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Amit Balteriski</h5>
+              <p class="card-text">
+                My name is Amit Balteriski, I am 25 years old, Originally from
+                Ra'anana and currently living in Netanya.
+              </p>
+            </div>
+          </div> -->
+          <div class="card img-fluid" style="width: 200px">
+            <img
+              class="card-img-top myImg"
+              src="./assets/myImg.JPG"
+              alt="Card image"
+              style="width: 100%"
+            />
+            <div class="card-img-overlay">
+              <h4 class="card-title">Amit Balteriski</h4>
+              <p class="card-text">
+                My name is Amit Balteriski, I am 25 years old, Originally from
+                Ra'anana and currently living in Netanya.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <h3>About the project:</h3>
+            <p>
+              This project is meant to display 100 coins from
+              "https://api.coingecko.com/api/v3/coins/list" api. <br />
+              The user can choose up to 5 coins, which their live rate data,
+              will be displayed in the
+              <span class="withinTextLiveRepo" onclick="showLiveRepo()"
+                >Live Reports</span
+              >
+              section. <br />
+              Also, in the
+              <span class="withinTextHome" onclick="showMain()">Home</span>
+              page, all the 100 coins will be dispalyed, and in the 'More Info'
+              button the user can see the coin rates in USD ($), EURO (€), and
+              ILS (₪).
+              <br />
+              Finally, the user can also search for certain coins in the top
+              search bar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Modal -->
     <div
