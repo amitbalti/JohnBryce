@@ -2,10 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Titillium+Web:wght@300&family=Tilt+Neon&family=Orbitron:wght@500&family=Righteous&family=Tourney:ital,wght@1,200&display=swap");
 
 body {
-  /* font-family: "Nunito", sans-serif; */
-  /* font-family: "Righteous", cursive; */
-  /* font-family: "Tourney", cursive; */
-  /* font-family: "Tilt Neon", cursive; */
   font-family: "Orbitron", sans-serif;
 }
 
@@ -94,6 +90,15 @@ nav a {
 nav li:hover,
 .searchBtn:hover,
 nav a:hover {
+  color: black;
+  background-color: #23b574;
+  border: 1px solid #23b574;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+nav li:focus,
+nav a:focus {
   color: black;
   background-color: #23b574;
   border: 1px solid #23b574;
@@ -259,9 +264,15 @@ input:checked + .slider:before {
 }
 
 #liveReports h1 {
+  font-family: "Righteous", cursive;
   font-size: 50px;
-  color: #23b574;
   text-align: center;
+  background-image: linear-gradient(45deg, green, black);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 
 #chartContainer {
@@ -281,33 +292,29 @@ input:checked + .slider:before {
 .allAbout {
   display: flex;
   flex-wrap: wrap;
+  font-size: 23px;
 }
-/* .myImg {
-  width: 10%;
-  border-radius: 50px;
-  justify-content: center;
-  display: inline;
-} */
 
 .card {
   width: 100px;
   border-radius: 30px;
+  margin-left: 10px;
 }
 
 .card-img-top {
   width: 100%;
   border-radius: 30px;
-  margin-left: 10px;
 }
 
 .card-title {
   color: white;
   width: 100%;
+  font-size: 25px;
 }
 
 .card-text {
   color: white;
-  font-size: 15px;
+  font-size: 18px;
   width: 100%;
 }
 
@@ -318,7 +325,11 @@ input:checked + .slider:before {
   width: 100%;
 }
 
-#about h1 {
+.col-md-8 > h3 {
+  text-decoration: underline;
+}
+
+#about > h1 {
   font-family: "Righteous", cursive;
   font-size: 50px;
   text-align: center;
@@ -355,6 +366,7 @@ input:checked + .slider:before {
 .withinTextHome:active {
   color: purple;
 }
+
 .modal-title {
   font-family: "Orbitron", sans-serif;
   font-weight: bolder;
@@ -387,13 +399,21 @@ input:checked + .slider:before {
 .infoBtnRate {
   text-transform: uppercase;
   color: #23b574;
-  font-weight: bolder;
 }
 
 .collapse {
-  margin-top: 55px;
+  margin-top: 15px;
   margin-bottom: 0;
+  padding: 0%;
   float: left;
+  width: 100%;
+  text-align: center;
+}
+
+.border-info {
+  width: 100%;
+  padding: 0%;
+  text-align: center;
 }
 
 .removed {
@@ -446,10 +466,8 @@ input:checked + .slider:before {
   }
 
   .wholeBar {
-    height: 92px;
+    height: 105px;
     width: 100%;
-    display: inline-block;
-    position: fixed;
     top: 100px;
     z-index: 1;
     left: 0;
@@ -457,7 +475,7 @@ input:checked + .slider:before {
   }
 
   nav {
-    justify-content: space-evenly;
+    justify-content: space-between;
     text-align: center;
     align-items: center;
   }
@@ -466,7 +484,6 @@ input:checked + .slider:before {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
   }
 
   nav li {
@@ -480,7 +497,8 @@ input:checked + .slider:before {
     margin-bottom: 25px;
     margin-top: 10px;
     margin-right: 5px;
-    width: 31%;
+    width: 25%;
+    height: auto;
     position: sticky;
   }
 
@@ -492,11 +510,11 @@ input:checked + .slider:before {
     cursor: pointer;
   }
 
-  /* .searchBar {
-    float: right;
+  .searchBar {
+    float: left;
     margin-top: -63px;
     margin-right: 7px;
-  } */
+  }
   .searchInp {
     font-family: "Orbitron", sans-serif;
     font-size: 10px;
@@ -506,10 +524,9 @@ input:checked + .slider:before {
     border-radius: 20px;
     cursor: pointer;
     margin-top: 50px;
-    margin-left: 7px;
+    margin-left: 10px;
+    float: left;
     width: 80%;
-    height: 35px;
-    display: inline-block;
   }
 
   .searchBtn {
@@ -520,12 +537,11 @@ input:checked + .slider:before {
     border-radius: 30px;
     border: 2px solid black;
     padding: 7px;
-    margin-top: 51px;
-    margin-left: 6px;
-    width: 35%;
-    height: 50%;
+    margin-top: 50px;
+    margin-right: -60px;
+    width: 45%;
     cursor: pointer;
-    display: inline-block;
+    float: right;
     font-family: "Orbitron", sans-serif;
   }
 
@@ -611,9 +627,49 @@ input:checked + .slider:before {
   .collapse {
     margin-top: 5px;
   }
+
+  .aboutMain {
+    margin-top: 200px;
+  }
+
+  .allAbout {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 20px;
+  }
+
+  .card {
+    width: 100px;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .col-md-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .col-md-8 > h3 {
+    text-align: center;
+  }
+
+  /* #about > h1 {
+    font-family: "Righteous", cursive;
+    font-size: 50px;
+    text-align: center;
+    background-image: linear-gradient(45deg, green, black);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  } */
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
   .collapse {
     margin-top: 5px;
   }
