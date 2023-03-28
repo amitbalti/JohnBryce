@@ -40,7 +40,7 @@ router.post(
 // URL => http://localhost:8080/deleteVideo/zeev - video not found - 404
 // axios.delete("http://localhost:8080/deleteVideo/5") <= react
 router.delete(
-  "/deleteVideo/:id",
+  "deleteVideo/:id",
   async (request: Request, response: Response, next: NextFunction) => {
     const videoID = +request.params.id || null;
     if (videoID === null || videoID < 1) {
@@ -48,12 +48,13 @@ router.delete(
     }
     console.log("Deleting: ", videoID);
     response.status(204); // DELETE - delete succesfuly status - 204
+    // When using status code 204 - I will not return any response.
   }
 );
 
 // GET - Getting succesfuly status - 200
 router.get(
-  "/videoList",
+  "videoList",
   async (request: Request, response: Response, next: NextFunction) => {
     const body = request.body;
     console.log("Request Body: ", body);
@@ -63,7 +64,7 @@ router.get(
 
 // GET - Getting succesfuly status - 200
 router.get(
-  "/videoSearch",
+  "videoSearch",
   async (request: Request, response: Response, next: NextFunction) => {
     const body = request.body;
     console.log("Request Body: ", body);
@@ -73,10 +74,12 @@ router.get(
 
 // PUT - updating succesfuly status - 200
 router.put(
-  "/videoUpdate",
+  "videoUpdate",
   async (request: Request, response: Response, next: NextFunction) => {
     const body = request.body;
     console.log("Request Body: ", body);
     response.status(200).json("{ 'msg':'your video was updated' }"); // PUT - updating succesfuly status - 200
   }
 );
+
+export default router;

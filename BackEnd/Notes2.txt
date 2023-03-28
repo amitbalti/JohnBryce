@@ -23,3 +23,24 @@ Between the Routes and the Logic, we have the MiddleWare.
 Between the Logic and the Logic "EndPoints", we have DAL - Data Abstract Layer.
     - Using DAL - when the signal will be "released", the switch will be very very fast, if I will work correctly and using DAL.
     - We are using DAL so we can switch between different sql softwares. 
+
+When using status code 204 - I will not return any response (This code is for delete method).
+
+When sending a request to the server, the server will send a response.
+    - The response that is returned is divided into three main parts.
+        1. Header.
+        2. Body - the info I would like to receive.
+        3. Status.
+    - Sometimes we won't get any body. 
+        - For example, when using DELETE, we won't get a body in a response.
+        - BUT, we still can add a body in a response of the DELETE method, for example: "video was deleted successfully".    
+
+Once I have Route, I am turning to the Logic.
+
+JWT - JSON Web Token.
+
+   Req     
+-> REST    
+-> BackEnd 
+-> MiddleWare - before you reach the Logic, I will check all the requests and I will check if I need to send the request to the Logic or not, and by that I can save a lot of money, also, I may create a new token 
+-> Logic.

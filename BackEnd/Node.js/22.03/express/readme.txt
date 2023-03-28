@@ -36,7 +36,8 @@ JavaScript library that provides utility functions for arrays, numbers, objects,
 The create all this neccasery files and docs:
     Files: 
         - Logic.
-        - MiddleWare.
+        - MiddleWare - inside:
+            - A doc when a page isn't found - route-not-found.ts
         - Models.
         - Routes.
         - Utils - inside:
