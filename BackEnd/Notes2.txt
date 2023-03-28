@@ -1,0 +1,25 @@
+The Frontend is sending us requests toward the BackEnd.
+Those requests are called REST requests.
+Finally we will get a response as well.
+
+The REST requests that are being sent from the Frontend are being sent to the Routes in the Backend.
+    Examples for Routes:
+        - /api/2/getAllCar         - POST
+        - /api/2/getCar?id=1113334 - GET
+
+From the Routes, all the requests will be sent to the Logic.
+    - Meaning - the Routes are visible to the client and the Logic is visible only to the developer.
+    - I will never make Logic visible to the client.
+    - Routes = EndPoints.
+    - The Logic can be:
+        - Another API.
+        - DataBase (mysql, noSql-mongoDB).
+        - Writing to the HardDisk.
+        - And many more.
+
+Between the Routes and the Logic, we have the MiddleWare.
+    - The MiddleWare responsibility is to intercept (ליירט) the request, check the request correctness, extract data that I need for later, and to continue (next). 
+
+Between the Logic and the Logic "EndPoints", we have DAL - Data Abstract Layer.
+    - Using DAL - when the signal will be "released", the switch will be very very fast, if I will work correctly and using DAL.
+    - We are using DAL so we can switch between different sql softwares. 

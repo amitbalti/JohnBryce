@@ -5,7 +5,6 @@ class Song {
   public songName: string;
   public songImg: string;
   public category: string;
-  public videoFile: string;
 
   constructor(
     url: string,

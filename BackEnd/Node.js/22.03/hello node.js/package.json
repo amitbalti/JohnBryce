@@ -1,0 +1,17 @@
+{
+  "name": "22.03",
+  "version": "1.0.0",
+  "description": "npm i [package name] npm i --save-dev [package] npm i -g [package] npm i [packageName]@latest npm i [packageName]@4.5.2 // a specific version ------------------------------------------------ yarn ------------------------------------------------ npm init -y // creating package.json npm i --save-dev nodemon npm i --save-dev ts-node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon --exec ts-node firstFile.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.21",
+    "ts-node": "^10.9.1"
+  }
+}

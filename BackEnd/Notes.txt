@@ -1,0 +1,97 @@
+Front end - client side.
+    We are using: 
+        - Web.
+        - React library.
+        - Angular.
+        - React Native.
+
+In between:
+    Rest:
+        The client side send request to the server side.
+        The server side send response to the client side.
+            - Which includes: header, body and - (2XX - OK, 4XX - errors in the client side, 5XX - errors in the server side).
+            - JWT - security token.
+Back end - server side.
+    We are using:
+        - NodeJS:
+            - SQL - mySQL.
+        - Express:
+            - no-SQL - mongoDB. - Database.
+        - S3 - simple storage server - place to storage on the cloud.
+        - Route53 - servers.
+        - API - external.
+        - Docker - includes the both sides.
+
+///// BackEnd ///// 
+    /// Real-time web application with node.js ///
+    /// Node.js ///
+        - Open source system.
+        - Cross platform language.
+        - Written with JavaScript/TypeScript.
+
+        // console.log() //
+        // Node.js syntax // 
+            - Node.js is a form of JavaScript.
+            - JavaScript has been standardized as EXMAScript.
+            - JavaScript is NOT related to Java.
+            - JavaScript features:  
+                - Prototype-based.
+                -First-class functions.
+                - Multi-par
+            - Comments - use // for line comments.
+            - Use /* .... */ for multiple-line comments.
+            - Variables.
+            - Declate with the var or let commands.
+            - Variable type is implied:
+                -
+            - Primitive variable types - 
+            - Arrays and Object.
+                - Arrays are defined using a set of variables or values in 
+                -
+                -
+            - Boolean Operations.
+                -
+                -
+                -
+                -
+                -
+                -
+                -
+                -
+            - if-Else
+                -
+                -
+                -
+                -
+                -
+            - Functions 
+                -
+                -
+                -
+                -
+            
+        // Debugging //
+            -
+    
+    /// Modules ///
+        - Pages: 38-
+
+        40:
+        - Every Node.js file is essentially a module.
+        -
+        - Only variables and functions that are exported may be used outside the file:
+            Example:
+                module.exports = {
+                    ex_sum: function(a,b) { return in_sum(a,b) }
+                };
+        43:
+        - Costum
+
+        44:
+        - The Node.js Package Manager (npm) is used to install 
+
+
+// Web server //
+    - Every time we are going into a website, we are approaching the web server.
+    - Every site we are approaching, is approached via IP.
+    
