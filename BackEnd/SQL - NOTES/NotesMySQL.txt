@@ -1,0 +1,21 @@
+SELECT   *     FROM    countrylanguage    WHERE            countrycode='ETH' 
+select   all   from    main folder        which column     which thing  type of language
+
+SELECT count(language) FROM countrylanguage WHERE language='Dutch' <== will find to me how many countries are talking in Dutch.
+
+SELECT count(language) as total FROM countrylanguage WHERE language='Dutch' <== will give me a name to see how many countries are talking in Dutch = with the name 'total'
+
+I can also break the query by lines:
+    SELECT count(language) as total 
+    FROM countrylanguage 
+    WHERE language='Arabic'
+
+
+!!!!!!!אוהבים לשאול את זה בראיונות עבודה!!!!!!!!
+CRUD:
+    Create
+    Read
+    Update
+    Delete
+
+!!!!!!!אוהבים לשאול את זה בראיונות עבודה!!!!!!!!

@@ -1,0 +1,92 @@
+/// Data ///
+    - Long story short - files:
+        - Field - one significant data.
+            - Examples: id, name, height.
+            - Includes one defined data, which determines the resereved area for it in the memory.
+        - Record - includes a few fields which have logic connection between them.
+            - Examples: student records, bank account records, etc.
+        - File - includes a few records from a certain type.
+            - Examples: students file, employees file, etc.
+        - DataBase - includes a few files which is used for a info system in a company.
+
+/// Real Word           VS   Database ///
+    Entity              =    Record (person, place, event)
+    Field (key field)   =    Characteristic - setting or description of the entity (ID)
+    File                =    A group of similar entities 
+
+    Example:
+        - In a table which includes a group of students which includes their student ID, name and surname, year of birth, and a phone number.
+            - In this case, every line with a student details, is an example for RECORD.
+            - In this case, every column and characteristic is example for FIELD.
+            - In this case, each student number is the KEY FIELD.
+            - In this case, the entire table is like a FILE.
+
+/// Key Field ///
+    Key field - make a certain field in the database to be unique and will prevent duplications.
+        - A field which exists for every record, and which allow recognition for the specific record.
+        - Used to pull data, sorting and updating.
+        - A key field may be a combination of a multiple fields.
+            - For example:  
+                - Grade: 89. Course Number: 121212. Student Number: 111111.
+                - Grade: 73. Course Number: 232323. Student Number: 111111.
+                - Grade: 81. Course Number: 121212. Student Number: 222222.
+            In this example, the key field is a combination of the course number and the student number.
+
+/// DBMS ///
+    DBMS - Database Management System:
+        - A system which taking care of managing Database, storage, pulling, and updating the data by various applications.
+            - For example, we have a bank which have a lot of data. 
+            The data may include clients data, savings data, loaning data, invesment data, and so on.
+            But each of the client have different data from the bank database. 
+            Meaning, there is no one client which is exposed to the entire bank database.
+
+/// Database Management Principles ///
+    - Separating the data from the progrems.
+    - Preventing duplicatation in the database.
+    - Flexibility: 
+        - Adjustment of database for different sizes of the organization (scalability).
+        - Adjustment for changes which are happened in the organization.
+    - Solutions for backup and recovery.
+    - Data reliability and integrity - by checking reasonableness and correctness check.
+    - Data security - by premission system.
+    - Sharing data between different applications.
+    - Centralized and integrated documentation by a data dictionary.
+    - Support for creating queries and reports.
+
+/// Logic Data Models ///
+    - Relational data models (table model):
+        - Showing data by tables, which maintain mutual relation using similar characteristics.
+        - Each table is called Relation, and it is binding the characteristics of entities.
+        - Similar characteristics in two tables constitute a relation.
+        - Pulling data by queries - SQL language.
+
+/// SQL ///
+    SQL - Structured Query Language:
+        - A standard language for creating queries in table databases.
+        - Includes simple actions which related to tables and fields.
+            - Select - selecting the columns.
+            - From - defining the relevant tables.
+            - Where - defining the conditions for pulling the data.
+        - Examples:
+            - SQL query for pulling the grades in course 121212.
+            - How to pull the students names which are studing for a lecturer which his private name is X. 
+/// ERD /// 
+    ERD - Data base diagram.
+    The structure of the tabled database using ERD:
+        1. Building ERD diagram.
+            - Identifing the relevant entities.
+            - Identifing and characteristing the relations between the entities.
+            - Identifing the characteristics of each entity and key characteristic.
+        2. Defining a table for each entity and a field for each characteristic.
+        3. Representing the relationships between the entities.
+
+
+Types of connections:
+    - 1:1 - one to one - single to single.
+        - Example: ID number of the partner is a civilian characteristic.
+    - 1:M - one to many.
+        - Example: University is a characteristic of a student.
+    - N:M - many to many.
+        - Example: A grade is a characteristic of the connection between a student and a course.
+
+
