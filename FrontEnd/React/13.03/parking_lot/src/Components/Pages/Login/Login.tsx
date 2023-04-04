@@ -19,7 +19,7 @@ function Login(): JSX.Element {
       <br />
       <br />
       <AccountBox style={{ fontSize: 40, margin: 10 }} />
-      <TextField label="Username" variant="outlined" />
+      <TextField label="User Name" variant="outlined" />
       <br />
       <br />
       <Password style={{ fontSize: 40, margin: 10 }} />
@@ -34,7 +34,7 @@ function Login(): JSX.Element {
         <Button
           color="primary"
           onClick={() => {
-            notify.success("Matan is in the house");
+            notify.success("You have logged in successfully!");
           }}
         >
           Login

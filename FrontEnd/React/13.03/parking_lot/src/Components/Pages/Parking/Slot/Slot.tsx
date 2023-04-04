@@ -8,6 +8,7 @@ interface carProps {
 
 function Slot(props: carProps): JSX.Element {
   const navigate = useNavigate();
+
   return (
     <div className="Slot Box">
       <h2>{props.carData.parkingNumber + 1}</h2>

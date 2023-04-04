@@ -7,11 +7,11 @@ function Home(): JSX.Element {
   const navigate = useNavigate();
   useEffect(() => {
     if (
-      localStorage.getItem("token") === null ||
+      localStorage.getItem("token") == null ||
       localStorage.getItem("token").length < 10
     ) {
-      //no login made yet
-      notify.error("Please Login");
+      // no login made yet
+      notify.error("Please login");
       navigate("/login");
     }
   }, []);
