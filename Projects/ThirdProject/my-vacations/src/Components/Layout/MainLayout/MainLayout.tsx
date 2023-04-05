@@ -13,9 +13,9 @@ function MainLayout(): JSX.Element {
       <main>
         <MainRouter />
       </main>
-      <footer>
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 }

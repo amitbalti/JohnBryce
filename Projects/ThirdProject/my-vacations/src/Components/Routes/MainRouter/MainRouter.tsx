@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import MainPage from "../../Layout/MainPage/MainPage";
+import About from "../../Pages/About/About";
 import AdminPage from "../../Pages/Admin/AdminPage/AdminPage";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
@@ -21,6 +22,7 @@ function MainRouter(): JSX.Element {
         <Route path="/addVacation" element={<AddVacation />} />
         <Route path="/editVacation" element={<EditVacation />} />
         <Route path="/vacationsReport" element={<VacationsReport />} />
+        <Route path="/about" element={<About />} />
         <Route path="/" element={<MainPage />} />
         {/* Continue Page404! */}
         <Route path="*" element={<Page404 />} />
