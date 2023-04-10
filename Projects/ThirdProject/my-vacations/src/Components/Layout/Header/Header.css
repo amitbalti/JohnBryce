@@ -1,10 +1,10 @@
 .Header {
+  margin-top: -13px;
 }
 
 a {
   text-decoration: none;
   color: black;
-  margin-top: -25px;
 }
 
 .topRight {
