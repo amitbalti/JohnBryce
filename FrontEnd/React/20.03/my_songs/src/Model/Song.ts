@@ -1,5 +1,3 @@
-import Cat from "./Cat";
-
 class Song {
   public url: string;
   public songName: string;

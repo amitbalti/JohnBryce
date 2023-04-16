@@ -3,6 +3,7 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import { useNavigate } from "react-router-dom";
 import cat from "../../../Model/Cat";
 import "./Categories.css";
+import Category from "../../../Model/Category";
 
 function Categories(): JSX.Element {
   const navigate = useNavigate();
@@ -10,8 +11,8 @@ function Categories(): JSX.Element {
     <div className="Categories">
       Categories
       <hr />
-      {cat.allCat().map((item) => (
-        <div>{item}</div>
+      {cat.allCat().map((item: Category) => (
+        <div>{item.name}</div>
       ))}
       <br />
       <br />
@@ -23,7 +24,11 @@ function Categories(): JSX.Element {
         >
           Add Song
         </Button>
-        <Button variant="contained" color="secondary">
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => navigate("/addCat")}
+        >
           Add Category
         </Button>
       </ButtonGroup>

@@ -6,9 +6,10 @@ import { useNavigate } from "react-router-dom";
 import cat from "../../../Model/Cat";
 import Song from "../../../Model/Song";
 import "./AddSong.css";
+import Category from "../../../Model/Category";
 
 function AddSong(): JSX.Element {
-  const apiKey = "AIzaSyBy1Zljo3_APSQWi_cdT7_N8pIYAgW8Q8I";
+  const apiKey = "AIzaSyCmnsJKtqLArOWjrLqhV3FBvIJ5GEE6lYY";
   const [songImg, setImg] = useState("");
   const [songName, setSongName] = useState("");
   const navigate = useNavigate();
@@ -19,8 +20,7 @@ function AddSong(): JSX.Element {
     formState: { errors },
   } = useForm<Song>();
 
-  const send = (userData: Song) => {
-    let songs: Song[] = [];
+  const send = async (userData: Song) => {
     console.log(userData);
     // Working with google cloud :)
     const songIdentifier = userData.url.split("=")[1];
@@ -28,32 +28,41 @@ function AddSong(): JSX.Element {
       .get(
         `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${songIdentifier}&fields=items(id%2Csnippet)&key=${apiKey}`
       )
-      .then((response) => {
-        setImg(response.data.items[0].snippet.thumbnail.default.url);
+      .then(async (response) => {
+        console.log(response);
+        setImg(response.data.items[0].snippet.thumbnails.default.url);
         setSongName(response.data.items[0].snippet.title);
-        userData.songImg = response.data.items[0].snippet.thumbnail.default.url;
+        userData.songImg =
+          response.data.items[0].snippet.thumbnails.default.url;
         userData.songName = response.data.items[0].snippet.title;
-        // console.log(response.data.items[0].snippet);
         console.log(userData);
-        // check if we have a key for songs in our localstorage
-        // if (localStorage.getItem("songs")) {
-        //   // the key exists
-        //   console.log("true");
-        //   let songs = JSON.parse(localStorage.getItem("songs"));
-        //   songs.push(userData);
-        //   localStorage.setItem("songs", JSON.stringify(songs));
-        // } else {
-        //   // we don't have the key
-        //   console.log("false");
-        //   let songs = [];
-        //   songs.push(userData);
-        //   localStorage.setItem("songs", JSON.stringify(songs));
-        // }
-        songs = localStorage.getItem("songs")
-          ? JSON.parse(localStorage.getItem("songs"))
-          : [];
-        songs.push(userData);
-        localStorage.setItem("songs", JSON.stringify(songs));
+        try {
+          const response = await fetch(
+            "http://localhost:8080/api/v1/videos/addVideo",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                url: userData.url,
+                songName: userData.songName,
+                songImg: userData.songImg,
+                category: +userData.category,
+                videoFile: userData.videoFile,
+              }),
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error("Failed to add song");
+          }
+
+          alert("Song added successfully!");
+        } catch (error) {
+          console.error(error);
+          alert("Failed to add song");
+        }
         navigate("/");
       });
   };
@@ -71,8 +80,8 @@ function AddSong(): JSX.Element {
         <br />
         <br />
         <Select style={{ width: 200 }} {...register("category")}>
-          {cat.allCat().map((item) => (
-            <MenuItem value={item}>{item}</MenuItem>
+          {cat.allCat().map((item: Category) => (
+            <MenuItem value={item.id}>{item.name}</MenuItem>
           ))}
         </Select>
         <br />

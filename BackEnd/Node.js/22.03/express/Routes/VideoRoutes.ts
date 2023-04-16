@@ -48,20 +48,6 @@ router.delete(
   }
 );
 
-// GET - created succesfuly status - 201
-router.get(
-  "/newCat/:catName",
-  async (request: Request, response: Response, next: NextFunction) => {
-    // console.log("in video routes");
-    // console.log(request.body.catName);
-    // const catName = request.body["name"];
-    // console.log(catName);
-    response
-      .status(201)
-      .json(await VideoLogic.addCategory(request.params.catName)); // 201 - created
-  }
-);
-
 // Get song by ID
 router.get(
   "/getSong/:id",
@@ -86,6 +72,20 @@ router.put(
 );
 
 /////////////////// categories ///////////////////
+// GET - created succesfuly status - 201
+router.get(
+  "/newCat/:catName",
+  async (request: Request, response: Response, next: NextFunction) => {
+    // console.log("in video routes");
+    // console.log(request.body.catName);
+    // const catName = request.body["name"];
+    // console.log(catName);
+    response
+      .status(201)
+      .json(await VideoLogic.addCategory(request.params.catName)); // 201 - created
+  }
+);
+
 router.delete(
   "/deleteCat/:id",
   async (request: Request, response: Response, next: NextFunction) => {

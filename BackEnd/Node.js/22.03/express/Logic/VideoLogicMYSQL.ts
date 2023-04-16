@@ -10,6 +10,7 @@ import { response } from "express";
 //one time running : create table songs, create table categories
 
 const addSong = async (newSong: Song) => {
+  console.log(newSong);
   const SQLcommand = `
     INSERT INTO youtube.songs 
     (url, songName, songImg, category, videoFile) 
