@@ -15,4 +15,5 @@ const ErrorHandler = (
   next(err);
 };
 
+export default ErrorHandler;
 // http://localhost:8080/api/v2/killMatan

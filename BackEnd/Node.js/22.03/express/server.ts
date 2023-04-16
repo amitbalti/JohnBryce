@@ -5,6 +5,9 @@ import fileUpload from "express-fileupload";
 import bodyParser from "body-parser";
 import router from "./Routes/VideoRoutes";
 import loginRouter from "./Routes/LoginRoutes";
+import config from "./Utils/Config";
+import logic from "./Logic/VideoLogicMYSQL";
+import ErrorHandler from "./MiddleWare/route-not-found";
 
 // Create server
 const server = express();
@@ -16,7 +19,7 @@ server.use(cors());
 server.use(express.json());
 
 // Where I will save the video files
-server.use(express.static("user_videos"));
+server.use(express.static("user_videos")); // static -
 
 // Enable file uploading, and create a path for the files if it not exists
 server.use(fileUpload({ createParentPath: true })); // make the option to create father folders.
@@ -41,10 +44,19 @@ server.use(bodyParser.json());
 
 // How to use the routes
 // all videos => route = videoList => full path "api/v1/videos/videoList"
-// all videos => http://localhost:3000/api/v1/videos/videoList
-server.use("api/v1/videos/", router);
-server.use("api/v1/users/", loginRouter);
+// all categories => http://localhost:8080/api/v1/videos/newCat/catName
+server.use("/api/v1/videos/", router); // When I will reach this route, it will get to the router.
+server.use("/api/v1/users/", loginRouter);
+
+// Create our tables if they don't exist
+console.log(`check if table exists...`);
+logic.createSongsTable();
+logic.createCategoriesTable();
 
 // Handle errors (route not found)
+server.use("*", ErrorHandler);
 
 // Start the server
+server.listen(config.WebPort, () => {
+  console.log(`listening on http://${config.mySQLhost}:${config.WebPort}`);
+});

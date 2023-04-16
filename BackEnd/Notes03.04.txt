@@ -1,0 +1,62 @@
+dal - data abstract layer
+When we are building the dal, we can send sql command and it will be executed.
+Meaning, we don't have to manage databasing at all.
+
+mySQL server community can hold up to 10 connections at once, top are 20 connections, not more then that, that's the limit.
+
+For the connection we need four things:
+    1. The host, for example: localhost:3030.
+    2. The user. The basic user is called the 'root', but with mySQL we can have access for users.
+    3. The password.
+    4. The database. Which database, scheme we are working with.
+
+
+Execute:
+    const execute = (sql: string): Promise<any> => {
+        return new Promise<any>((resolve, reject) => {     
+            connection.execute(sql,(err, res) => {
+                if(err){
+                    reject(err);
+                    return;
+                }
+        
+                resolve(res);
+            });
+        });
+    }
+    
+    The promise can be 'any' - anything.
+    The promise have three states:
+        1. Pending - when I am sending the request.
+        When the request is back, it can be either rejected or fullfiled.
+        2. Fullfiled/Resolved - giving the data as it should be.
+        3. Rejected.
+
+    I have two variables, resolve and reject, which I get them after I run the command.
+    If I received the 'reject', I execute the 'error'.
+    'resolve' will give us the result.
+
+I give it a connection and give it a query. 
+    'sql' is a sql query, it can be SELECT * FROM youtube, or SELECT * FROM video, or SELECT * FROM video WHERE id = 2, or SELECT * FROM video WHERE id = 3, or SELECT * FROM video WHERE id BETWEEN 1 and 9.
+    And in response I receive two answers: 
+        Or 'res' (result) or 'err' (error).
+        If the answer is 'err', then I make 'reject' for the 'err'.
+        If I received and answer, I am making 'resolve' for the 'res'.
+
+
+
+/// All the MiddleWear Actions: ///
+    Once the 'Server.ts' get a request, he is checking for the url of the request, in our case it's 'api/v1/videos', by that he knows how to turn for the relevant file, which in our case is 'VideoRoutes.ts'.
+    When the 'VideoRoutes.ts' get a request, he knows the main routes, the endpoint, but he also have something which makes each funciton unique.
+        The uniqueness of the functions is determined in two ways:
+            1. By the verb, 'GET', 'POST', 'PUT', 'DELETE'.
+            2. By the route, for example 'addCat', 'addSong', 'getAllSongs', 'getAllCats' ect.
+        Once the 'VideoRoutes.ts' understands what he needs to do, he is turning to the 'VideoLogicMySQL.ts'.
+    The 'VideoLogicMySQL.ts' will run SQL commands, for example 'SELECT * FROM' and more.
+    Since the BackEnd and the Express doesn't know what SQL command is, we built for comfort the 'dal_mysql.ts'.
+    The 'dal_mysql.ts' receives the SQL command as a string and make it into a REAL SQL command. The 'dal_mysql.ts' itself turns to the SQL.
+    The SQL knows how to give back an answer for the 'dal_mysql.ts' for example when I make 'INSERT INTO', the answer will be the same ID from the Auto Increment.
+    The 'dal_mysql.ts' will bring back or the ID, or an object, or an array of objects, like 'getAllSongs', meaning, the 'dal_mysql.ts' can be ANY.
+    The 'dal_mysql.ts' will give back an answer for the 'VideoLogicMySQL.ts', which will say that everything is fine and working.
+    The 'VideoLogicMySQL.ts' will give back an answer, using response, for the 'VideoRoutes.ts'.
+    And finally the 'VideoRoutes.ts' will give back an answer for the 'Server.ts', and the 'Server.ts' to the FrontEnd.

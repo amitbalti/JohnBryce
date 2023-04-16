@@ -1,4 +1,4 @@
-// dal = abstract data layer
+// dal = data abstract layer
 import mysql from "mysql";
 import config from "./Config";
 
@@ -10,7 +10,7 @@ const connection = mysql.createPool({
   database: config.mySQLdatabase,
 });
 
-console.log("We are connected to mysql");
+// console.log("We are connected to mysql");
 
 function execute(sql: string): Promise<any> {
   return new Promise<any>((resolve, reject) => {
