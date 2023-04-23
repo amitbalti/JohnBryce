@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import "./MainRoute.css";
-import YouTube from "../../Layout/Youtube/Youtube";
+import "./MainRouter.css";
+import Youtube from "../../Layout/Youtube/Youtube";
 import About from "../../Pages/About/About";
 import AddSongForm from "../../Pages/AddSongForm/AddSongForm";
 import MyFavorites from "../../Pages/MyFavorites/MyFavorites";
@@ -9,12 +9,12 @@ import Player from "../../Pages/Player/Player";
 import AddNewCategory from "../../Pages/AddNewCategory/AddNewCategory";
 import Page404 from "../../Pages/Page404/Page404";
 
-function MainRoute(): JSX.Element {
+function MainRouter(): JSX.Element {
   return (
-    <div className="MainRoute">
+    <div className="MainRouter">
       <Routes>
-        <Route path="/" element={<YouTube />} />
-        <Route path="/home" element={<YouTube />} />
+        <Route path="/" element={<Youtube />} />
+        <Route path="/home" element={<Youtube />} />
         <Route path="/about" element={<About />} />
         <Route path="/addSong" element={<AddSongForm />} />
         <Route path="/favorites" element={<MyFavorites />} />
@@ -27,4 +27,4 @@ function MainRoute(): JSX.Element {
   );
 }
 
-export default MainRoute;
+export default MainRouter;
