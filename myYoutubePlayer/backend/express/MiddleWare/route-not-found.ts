@@ -12,3 +12,5 @@ const ErrorHandler = (
   const err = new RouteNotFoundError(request.originalUrl);
   next(err);
 };
+
+export default ErrorHandler;

@@ -3,8 +3,11 @@ import bodyParser from "body-parser";
 import cors from "cors"; // npm install cors and npm install @types/cors
 import express from "express";
 import fileUpload from "express-fileupload";
-import router from "./Routes/VideoRoutes";
 import loginRouter from "./Routes/LoginRoutes";
+import router from "./Routes/VideoRoutes";
+import config from "./Utils/Config";
+import logic from "./Logic/VideoLogicMySQL";
+import ErrorHandler from "./MiddleWare/route-not-found";
 
 // create server
 const server = express();
@@ -32,6 +35,15 @@ server.use(bodyParser.json()); // the data that I will get, will come to me as a
 server.use("api/v1/videos/", router);
 server.use("api/v1/users/", loginRouter);
 
+// create our tables if they are not exists
+console.log("Check if table exists...");
+logic.createSongsTable();
+logic.createCategoriesTable();
+
 // handle errors (route not found)
+server.use("*", ErrorHandler);
 
 // start the server
+server.listen(config.WebPort, () => {
+  console.log(`Listening on http://${config.mySQLhost}:${config.WebPort}`);
+});
