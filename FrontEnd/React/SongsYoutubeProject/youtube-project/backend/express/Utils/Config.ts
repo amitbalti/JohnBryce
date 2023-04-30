@@ -1,6 +1,5 @@
 class Config {
-  public WebPort = 4000;
-  // public dbHost = "db.thouchwand.com";
+  public WebPort = 8080;
   public mySQLhost = "localhost";
   public mySQLuser = "root";
   public mySQLpassword = "12345678";
