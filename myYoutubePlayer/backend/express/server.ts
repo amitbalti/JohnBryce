@@ -32,8 +32,8 @@ server.use(bodyParser.json()); // the data that I will get, will come to me as a
 
 // how to use the routes
 // full path for all videos => "http://localhost:4000/api/v1/videos/videoList"
-server.use("api/v1/videos/", router);
-server.use("api/v1/users/", loginRouter);
+server.use("/api/v1/videos", router);
+server.use("/api/v1/users", loginRouter);
 
 // create our tables if they are not exists
 console.log("Check if table exists...");

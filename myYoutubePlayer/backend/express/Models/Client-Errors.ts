@@ -11,20 +11,20 @@ export class ClientError {
 // "child" client error class
 export class RouteNotFoundError extends ClientError {
   public constructor(route: string) {
-    super(404, `Route ${route} not found`);
+    super(404, `route ${route} not found`);
   }
 }
 
 // "child" video error class
 export class VideoNotFoundError extends ClientError {
   public constructor(videoID: string) {
-    super(404, `Video ID ${videoID} not found`);
+    super(404, `video id:${videoID} was not found`);
   }
 }
 
-// "child" user not logged in
+// "child" user not logged
 export class UserNotLoggedError extends ClientError {
   public constructor() {
-    super(401, `User not authorized, please login...`);
+    super(401, "User not authrized, please login...");
   }
 }

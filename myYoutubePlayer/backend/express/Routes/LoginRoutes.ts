@@ -5,37 +5,32 @@ const loginRouter = express.Router();
 loginRouter.post(
   "/login",
   async (request: Request, response: Response, next: NextFunction) => {
-    console.log("Login User");
-    response.status(200).json(`{ "msg" : "Everything is good" }`);
+    console.log("login user");
+    response.status(200).json(`{"msg":"all is good"}`);
   }
 );
 
 loginRouter.post(
   "/register",
   async (request: Request, response: Response, next: NextFunction) => {
-    console.log("Register User");
-    response.status(201).json(`{ "msg" : "Welcome new user!" }`);
+    console.log("register user");
+    response.status(201).json(`{"msg":"welcome new user"}`);
   }
 );
 
 loginRouter.delete(
   "/deleteUser/:userId",
   async (request: Request, response: Response, next: NextFunction) => {
-    console.log("Delete User");
-    response
-      .status(201)
-      .json(`{ "msg" : "User ${+request.params.userId} was deleted" }`);
+    console.log("delete user");
+    response.status(201).json(`{"msg":"user deleted"}`);
   }
 );
 
 loginRouter.put(
-  "/updateUser/:userId",
+  "/updateUser/",
   async (request: Request, response: Response, next: NextFunction) => {
-    console.log("User was updated");
-    response
-      .status(202)
-      .json(`{ "msg" : "User ${+request.params.userId} was updated" }`);
+    console.log("update user");
+    response.status(202).json(`{"msg":"user updated"}`);
   }
 );
-
 export default loginRouter;

@@ -1,4 +1,6 @@
-// description, img, title, url, video_file, category
+import Cat from "./Cat";
+
+//description,img,title,url,video_file,category
 
 class Song {
   public id: number;
@@ -19,6 +21,7 @@ class Song {
     category: number,
     category_name: string
   ) {
+    this.url = url;
     this.description = description;
     this.img = img;
     this.title = title;
