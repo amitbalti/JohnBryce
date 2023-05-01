@@ -3,7 +3,7 @@
   box-sizing: border-box;
   display: grid;
   grid-template-rows: 15% 75% 10%;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .MainLayout > header,
