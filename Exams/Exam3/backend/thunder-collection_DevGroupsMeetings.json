@@ -1,0 +1,80 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "DevGroupsMeetings",
+    "dateExported": "2023-05-01T09:32:33.730Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "48260ee3-d344-4f3e-b4ef-40458d6f75b5",
+            "colId": "71aee0a6-aef2-45d5-8f81-97e7197bf0c9",
+            "containerId": "",
+            "name": "POST new Development Group",
+            "url": "http://localhost:4000/devMeetings/addDevGroup",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-05-01T08:56:33.718Z",
+            "modified": "2023-05-01T08:57:56.016Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"groupName\":\"React Team\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "53107cdb-71d2-487d-b2fe-e9d36aaa1bf0",
+            "colId": "71aee0a6-aef2-45d5-8f81-97e7197bf0c9",
+            "containerId": "",
+            "name": "GET all Development Groups",
+            "url": "http://localhost:4000/devMeetings/allDevGroup",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-05-01T08:56:53.608Z",
+            "modified": "2023-05-01T08:57:05.215Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0c74861f-11b8-491d-ab37-759d79e5d0b3",
+            "colId": "71aee0a6-aef2-45d5-8f81-97e7197bf0c9",
+            "containerId": "",
+            "name": "GET all meetings",
+            "url": "http://localhost:4000/devMeetings/allMeetings",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-05-01T09:31:57.799Z",
+            "modified": "2023-05-01T09:31:57.799Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"startDate\": \"2023-05-01\",\n    \"endDate\": \"2023-05-01\",\n    \"startTime\": \"10:10:10\",\n    \"endTime\":\"13:10:10\",\n    \"description\": \"Mobile Team\",\n    \"roomName\": \"New York Room\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ff6629a1-475a-448b-94a4-9638d6d937d7",
+            "colId": "71aee0a6-aef2-45d5-8f81-97e7197bf0c9",
+            "containerId": "",
+            "name": "POST new meeting",
+            "url": "http://localhost:4000/devMeetings/addMeeting",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-05-01T09:32:18.780Z",
+            "modified": "2023-05-01T09:32:18.780Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"startDate\": \"2023-05-01\",\n    \"endDate\": \"2023-05-01\",\n    \"startTime\": \"10:10:10\",\n    \"endTime\":\"13:10:10\",\n    \"description\": \"Mobile Team\",\n    \"roomName\": \"New York Room\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

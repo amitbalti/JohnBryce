@@ -14,4 +14,3 @@ const ErrorHandler = (
 };
 
 export default ErrorHandler;
-//all we hear from you is blah blah blah blah

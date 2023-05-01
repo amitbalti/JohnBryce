@@ -42,7 +42,7 @@ const createCategoriesTable = () => {
 
 //////////// Songs ////////////
 // add song, update song, delete song, getSongById, getAllSongs
-
+//
 const addSong = async (newSong: Song) => {
   const SQLcommand = `
   INSERT INTO youtube.songs 
