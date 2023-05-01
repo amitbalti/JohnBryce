@@ -39,6 +39,7 @@ server.use("/api/v1/users", loginRouter);
 console.log("Check if table exists...");
 logic.createSongsTable();
 logic.createCategoriesTable();
+// logic.createLangaugesTable();
 
 // handle errors (route not found)
 server.use("*", ErrorHandler);

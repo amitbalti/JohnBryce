@@ -2,6 +2,7 @@ import Song from "../Models/Song";
 import Category from "../Models/Cat";
 import dal_mysql from "../Utils/dal_mysql";
 import { OkPacket } from "mysql";
+import { response } from "express";
 
 //////////// One Time Running ////////////
 // One time running: create table songs, create table categories
@@ -28,6 +29,16 @@ const createCategoriesTable = () => {
         UNIQUE INDEX name_UNIQUE (name ASC) VISIBLE);`;
   const response = dal_mysql.execute(SQLcommand);
 };
+
+// const createLangaugesTable = () => {
+//   const SQLcommand = `
+//     CREATE TABLE IF NOT EXISTS youtube.languages (
+//         id INT NOT NULL AUTO_INCREMENT,
+//         name VARCHAR(45) NOT NULL,
+//         PRIMARY KEY (id),
+//         UNIQUE INDEX name_UNIQUE (name ASC) VISIBLE);`;
+//   const response = dal_mysql.execute(SQLcommand);
+// };
 
 //////////// Songs ////////////
 // add song, update song, delete song, getSongById, getAllSongs
@@ -114,6 +125,7 @@ export default {
   getAllSongs,
   createSongsTable,
   createCategoriesTable,
+  // createLangaugesTable,
   addCategory,
   deleteCategory,
   updateCategory,
