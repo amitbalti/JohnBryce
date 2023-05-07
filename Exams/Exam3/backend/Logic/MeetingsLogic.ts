@@ -19,12 +19,11 @@ const createMeetingsTable = () => {
   const SQLcommand = `
     CREATE TABLE IF NOT EXISTS DevelopmentGroups.meetings (
         id INT NOT NULL AUTO_INCREMENT,
-        startDate DATE NULL,
-        startTime TIME NULL, 
-        endDate DATE NULL,
-        endTime TIME NULL,
+        startDate DATETIME NULL,
+        endDate DATETIME NULL,
         description VARCHAR(255) NULL,
         roomName VARCHAR(255) NULL,
+        groupId INT NOT NULL,
         PRIMARY KEY (id));
       `;
   const response = dal_mysql.execute(SQLcommand);
@@ -56,8 +55,8 @@ const getAllDevelopmentGroups = async () => {
 const addMeeting = async (newMeeting: Meetings) => {
   const SQLcommand = `
           INSERT INTO DevelopmentGroups.meetings 
-          (startDate, endDate, startTime, endTime, description, roomName) 
-          VALUES ('${newMeeting.startDate}','${newMeeting.endDate}', '${newMeeting.startTime}', '${newMeeting.endTime}','${newMeeting.description}','${newMeeting.roomName}');
+          (startDate, endDate, description, roomName, groupId) 
+          VALUES ('${newMeeting.startDate}','${newMeeting.endDate}','${newMeeting.description}','${newMeeting.roomName}', ${newMeeting.groupId});
           `;
   // const SQLcommand = `
   // INSERT INTO DevelopmentGroups.meetings
@@ -72,7 +71,12 @@ const addMeeting = async (newMeeting: Meetings) => {
 
 // Get all Meetings
 const getAllMeetings = async () => {
-  const SQLcommand = `SELECT * FROM DevelopmentGroups.meetings`;
+  const SQLcommand = `
+    SELECT m.startDate, m.endDate, m.description, m.roomName, g.groupName
+    FROM DevelopmentGroups.meetings m
+    JOIN DevelopmentGroups.groups g ON m.groupId = g.id
+    order by m.startDate asc
+  `;
   return await dal_mysql.execute(SQLcommand);
 };
 

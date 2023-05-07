@@ -1,6 +1,6 @@
 class Meetings {
   public id: number;
-  // public groupId:number;
+  public groupId: number;
   public startDate: Date;
   public startTime: Date;
   public endDate: Date;

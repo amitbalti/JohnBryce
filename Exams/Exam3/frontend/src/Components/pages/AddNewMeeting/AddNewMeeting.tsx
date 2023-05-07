@@ -3,118 +3,143 @@ import "./AddNewMeeting.css";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import DevGroup from "../../../Models/DevGroup";
-// import { useForm } from "react-hook-form";
 import Meetings from "../../../Models/Meetings";
+import { useForm } from "react-hook-form";
 
 function AddNewMeeting(): JSX.Element {
   const navigate = useNavigate();
   //   const params = useParams();
 
-  const tempGroup = new DevGroup(1, "UI");
-  const [groups, setGroups] = useState<DevGroup>(tempGroup);
-
-  const [startDate, setStartDate] = useState("");
-  const [startTime, setStartTime] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [endTime, setEndTime] = useState("");
-  const [description, setDescription] = useState("");
-  const [roomName, setRoomName] = useState("");
-
-  const [meeting, setMeeting] = useState("");
-  const [meetings, setMeetings] = useState([]);
-
-  //   useEffect(() => {
-  //     axios
-  //       .get("http://localhost:4000/devMeetings/allMeetings")
-  //       .then((res) => setMeetings(res.data));
-  //   }, []);
-
-  //   const ourGroups = () => {
-  //     let value = groups?.groupName;
-  //     setGroups(value);
-  //   };
-
-  //   const myMeeting = (args: SyntheticEvent) => {
-  //     let value = (args.target as HTMLSelectElement).value;
-  //     setMeeting(value);
-  //   };
-  const apiURL = "http://localhost:4000/devMeetings/";
-
-  const searchMeeting = () => {
-    //console.log(songURL.split("=")[1]);
-    // const meetingId = Meetings.id;
-    axios.get(apiURL).then((response) => {
-      setStartDate(
-        response.data.items[0].snippet.channelTitle.replace("'", "")
-      );
-      setStartTime(response.data.items[0].snippet.title.replace("'", ""));
-      setEndDate(response.data.items[0].snippet.channelTitle.replace("'", ""));
-      setEndTime(response.data.items[0].snippet.channelTitle.replace("'", ""));
-      setDescription(response.data.items[0].snippet.thumbnails.medium.url);
-
-      setRoomName(response.data.items[0].snippet.thumbnails.medium.url);
-    });
+  const [groups, setGroups] = useState<DevGroup[]>([]);
+  const [selectedOption, setSelectedOption] = useState<number>(0);
+  const handleOptionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedValue = +event.target.value;
+    setSelectedOption(selectedValue);
   };
 
-  const addNewMeeting = () => {
+  useEffect(() => {
     axios
-      .post(`http://localhost:4000/devMeetings/addMeeting`)
-      .then((res) => navigate("/"));
+      .get("http://localhost:4000/devMeetings/allDevGroup")
+      .then((res) => setGroups(res.data));
+  }, []);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Meetings>({
+    defaultValues: {
+      groupId: 0,
+    },
+  });
+
+  const send = async (meeting: Meetings) => {
+    console.log(meeting);
+    try {
+      const response = await fetch(
+        "http://localhost:4000/devMeetings/addMeeting",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(meeting),
+        }
+      );
+      const result = await response.json();
+      console.log(result);
+      navigate("/allMeetings");
+    } catch (error) {
+      console.error(error);
+    }
   };
-
-  //   const send = (meetingData: Meetings) => {
-  //     console.log(meetingData);
-  //   };
-
-  //   const {
-  //     register,
-  //     handleSubmit,
-  //     formState: { errors },
-  //   } = useForm<Meetings>();
 
   return (
     <div className="AddNewMeeting">
       <div className="Box">
-        <h1>Team Calender</h1>
-        <select name="Development Group" value="Development Group" id="">
-          <option value="Development Group" disabled selected>
-            Select Group Name
-          </option>
-          {/* {groups?.groupName ? (
-            <option value="">{groups?.groupName}</option>
-          ) : (
-            "No Groups Avilable"
-          )} */}
-          <option value="">{groups?.groupName}</option>
-        </select>
-        <br />
-        <br />
-        <label htmlFor="startDate">Start Date & Time</label>
-        <br />
-        <input type="datetime-local" name="startDate" id="startDate" />
-        <br />
-        <br />
-        <label htmlFor="endDate">End Date & Time</label>
-        <br />
-        <input type="datetime-local" name="endDate" id="endDate" />
-        <br />
-        <br />
-        <label htmlFor="desc">Description</label>
-        <br />
-        <input type="text" name="desc" id="desc" />
-        <br />
-        <br />
-        <label htmlFor="Room">Room Name</label>
-        <br />
-        <input type="text" name="Room" id="Room" />
-        <br />
-        <br />
-        <input
-          type="submit"
-          value="Add New Meeting"
-          id="submitBtn"
-          onClick={addNewMeeting}
-        />
+        <form onSubmit={handleSubmit(send)}>
+          <h1>Team Calender</h1>
+          {/* Select Development Group */}
+          <select
+            {...register("groupId", {
+              valueAsNumber: true,
+              min: { value: 1, message: "Please select Group" },
+            })}
+          >
+            <option value="0">Select Group Name</option>
+            {groups.map((item) => (
+              <option value={item.id}>{item.groupName}</option>
+            ))}
+          </select>
+          <br />
+          <span className="ErrMsg">{errors.groupId?.message}</span>
+
+          <br />
+          <br />
+
+          {/* Select start date */}
+          <label htmlFor="startDate">Start Date & Time</label>
+          <br />
+          <input
+            {...register("startDate", {
+              required: "Please enter a valid start date",
+            })}
+            type="datetime-local"
+          />
+          <br />
+          <span className="ErrMsg">{errors.startDate?.message}</span>
+
+          <br />
+          <br />
+
+          {/* Select end date */}
+          <label htmlFor="endDate">End Date & Time</label>
+          <br />
+          <input
+            {...register("endDate", {
+              required: "Please enter a valid end date",
+            })}
+            type="datetime-local"
+          />
+          <br />
+          <span className="ErrMsg">{errors.endDate?.message}</span>
+
+          <br />
+          <br />
+
+          {/* Write description */}
+          <label htmlFor="desc">Description</label>
+          <br />
+          <input
+            {...register("description", {
+              required: "Please enter description",
+            })}
+            type="text"
+          />
+          <br />
+          <span className="ErrMsg">{errors.description?.message}</span>
+
+          <br />
+          <br />
+
+          {/* Write room name */}
+          <label htmlFor="Room">Room Name</label>
+          <br />
+          <input
+            {...register("roomName", {
+              required: "Please enter room",
+            })}
+            type="text"
+          />
+          <br />
+          <span className="ErrMsg">{errors.roomName?.message}</span>
+
+          <br />
+          <br />
+
+          {/* Submit button */}
+          <input type="submit" value="Add New Meeting" id="submitBtn" />
+        </form>
       </div>
     </div>
   );

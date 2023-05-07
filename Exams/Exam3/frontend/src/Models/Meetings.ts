@@ -1,6 +1,6 @@
 class Meetings {
   public id: number;
-  // public groupId:number;
+  public groupId: number;
   public startDate: Date;
   public startTime: Date;
   public endDate: Date;
@@ -10,6 +10,7 @@ class Meetings {
 
   constructor(
     id: number,
+    groupId: number,
     startDate: Date,
     startTime: Date,
     endDate: Date,
@@ -18,6 +19,7 @@ class Meetings {
     roomName: string
   ) {
     this.id = id;
+    this.groupId = groupId;
     this.startDate = startDate;
     this.startTime = startTime;
     this.endDate = endDate;

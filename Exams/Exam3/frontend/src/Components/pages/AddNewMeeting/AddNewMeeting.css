@@ -1,3 +1,8 @@
 #submitBtn:hover {
   cursor: pointer;
 }
+
+.ErrMsg {
+  color: red;
+  font-weight: bolder;
+}

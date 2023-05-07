@@ -1,26 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./AllMeetings.css";
+import axios from "axios";
+import MeetingInfo from "../../../Models/MeetingInfo";
 
 function AllMeetings(): JSX.Element {
-  // useEffect(() => {
-  //   //redux
-  //   if (youtube.getState().songs.allSongs.length < 1) {
-  //     console.log("getting data from backend....");
-  //     axios.get("http://localhost:4000/api/v1/videos/all").then((response) => {
-  //       youtube.dispatch(downloadSongsAction(response.data));
-  //     });
-  //     setRefresh(!refresh);
-  //   }
-  //   if (youtube.getState().categories.categories.length < 1) {
-  //     axios
-  //       .get("http://localhost:4000/api/v1/videos/allCat")
-  //       .then((response) => {
-  //         youtube.dispatch(downloadCategoryAction(response.data));
-  //       });
-  //     setRefresh(!refresh);
-  //   }
-  //   setRefresh(!refresh);
-  // }, []);
+  const [meetings, setMeetings] = useState<MeetingInfo[]>();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/devMeetings/allMeetings")
+      .then((res) => setMeetings(res.data));
+  }, []);
+
+  const niceDate = new Date().toDateString();
+
   return (
     <div className="AllMeetings">
       <h1>All Meetings</h1>
@@ -36,12 +29,19 @@ function AllMeetings(): JSX.Element {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+          {meetings?.map((item) => {
+            console.log(item);
+
+            return (
+              <tr>
+                <td>{item.groupName}</td>
+                <td>{item.startDate}</td>
+                <td>{item.endDate}</td>
+                <td>{item.description}</td>
+                <td>{item.roomName}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
