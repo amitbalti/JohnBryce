@@ -1,0 +1,33 @@
+<br />
+<div class="Box">
+  <input
+    [type]="myType"
+    name="uName"
+    id="user_name"
+    [placeholder]="myPlaceHolder"
+  />
+  <br /><br />
+  <!-- Event Bindings -->
+  <input
+    type="password"
+    name="uPass"
+    id="user_password"
+    placeholder="Enter Password"
+    (input)="this.onPassUpdate($event)"
+  />
+  <!-- 
+    Like an event
+        (input)="this.onPassUpdate($event)" 
+    -->
+</div>
+
+<br /><br />
+
+<!-- Two way bindings - Will write something and it will immediatly will show up on my screen-->
+<div class="Box">
+  <!-- Square brackets - some Logic which is coming from the ts file  -->
+  <!-- Property binding = [] sqaure brackets -->
+  <!-- Event binding = () circular brackets -->
+  <input type="number" name="age" id="id_age" [(ngModel)]="myAge" />
+  <h2>You was burn in {{ 2023 - myAge }}</h2>
+</div>

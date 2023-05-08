@@ -1,0 +1,12 @@
+.errorBox {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  border: 1px solid purple;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px gainsboro;
+}

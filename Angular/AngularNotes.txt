@@ -1,0 +1,72 @@
+Angular was built by Google.
+
+In Angular there is no virtual DOM.
+
+GitHub stars - React wins.
+
+//////////////////////
+
+MVC - Model View Controler. 
+    - I am spliting the program into three parts:
+        1. Model (Data).
+        2. View (HTML).
+            - The model and the view updates the controller which updates them back.
+        3. Controller
+
+        But! the model and the view aren't communicating.
+MVVM - Model View View Model.
+
+//////////////////////
+
+How to install angular?
+    npm i -g @angular/cli
+
+Angular Material - It's like 'mui'.
+
+//////////////////////
+
+In Angular, everything is sitting under 'src'. 
+There is no 'public' or 'src' like React.
+
+Every tag is a "containing" tag.
+
+//////////////////////
+
+All the imports will go into the 'app.module.ts' file.
+The 'app.module.ts' file, is like a "candy store" which every component will "talk" with this file.
+
+//////////////////////
+
+In Angular the app is separated into two:
+    - Logic and the View (HTML) is separated - Unlike React.
+
+//////////////////////
+
+How to start new Angular project?
+    - ng new ''
+        // Within the '' - the name of the project
+
+//////////////////////
+
+In Angular to create a new component: 
+    - ng g c header
+        
+        // g - generate
+        // c - component
+
+//////////////////////
+
+Angular allows - Data Binding.
+
+//////////////////////
+
+Square brackets - some Logic which is coming from the ts file  
+Property binding = [] sqaure brackets 
+Event binding = () circular brackets 
+
+//////////////////////
+
+ngModel = Angular Model
+ngModel - a type of event.
+
+//////////////////////

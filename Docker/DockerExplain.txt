@@ -1,0 +1,2 @@
+Docker - a "virtual machine" which includes on it: mySQL, Ngnix, Backend, Frontend.
+
