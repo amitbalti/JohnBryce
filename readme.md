@@ -12,3 +12,7 @@ We studied already:
 - AJAX
 - TypeScript
 - React
+- mySQL
+- Docker
+- Express
+- Angular
