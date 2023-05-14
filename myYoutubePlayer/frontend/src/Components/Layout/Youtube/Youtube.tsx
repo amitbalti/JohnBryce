@@ -18,7 +18,7 @@ function Youtube(): JSX.Element {
 
   return (
     <div className="Youtube">
-      {/* {youtube.getState().songs.allSongs.map((item) => (
+      {youtube.getState().songs.allSongs.map((item) => (
         <SingleItem
           url={item["url"]}
           title={item["title"]}
@@ -26,7 +26,7 @@ function Youtube(): JSX.Element {
           img={item["img"]}
           key={item["title"]}
         />
-      ))} */}
+      ))}
     </div>
   );
 }

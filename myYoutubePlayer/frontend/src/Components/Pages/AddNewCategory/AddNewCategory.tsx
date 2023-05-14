@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { addCategoryAction } from "../../Redux/CategoriesReducer";
 import { Category } from "../../Model/Category";
-import { youtube } from "../../Redux/YouTubeStore";
+import { youtube } from "../../Redux/YoutubeStore";
 
 function AddNewCategory(): JSX.Element {
   const [category, setCategory] = useState("");

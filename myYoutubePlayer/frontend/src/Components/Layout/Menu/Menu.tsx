@@ -1,7 +1,7 @@
 import "./Menu.css";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { youtube } from "../../Redux/YouTubeStore";
+import { youtube } from "../../Redux/YoutubeStore";
 import { Category } from "../../Model/Category";
 
 function Menu(): JSX.Element {

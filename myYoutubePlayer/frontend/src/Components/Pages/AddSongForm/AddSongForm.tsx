@@ -3,7 +3,7 @@ import "./AddSongForm.css";
 import axios from "axios";
 import Song from "../../Model/Song";
 import { useNavigate } from "react-router-dom";
-import { youtube } from "../../Redux/YouTubeStore";
+import { youtube } from "../../Redux/YoutubeStore";
 import { addSongAction } from "../../Redux/SongReducer";
 
 function AddSongForm(): JSX.Element {

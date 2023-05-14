@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Header.css";
-import { youtube } from "../../Redux/YouTubeStore";
+import { youtube } from "../../Redux/YoutubeStore";
 
 function Header(): JSX.Element {
   const [totalSongs, setTotalSongs] = useState(
