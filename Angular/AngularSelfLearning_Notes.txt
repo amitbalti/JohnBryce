@@ -1,0 +1,169 @@
+/// What is Angualr? ///
+    - AngularJS is a framework in open code to web applications, which is maintained by Google and by a broad community of developers.
+    - AngularJS is ment to solve chalenges in developing SPA applications, and simplifing the development and checking of this apps, using MVC or MVVM, together with components which are usually being used in rich web apps.
+    - AngularJS library is working by calling HTML page, which the tags which are being added have more characteristics.
+    - Angular will translate those characteristics as commands of connecting the output or the input in the page into a model which is being represented by simple JS variables.
+    - The values of the JS variables can be changed by using code, and we can reach them in static way, or in dynamic way - using JSON.
+
+/// Angular advantages: ///
+    1. Working with components.
+    2. Working in MVC method.
+    3. The ability of presenting the application as HTML page - without the need of reloading the page when changing from one page to another.
+
+In avarage, every 6-8 months Google is realising an update, which most of the differences between the versions is in performance and in the final weight of the application.
+
+/// How to install Angular? ///
+    - First make sure to have the latest version of NodeJS.
+    - Then we will install Angular globally:
+        - npm install -g @angular/cli
+    - To start a new projectm we will write in the terminal the next line of code:
+        - ng new <app-name>
+    - To run our code we will write in the terminal:
+        - ng serve
+
+/// How Angular project is built? ///
+    - Most of the application will be written inside SRC 'folder', especially inside 'APP' folder which is found within the 'SRC' folder.
+    - 'app.component.ts' is the main component which is sending orders to all the other components.
+    - 'app.component.ts' is being controlled by 'main.ts'.
+    - All the models ("libraries with different abilities") which we will use, are found within 'app.module.ts' file, which unlike React which we needed to import every model into every component which we wanted to use.
+
+/// What is a component? /// 
+    - In Angular we can build the app/website from components. 
+        - For example: in a basic website there is a WIDGETS, MAIN, HEADER, FOOTER, SIDE which can be split into components.
+    - Every component will be written with her own JS section, which usually when we will create her will contain 3 files (there is 4th file which is meant for testing - not relevant for development):
+        1. The brain of the component - which will be represneted as a TS file (TypeScript).
+        2. The skeleton of the component VIEW - which will be represneted as HTML file.
+        3. The styling of the component - which will be represneted as a CSS file.
+
+/// How the 'app.component.ts' component looks like? ///
+
+    import { Component } from '@angular/core'; // This line connecting the Angular model and is using his abilities of presenting TypeScript.
+
+    @Component({ // This part is TypeScript ability, the "@" represents director command, which in our case is calling on the components of the component - from CSS, HTML and the ID of the component - in this code "app-root".
+                 // Pay Attention! It is important to keep the name of the SELECTOR, and usually it is recommended to add the word 'app'. 
+        selector: 'app-root',
+        templateUrl: './app.component.html',
+        styleUrls: ['./app.component.css']
+    })
+
+    export class AppComponent { // Finally we are exporting (so we can import).
+                                // Also there is a variable, named 'title' which we can "inject" into other components.
+        title = 'hacker-test';
+    }
+
+
+An example of using the 'title' variable inside another component:
+    <div style="text-align:center">
+        <h1>
+            Welcome to {{ title }}!
+        </h1>
+    </div>
+
+    We will see h1 header - the text will be: "Welcome to hacker-test!"
+
+/// What is the best way to create component in angular? ///
+    - In the terminal we will write: 
+            'ng generate component header' 
+        OR, in shortcut:
+            'ng g c header'
+    - Also there is an option of writing the name of the file which we would like to have our app components, for example:
+        'ng g c comps/header' - here the 'comps' folder will be created under the 'app' folder, and within the 'comps' folder, a header folder with all the neccasary files will be created.
+
+/// How to use component? ///
+    - All we need to do is to implement the component as a tag.
+    - For example: 
+        <div style="text-align:center">
+            <app-header></app-header> // In the HTML a paragraph with the text: 'header works!' will be displayed above the header from before.
+            <h1>
+                Welcome to {{ title }}!
+            </h1>
+        </div>
+    
+/// What is TypeScript? /// 
+    - TypeScript is a format of writing JS in more suffisticated way.
+    - TypeScript mainly adding the following abilities:
+        1. An option of defining types for anything (such as 'string', 'number' and so on).
+        2. Creating an interface inside a component.
+        3. More clear and smarter code.
+
+    - At the end of the development we will perform 'DEPLOY/BUILD' to our code, which will transfer our code into JS files.
+
+/// What is DATA BINDING? ///
+    - One of the main advantages of Angular framework is the ability of injecting variables into the HTML VIEW.
+    - There are different options of injecting Data into our VIEW:
+        1. String Interpolation.
+        2. Property Binding.
+        3. Event Binding.
+        4. Two Way Data-Binding.
+    
+    - The more basic option is "String Interpolation":
+        - In the main component file "app.component.ts" we will create:
+            export class AppComponent {
+                title = "hacker-test";
+                myName = "koko";
+            }
+          In the VIEW file "app.component.html" we will write:
+            <h2>Your name is: {{ myName }}</h2>
+        
+        - Another example of 'String Interpolation':
+            export class AppComponent {
+                title = "ang-hack";
+                myName = "koko";
+                myType = "password";
+
+                showMyNameAndType(){
+                    return "My name is " + this.myName + " and my type is " + myType;
+                }
+            }
+          Inside the HTML:
+            <p>Test: {{ this.showMyNameAndType() }}</p>
+    
+    - Property Binding:
+        - Example:
+            export class AppComponent {
+                title: 'ang-hack';
+                myName: "koko";
+                myType: "password";
+            }
+
+            in the HTML:
+                <label>Enter password:</label>
+                <input [type]="myType" name="pass" id="id_pass"/>
+
+                // The square brackets [] make Angular understand that we are talking about Property Binding. 
+                // When we will run the application and will write inside the Input, we will see that the type of the input is 'password'.
+
+    - Event Binding:
+        - Using Event Binding we can transfer data while listening to an event.
+        - Example:
+            In the HTML:
+                // Circular brackets () implify to Angular that we are talking about Event Binding. 
+                // Inside the () we wrote the name of the function, and we injected there the 'event' argument which will be used to collect data from the input.
+                <input [type]="myType" name="pass" id="id_pass" (input)="onPassUpdate($event)"/>
+            In the app we will write:
+                onPassUpdate(event) {
+                    this.myName = event.target.value;
+                }
+    
+    - Two Way Data-Binding:
+        - In the Binding Event we saw that in order to transfer data from the Input or Select Box we need to create function to tranfer parameter and afterwards in the function to give the order and only then to inject the data we want, which can make little changes complicated to make.
+        - Therefore in Two Way Data-Binding Angular is 'automatically' coming with the 'ngmodel' model which allows pretty easily to listen to event and change the variable in the memory quickly and reinject it back to the user.
+        - For it to work, we need to import it, and we will do this that way:
+                import { FormsModule } from '@angular/forms';
+
+            And in the @NgModule to add inside the imports section:
+                @NgModule({
+                    declarations: [...],
+                    imports: [
+                        ...,
+                        ...,
+                        FormsModule
+                    ],
+                })
+        - After that all we need for using it is to create another input which we will ask from the user to enter his age:
+            <label>Enter your age:</label>
+            <input type="number" name="age" id="id_age" [(ngModel)]="myAge" />
+            <h2>Your age is {{ myAge }}</h2>
+            // Now the data which is written inside the input will automatically be transdered to the injection of the name inside the 'ngModel'.
+        - Note that the 'ngModel' is wrapped inside both a sqaure and circular brackets [()] - since it is representing both the Event Binding and the Property Binding together.
+        
