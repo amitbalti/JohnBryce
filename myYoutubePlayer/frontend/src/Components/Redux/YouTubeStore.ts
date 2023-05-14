@@ -1,5 +1,6 @@
-// Install the follwoing: npm i redux, npm i @reduxjs/toolkit
+// This one is managing my reducer
 
+// Install the follwoing: npm i redux, npm i @reduxjs/toolkit
 import { configureStore } from "@reduxjs/toolkit";
 import { SongReducer } from "./SongReducer";
 

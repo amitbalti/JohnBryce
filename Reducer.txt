@@ -3,10 +3,56 @@ The reducer manage the state for us.
 
 But what happen when I have few reducers to manage in the app?
 
-//////
+////////////////////////
 
 enum works the best with switch.
 When using switch, the enum will remove the stuff we already used in the switch. 
 Therefore we will not use the same thing twice, because it will already be deleted/used.
 
 switch works the best with numbers and not with strings.
+
+////////////////////////
+
+The main idea of redux is to keep the data in the memory. 
+The state itself is being saved in the memory, and we can approach to it from anywhere within the app - therefore we also call it 'APPLICATION_STATE'
+
+If I will update the state in the redux, it will be available to me within the entire app.
+
+////////////////////////
+
+What are the stages to write Redux?
+    1. What is the state which I want to work with?
+    2. What are the actions which I except from the Redux to perform? (the enum).
+    3. The creation of the data structure 
+        - For example:
+            export interface SongAction {
+                type: SongActionType;
+                payload?: any;
+            }
+        When I am making 'SongAction' I expect to get 'type' and 'payload'.
+        Meaning, I am giving myself boundries.
+
+////////////////////////
+
+Unlike the 'useReducer', which in there we are telling 'dispatch' and I simply send the action itself, in the Redux I cannot do it.
+    Why?
+        Because the one who manages the reducer, is the Redux itself and not me.
+        Therefore, I export the functions which I would like to work with.
+        Because every one of those functions returns the 'SongAction', Redux know to 'catch' everything that which have action with payload and type, and to turn on the reducer when he needs it.
+
+////////////////////////
+
+After I exported all the functions, I am writing the Reducer itself.
+The reducer have a unique signature:
+    1. He suppose to return the new state.
+
+    I give the reducer two figures:
+        1. State - the current state which is already exists.
+            If the state never been used before, I am creating a new state. For example:
+                'currentState: SongState = new SongState();'
+        
+        Afterwards I create a copy of the current state, once everything is ready, I will return the new state.
+
+////////////////////////
+
+Then I am doing 'switch' on all of the 'action' types we have, where the data will ALWAYS be the 'action.payload'.

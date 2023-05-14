@@ -1,11 +1,14 @@
 import Song from "../Model/Song";
 
 // Initial State
+// What the state suppose to save?
 export class SongsState {
   public allSongs: Song[] = [];
 }
 
 // What action I will use...
+// We are putting it as 'enum' in advance - it will help me afterwards to write the switch and to tell me what is missing.
+// We are putting it as 'enum' in advance - also because the odds to have typo is low.
 export enum SongActionType {
   addSong = "addSong",
   deleteSong = "deleteSong",
@@ -47,6 +50,7 @@ export function SongReducer(
     // action.payload to the DATA
 
     case SongActionType.addSong:
+      // Will give us an error - data mutation...
       newState.allSongs.push(action.payload);
       break;
 
