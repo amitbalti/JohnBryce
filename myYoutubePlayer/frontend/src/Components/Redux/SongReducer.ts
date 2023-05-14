@@ -1,6 +1,6 @@
 import Song from "../Model/Song";
 
-// initial state
+// Initial State
 export class SongsState {
   public allSongs: Song[] = [];
 }
@@ -10,16 +10,16 @@ export enum SongActionType {
   addSong = "addSong",
   deleteSong = "deleteSong",
   searchSong = "searchSong",
-  downloadSong = "downloadSong",
+  downloadSongs = "downloadSongs",
 }
 
-// action data structure
+// Action data structure
 export interface SongAction {
   type: SongActionType;
-  payload?: any;
+  payload?: any; // Since there is a chance I won't transfer data, I will put question mark next to the payload
 }
 
-// Which functions I will run when I will dispatch an action
+// Which function will run when I will dispatch an action
 export const addSongAction = (newSong: Song): SongAction => {
   return { type: SongActionType.addSong, payload: newSong };
 };
@@ -32,11 +32,10 @@ export const searchSongAction = (songName: string): SongAction => {
   return { type: SongActionType.searchSong, payload: songName };
 };
 
-export const downloadSongAction = (allSongs: Song[]): SongAction => {
-  return { type: SongActionType.downloadSong, payload: allSongs };
+export const downloadSongsAction = (allSongs: Song[]): SongAction => {
+  return { type: SongActionType.downloadSongs, payload: allSongs };
 };
 
-// This is the reducer function, but since it's managed only by redux, we built the function above
 export function SongReducer(
   currentState: SongsState = new SongsState(),
   action: SongAction
@@ -44,28 +43,29 @@ export function SongReducer(
   const newState = { ...currentState };
 
   switch (action.type) {
+    // action.type to the SWITCH
+    // action.payload to the DATA
+
     case SongActionType.addSong:
-      // will give as an error - data mutation....
-      // newState.allSongs.push(action.payload);
-      newState.allSongs = [...newState.allSongs, action.payload];
+      newState.allSongs.push(action.payload);
       break;
 
     case SongActionType.deleteSong:
-      //   newState.allSongs = newState.allSongs.filter(
-      //     (item) => item.title != action.payload
-      //   );
-      newState.allSongs = [...newState.allSongs].filter(
-        (item) => item.id !== action.payload
+      // Returns all of them except for one
+      newState.allSongs = newState.allSongs.filter(
+        (item) => item.title != action.payload
       );
       break;
 
     case SongActionType.searchSong:
+      // As long as the search includes something from the song it will work
       newState.allSongs = newState.allSongs.filter((item) =>
         item.title.includes(action.payload)
       );
       break;
 
-    case SongActionType.downloadSong:
+    case SongActionType.downloadSongs:
+      // Getting an array of songs and updating the state.
       newState.allSongs = action.payload;
       break;
   }

@@ -1,0 +1,12 @@
+The reducer manage the state for us.
+
+
+But what happen when I have few reducers to manage in the app?
+
+//////
+
+enum works the best with switch.
+When using switch, the enum will remove the stuff we already used in the switch. 
+Therefore we will not use the same thing twice, because it will already be deleted/used.
+
+switch works the best with numbers and not with strings.
