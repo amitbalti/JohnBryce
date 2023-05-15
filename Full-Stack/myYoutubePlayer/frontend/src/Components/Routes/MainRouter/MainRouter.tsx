@@ -8,6 +8,7 @@ import SongSearch from "../../Pages/SongSearch/SongSearch";
 import Player from "../../Pages/Player/Player";
 import AddNewCategory from "../../Pages/AddNewCategory/AddNewCategory";
 import Page404 from "../../Pages/Page404/Page404";
+import Export from "../../Pages/Export/Export";
 
 function MainRouter(): JSX.Element {
   return (
@@ -21,6 +22,7 @@ function MainRouter(): JSX.Element {
         <Route path="/search" element={<SongSearch />} />
         <Route path="/player/:title/:url" element={<Player />} />
         <Route path="/addCategory" element={<AddNewCategory />} />
+        <Route path="/export" element={<Export />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </div>
