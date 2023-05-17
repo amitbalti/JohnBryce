@@ -1,0 +1,43 @@
+.red_box {
+  background-color: pink;
+  border: 3px solid red;
+  color: black;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.green_box {
+  background-color: greenyellow;
+  border: 3px solid green;
+  color: black;
+  padding: 1em;
+}
+
+/* Targil */
+.purple_box {
+  background-color: plum;
+  border: 3px solid purple;
+  color: black;
+  padding: 1em;
+  border-radius: "20px";
+}
+
+.pink_box {
+  background-color: pink;
+  border: 3px solid palevioletred;
+  color: black;
+  padding: 1em;
+  border-radius: "20px";
+}
+
+.orange_box {
+  background-color: lightsalmon;
+  border: 3px solid orange;
+  color: black;
+  padding: 1em;
+  border-radius: "20px";
+}
+
+li {
+  list-style: none;
+}

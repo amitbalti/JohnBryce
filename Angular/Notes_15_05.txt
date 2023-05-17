@@ -1,0 +1,6 @@
+Structural directive:
+    - *ngIf="functionName" - Will do something with if's.
+
+
+Creat using ngFor, boxex (BOX) which contain pic of a crypto coin, today's coin rate, and some short info.
+Payattention that every coin is basicallt a object inside an array.

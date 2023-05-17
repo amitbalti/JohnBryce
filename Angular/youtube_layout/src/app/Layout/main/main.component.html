@@ -5,6 +5,7 @@
     name="uName"
     id="user_name"
     [placeholder]="myPlaceHolder"
+    appYellow
   />
   <br /><br />
   <!-- Event Bindings -->
@@ -14,6 +15,7 @@
     id="user_password"
     placeholder="Enter Password"
     (input)="this.onPassUpdate($event)"
+    appYellow
   />
   <!-- 
     Like an event
@@ -28,7 +30,7 @@
   <!-- Square brackets - some Logic which is coming from the ts file  -->
   <!-- Property binding = [] sqaure brackets -->
   <!-- Event binding = () circular brackets -->
-  <h2>How old are you?</h2>
-  <input type="number" name="age" id="id_age" [(ngModel)]="myAge" />
-  <h2>You were burn in {{ 2023 - myAge }}</h2>
+  <h1 appRed>You born in...</h1>
+  <input appYellow type="number" name="age" id="id_age" [(ngModel)]="myAge" />
+  <h2 appGreen>You were burn in {{ 2023 - myAge }}</h2>
 </div>

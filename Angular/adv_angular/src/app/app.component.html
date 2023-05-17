@@ -1,0 +1,66 @@
+<div style="text-align: center">
+  <h1>Welcom to {{ title }}</h1>
+  <hr />
+
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati facilis
+  vitae at quod mollitia laudantium aspernatur quae ad minima inventore.
+  Voluptatibus maiores voluptas deleniti repellat, ratione sed officiis hic
+  explicabo doloribus ab enim perspiciatis accusantium obcaecati voluptatem
+  corrupti beatae saepe voluptatum expedita, esse nulla tempore quia magni cum
+  ut. Recusandae!
+
+  <h2 *ngIf="showInfo">Matan wants to marry with Maya, but Maya wants Nadav</h2>
+  <br /><br />
+
+  <!-- <h2 *ngIf="showInfo; else hideInfo">Matan and Nadav wants to marry maya</h2> -->
+  <!-- <ng-template #hideInfo>Maya wants only Alon</ng-template> -->
+
+  <!-- How to use with ngIf, ngStyle, ngClass -->
+  <h2 *ngIf="userLogged; else userInfo">Hello Amit, Logout</h2>
+  <ng-template #userInfo><h2>Hello Guest, please Login</h2></ng-template>
+  <button
+    [ngStyle]="{
+      backgroundColor: getShowColor(),
+      padding: '10px',
+      borderRadius: '20px',
+      border: 'none'
+    }"
+    (click)="onBtnClick()"
+  >
+    Login/Logout
+  </button>
+  <br /><br />
+  <h3 [ngClass]="{ green_box: !userLogged, red_box: userLogged }">
+    ng class test
+  </h3>
+  <br /><br />
+  <button
+    (click)="onBtnClick()"
+    [ngClass]="{
+      purple_box: !userLogged,
+      orange_box: userLogged,
+      pink_box: userLogged
+    }"
+  >
+    NEXT
+  </button>
+  <br /><br />
+
+  <!-- using ngFor -->
+  Mans that wants to marry with Hila <br />
+  <ul>
+    <!-- <li *ngFor="let groom of grooms">{{ groom }}</li> -->
+    <li *ngFor="let item of grooms; let i = index" [ngSwitch]="item">
+      <span *ngSwitchCase="'Ido'" [ngStyle]="{ color: 'red' }">
+        {{ i + 1 }} - {{ item }}</span
+      >
+      <span *ngSwitchCase="'Daniel'" [ngStyle]="{ color: 'green' }">
+        {{ i + 1 }} - {{ item }}
+      </span>
+      <span *ngSwitchCase="'Matan'" [ngStyle]="{ color: 'palevioletred' }"
+        >{{ i + 1 }} - {{ item }}</span
+      >
+      <span *ngSwitchDefault> {{ i + 1 }} - {{ item }} </span>
+    </li>
+  </ul>
+</div>
