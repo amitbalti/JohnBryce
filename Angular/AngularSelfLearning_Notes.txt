@@ -165,5 +165,11 @@ An example of using the 'title' variable inside another component:
             <input type="number" name="age" id="id_age" [(ngModel)]="myAge" />
             <h2>Your age is {{ myAge }}</h2>
             // Now the data which is written inside the input will automatically be transdered to the injection of the name inside the 'ngModel'.
-        - Note that the 'ngModel' is wrapped inside both a sqaure and circular brackets [()] - since it is representing both the Event Binding and the Property Binding together.
-        
+        - Note that the 'ngModel' is wrapped inside both a sqaure and circular brackets [()] - since it is representing both the Event Binding and the Property Binding together! 
+          Now whatever we will write inside the input (or in the Select Box) automatically will transfer for injection of the name which is found inside the ngModel.
+
+/// DIRECTIVES ///
+In Angular there are different types of directives:
+    1. Component - every component which we created until this day, are count as directives.
+    2. Structural Directive - which are controlling in the DOM represention, like IF and FOR and are written in the beggining with '*'.
+    3. Attribute Directives - changing the display and the actions of elements, components or other directives.

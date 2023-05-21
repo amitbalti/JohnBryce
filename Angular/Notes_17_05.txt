@@ -1,0 +1,25 @@
+Transformation of data in React:
+    - In order to transfer data from component A to B, we used props.
+    - In order to create communication between two components which doesn't have connection, I used Redux/Contex.
+
+In Angular:
+    - We have the App, which within the App we have the 'user input', and we have two directives - one - list-items, two - item according to ngFor. 
+    
+/// Service (In Angular) ///
+    - We also have the Service which is like the Redux.
+    - All of the other directives are "talking" with the Service, but no one is talking to one another.
+    - We can import or export data from the Service.
+
+The advantages of the Service are split into four (usually):
+    1. The classes can send functionality and variables to different number of components which knows how to receive and return data/info. Every thing is written in the Service, and when the Service will change, it will change all of the other components, directives and so on.
+    2. Our components are 'lean', they are saving us to use global functions, and global variables.
+    3. 
+    4. 
+
+If a Service is falling, I can say for example 'if I didn't get a response in five minutes for example, create new or restart yourself'.
+
+DRY = Don't Repeat Yourself.
+
+SYNC action - action which is going one after the other.
+ASYNC - actions which can happen in the same time (parallel to one another).
+
