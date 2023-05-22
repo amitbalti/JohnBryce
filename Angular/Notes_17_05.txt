@@ -23,3 +23,19 @@ DRY = Don't Repeat Yourself.
 SYNC action - action which is going one after the other.
 ASYNC - actions which can happen in the same time (parallel to one another).
 
+//// NgModule ////
+    - When we are talking about the NgModule, we are talking about the base of Angular, it's core.
+
+
+//// _val ////
+    - '_val' is a temporary variable.
+    - After you are transfering the variable, there is no other use of this variable.
+    - He is only used for transfering data/info.
+    - Example:
+        addFruit(_val: string) {
+            this.fruits_ar.push(_val);
+        }
+
+//// @Injectable ////
+    - Instead of importing the Service into the app module, I will use '@Injectable' instead.
+    - This will automatically import the Service into the app module.
