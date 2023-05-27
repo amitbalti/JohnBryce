@@ -1,0 +1,13 @@
+If we don't find 'AppRoutingModule' in the app.module imports we need to add it.
+
+To do routing we will first add inside the app-routing module, inside the 'const routes: Routes = []' all the paths.
+Here is an example:
+        const routes: Routes = [
+        { path: '', component: AllSongsComponent },
+        { path: 'list', component: AllSongsComponent },
+        { path: 'addSong', component: AddSongComponent },
+        { path: 'addCategory', component: AddCategoryComponent },
+        { path: 'categories', component: CategoriesComponent },
+        { path: 'about', component: AboutComponent },
+        { path: 'player/:id', component: PlayerComponent },
+        ];
