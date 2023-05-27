@@ -1,0 +1,14 @@
+<h1>Welcome to the {{ title }} website</h1>
+<div class="Box" *ngFor="let item of coins">
+  <img src="{{ item.coinImg }}" width="100" />
+  <h2>{{ item.coinName }}</h2>
+  <hr />
+  <u>
+    <b>Coin rate:</b>
+  </u>
+  <b> {{ item.coinRate }}$</b>
+  <br />
+  <p>
+    <u><b>Coin Info:</b></u> {{ item.someInfo }}
+  </p>
+</div>
