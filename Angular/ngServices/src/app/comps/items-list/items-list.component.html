@@ -4,5 +4,15 @@
     <div class="col-7 border p-2" *ngFor="let item of listFruits_ar">
       {{ item }}
     </div>
+    <hr />
+    <div class="col-7 border p-2" *ngFor="let item of listDrink_ar">
+      <!-- This will make only the first letter uppercased -->
+      <h3>{{ item.name | titlecase }}</h3>
+      <!--<h3>{{ item.name | uppercase }}</h3>  this will make the whole word in uppercase -->
+      <div>Price: {{ item.price | number : "1.2" | currency : "GBP" }}</div>
+      <!-- The number - will give the whole number before the dot and will put two numbers afterwards  -->
+      <div>Alcohol: {{ item.alcohol | percent }}</div>
+      <div>Expired: {{ item.expired | date }}</div>
+    </div>
   </div>
 </div>

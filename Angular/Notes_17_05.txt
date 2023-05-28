@@ -40,4 +40,12 @@ ASYNC - actions which can happen in the same time (parallel to one another).
     - Instead of importing the Service into the app module, I will use '@Injectable' instead.
     - This will automatically import the Service into the app module.
 
-/// How to update the service itself? ///
+/// Pipes Usage ///
+    To use pipe we will use the '|' symbol.
+    
+    What is pipe?
+
+    // sortBy // 
+        - Is working in a way that I can tell him to sort an array by a specific field.
+
+/// Observable ///
