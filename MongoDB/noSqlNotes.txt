@@ -1,0 +1,3 @@
+NoSQL:
+    - Schema less - the 'table' is built from the code itself.
+    - Open source - doesn't cost money.
