@@ -22,3 +22,7 @@ For example:
 
 // snapshot //
         - snapshot = 'mirror picture'
+
+
+// square brackets [] in Angular //
+        - square brackets [] in Angular are for changing value.

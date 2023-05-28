@@ -7,6 +7,7 @@ import { CategoriesComponent } from './Pages/categories/categories.component';
 import { AboutComponent } from './Pages/about/about.component';
 import { PlayerComponent } from './Pages/player/player.component';
 import { MainPageComponent } from './Pages/main-page/main-page.component';
+import { Page404Component } from './Pages/page404/page404.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'categories', component: CategoriesComponent },
   { path: 'about', component: AboutComponent },
   { path: 'player/:id', component: PlayerComponent },
+  { path: '**', component: Page404Component },
 ];
 
 @NgModule({
