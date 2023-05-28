@@ -11,3 +11,14 @@ Here is an example:
         { path: 'about', component: AboutComponent },
         { path: 'player/:id', component: PlayerComponent },
         ];
+
+If we have two components which are showed at the same time (and we don't want that), on the routing, we will use '[routerLinkActiveOptions] = "{ exact: true }"'.
+For example:
+        <a
+           routerLink="/"
+           [routerLinkActive]="['active']"
+           [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a>
+
+// snapshot //
+        - snapshot = 'mirror picture'
