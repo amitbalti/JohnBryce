@@ -11,10 +11,10 @@ In Angular:
     - We can import or export data from the Service.
 
 The advantages of the Service are split into four (usually):
-    1. The classes can send functionality and variables to different number of components which knows how to receive and return data/info. Every thing is written in the Service, and when the Service will change, it will change all of the other components, directives and so on.
-    2. Our components are 'lean', they are saving us to use global functions, and global variables.
-    3. 
-    4. 
+    1. Coding of DRY (Don't Repeat Yourself).   
+    2. Separate between getting the data and the way we display the data. Will be valid to all the topic of AJAX (I don't know when I will get it, and when I will get it, I will want to work with it).
+    3. If the service will fall, the app won't fall, I can turn on the service all over again.
+    4. Decreasing the load on the system. That's because I don't need to check every time when the data arrived. The service will let me know when I have data.
 
 If a Service is falling, I can say for example 'if I didn't get a response in five minutes for example, create new or restart yourself'.
 
@@ -39,3 +39,4 @@ ASYNC - actions which can happen in the same time (parallel to one another).
 //// @Injectable ////
     - Instead of importing the Service into the app module, I will use '@Injectable' instead.
     - This will automatically import the Service into the app module.
+
