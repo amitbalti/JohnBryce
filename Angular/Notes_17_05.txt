@@ -48,4 +48,83 @@ ASYNC - actions which can happen in the same time (parallel to one another).
     // sortBy // 
         - Is working in a way that I can tell him to sort an array by a specific field.
 
+/// What is singleTone? ///
+    Creating a 'show' from a class, and creation of a single 'show' from a class.
+    תבנית עיצוב שמאפשרת יצירת מופע בודד ממחלקה
+
+    - SingleTone means that the constructor is private, we cannot do a new command.
+
+    // What is: private constructor() {}? //
+    private constructor() {}
+        - Private constructor means that I cannot create a new type of this model. no 'new'
+
+
 /// Observable ///
+    - When it will have a data it will give it to us, until then we don't care.
+    - One of the thing it does, it is helping us with the API.
+
+    Example:
+        getTestData() {
+            // I am creating a command, which once it will get data it will announce it to me.
+            this.data = new Observable((obs) => {
+            setTimeout(() => {
+                obs.next('bit 1000');
+            }, 1000);
+            setTimeout(() => {
+                obs.next('bit value 2000');
+            }, 2000);
+            setTimeout(() => {
+                obs.next('bit value 3000');
+            }, 3000);
+            });
+            return this.data;
+        }
+
+    Where the 'observable' sending the data?
+        - The observable at the moment will not do anything.
+          But what can I do so it will work?
+            - 
+    What the 'next' is saying?
+        - 'next' is telling me - send the next thing.
+
+After creating the 'observable' I will put in the component, for example:
+    export class CryptoListComponent implements OnInit {
+    constructor(private cryptoService: CryptoService) {}
+
+    ngOnInit(): void {
+            console.log('Noam wants to marry with:');
+            this.cryptoService.getTestData().subscribe((data) => {
+                console.log(data);
+            });
+        }
+    }
+
+    What is the 'subscribe'?
+        - Everytime I want to push data, I am doing it with 'next'.
+        - 'next' is telling me - send the next thing.
+        - The 'subscribe' is the one who listen.
+        - When the 'next' turn on itself, so he catch the 'next's and act according to them.
+        - The 'next' is letting the 'subscribe' know that he have new data, and the 'subscribe' will present it.
+
+/// Can I connect two services with one another? ///
+    - I can connect two different services to one another!
+    - For example, 
+        - One service will be relate to taking out the data that I need to be inside a certain API.
+        - The other service will be responsible to update the screen with the data he received from the other service.  
+        - Within this example, the first service will have the 'observable' and the other one will have the 'subscribe'.
+
+    - An example from real life:
+        - The store is the 'observer', it is checking if there is anything new.
+        - The 'subscribe' is the signing to the club of the store - with all the sales and so on...
+
+        - Creating a new object 'Observable', and everytime I want to send it I am using the 'subscribe'.
+
+/// React VS. Angular ///
+    - React is telling me that I can use any library I want - to do that, 'npm i ...'.
+    - Angular is also letting us take any library we want, but mostly we are using all the 'Angular' libraries that Angular created for us.
+
+    Those differences making the Angular app to be much smaller (because all of the libraries are found in the same file.)
+    The other thing is that in Angular we don't need to import anything for the different components/directives - which is a lot.
+
+/// HttpClient ///
+    - HttpClient is observable to begin with
