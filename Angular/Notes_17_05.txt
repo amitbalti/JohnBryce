@@ -40,3 +40,4 @@ ASYNC - actions which can happen in the same time (parallel to one another).
     - Instead of importing the Service into the app module, I will use '@Injectable' instead.
     - This will automatically import the Service into the app module.
 
+/// How to update the service itself? ///
