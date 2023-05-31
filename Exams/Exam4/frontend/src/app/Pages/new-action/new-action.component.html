@@ -12,7 +12,7 @@
     <option value="loan">Loan</option>
   </select>
   <br /><br />
-  <h4>Your Action is {{ selectedAction }}</h4>
+  <h3>{{ selectedAction | titlecase }}</h3>
   <div id="formContainer">
     <form *ngIf="selectedAction === 'deposit'">
       <!-- Deposit form fields -->
