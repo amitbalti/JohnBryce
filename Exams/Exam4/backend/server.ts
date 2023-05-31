@@ -6,7 +6,7 @@ import fileUpload from "express-fileupload";
 import config from "./Utils/Config";
 import ErrorHandler from "./MiddleWare/route-not-found";
 import { myBanner } from "./Utils/banner";
-// import router from "./Routes/MeetingsRouter";
+import router from "./Routes/BankRouter";
 import logic from "./Logic/BankLogic";
 
 //create server

@@ -1,0 +1,22 @@
+<!-- <div class="Box">
+  <h2>What's your account number?</h2>
+  <input type="number" placeholder="Account Number" /><br /><br />
+  <button (click)="myAccountDetails()">Login to your account</button>
+</div> -->
+
+<div class="Box">
+  <div class="input-group px-5">
+    <h2>What's your account number?</h2>
+
+    <input
+      type="number"
+      placeholder="Account Number"
+      class="form-control"
+      [(ngModel)]="login_input"
+    />
+    <br /><br />
+    <button class="btn btn-info" (click)="myAccountDetails()">
+      Login to your account
+    </button>
+  </div>
+</div>
