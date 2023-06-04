@@ -1,4 +1,34 @@
-<form *ngIf="selectedAction === 'deposit'" (ngSubmit)="submitDepositForm()">
-  <!-- Deposit form fields -->
-  <button type="submit">Submit</button>
-</form>
+<h2 class="Box">Account Actions for {{ accountNumber }}</h2>
+<br />
+<div class="Box">
+  <button (click)="withdraw()">Withdraw</button>
+</div>
+<div class="Box">
+  <button (click)="deposit()">Deposit</button>
+</div>
+<div class="Box">
+  <button (click)="loan()">Loan</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <td><b>Action Type</b></td>
+      <td><b>Date</b></td>
+      <td><b>Amount</b></td>
+      <td><b>Interest Rate</b></td>
+      <td><b>Amount of payments</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let operation of accountOperations">
+      <td>
+        <b> {{ operation.type | titlecase }}</b>
+      </td>
+      <td>{{ operation.date }}</td>
+      <td>{{ operation.amount }}</td>
+      <td>{{ operation.interest }}</td>
+      <td>{{ operation.amountOfPayments }}</td>
+    </tr>
+  </tbody>
+</table>

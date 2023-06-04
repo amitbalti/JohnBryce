@@ -14,6 +14,7 @@ import { Page404Component } from './Pages/page404/page404.component';
 import { AllAccountDetailsComponent } from './Pages/all-account-details/all-account-details.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { InputUserComponent } from './comps/input-user/input-user.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { InputUserComponent } from './comps/input-user/input-user.component';
     LoginComponent,
     InputUserComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

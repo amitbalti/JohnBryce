@@ -1,22 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AccountDetailsService } from 'src/app/services/account-details.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
-  login_input = '';
-  router: any;
+export class LoginComponent {
+  accountNumber: number | undefined;
 
-  constructor(private accoutDetails: AccountDetailsService, router: Router) {}
+  constructor(private router: Router) {}
 
-  ngOnInit() {}
+  login(): void {
+    const isValidAccount = true;
 
-  myAccountDetails() {
-    this.accoutDetails.getAccountDetails();
-    this.router.navigate(['/account', this.login_input]);
+    if (isValidAccount) {
+      this.router.navigate(['/account', this.accountNumber]);
+    } else {
+      alert('Invalid account number');
+    }
   }
 }

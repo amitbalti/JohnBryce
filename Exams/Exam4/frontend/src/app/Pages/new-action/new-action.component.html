@@ -1,27 +1,28 @@
 <div class="Box">
-  <h3>Which action do you want to perform?</h3>
-  <input
-    type="number"
-    placeholder="Account Number"
-    class="form-control"
-  /><br /><br />
-  <select [(ngModel)]="selectedAction" (ngModelChange)="onActionChange()">
-    <option value="notSelected" selected disabled>Action Type</option>
-    <option value="deposit">Deposit</option>
-    <option value="withdraw">Withdraw</option>
-    <option value="loan">Loan</option>
-  </select>
-  <br /><br />
-  <h3>{{ selectedAction | titlecase }}</h3>
+  <h2><u>Account Number:</u> {{ accountNumber }}</h2>
+
+  <h2>{{ operation | titlecase }}</h2>
   <div id="formContainer">
-    <form *ngIf="selectedAction === 'deposit'">
-      <!-- Deposit form fields -->
-    </form>
-    <form *ngIf="selectedAction === 'withdraw'">
-      <!-- Withdraw form fields -->
-    </form>
-    <form *ngIf="selectedAction === 'loan'">
-      <!-- Loan form fields -->
-    </form>
+    <input type="number" placeholder="Amount" [(ngModel)]="amount" />
+
+    <div *ngIf="operation === 'deposit'"></div>
+    <div *ngIf="operation === 'withdraw'"></div>
+    <div *ngIf="operation === 'loan'">
+      <br />
+      <input
+        type="number"
+        placeholder="Intrest Rate"
+        [(ngModel)]="intrestRate"
+      />
+      <br />
+      <br />
+      <input
+        type="number"
+        placeholder="Amount of payments"
+        [(ngModel)]="amountOfPayments"
+      />
+    </div>
+    <br />
+    <button (click)="doOperation()">Submit</button>
   </div>
 </div>

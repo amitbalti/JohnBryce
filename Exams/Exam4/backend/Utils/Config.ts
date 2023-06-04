@@ -1,5 +1,5 @@
 class Config {
-  public WebPort = 4000; //backend port
+  public WebPort = 8080; //backend port
   public mySQLhost = "localhost";
   public mySQLuser = "root";
   public mySQLpass = "12345678";

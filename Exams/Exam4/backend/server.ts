@@ -29,7 +29,7 @@ server.use(bodyParser.json());
 
 //how to use the routes
 //all categories (becuase of hila) => http://localhost:8080/api/v1/videos/newCat/catName
-server.use("/devMeetings", router);
+server.use("/bankAccount", router);
 
 // create our tables if they are not exists
 console.log("Check if table exists...");
