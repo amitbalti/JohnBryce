@@ -1,0 +1,35 @@
+/* .MainLayout {
+  height: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 15% 80% 5%;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.MainLayout > header,
+.MainLayout > footer {
+  grid-column: span 6;
+}
+
+.MainLayout > main {
+  grid-column: span 5;
+}
+
+.MainLayout,
+.MainLayout > * {
+  border: 1px solid white;
+} */
+
+.MainLayout {
+  height: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 15% 85%;
+  /* 15 - on top, 85 - in the rest of the page */
+}
+
+/* Making it to the whole component and all of it's inner components */
+.MainLayout,
+.MainLayout > * {
+  border: 1px solid white;
+}
