@@ -46,22 +46,22 @@ const updateVacation = async (vacation: Vacation) => {
   price = ${vacation.price}, 
   img = '${vacation.img}' 
   WHERE 
-  (id = ${vacation.vacationId});`;
+  (vacationId = ${vacation.vacationId});`;
   await dal_mysql.execute(SQLcommand);
   return true;
 };
 
 // Delete Vacation using the vacation id
-const deleteVacation = (id: number) => {
-  const SQLcommand = `DELETE FROM myVacations.vacations WHERE id = ${id}`;
+const deleteVacation = (vacationId: number) => {
+  const SQLcommand = `DELETE FROM myVacations.vacations WHERE vacationId = ${vacationId}`;
   dal_mysql.execute(SQLcommand);
   return true;
 };
 
 // Get Vacation by the vacation id
-const getVacationById = async (id: number) => {
+const getVacationById = async (vacationId: number) => {
   return dal_mysql.execute(
-    `SELECT * FROM myVacations.vacations WHERE id = ${id}`
+    `SELECT * FROM myVacations.vacations WHERE vacationId = ${vacationId}`
   );
 };
 
