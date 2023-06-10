@@ -7,12 +7,8 @@ function Header(): JSX.Element {
     <div className="Header">
       <h1>My Vacations</h1>
       <Clock />
-      <NavLink to="/">Home Page</NavLink> • <NavLink to="/login">Login</NavLink>{" "}
-      • <NavLink to="/about">About Us</NavLink>
-      {/* <span className="topRight">
-        <NavLink to="/login">Login</NavLink> /{" "}
-        <NavLink to="/register">Register</NavLink>
-      </span> */}
+      <NavLink to="/allVacations">Home Page</NavLink> •{" "}
+      <NavLink to="/about">About Us</NavLink>
     </div>
   );
 }

@@ -6,8 +6,6 @@ import Header from "../Header/Header";
 import "./MainLayout.css";
 import { VacationDownloadedAction } from "../../Redux/VacationReducer";
 
-
-
 function MainLayout(): JSX.Element {
   useEffect(() => {
     // store.dispatch(VacationDownloadedAction(JSON.parse(localStorage.getItem("vacations"))))
@@ -17,7 +15,6 @@ function MainLayout(): JSX.Element {
       <header>
         <Header />
       </header>
-      {/* <aside></aside> */}
       <main>
         <MainRouter />
       </main>

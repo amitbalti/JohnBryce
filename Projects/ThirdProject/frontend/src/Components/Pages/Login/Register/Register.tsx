@@ -1,8 +1,16 @@
-import { Face, Group, MailOutline, Password } from "@mui/icons-material";
+import {
+  SupervisedUserCircle,
+  Face,
+  Group,
+  MailOutline,
+  Password,
+} from "@mui/icons-material";
 import {
   Button,
   ButtonGroup,
   Link,
+  Radio,
+  RadioGroup,
   TextField,
   Typography,
 } from "@mui/material";
@@ -54,6 +62,13 @@ function Register(): JSX.Element {
         variant="standard"
         required
       />
+      <br />
+      <SupervisedUserCircle style={{ fontSize: 40, margin: 10 }} />
+      {/* Check it out - learn more how it works */}
+      {/* <RadioGroup name="isAdmin"> */}
+      <Radio name="isAdmin" radioGroup="isAdmin" color="success" size="small" />
+      <Radio name="isAdmin" radioGroup="isAdmin" color="success" size="small" />
+      {/* </RadioGroup> */}
       <br /> <br />
       <ButtonGroup variant="contained" fullWidth>
         <Button
