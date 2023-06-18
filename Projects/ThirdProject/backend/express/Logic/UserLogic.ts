@@ -29,6 +29,7 @@ const addUser = async (newUser: User) => {
     VALUES 
     ('${newUser.userName}', '${newUser.userMail}', ${newUser.isAdmin},${newUser.userPassword});
   `;
+
   const result: OkPacket = await dal_mysql.execute(SQLcommand);
   return result.insertId;
 };

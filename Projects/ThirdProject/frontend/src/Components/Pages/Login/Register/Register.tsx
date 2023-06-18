@@ -8,6 +8,10 @@ import {
 import {
   Button,
   ButtonGroup,
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
   Link,
   Radio,
   RadioGroup,
@@ -17,8 +21,14 @@ import {
 import { useNavigate } from "react-router-dom";
 import notify from "../../../Utils/Notify/Notify";
 import "./Register.css";
+import React, { useState } from "react";
 
 function Register(): JSX.Element {
+  const [isAdmin, setIsAdmin] = useState(false);
+  console.log({ isAdmin });
+  const handleAdminChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsAdmin(event.target.checked);
+  };
   const navigate = useNavigate();
   return (
     <div className="Register Box" style={{ marginTop: 55 }}>
@@ -63,12 +73,10 @@ function Register(): JSX.Element {
         required
       />
       <br />
-      <SupervisedUserCircle style={{ fontSize: 40, margin: 10 }} />
-      {/* Check it out - learn more how it works */}
-      {/* <RadioGroup name="isAdmin"> */}
-      <Radio name="isAdmin" radioGroup="isAdmin" color="success" size="small" />
-      <Radio name="isAdmin" radioGroup="isAdmin" color="success" size="small" />
-      {/* </RadioGroup> */}
+      <FormControlLabel
+        label={"Are you an Admin?"}
+        control={<Checkbox checked={isAdmin} onChange={handleAdminChange} />}
+      ></FormControlLabel>
       <br /> <br />
       <ButtonGroup variant="contained" fullWidth>
         <Button
@@ -93,7 +101,7 @@ function Register(): JSX.Element {
         {/* <Link onClick={() => navigate("/register")}>register now!</Link> */}
         <Button
           onClick={() => {
-            navigate("/login");
+            navigate("/");
           }}
           sx={{ fontSize: 12 }}
         >
