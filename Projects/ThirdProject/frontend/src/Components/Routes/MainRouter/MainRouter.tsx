@@ -13,6 +13,7 @@ import "./MainRouter.css";
 import VacationsListsForUser from "../../Pages/Vacations/VacationsListsForUser/VacationsListsForUser";
 import VacationsListsForAdmin from "../../Pages/Vacations/VacationsListsForAdmin/VacationsListsForAdmin";
 import Home from "../../Pages/Home/Home";
+import DateRangePickerMUI from "../../Pages/DateRangePickerMUI/DateRangePickerMUI";
 
 function MainRouter(): JSX.Element {
   return (
@@ -22,12 +23,13 @@ function MainRouter(): JSX.Element {
         <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/vacationsPage" element={<Vacations />} />
-        <Route path="/adminPage" element={<AdminPage />} />
+        <Route path="/adminHomePage" element={<AdminPage />} />
         <Route path="/addVacation" element={<AddVacation />} />
         <Route path="/editVacation" element={<EditVacation />} />
         <Route path="/vacationsReport" element={<VacationsReport />} />
         <Route path="/about" element={<About />} />
         <Route path="/vacationsList" element={<Vacations />} />
+        {/* <Route path="/datePicker" element={<DateRangePickerMUI />} /> */}
         <Route
           path="/vacationsListUser" // Update the path to be relative to the User ID
           element={<VacationsListsForUser />}

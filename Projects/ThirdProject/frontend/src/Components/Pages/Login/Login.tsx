@@ -1,16 +1,28 @@
-import { MailOutline, Password } from "@mui/icons-material";
+import { MailOutline, Visibility, VisibilityOff } from "@mui/icons-material";
 import {
   Button,
   ButtonGroup,
-  Link,
-  TextField,
+  FormControl,
+  IconButton,
+  Input,
+  InputAdornment,
+  InputLabel,
   Typography,
 } from "@mui/material";
 import notify from "../../Utils/Notify/Notify";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import { useState } from "react";
 
 function Login(): JSX.Element {
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleMouseDownPassword = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
+  };
+
   const navigate = useNavigate();
   return (
     <div className="Login Box" style={{ marginTop: 100 }}>
@@ -19,23 +31,42 @@ function Login(): JSX.Element {
       </Typography>
       <hr />
       <br />
-      <MailOutline style={{ fontSize: 40, margin: 10 }} />
-      <TextField
-        id="standard-required"
-        label="Email"
-        type="email"
-        variant="standard"
-        required
-      />
+      <FormControl>
+        <InputLabel htmlFor="email" required>
+          Email address
+        </InputLabel>
+        <Input
+          id="my-input"
+          aria-describedby="my-helper-text"
+          required
+          startAdornment={
+            <InputAdornment position="start">
+              <MailOutline
+                style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
+              />
+            </InputAdornment>
+          }
+        />
+      </FormControl>
       <br />
-      <Password style={{ fontSize: 40, margin: 10 }} />
-      <TextField
-        id="standard-required"
-        label="Password"
-        type="password"
-        variant="standard"
-        required
-      />
+      <FormControl sx={{ m: 1, width: "25ch" }} variant="standard" required>
+        <InputLabel htmlFor="password">Password</InputLabel>
+        <Input
+          id="password"
+          type={showPassword ? "text" : "password"}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+              >
+                {showPassword ? <Visibility /> : <VisibilityOff />}
+              </IconButton>
+            </InputAdornment>
+          }
+        />
+      </FormControl>
       <br /> <br />
       <ButtonGroup variant="contained" fullWidth>
         <Button

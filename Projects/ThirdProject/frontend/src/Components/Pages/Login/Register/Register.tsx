@@ -1,9 +1,9 @@
 import {
-  SupervisedUserCircle,
   Face,
   Group,
   MailOutline,
-  Password,
+  Visibility,
+  VisibilityOff,
 } from "@mui/icons-material";
 import {
   Button,
@@ -11,11 +11,10 @@ import {
   Checkbox,
   FormControl,
   FormControlLabel,
-  FormLabel,
-  Link,
-  Radio,
-  RadioGroup,
-  TextField,
+  IconButton,
+  Input,
+  InputAdornment,
+  InputLabel,
   Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -24,6 +23,13 @@ import "./Register.css";
 import React, { useState } from "react";
 
 function Register(): JSX.Element {
+  const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleMouseDownPassword = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
+  };
   const [isAdmin, setIsAdmin] = useState(false);
   console.log({ isAdmin });
   const handleAdminChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,44 +43,92 @@ function Register(): JSX.Element {
       </Typography>
       <hr />
       <br />
-      <Face style={{ fontSize: 40, margin: 10 }} />
-      <TextField
-        id="standard-required"
-        label="First Name"
-        type="text"
-        variant="standard"
-        required
-      />
+      <FormControl style={{ margin: 10 }} required>
+        <InputLabel htmlFor="firstName" required>
+          First Name
+        </InputLabel>
+        <Input
+          type="text"
+          id="firstName"
+          aria-describedby="my-helper-text"
+          required
+          startAdornment={
+            <InputAdornment position="start">
+              <Face
+                style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
+              />
+            </InputAdornment>
+          }
+        />
+      </FormControl>
       <br />
-      <Group style={{ fontSize: 40, margin: 10 }} />
-      <TextField
-        id="standard-required"
-        label="Surname"
-        type="text"
-        variant="standard"
-        required
-      />
+      <FormControl style={{ margin: 10 }} required>
+        <InputLabel htmlFor="surname" required>
+          Surname
+        </InputLabel>
+        <Input
+          type="text"
+          id="surname"
+          aria-describedby="my-helper-text"
+          required
+          startAdornment={
+            <InputAdornment position="start">
+              <Group
+                style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
+              />
+            </InputAdornment>
+          }
+        />
+      </FormControl>
       <br />
-      <MailOutline style={{ fontSize: 40, margin: 10 }} />
-      <TextField
-        id="standard-required"
-        label="Email"
-        type="email"
-        variant="standard"
-        required
-      />
+      <FormControl style={{ margin: 10 }} required>
+        <InputLabel htmlFor="email" required>
+          Email Address
+        </InputLabel>
+        <Input
+          type="text"
+          id="email"
+          aria-describedby="my-helper-text"
+          required
+          startAdornment={
+            <InputAdornment position="start">
+              <MailOutline
+                style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
+              />
+            </InputAdornment>
+          }
+        />
+      </FormControl>
       <br />
-      <Password style={{ fontSize: 40, margin: 10 }} />
-      <TextField
-        id="standard-required"
-        label="Password"
-        type="password"
+      <FormControl
+        sx={{ m: 1, width: "25ch" }}
         variant="standard"
+        style={{ margin: 10 }}
         required
-      />
+      >
+        <InputLabel htmlFor="password">Password</InputLabel>
+        <Input
+          id="password"
+          type={showPassword ? "text" : "password"}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+              >
+                {showPassword ? <Visibility /> : <VisibilityOff />}
+              </IconButton>
+            </InputAdornment>
+          }
+        />
+      </FormControl>
+      <br />
       <br />
       <FormControlLabel
+        style={{ color: "purple" }}
         label={"Are you an Admin?"}
+        labelPlacement="top"
         control={<Checkbox checked={isAdmin} onChange={handleAdminChange} />}
       ></FormControlLabel>
       <br /> <br />

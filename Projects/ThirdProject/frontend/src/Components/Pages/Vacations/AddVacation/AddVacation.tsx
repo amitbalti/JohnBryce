@@ -2,16 +2,31 @@
 import { useNavigate } from "react-router-dom";
 import Vacation from "../../../../Model/Vacation";
 import "./AddVacation.css";
-import { Button, TextField, Typography } from "@mui/material";
 import {
-  AttachMoney,
-  CalendarMonthTwoTone,
+  Button,
+  FormControl,
+  Input,
+  InputAdornment,
+  InputLabel,
+  TextField,
+  Typography,
+} from "@mui/material";
+import {
   FlightTakeoff,
   ImageOutlined,
   NoteAltTwoTone,
 } from "@mui/icons-material";
+import { DateRangePicker } from "rsuite";
+
+import DateRangePickerMUI from "../../DateRangePickerMUI/DateRangePickerMUI";
+import { useState } from "react";
 
 function AddVacation(): JSX.Element {
+  // const [value, setValue] = useState<Date>([
+  //   new Date() || null,
+  //   new Date() || null,
+  // ]);
+
   const navigate = useNavigate();
 
   // const {
@@ -32,61 +47,56 @@ function AddVacation(): JSX.Element {
         Add New Vacation
       </Typography>
       <hr />
-      <FlightTakeoff style={{ fontSize: 40, margin: 10 }} />
-      <TextField
-        id="standard-required"
-        label="Destination"
-        type="text"
-        variant="standard"
-        required
-      />
-      <br />
-      <NoteAltTwoTone style={{ fontSize: 40, margin: 10 }} />
-      {/* <StickyNote2TwoTone style={{ fontSize: 40, margin: 10 }} /> */}
-      <TextField
-        // id="standard-required"
-        label="Description"
-        type="textarea"
-        variant="standard"
-        required
-      />
-      {/* <StyledTextarea maxRows={4} aria-label="maximum height" required /> */}
 
+      <FormControl style={{ margin: 10 }} required>
+        <InputLabel htmlFor="destination" required>
+          Destination
+        </InputLabel>
+        <Input
+          type="text"
+          id="destination"
+          aria-describedby="my-helper-text"
+          required
+          startAdornment={
+            <InputAdornment position="start">
+              <FlightTakeoff
+                style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
+              />
+            </InputAdornment>
+          }
+        />
+      </FormControl>
       <br />
-
-      {/* /////// CHECK ABOUT ///////*/}
-      <CalendarMonthTwoTone style={{ fontSize: 40, margin: 10 }} />
-      <TextField
-        style={{ width: 166 }}
-        id="standard-required"
-        label="Start Date" // CHECK - how to change the label
-        type="date"
-        variant="standard"
-        required
-      />
-      <br />
-
-      {/* /////// CHECK ABOUT ///////*/}
-      <CalendarMonthTwoTone style={{ fontSize: 40, margin: 10 }} />
-      <TextField
-        style={{ width: 166 }}
-        id="standard-required"
-        label="End Date" // CHECK - how to change the label
-        type="date"
-        variant="standard"
-        required
-      />
+      <FormControl style={{ margin: 10 }} required>
+        <InputLabel htmlFor="description" required>
+          Description
+        </InputLabel>
+        <Input
+          type="text"
+          id="description standard-multiline-static"
+          aria-describedby="my-helper-text"
+          required
+          multiline
+          rows={2.5}
+          startAdornment={
+            <InputAdornment position="start">
+              <NoteAltTwoTone
+                style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
+              />
+            </InputAdornment>
+          }
+        />
+      </FormControl>
       <br />
 
-      {/* /////// CHECK ABOUT ///////*/}
-      <AttachMoney style={{ fontSize: 40, margin: 10 }} />
-      <TextField
-        id="standard-required"
-        label="Price" // CHECK - how to change the label
-        type="number"
-        variant="standard"
-        required
-      />
+      {/* {value != undefined ? (
+        <h5>Selected Date - {String(value)}</h5>
+      ) : (
+        <h5> Please select date </h5>
+      )}
+      <br />
+      <DateRangePicker value={value} onChange={setValue} /> */}
+      {/* <DateRangePickerMUI /> */}
       <br />
 
       {/* /////// CHECK ABOUT ///////*/}
