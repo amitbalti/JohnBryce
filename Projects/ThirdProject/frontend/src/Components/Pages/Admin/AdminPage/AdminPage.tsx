@@ -1,17 +1,21 @@
 import { Box, Button, ButtonGroup, Card, Grid, Stack } from "@mui/material";
 import "./AdminPage.css";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function AdminPage(): JSX.Element {
   const navigate = useNavigate();
   return (
     <div className="AdminPage">
+      <Box className="NavBar">
+        <NavLink to="/adminHomePage">Home Page</NavLink> •{" "}
+        <NavLink to="/logout">Logout</NavLink>
+      </Box>
       <Box className="allAdminBox">
         <Card
           variant="outlined"
           className="AdminCard"
           onClick={() => {
-            navigate("/myVacations/:id");
+            navigate("/myVacations/admin");
           }}
         >
           My Vacations

@@ -14,6 +14,8 @@ import VacationsListsForUser from "../../Pages/Vacations/VacationsListsForUser/V
 import VacationsListsForAdmin from "../../Pages/Vacations/VacationsListsForAdmin/VacationsListsForAdmin";
 import Home from "../../Pages/Home/Home";
 import DateRangePickerMUI from "../../Pages/DateRangePickerMUI/DateRangePickerMUI";
+import AdminVacations from "../../Pages/Admin/AdminVacations/AdminVacations";
+import AdminVacationsStats from "../../Pages/Admin/AdminVacationsStats/AdminVacationsStats";
 
 function MainRouter(): JSX.Element {
   return (
@@ -24,6 +26,8 @@ function MainRouter(): JSX.Element {
         <Route path="/register" element={<Register />} />
         <Route path="/vacationsPage" element={<Vacations />} />
         <Route path="/adminHomePage" element={<AdminPage />} />
+        <Route path="/myVacations/admin" element={<AdminVacations />} />
+        <Route path="/myVacationsStats" element={<AdminVacationsStats />} />
         <Route path="/addVacation" element={<AddVacation />} />
         <Route path="/editVacation" element={<EditVacation />} />
         <Route path="/vacationsReport" element={<VacationsReport />} />

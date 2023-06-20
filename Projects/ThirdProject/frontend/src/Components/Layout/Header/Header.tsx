@@ -5,11 +5,11 @@ import "./Header.css";
 function Header(): JSX.Element {
   return (
     <div className="Header">
-      <NavLink to="/home">
+      <NavLink to="/">
         <h1 className="HomeHeader">My Vacations</h1>
       </NavLink>
       <Clock />
-      <NavLink to="/home">Home Page</NavLink> •{" "}
+      {/* <NavLink to="/home">Home Page</NavLink> •{" "} */}
       <NavLink to="/about">About Us</NavLink>
     </div>
   );
