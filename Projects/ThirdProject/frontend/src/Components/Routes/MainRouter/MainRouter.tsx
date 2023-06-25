@@ -7,11 +7,7 @@ import Register from "../../Pages/Login/Register/Register";
 import Page404 from "../../Pages/Page404/Page404";
 import AddVacation from "../../Pages/Vacations/AddVacation/AddVacation";
 import EditVacation from "../../Pages/Vacations/EditVacation/EditVacation";
-import Vacations from "../../Pages/Vacations/Vacations";
-import VacationsReport from "../../Pages/Vacations/VacationsReport/VacationsReport";
 import "./MainRouter.css";
-import VacationsListsForUser from "../../Pages/Vacations/VacationsListsForUser/VacationsListsForUser";
-import VacationsListsForAdmin from "../../Pages/Vacations/VacationsListsForAdmin/VacationsListsForAdmin";
 import Home from "../../Pages/Home/Home";
 import DateRangePickerMUI from "../../Pages/DateRangePickerMUI/DateRangePickerMUI";
 import AdminVacations from "../../Pages/Admin/AdminVacations/AdminVacations";
@@ -31,17 +27,10 @@ function MainRouter(): JSX.Element {
         <Route path="/myVacationsStats" element={<AdminVacationsStats />} />
         <Route path="/addVacation" element={<AddVacation />} />
         <Route path="/editVacation" element={<EditVacation />} />
-        <Route path="/vacationsReport" element={<VacationsReport />} />
+        <Route path="/vacationsReport" element={<AdminVacationsStats />} />
         <Route path="/about" element={<About />} />
         {/* <Route path="/datePicker" element={<DateRangePickerMUI />} /> */}
-        <Route
-          path="/vacationsListUser" // Update the path to be relative to the User ID
-          element={<VacationsListsForUser />}
-        ></Route>
-        <Route
-          path="/vacationsListAdmin" // Update the path to be relative to the Admin ID
-          element={<VacationsListsForAdmin />}
-        ></Route>
+
         {/* <Route path="/" element={<MainPage />} /> */}
         {/* Continue Page404! */}
         <Route path="*" element={<Page404 />} />

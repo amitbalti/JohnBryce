@@ -1,8 +1,9 @@
 // import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Vacation from "../../../../Model/Vacation";
 import "./AddVacation.css";
 import {
+  Box,
   Button,
   FormControl,
   Input,
@@ -42,86 +43,92 @@ function AddVacation(): JSX.Element {
     // axios.get().then(response)=>{}
   };
   return (
-    <div className="AddVacation Box" style={{ marginTop: 50 }}>
-      <Typography variant="h4" className="HeadLine">
-        Add New Vacation
-      </Typography>
-      <hr />
+    <div className="AddVacation">
+      <Box className="NavBar" style={{ marginTop: 5 }}>
+        <NavLink to="/adminHomePage">Home Page</NavLink> •{" "}
+        <NavLink to="/logout">Logout</NavLink>
+      </Box>
+      <div className="Box" style={{ marginTop: 50 }}>
+        <Typography variant="h4" className="HeadLine">
+          Add New Vacation
+        </Typography>
+        <hr />
 
-      <FormControl style={{ margin: 10 }} required>
-        <InputLabel htmlFor="destination" required>
-          Destination
-        </InputLabel>
-        <Input
-          type="text"
-          id="destination"
-          aria-describedby="my-helper-text"
-          required
-          startAdornment={
-            <InputAdornment position="start">
-              <FlightTakeoff
-                style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
-              />
-            </InputAdornment>
-          }
-        />
-      </FormControl>
-      <br />
-      <FormControl style={{ margin: 10 }} required>
-        <InputLabel htmlFor="description" required>
-          Description
-        </InputLabel>
-        <Input
-          type="text"
-          id="description standard-multiline-static"
-          aria-describedby="my-helper-text"
-          required
-          multiline
-          rows={2.5}
-          startAdornment={
-            <InputAdornment position="start">
-              <NoteAltTwoTone
-                style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
-              />
-            </InputAdornment>
-          }
-        />
-      </FormControl>
-      <br />
+        <FormControl style={{ margin: 10 }} required>
+          <InputLabel htmlFor="destination" required>
+            Destination
+          </InputLabel>
+          <Input
+            type="text"
+            id="destination"
+            aria-describedby="my-helper-text"
+            required
+            startAdornment={
+              <InputAdornment position="start">
+                <FlightTakeoff
+                  style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
+                />
+              </InputAdornment>
+            }
+          />
+        </FormControl>
+        <br />
+        <FormControl style={{ margin: 10 }} required>
+          <InputLabel htmlFor="description" required>
+            Description
+          </InputLabel>
+          <Input
+            type="text"
+            id="description standard-multiline-static"
+            aria-describedby="my-helper-text"
+            required
+            multiline
+            rows={2.5}
+            startAdornment={
+              <InputAdornment position="start">
+                <NoteAltTwoTone
+                  style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
+                />
+              </InputAdornment>
+            }
+          />
+        </FormControl>
+        <br />
 
-      {/* {value != undefined ? (
+        {/* {value != undefined ? (
         <h5>Selected Date - {String(value)}</h5>
       ) : (
         <h5> Please select date </h5>
       )}
       <br />
       <DateRangePicker value={value} onChange={setValue} /> */}
-      {/* <DateRangePickerMUI /> */}
-      <br />
+        {/* <DateRangePickerMUI /> */}
+        <br />
 
-      {/* /////// CHECK ABOUT ///////*/}
-      <ImageOutlined style={{ fontSize: 40, margin: 10 }} />
-      <TextField
-        style={{ width: 160 }}
-        id="standard-required"
-        label="Cover Image" // CHECK - how to change the label
-        type="file"
-        variant="standard"
-        required
-      />
-      <br />
+        {/* /////// CHECK ABOUT ///////*/}
+        <ImageOutlined style={{ fontSize: 40, margin: 10 }} />
+        <TextField
+          style={{ width: 160 }}
+          id="standard-required"
+          label="Cover Image" // CHECK - how to change the label
+          type="file"
+          variant="standard"
+          required
+        />
+        <br />
 
-      {/* /////// CHECK ABOUT ///////*/}
-      {/* <ButtonGroup> */}
-      <Button fullWidth variant="contained" color="primary">
-        Add Vacation
-      </Button>
-      <br />
-      <br />
-      <Button fullWidth variant="outlined" color="error">
-        Cancel
-      </Button>
-      {/* </ButtonGroup> */}
+        {/* /////// CHECK ABOUT ///////*/}
+        {/* <ButtonGroup> */}
+        <Button fullWidth variant="contained" color="primary">
+          Add Vacation
+        </Button>
+        <br />
+        <br />
+        <Button fullWidth variant="outlined" color="error">
+          Cancel
+        </Button>
+        {/* </ButtonGroup> */}
+      </div>
     </div>
   );
 }

@@ -6,7 +6,7 @@ function AdminPage(): JSX.Element {
   const navigate = useNavigate();
   return (
     <div className="AdminPage">
-      <Box className="NavBar">
+      <Box className="NavBar" style={{ marginTop: 5 }}>
         <NavLink to="/adminHomePage">Home Page</NavLink> •{" "}
         <NavLink to="/logout">Logout</NavLink>
       </Box>
