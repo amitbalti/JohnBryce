@@ -4,12 +4,9 @@ import "./Parking.css";
 import Slot from "./Slot/Slot";
 
 function Parking(): JSX.Element {
-  //let parking:Car[] = [];
   const [parking, setParking] = useState<Car[]>([]);
 
-  useEffect(() => {
-    
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div className="Parking">
