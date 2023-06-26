@@ -57,7 +57,6 @@ const loginUser = async (
       return user;
     }
   }
-
   // Invalid credentials or user not found
   return null;
 };

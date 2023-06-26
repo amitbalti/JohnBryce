@@ -5,11 +5,15 @@ import "./AddVacation.css";
 import {
   Box,
   Button,
+  FilledTextFieldProps,
   FormControl,
   Input,
   InputAdornment,
   InputLabel,
+  OutlinedTextFieldProps,
+  StandardTextFieldProps,
   TextField,
+  TextFieldVariants,
   Typography,
 } from "@mui/material";
 import {
@@ -17,12 +21,17 @@ import {
   ImageOutlined,
   NoteAltTwoTone,
 } from "@mui/icons-material";
-import { DateRangePicker } from "rsuite";
 
+import * as React from "react";
+import DateRangePicker from "@mui/lab/DateRangePicker";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DateRangePickerMUI from "../../DateRangePickerMUI/DateRangePickerMUI";
 import { useState } from "react";
 
 function AddVacation(): JSX.Element {
+  const [value, setValue] = useState([null, null]);
+
   // const [value, setValue] = useState<Date>([
   //   new Date() || null,
   //   new Date() || null,
@@ -95,6 +104,43 @@ function AddVacation(): JSX.Element {
         </FormControl>
         <br />
 
+        {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DateRangePicker
+            startText="Check-in"
+            endText="Check-out"
+            value={value}
+            onChange={(newValue: React.SetStateAction<null[]>) => {
+              setValue(newValue);
+            }}
+            renderInput={(
+              startProps: JSX.IntrinsicAttributes & {
+                variant?: TextFieldVariants | undefined;
+              } & Omit<
+                  | FilledTextFieldProps
+                  | OutlinedTextFieldProps
+                  | StandardTextFieldProps,
+                  "variant"
+                >,
+              endProps: JSX.IntrinsicAttributes & {
+                variant?: TextFieldVariants | undefined;
+              } & Omit<
+                  | FilledTextFieldProps
+                  | OutlinedTextFieldProps
+                  | StandardTextFieldProps,
+                  "variant"
+                >
+            ) => (
+              <React.Fragment>
+                <TextField {...startProps} />
+                <Box sx={{ mx: 2 }}> to </Box>
+                <TextField {...endProps} />
+              </React.Fragment>
+            )}
+          />
+        </LocalizationProvider> */}
+        {/* <FormControl>
+      <DateRangePicker value={value} onChange={setValue} /> 
+        </FormControl> */}
         {/* {value != undefined ? (
         <h5>Selected Date - {String(value)}</h5>
       ) : (

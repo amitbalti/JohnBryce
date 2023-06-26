@@ -16,7 +16,7 @@ function EditVacation(): JSX.Element {
   const navigate = useNavigate();
   const params = useParams();
   const tempVacation = new Vacation(
-    "na",
+    "destination",
     "na",
     new Date(),
     new Date(),
@@ -27,11 +27,16 @@ function EditVacation(): JSX.Element {
 
   useEffect(() => {});
 
+  const vacationId = 2;
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Vacation>();
+  } = useForm<Vacation>({
+    // defaultValues: async ():AsyncDefaultValues<Vacation> =>
+    //   await fetch(`http://localhost:8080/vacations/getVacation/${vacationId}`),
+  });
 
   // Handle once the data was sent to me:
   const send = (vacationData: Vacation) => {

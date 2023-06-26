@@ -1,4 +1,4 @@
-import User from "../../Model/User";
+import { User, UserLogIn } from "../../Model/User";
 
 // Phase 1: Create the data that should be exposed to the app
 export class UserState {
@@ -23,15 +23,17 @@ export interface AuthAction {
 }
 
 // Phase 4: the function that needs to be run according to action
-export function UserLogedInRequest() {}
-export function UserLogedInSuccess() {}
-export function UserLogedInFailure() {}
-export function UserLoggedOut() {}
-export function UserRegisterRequest() {}
-export function UserRegisterSuccess(user: User): AuthAction {
+export function userLogedInRequestAction(loginData: UserLogIn) {
+  return { type: AuthActionType.LOGIN_REQUEST, payload: loginData };
+}
+export function userLogedInSuccess() {}
+export function userLogedInFailure() {}
+export function userLoggedOut() {}
+export function userRegisterRequest() {}
+export function userRegisterSuccess(user: User): AuthAction {
   return { type: AuthActionType.REGISTER_SUCCESS, payload: user };
 }
-export function UserRegisterFailure() {}
+export function userRegisterFailure() {}
 
 // Phase 5: building the reducer by it's signature. We will not handle or use this function, the redux will handle it for us.
 // export function authUserReducer(
