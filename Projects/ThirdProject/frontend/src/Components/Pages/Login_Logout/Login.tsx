@@ -9,12 +9,23 @@ import {
   InputLabel,
   Typography,
 } from "@mui/material";
-import notify from "../../Utils/Notify/Notify";
+// import notify from "../../Utils/Notify/Notify";
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../../../Redux/actions/authActions";
+import "./Login.css";
 
 function Login(): JSX.Element {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+
+  const handleLogin = () => {
+    console.log(login(email, password));
+    dispatch(login(email, password));
+  };
+
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (
@@ -24,6 +35,7 @@ function Login(): JSX.Element {
   };
 
   const navigate = useNavigate();
+
   return (
     <div className="Login Box" style={{ marginTop: 100 }}>
       <Typography variant="h4" className="HeadLine">
@@ -36,9 +48,11 @@ function Login(): JSX.Element {
           Email address
         </InputLabel>
         <Input
-          id="my-input"
+          id="email"
           aria-describedby="my-helper-text"
           required
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
           startAdornment={
             <InputAdornment position="start">
               <MailOutline
@@ -54,6 +68,8 @@ function Login(): JSX.Element {
         <Input
           id="password"
           type={showPassword ? "text" : "password"}
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
           endAdornment={
             <InputAdornment position="end">
               <IconButton
@@ -69,12 +85,7 @@ function Login(): JSX.Element {
       </FormControl>
       <br /> <br />
       <ButtonGroup variant="contained" fullWidth>
-        <Button
-          color="primary"
-          onClick={() => {
-            navigate("/");
-          }}
-        >
+        <Button color="primary" onClick={handleLogin} type="submit">
           Login
         </Button>
         {/* <Button

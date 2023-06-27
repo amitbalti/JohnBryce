@@ -1,10 +1,8 @@
 import { useEffect } from "react";
-import { store } from "../../Redux/store";
 import MainRouter from "../../Routes/MainRouter/MainRouter";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import "./MainLayout.css";
-import { VacationDownloadedAction } from "../../Redux/VacationReducer";
 
 function MainLayout(): JSX.Element {
   useEffect(() => {

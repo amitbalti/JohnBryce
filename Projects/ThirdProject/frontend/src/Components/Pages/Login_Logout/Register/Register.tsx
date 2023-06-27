@@ -18,23 +18,37 @@ import {
   Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import notify from "../../../Utils/Notify/Notify";
+// import notify from "../../../Utils/Notify/Notify";
 import "./Register.css";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { register } from "../../../../Redux/actions/authActions";
 
 function Register(): JSX.Element {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [isAdmin, setIsAdmin] = useState(false);
+
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
     event.preventDefault();
   };
-  const [isAdmin, setIsAdmin] = useState(false);
-  console.log({ isAdmin });
+
   const handleAdminChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsAdmin(event.target.checked);
   };
+
+  const dispatch = useDispatch();
+
+  const handleRegisterChange = () => {
+    dispatch(register(firstName, surname, email, password, isAdmin));
+  };
+
   const navigate = useNavigate();
   return (
     <div className="Register Box" style={{ marginTop: 55 }}>
@@ -52,6 +66,8 @@ function Register(): JSX.Element {
           id="firstName"
           aria-describedby="my-helper-text"
           required
+          value={firstName}
+          onChange={(event) => setFirstName(event.target.value)}
           startAdornment={
             <InputAdornment position="start">
               <Face
@@ -71,6 +87,8 @@ function Register(): JSX.Element {
           id="surname"
           aria-describedby="my-helper-text"
           required
+          value={surname}
+          onChange={(event) => setSurname(event.target.value)}
           startAdornment={
             <InputAdornment position="start">
               <Group
@@ -90,6 +108,8 @@ function Register(): JSX.Element {
           id="email"
           aria-describedby="my-helper-text"
           required
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
           startAdornment={
             <InputAdornment position="start">
               <MailOutline
@@ -110,6 +130,8 @@ function Register(): JSX.Element {
         <Input
           id="password"
           type={showPassword ? "text" : "password"}
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
           endAdornment={
             <InputAdornment position="end">
               <IconButton
@@ -133,12 +155,7 @@ function Register(): JSX.Element {
       ></FormControlLabel>
       <br /> <br />
       <ButtonGroup variant="contained" fullWidth>
-        <Button
-          color="primary"
-          onClick={() => {
-            navigate("/");
-          }}
-        >
+        <Button color="primary" onClick={handleRegisterChange}>
           Register
         </Button>
         {/* <Button
