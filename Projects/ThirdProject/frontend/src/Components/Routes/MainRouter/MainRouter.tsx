@@ -17,15 +17,14 @@ function MainRouter(): JSX.Element {
   return (
     <div className="MainRouter">
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/adminHomePage" element={<AdminPage />} />
         <Route path="/myVacations/admin" element={<AdminVacations />} />
-        <Route path="/userHomePage" element={<UserVacations />} />
-        <Route path="/myVacationsStats" element={<AdminVacationsStats />} />
         <Route path="/addVacation" element={<AddVacation />} />
         <Route path="/editVacation" element={<EditVacation />} />
         <Route path="/vacationsReport" element={<AdminVacationsStats />} />
+        <Route path="/userHomePage" element={<UserVacations />} />
         <Route path="/about" element={<About />} />
         {/* <Route path="/datePicker" element={<DateRangePickerMUI />} /> */}
 

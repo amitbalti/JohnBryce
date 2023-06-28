@@ -15,26 +15,52 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../../Redux/actions/authActions";
 import "./Login.css";
+import axios from "axios";
 
 function Login(): JSX.Element {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogin = () => {
-    console.log(login(email, password));
+    // Dispatch login action
     dispatch(login(email, password));
+
+    // Make API request using Axios
+    axios
+      .post("http://localhost:8080/login", {
+        email,
+        password,
+      })
+      .then((response) => {
+        // Handle successful login
+        console.log("Login successful", response.data);
+
+        // Determine the user's role (Admin or regular User) based on the response data
+        const { role } = response.data;
+
+        // Navigate to the desired page based on the user's role
+        if (role === "Admin") {
+          navigate("/adminHomePage");
+        } else if (role === "User") {
+          navigate("/userHomePage");
+        }
+      })
+      .catch((error) => {
+        // Handle login error
+        console.log("Login failed", error.response.data);
+      });
   };
 
-  const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
     event.preventDefault();
   };
-
-  const navigate = useNavigate();
 
   return (
     <div className="Login Box" style={{ marginTop: 100 }}>

@@ -23,6 +23,7 @@ import "./Register.css";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { register } from "../../../../Redux/actions/authActions";
+import axios from "axios";
 
 function Register(): JSX.Element {
   const [showPassword, setShowPassword] = useState(false);
@@ -44,12 +45,32 @@ function Register(): JSX.Element {
   };
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleRegisterChange = () => {
+    // Dispatch register action
     dispatch(register(firstName, surname, email, password, isAdmin));
+
+    // Make API request using Axios
+    axios
+      .post("http://localhost:8080/register", {
+        firstName,
+        surname,
+        email,
+        password,
+        isAdmin,
+      })
+      .then((response) => {
+        // Handle successful registration
+        console.log("Registration successfully", response.data);
+        navigate("/login");
+      })
+      .catch((error) => {
+        // Handle registration error
+        console.log("Registration failed", error.response.data);
+      });
   };
 
-  const navigate = useNavigate();
   return (
     <div className="Register Box" style={{ marginTop: 55 }}>
       <Typography variant="h4" className="HeadLine">
@@ -169,10 +190,9 @@ function Register(): JSX.Element {
       </ButtonGroup>
       <p>
         Already a member? <br />
-        {/* <Link onClick={() => navigate("/register")}>register now!</Link> */}
         <Button
           onClick={() => {
-            navigate("/");
+            navigate("/login");
           }}
           sx={{ fontSize: 12 }}
         >
