@@ -2,16 +2,12 @@
   margin-top: -13px;
 }
 
-a {
-  text-decoration: none;
-  color: darkorange;
-}
-
 a:hover {
   color: black;
 }
 
 .HomeHeader {
-  color: darkcyan;
+  color: #6a5acd;
+  font-size: 37px;
   text-decoration: none;
 }

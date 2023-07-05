@@ -9,10 +9,18 @@ function AdminVacations(): JSX.Element {
 
   return (
     <div className="AdminVacations">
-      <Box className="NavBar" style={{ marginTop: 5 }}>
+      <Box className="NavBar" style={{ padding: 5, marginTop: 5 }}>
         <NavLink to="/adminHomePage">Home Page</NavLink> •{" "}
-        <NavLink to="/logout">Logout</NavLink>
+        <NavLink to="/logout">Logout</NavLink> •{" "}
+        <NavLink to="/about">About Us</NavLink>
       </Box>
+      <hr
+        style={{
+          backgroundColor: "white",
+          height: "2px",
+          border: "none",
+        }}
+      />
       <div className="Box">
         {vacation.map((item) => (
           <SingleVacationAdmin key={item.vacationId} vacationData={item} />

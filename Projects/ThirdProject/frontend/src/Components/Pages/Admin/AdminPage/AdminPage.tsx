@@ -6,10 +6,18 @@ function AdminPage(): JSX.Element {
   const navigate = useNavigate();
   return (
     <div className="AdminPage">
-      <Box className="NavBar" style={{ marginTop: 5 }}>
+      <Box className="NavBar" style={{ padding: 5, marginTop: 5 }}>
         <NavLink to="/adminHomePage">Home Page</NavLink> •{" "}
-        <NavLink to="/logout">Logout</NavLink>
+        <NavLink to="/logout">Logout</NavLink> •{" "}
+        <NavLink to="/about">About Us</NavLink>
       </Box>
+      <hr
+        style={{
+          backgroundColor: "white",
+          height: "2px",
+          border: "none",
+        }}
+      />
       <Box className="allAdminBox">
         <Card
           variant="outlined"
@@ -33,7 +41,7 @@ function AdminPage(): JSX.Element {
           variant="outlined"
           className="AdminCard"
           onClick={() => {
-            navigate("/myVacationsStats");
+            navigate("/vacationsReport");
           }}
         >
           My Vacations Stats

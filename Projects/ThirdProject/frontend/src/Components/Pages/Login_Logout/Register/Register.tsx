@@ -6,6 +6,7 @@ import {
   VisibilityOff,
 } from "@mui/icons-material";
 import {
+  Box,
   Button,
   ButtonGroup,
   Checkbox,
@@ -17,7 +18,7 @@ import {
   InputLabel,
   Typography,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 // import notify from "../../../Utils/Notify/Notify";
 import "./Register.css";
 import React, { useState } from "react";
@@ -42,6 +43,7 @@ function Register(): JSX.Element {
 
   const handleAdminChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsAdmin(event.target.checked);
+    console.log("Are you an Admin?", event.target.checked);
   };
 
   const dispatch = useDispatch();
@@ -72,114 +74,125 @@ function Register(): JSX.Element {
   };
 
   return (
-    <div className="Register Box" style={{ marginTop: 55 }}>
-      <Typography variant="h4" className="HeadLine">
-        Register
-      </Typography>
-      <hr />
-      <br />
-      <FormControl style={{ margin: 10 }} required>
-        <InputLabel htmlFor="firstName" required>
-          First Name
-        </InputLabel>
-        <Input
-          type="text"
-          id="firstName"
-          aria-describedby="my-helper-text"
-          required
-          value={firstName}
-          onChange={(event) => setFirstName(event.target.value)}
-          startAdornment={
-            <InputAdornment position="start">
-              <Face
-                style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
-              />
-            </InputAdornment>
-          }
-        />
-      </FormControl>
-      <br />
-      <FormControl style={{ margin: 10 }} required>
-        <InputLabel htmlFor="surname" required>
-          Surname
-        </InputLabel>
-        <Input
-          type="text"
-          id="surname"
-          aria-describedby="my-helper-text"
-          required
-          value={surname}
-          onChange={(event) => setSurname(event.target.value)}
-          startAdornment={
-            <InputAdornment position="start">
-              <Group
-                style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
-              />
-            </InputAdornment>
-          }
-        />
-      </FormControl>
-      <br />
-      <FormControl style={{ margin: 10 }} required>
-        <InputLabel htmlFor="email" required>
-          Email Address
-        </InputLabel>
-        <Input
-          type="text"
-          id="email"
-          aria-describedby="my-helper-text"
-          required
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          startAdornment={
-            <InputAdornment position="start">
-              <MailOutline
-                style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
-              />
-            </InputAdornment>
-          }
-        />
-      </FormControl>
-      <br />
-      <FormControl
-        sx={{ m: 1, width: "25ch" }}
-        variant="standard"
-        style={{ margin: 10 }}
-        required
-      >
-        <InputLabel htmlFor="password">Password</InputLabel>
-        <Input
-          id="password"
-          type={showPassword ? "text" : "password"}
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton
-                aria-label="toggle password visibility"
-                onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
-              >
-                {showPassword ? <Visibility /> : <VisibilityOff />}
-              </IconButton>
-            </InputAdornment>
-          }
-        />
-      </FormControl>
-      <br />
-      <br />
-      <FormControlLabel
-        style={{ color: "purple" }}
-        label={"Are you an Admin?"}
-        labelPlacement="top"
-        control={<Checkbox checked={isAdmin} onChange={handleAdminChange} />}
-      ></FormControlLabel>
-      <br /> <br />
-      <ButtonGroup variant="contained" fullWidth>
-        <Button color="primary" onClick={handleRegisterChange}>
+    <div>
+      <Box className="NavBar" style={{ padding: 5, marginTop: 5 }}>
+        <NavLink to="/about">About Us</NavLink>
+      </Box>
+      <hr
+        style={{
+          backgroundColor: "white",
+          height: "2px",
+          border: "none",
+        }}
+      />
+      <div className="Register Box" style={{ marginTop: 55 }}>
+        <Typography variant="h4" className="HeadLine">
           Register
-        </Button>
-        {/* <Button
+        </Typography>
+        <hr />
+        <br />
+        <FormControl style={{ margin: 10 }} required>
+          <InputLabel htmlFor="firstName" required>
+            First Name
+          </InputLabel>
+          <Input
+            type="text"
+            id="firstName"
+            aria-describedby="my-helper-text"
+            required
+            value={firstName}
+            onChange={(event) => setFirstName(event.target.value)}
+            startAdornment={
+              <InputAdornment position="start">
+                <Face
+                  style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
+                />
+              </InputAdornment>
+            }
+          />
+        </FormControl>
+        <br />
+        <FormControl style={{ margin: 10 }} required>
+          <InputLabel htmlFor="surname" required>
+            Surname
+          </InputLabel>
+          <Input
+            type="text"
+            id="surname"
+            aria-describedby="my-helper-text"
+            required
+            value={surname}
+            onChange={(event) => setSurname(event.target.value)}
+            startAdornment={
+              <InputAdornment position="start">
+                <Group
+                  style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
+                />
+              </InputAdornment>
+            }
+          />
+        </FormControl>
+        <br />
+        <FormControl style={{ margin: 10 }} required>
+          <InputLabel htmlFor="email" required>
+            Email Address
+          </InputLabel>
+          <Input
+            type="text"
+            id="email"
+            aria-describedby="my-helper-text"
+            required
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            startAdornment={
+              <InputAdornment position="start">
+                <MailOutline
+                  style={{ fontSize: 35, marginBottom: 5, color: "purple" }}
+                />
+              </InputAdornment>
+            }
+          />
+        </FormControl>
+        <br />
+        <FormControl
+          sx={{ m: 1, width: "25ch" }}
+          variant="standard"
+          style={{ margin: 10 }}
+          required
+        >
+          <InputLabel htmlFor="password">Password</InputLabel>
+          <Input
+            id="password"
+            type={showPassword ? "text" : "password"}
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                >
+                  {showPassword ? <Visibility /> : <VisibilityOff />}
+                </IconButton>
+              </InputAdornment>
+            }
+          />
+        </FormControl>
+        <br />
+        <br />
+        <FormControlLabel
+          style={{ color: "purple" }}
+          label={"Are you an Admin?"}
+          labelPlacement="top"
+          control={<Checkbox checked={isAdmin} onChange={handleAdminChange} />}
+        ></FormControlLabel>
+        <br /> <br />
+        <ButtonGroup variant="contained" fullWidth>
+          <Button color="primary" onClick={handleRegisterChange}>
+            Register
+          </Button>
+          {/* <Button
           color="primary"
           onClick={() => {
             notify.success("You have registered successfully!");
@@ -187,18 +200,19 @@ function Register(): JSX.Element {
         >
           Register
         </Button> */}
-      </ButtonGroup>
-      <p>
-        Already a member? <br />
-        <Button
-          onClick={() => {
-            navigate("/");
-          }}
-          sx={{ fontSize: 12 }}
-        >
-          Login
-        </Button>
-      </p>
+        </ButtonGroup>
+        <p>
+          Already a member? <br />
+          <Button
+            onClick={() => {
+              navigate("/");
+            }}
+            sx={{ fontSize: 12 }}
+          >
+            Login
+          </Button>
+        </p>
+      </div>
     </div>
   );
 }

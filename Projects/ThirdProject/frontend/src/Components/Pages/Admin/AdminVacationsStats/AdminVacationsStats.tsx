@@ -44,10 +44,18 @@ const data = [
 function AdminVacationsStats(): JSX.Element {
   return (
     <div className="AdminVacationsStats">
-      <Box className="NavBar" style={{ marginTop: 5 }}>
+      <Box className="NavBar" style={{ padding: 5, marginTop: 5 }}>
         <NavLink to="/adminHomePage">Home Page</NavLink> •{" "}
-        <NavLink to="/logout">Logout</NavLink>
+        <NavLink to="/logout">Logout</NavLink> •{" "}
+        <NavLink to="/about">About Us</NavLink>
       </Box>
+      <hr
+        style={{
+          backgroundColor: "white",
+          height: "2px",
+          border: "none",
+        }}
+      />
       <BarChart
         className="Box"
         width={730}
