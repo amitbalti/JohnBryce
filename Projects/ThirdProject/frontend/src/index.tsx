@@ -5,7 +5,7 @@ import MainLayout from "./Components/Layout/MainLayout/MainLayout";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { createStore } from "redux";
-import rootReducer from "./Redux/reducers/rootReducer";
+import rootReducer from "./Redux/rootReducer";
 
 // Create the redux store
 const store = createStore(rootReducer);

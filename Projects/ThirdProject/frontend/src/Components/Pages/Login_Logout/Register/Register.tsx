@@ -22,7 +22,7 @@ import { useNavigate } from "react-router-dom";
 import "./Register.css";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { register } from "../../../../Redux/actions/authActions";
+import { register } from "../../../../Redux/Auth/actions/authActions";
 import axios from "axios";
 
 function Register(): JSX.Element {
@@ -63,7 +63,7 @@ function Register(): JSX.Element {
       .then((response) => {
         // Handle successful registration
         console.log("Registration successfully", response.data);
-        navigate("/login");
+        navigate("/");
       })
       .catch((error) => {
         // Handle registration error
@@ -192,7 +192,7 @@ function Register(): JSX.Element {
         Already a member? <br />
         <Button
           onClick={() => {
-            navigate("/login");
+            navigate("/");
           }}
           sx={{ fontSize: 12 }}
         >

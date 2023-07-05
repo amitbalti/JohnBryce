@@ -8,7 +8,7 @@ import Page404 from "../../Pages/Page404/Page404";
 import AddVacation from "../../Pages/Vacations/AddVacation/AddVacation";
 import EditVacation from "../../Pages/Vacations/EditVacation/EditVacation";
 import "./MainRouter.css";
-import DateRangePickerMUI from "../../Pages/DateRangePickerMUI/DateRangePickerMUI";
+// import DateRangePickerMUI from "../../Pages/DateRangePickerMUI/DateRangePickerMUI";
 import AdminVacations from "../../Pages/Admin/AdminVacations/AdminVacations";
 import AdminVacationsStats from "../../Pages/Admin/AdminVacationsStats/AdminVacationsStats";
 import UserVacations from "../../Pages/User/UserVacations/UserVacations";
@@ -17,7 +17,7 @@ function MainRouter(): JSX.Element {
   return (
     <div className="MainRouter">
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/adminHomePage" element={<AdminPage />} />
         <Route path="/myVacations/admin" element={<AdminVacations />} />
