@@ -15,11 +15,7 @@ function AdminVacations(): JSX.Element {
         <NavLink to="/about">About Us</NavLink>
       </Box>
       <hr
-        style={{
-          backgroundColor: "white",
-          height: "2px",
-          border: "none",
-        }}
+        className="hrMenu"
       />
       <div className="Box">
         {vacation.map((item) => (

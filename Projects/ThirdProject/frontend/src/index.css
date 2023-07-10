@@ -25,3 +25,9 @@ a {
   color: #900c55;
   font-weight: bold;
 }
+
+.hrMenu {
+  background-color: white;
+  height: 2px;
+  border: none;
+}

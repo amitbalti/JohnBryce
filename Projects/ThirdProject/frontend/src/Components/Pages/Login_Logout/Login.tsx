@@ -68,13 +68,7 @@ function Login(): JSX.Element {
       <Box className="NavBar" style={{ padding: 5, marginTop: 5 }}>
         <NavLink to="/about">About Us</NavLink>
       </Box>
-      <hr
-        style={{
-          backgroundColor: "white",
-          height: "2px",
-          border: "none",
-        }}
-      />
+      <hr className="hrMenu" />
       <div className="Login Box" style={{ marginTop: 100 }}>
         <Typography variant="h4" className="HeadLine">
           Login

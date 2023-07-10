@@ -50,11 +50,7 @@ function AdminVacationsStats(): JSX.Element {
         <NavLink to="/about">About Us</NavLink>
       </Box>
       <hr
-        style={{
-          backgroundColor: "white",
-          height: "2px",
-          border: "none",
-        }}
+        className="hrMenu"
       />
       <BarChart
         className="Box"
@@ -78,7 +74,7 @@ function AdminVacationsStats(): JSX.Element {
         </XAxis>
         <YAxis
           label={{
-            value: "Amount of likes",
+            value: "Amount of Likes",
             angle: -90,
             position: "insideBottomLeft",
           }}

@@ -11,13 +11,7 @@ function AdminPage(): JSX.Element {
         <NavLink to="/logout">Logout</NavLink> •{" "}
         <NavLink to="/about">About Us</NavLink>
       </Box>
-      <hr
-        style={{
-          backgroundColor: "white",
-          height: "2px",
-          border: "none",
-        }}
-      />
+      <hr className="hrMenu" />
       <Box className="allAdminBox">
         <Card
           variant="outlined"
