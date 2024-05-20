@@ -18,17 +18,13 @@ const conncetion = mysql.createPool({
 
 console.log("We are connected to mySQL");
 
-function execute(sql: string): Promise<any> {
-  // Promise have three lifescycles: pending, fullfilled, and rejected.
+function execute(sql: string, values: any[] = []): Promise<any> {
   return new Promise<any>((resolve, reject) => {
-    // execute the sql to mySQL
-    conncetion.query(sql, (err, result) => {
-      // if there is an error (sql server does not understand the query)
+    conncetion.query(sql, values, (err, result) => {
       if (err) {
         reject(err);
         return;
       }
-      // no error - report data
       resolve(result);
     });
   });

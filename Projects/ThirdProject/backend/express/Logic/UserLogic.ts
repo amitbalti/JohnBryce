@@ -23,15 +23,24 @@ const createUsersTable = () => {
 // Add new User
 const addUser = async (newUser: User) => {
   console.log(newUser);
-  const SQLcommand = `
-    INSERT INTO myVacations.users 
-    (userName, userMail, isAdmin, userPassword) 
-    VALUES 
-    ('${newUser.userName}', '${newUser.userMail}', ${newUser.isAdmin},${newUser.userPassword});
-  `;
+  const addUser = async (newUser: User) => {
+    const SQLcommand = `
+      INSERT INTO myVacations.users 
+      (userName, userMail, isAdmin, userPassword) 
+      VALUES 
+      (?, ?, ?, ?);
+    `;
 
-  const result: OkPacket = await dal_mysql.execute(SQLcommand);
-  return result.insertId;
+    const values = [
+      newUser.userName,
+      newUser.userMail,
+      newUser.isAdmin,
+      newUser.userPassword,
+    ];
+
+    const result: OkPacket = await dal_mysql.execute(SQLcommand, values);
+    return result.insertId;
+  };
 };
 
 // Login user
